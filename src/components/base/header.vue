@@ -1,22 +1,20 @@
 <template>
     <div class="header">
-        <div class="logo active">
-            <a href="/">
-                <img src="https://www.ywart.com/svg_file?path=/Content/image/logo_text.svg&amp;rgb=255,255,255"
-                     alt="艺网logo">
+        <div class="logo" :class="{ active:logo.active }">
+            <a href="#" @click="menuRedirect(logo)">
+                <img src="https://www.ywart.com/svg_file?path=/Content/image/logo_text.svg&amp;rgb=255,255,255">
             </a>
         </div>
         <div class="nav">
-            <a href="/buy">原创艺术</a>
-            <a href="/makeart">造艺</a>
-            <a href="/collect/index">藏艺术</a>
-            <a href="/user/userwishlist">我的珍藏</a>
+            <template v-for="item in menuList">
+                <a href="#" :class="{ active : item.active }" @click="menuRedirect(item)">{{ item.name }}</a>
+            </template>
             <div class="search">
-                <a href="javascript:void(0);">
+                <a href="#" @click="search($event)">
                     <img src="https://www.ywart.com/svg_file?path=/Content/image/search.svg&amp;rgb=255,255,255"
-                         class="souicon active">
+                         class="searchIcon" :class="{ active : searchFlag }">
                     <img src="https://www.ywart.com/svg_file?path=/Content/image/closeInput.svg&amp;rgb=255,255,255"
-                         class="close">
+                         class="closeIcon" :class="{ active : !searchFlag }">
                 </a>
             </div>
         </div>
@@ -27,7 +25,7 @@
                 </a>
             </div>
         </div>
-        <div class="searchBox" style="display: none;">
+        <div class="searchBox" :class="{ active : !searchFlag }">
             <input placeholder="搜索艺术家或艺术品">
         </div>
     </div>
@@ -37,62 +35,57 @@
   export default {
     components: {},
     data () {
-      return {}
+      return {
+        logo: {name: '', link: '', active: true},
+        menuList: [
+          {name: '原创艺术', link: '/buy', active: false},
+          {name: '造艺', link: '/makeArt', active: false},
+          {name: '藏艺术', link: '/collect/index', active: false},
+          {name: '我的珍藏', link: '/user/userWishList', active: false}
+        ],
+        searchFlag: true
+      }
     },
     created () {
     },
     mounted () {
     },
     computed: {},
-    methods: {}
+    methods: {
+      /**
+       * 菜单跳转事件
+       * @param item
+       */
+      menuRedirect (item) {
+        this.logo.active = false
+        this.menuList.forEach((val) => {
+          val.active = false
+        })
+        item.active = true
+        console.log('link:', item.link)
+      },
+      search (e) {
+        // debugger
+        console.log('e:', e)
+
+        let target = e.target
+        // let className = target.className || ''
+        let flag = this.$utils.Dom.hasClass(target, 'closeIcon')
+        if (flag) {
+          // this.$utils.Dom.getElement('.searchIcon').style.display = 'none'
+          // this.$utils.Dom.getElement('.closeIcon').style.display = 'inline-block'
+          // this.$utils.Dom.getElement('.closeIcon').style.transition = 'All 0.4s ease-in-out'
+          this.$utils.Dom.removeClass(this.$utils.Dom.getElement('.closeIcon'), '.active')
+
+        }
+        setTimeout(() => {
+          this.searchFlag = !this.searchFlag
+        }, 500)
+      }
+    }
   }
 </script>
 
 <style lang="less">
-    .header {
-        min-width: 1028px;
-        width: 100%;
-        height: 68px;
-        padding: 0 40px;
-        position: fixed;
-        top: 0;
-        text-align: center;
-        background: #000;
-        box-shadow: 0 -1px 8px 1px #333;
-
-        .logo {
-            float: left;
-            height: 68px;
-            margin: 0 100px 0 20px;
-            img {
-                height: 68px;
-                width: 42px;
-            }
-            &:after {
-                width: 100px;
-                height: 5px;
-                background-color: #fff;
-                display: none;
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 33px;
-            }
-        }
-
-        .nav {
-
-            &.active {
-
-            }
-
-            .search {
-
-            }
-        }
-
-        .member {
-
-        }
-    }
+    @import "../../assets/styles/comp/header";
 </style>

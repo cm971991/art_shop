@@ -3,13 +3,14 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import Util from './assets/utils/index'
 
 Vue.config.productionTip = false
-
+Vue.use(Util)
 /* eslint-disable no-new */
-new Vue({
+window.$globalHub = new Vue({
   el: '#app',
   router,
   template: '<App/>',
-  components: { App }
+  components: {App}
 })
