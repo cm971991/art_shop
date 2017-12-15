@@ -1,12 +1,12 @@
 <template>
     <div id="app">
         <i-header></i-header>
-        <!--<router-view/>-->
+        <router-view/>
     </div>
 </template>
 
 <script>
-  import iHeader from './components/base/header'
+  import iHeader from './components/base/iHeader'
 
   export default {
     components: {
@@ -17,6 +17,7 @@
 
 <style>
     @import "../node_modules/ress/ress.css";
+    @import "./assets/styles/common/icon.less";
 
     #app {
         font-family: 'Avenir', Helvetica, Arial, sans-serif;

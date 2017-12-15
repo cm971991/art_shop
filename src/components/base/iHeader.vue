@@ -20,8 +20,8 @@
         </div>
         <div class="member">
             <div class="login_prev">
-                <a href="/login">
-                    <b>登录 / 注册</b>
+                <a href="#">
+                    <b @click="loginRedirect">登录 / 注册</b>
                 </a>
             </div>
         </div>
@@ -64,23 +64,25 @@
         item.active = true
         console.log('link:', item.link)
       },
+      /**
+       * 登录、注册跳转
+       */
+      loginRedirect () {
+        this.$router.push({path: '/login'})
+      },
       search (e) {
-        // debugger
-        console.log('e:', e)
-
         let target = e.target
-        // let className = target.className || ''
-        let flag = this.$utils.Dom.hasClass(target, 'closeIcon')
+        let flag = this.$utils.Dom.hasClass(target, 'searchIcon')
         if (flag) {
-          // this.$utils.Dom.getElement('.searchIcon').style.display = 'none'
-          // this.$utils.Dom.getElement('.closeIcon').style.display = 'inline-block'
-          // this.$utils.Dom.getElement('.closeIcon').style.transition = 'All 0.4s ease-in-out'
-          this.$utils.Dom.removeClass(this.$utils.Dom.getElement('.closeIcon'), '.active')
-
+          this.searchFlag = false
+          this.$utils.Dom.getElement('.searchBox').style.display = 'block'
+          this.$utils.Dom.getElement('.searchBox input').focus()
+        } else {
+          this.$utils.Dom.addClass(this.$utils.Dom.getElement('.closeIcon'), 'back')
+          setTimeout(() => {
+            this.searchFlag = true
+          }, 200)
         }
-        setTimeout(() => {
-          this.searchFlag = !this.searchFlag
-        }, 500)
       }
     }
   }
