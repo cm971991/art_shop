@@ -11,7 +11,7 @@
             </swiper>
         </section>
         <!--endregion swiper -->
-        
+
         <div class="index_center">
             <!--region 推荐 -->
             <section class="category">
@@ -22,36 +22,36 @@
                         <div :class="{ active : item.active }" @click="categorySelect(item)">{{ item.name }}</div>
                     </template>
                 </div>
-
-                <div class="item-box active">
-                    <template v-for="i in 4">
-                        <div class="item">
-                            <a href="/artworks/1rnpd0" target="_blank">
-                                <div class="img imghover">
-                                    <img src="https://cdn.ywart.com/yw/20160801173816619b90e50ac.jpg@560h_560w_1e_1c_1wh_90Q">
-                                </div>
-                            </a>
-                            <div class="info_box">
-                                <div>
-                                    <a href="/artist/155xzm" target="_blank">
-                                        <h3>王缺土</h3>
-                                    </a>
-                                    <p class="info">
-                                        <a href="/artworks/1rnpd0" target="_blank">
+                <template v-for="item in categoryTitleList">
+                    <div class="item-box" :class="{ active : item.active }">
+                        <template v-for="category in categoryList">
+                            <div class="item">
+                                <router-link :to="{ path: '/artworks/' + category.id +''}" target="_blank">
+                                    <div class="img img-hover">
+                                        <img :src="category.img">
+                                    </div>
+                                </router-link>
+                                <div class="info_box">
+                                    <div>
+                                        <a href="#" target="_blank">
+                                            <h3>{{ category.artist }}</h3>
                                         </a>
-                                    </p>
-                                    <h4>
-                                        <a href="/artworks/1rnpd0" target="_blank">布景</a>
-                                    </h4>
-                                    <a href="/artworks/1rnpd0" target="_blank"></a>
-                                    ，2015<br>布面油画 &nbsp;50x40cm
-                                    <p></p>
-                                    <p class="ysp_price">¥10,050</p>
+                                        <a href="#" target="_blank">
+                                            <h4>{{ category.name }}</h4>
+                                            <h4>，</h4>
+                                            <h4>{{ category.date }}</h4>
+                                        </a>
+                                        <div>
+                                            <h4>{{ category.type }}</h4>
+                                            <h4>{{ category.size }}</h4>
+                                        </div>
+                                        <p class="ysp_price">¥{{ category.price }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </template>
-                </div>
+                        </template>
+                    </div>
+                </template>
             </section>
             <!--endregion 推荐 -->
 
@@ -107,10 +107,46 @@
           {name: '油画', param: 'oil', active: true}
         ],
         categoryList: [
-          {artist: '王缺土', name: '布景', date: '2015', category: '布面油画', size: '50x40cm', price: '10050'},
-          {artist: 'Pung刘', name: '空', date: '2013', category: '布面油画、墨', size: '70x50cm', price: '6050'},
-          {artist: '李昌龙', name: '色层与边界系列90号', date: '2015', category: '布面油画', size: '40x30cm', price: '24050'},
-          {artist: '刘川', name: '角落', date: '2017', category: '布面丙烯', size: '120x100cm', price: '28350'}
+          {
+            id: '1',
+            artist: '王缺土',
+            name: '布景',
+            date: '2015',
+            type: '布面油画',
+            size: '50x40cm',
+            price: '10050',
+            img: require('../assets/images/pages/index/category/oil_1.jpg')
+          },
+          {
+            id: '2',
+            artist: 'Pung刘',
+            name: '空',
+            date: '2013',
+            type: '布面油画、墨',
+            size: '70x50cm',
+            price: '6050',
+            img: require('../assets/images/pages/index/category/oil_2.jpg')
+          },
+          {
+            id: '3',
+            artist: '李昌龙',
+            name: '色层与边界系列90号',
+            date: '2015',
+            type: '布面油画',
+            size: '40x30cm',
+            price: '24050',
+            img: require('../assets/images/pages/index/category/oil_3.jpg')
+          },
+          {
+            id: '4',
+            artist: '刘川',
+            name: '角落',
+            date: '2017',
+            type: '布面丙烯',
+            size: '120x100cm',
+            price: '28350',
+            img: require('../assets/images/pages/index/category/oil_4.jpg')
+          }
         ]
       }
     },
@@ -121,14 +157,14 @@
     },
     methods: {
       /**
-       * 更多点击事件
+       * 更多跳转事件
        */
       buyRedirect () {
         let categoryItem = this.categoryTitleList.find((item) => item.active)
         this.$router.push({path: '/buy', query: {category: categoryItem.param}})
       },
       /**
-       * 种类点击事件
+       * 种类切换事件
        * @param title
        */
       categorySelect (title) {

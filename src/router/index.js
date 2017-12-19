@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Index from '../pages/index'
 import Login from '../pages/login'
 import Buy from '../pages/buy'
+import Artworks from '../pages/artworks'
 
 Vue.use(Router)
 
@@ -27,6 +28,16 @@ export default new Router({
       path: '/buy',
       name: 'buy',
       component: Buy
+    },
+    {
+      path: '/artworks',
+      name: 'artworks',
+      component: Artworks
+    },
+    {
+      path: '/artworks/:id',
+      name: 'artworks',
+      component: Artworks
     }
   ]
 })
