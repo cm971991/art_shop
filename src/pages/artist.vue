@@ -1,6 +1,6 @@
 <template>
     <div class="MyContain">
-        <h1>artworks</h1>
+        <h1>artist</h1>
     </div>
 </template>
 
@@ -11,7 +11,6 @@
       return {}
     },
     created () {
-      console.log('this.$route.params:', this.$route.params.id)
     },
     mounted () {
     },

@@ -1,0 +1,32 @@
+.index-contain .hero {
+  width: 100%;
+  min-width: 1180px;
+  height: 420px;
+  position: fixed;
+  top: 68px;
+  margin-top: 0;
+  z-index: 0;
+  background-color: #fff;
+}
+.index-contain .hero .item-app {
+  width: 100%;
+  height: 420px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.index-contain .index_center {
+  overflow: hidden;
+  margin-top: 488px;
+  width: 100%;
+  background-color: #fff;
+  position: relative;
+}
+.index-contain .index_center .img-hover:hover img {
+  transform: scale(1.05);
+}
+.index-contain .index_center a {
+  text-decoration: none;
+  color: #000;
+}
