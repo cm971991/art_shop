@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Index from '../pages/index/index'
 import Login from '../pages/login'
-import Buy from '../pages/buy'
+import Buy from '../pages/buy/buy'
 import Artworks from '../pages/artworks'
 import Artist from '../pages/artist'
 

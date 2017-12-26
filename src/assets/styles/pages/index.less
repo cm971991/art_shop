@@ -6,6 +6,16 @@
     background-color: #fff;
     position: relative;
 
+    .img-hover img {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: all, 0.5s;
+      transition-timing-function: ease-out;
+    }
+
     .img-hover:hover img {
       transform: scale(1.05);
     }
@@ -14,5 +24,13 @@
       text-decoration: none;
       color: #000;
     }
+
+    p {
+      text-align: justify;
+    }
   }
 }
+
+
+
+

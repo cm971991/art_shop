@@ -1,0 +1,255 @@
+.buy-art {
+  width: 100%;
+}
+.buy-art .simple {
+  width: 100%;
+  height: 310px;
+  border-bottom: 1px solid #eee;
+}
+.buy-art .simple .choice-left {
+  box-sizing: border-box;
+  padding-left: 7.5%;
+  float: left;
+  width: 50%;
+  line-height: 80px;
+  font-size: 0;
+  text-align: left;
+}
+.buy-art .simple .choice-left .price i {
+  margin-left: -30px;
+}
+.buy-art .simple .choice-left .price,
+.buy-art .simple .choice-left .size,
+.buy-art .simple .choice-left .shape {
+  position: relative;
+}
+.buy-art .simple .choice-left .price i,
+.buy-art .simple .choice-left .size i,
+.buy-art .simple .choice-left .shape i {
+  position: absolute;
+  font-size: 12px;
+  color: #666;
+  top: 15px;
+  font-style: inherit;
+  width: 0;
+  height: 0;
+}
+.buy-art .simple .choice-left .price i:first-of-type,
+.buy-art .simple .choice-left .size i:first-of-type,
+.buy-art .simple .choice-left .shape i:first-of-type {
+  margin-left: -5px;
+}
+.buy-art .simple .choice-left .price i:last-of-type,
+.buy-art .simple .choice-left .size i:last-of-type,
+.buy-art .simple .choice-left .shape i:last-of-type {
+  margin-left: -15px;
+}
+.buy-art .simple .choice-left .price a,
+.buy-art .simple .choice-left .size a,
+.buy-art .simple .choice-left .shape a {
+  background-color: #ddd;
+}
+.buy-art .simple .choice-left .price a:hover,
+.buy-art .simple .choice-left .size a:hover,
+.buy-art .simple .choice-left .shape a:hover {
+  background-color: #b0b0b0;
+}
+.buy-art .simple .choice-left .color b {
+  position: relative;
+  top: -4px;
+}
+.buy-art .simple .choice-left .shape {
+  line-height: 40px;
+}
+.buy-art .simple .choice-left .shape .square {
+  width: 24px;
+  height: 24px;
+}
+.buy-art .simple .choice-left .shape .la_Rec {
+  height: 16px;
+  width: 32px;
+}
+.buy-art .simple .choice-left .shape .lo_Rec {
+  height: 32px;
+  width: 16px;
+}
+.buy-art .simple .choice-left .shape .round {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.buy-art .simple .choice-left .shape .irregular {
+  border: none;
+  width: 0;
+  height: 0;
+  text-decoration: none;
+  color: #666;
+  font-size: 36px;
+  position: relative;
+  top: 14px;
+}
+.buy-art .simple .choice-left .shape a {
+  transform: translate(0, 50%);
+  background-color: #fff;
+  border: 1px solid #666;
+  margin-right: 10%;
+  margin-top: -10px;
+}
+.buy-art .simple .choice-left .shape a .default {
+  display: inline-block;
+}
+.buy-art .simple .choice-left .shape a .default:hover {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a .hover {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a .show {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a img {
+  width: 30px;
+}
+.buy-art .simple .choice-left .shape a:hover .default {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a:hover .hover {
+  display: inline-block;
+}
+.buy-art .simple .choice-left .shape a:hover .show {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a.active .default {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a.active .hover {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a.active .show {
+  display: inline-block;
+}
+.buy-art .simple .choice-left .shape > b {
+  position: relative;
+  top: 4px;
+}
+.buy-art .simple .choice-left a {
+  display: inline-block;
+  width: 13%;
+  box-sizing: border-box;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 2px;
+}
+.buy-art .simple .choice-left a:hover {
+  filter: opacity(80);
+  opacity: 0.8;
+}
+.buy-art .simple .choice-left > p > b {
+  font-size: 14px;
+  margin-right: 50px;
+}
+.buy-art .simple .choice-middle {
+  float: left;
+  width: 17.5%;
+}
+.buy-art .simple .choice-middle > .space {
+  width: 62.5%;
+}
+.buy-art .simple .choice-middle > div {
+  float: left;
+  text-align: left;
+}
+.buy-art .simple .choice-middle > div h3 {
+  line-height: 80px;
+  font-size: 14px;
+}
+.buy-art .simple .choice-middle > div ul > a {
+  cursor: pointer;
+  line-height: 36px;
+  font-size: 14px;
+  color: #666;
+  display: block;
+}
+.buy-art .simple .choice-middle > div ul > a.active {
+  color: #000;
+  font-weight: bold;
+}
+.buy-art .simple .choice-right {
+  box-sizing: border-box;
+  float: left;
+  width: 32.5%;
+  border-left: 1px solid #eee;
+}
+.buy-art .simple .choice-right .text {
+  cursor: pointer;
+  text-align: center;
+  float: left;
+  width: 30%;
+  margin-top: 35px;
+}
+.buy-art .simple .choice-right .text ul {
+  margin-bottom: 30px;
+}
+.buy-art .simple .choice-right .text ul a {
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #666;
+  display: block;
+}
+.buy-art .simple .choice-right .show_wall {
+  background-size: cover;
+  height: 310px;
+  float: left;
+  width: 70%;
+  text-align: center;
+  color: #fff;
+  padding-top: 30px;
+  position: relative;
+  box-sizing: border-box;
+}
+.buy-art .simple .choice-right .show_wall h2 {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+.buy-art .simple .choice-right .show_wall hr {
+  margin: 20px auto;
+  background-color: #fff;
+  border: none;
+  height: 1px;
+  width: 30%;
+  position: relative;
+  z-index: 2;
+}
+.buy-art .simple .choice-right .show_wall p {
+  line-height: 26px;
+  text-align: left;
+  margin: 0 auto;
+  width: 90%;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+.buy-art .red {
+  background-color: #e73233;
+}
+.buy-art .yellow {
+  background-color: #ffea03;
+}
+.buy-art .green {
+  background-color: #32cc66;
+}
+.buy-art .blue {
+  background-color: #0099ff;
+}
+.buy-art .bwg {
+  box-sizing: border-box;
+  position: relative;
+}
+.buy-art .bwg img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
