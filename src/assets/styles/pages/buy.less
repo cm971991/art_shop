@@ -36,6 +36,10 @@
         }
         a {
           background-color: #ddd;
+          &.active {
+            background-color: #000;
+            border-color: #000;
+          }
           &:hover {
             background-color: #b0b0b0;
           }
@@ -48,6 +52,14 @@
           position: relative;
           top: -4px;
         }
+        a.active {
+          border: 2px solid #000;
+          box-sizing: border-box;
+        }
+        .bwg {
+          box-sizing: border-box;
+          position: relative;
+        }
       }
       .shape {
         line-height: 40px;
@@ -55,11 +67,11 @@
           width: 24px;
           height: 24px;
         }
-        .la_Rec {
+        .la-Rec {
           height: 16px;
           width: 32px;
         }
-        .lo_Rec {
+        .lo-Rec {
           height: 32px;
           width: 16px;
         }
@@ -191,10 +203,14 @@
             font-size: 14px;
             color: #666;
             display: block;
+            &.active {
+              color: #000;
+              font-weight: bold;
+            }
           }
         }
       }
-      .show_wall {
+      .show-wall {
         background-size: cover;
         height: 310px;
         float: left;
@@ -250,6 +266,91 @@
       width: 100%;
       height: 100%;
       position: absolute;
+    }
+  }
+
+  .buy-search {
+    position: relative;
+    top: 0;
+    width: 100%;
+    text-align: left;
+    line-height: 50px;
+    height: 50px;
+    background-color: #fff;
+    box-sizing: border-box;
+    padding: 0 7.5%;
+    border-bottom: 1px solid #eee;
+    z-index: 0;
+    .s-reset {
+      display: none;
+      background: none;
+      border: none;
+      color: #666;
+      font-size: 14px;
+      cursor: pointer;
+      margin: 0 20px;
+      position: relative;
+    }
+    div {
+      display: inline-block;
+      border-radius: 13px;
+      position: relative;
+      height: 28px;
+      top: 12px;
+      i {
+        position: relative;
+        top: -8px;
+      }
+      .search {
+        position: relative;
+        top: -12px;
+        font-size: 14px;
+        padding-left: 8px;
+        border: none;
+        line-height: 16px;
+      }
+    }
+    .sure {
+      border-color: #999;
+      background-color: #999;
+      color: #fff;
+      transition: background-color, 1s;
+    }
+
+    .changeModel {
+      position: absolute;
+      text-align: center;
+      background-color: #fff;
+      top: 50px;
+      left: 50%;
+      margin-left: -70px;
+      display: block;
+      width: 140px;
+      height: 30px;
+      color: #333;
+      font-size: 14px;
+      text-decoration: none;
+      line-height: 30px;
+      border-radius: 0 0 4px 4px;
+      -moz-border-radius: 0 0 4px 4px;
+      -webkit-border-radius: 0 0 4px 4px;
+      border: 1px solid #eee;
+      border-top: none;
+      i {
+        margin-left: 10px;
+      }
+    }
+
+    button {
+      margin-top: 6px;
+      float: right;
+      border: none;
+      width: 130px;
+      height: 36px;
+      cursor: pointer;
+      outline: none;
+      font-size: 14px;
+      display: none;
     }
   }
 }

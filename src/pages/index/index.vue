@@ -39,7 +39,6 @@
 
     </div>
 
-
   </div>
 </template>
 

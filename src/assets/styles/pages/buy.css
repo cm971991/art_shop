@@ -49,6 +49,12 @@
 .buy-art .simple .choice-left .shape a {
   background-color: #ddd;
 }
+.buy-art .simple .choice-left .price a.active,
+.buy-art .simple .choice-left .size a.active,
+.buy-art .simple .choice-left .shape a.active {
+  background-color: #000;
+  border-color: #000;
+}
 .buy-art .simple .choice-left .price a:hover,
 .buy-art .simple .choice-left .size a:hover,
 .buy-art .simple .choice-left .shape a:hover {
@@ -58,6 +64,14 @@
   position: relative;
   top: -4px;
 }
+.buy-art .simple .choice-left .color a.active {
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+.buy-art .simple .choice-left .color .bwg {
+  box-sizing: border-box;
+  position: relative;
+}
 .buy-art .simple .choice-left .shape {
   line-height: 40px;
 }
@@ -65,11 +79,11 @@
   width: 24px;
   height: 24px;
 }
-.buy-art .simple .choice-left .shape .la_Rec {
+.buy-art .simple .choice-left .shape .la-Rec {
   height: 16px;
   width: 32px;
 }
-.buy-art .simple .choice-left .shape .lo_Rec {
+.buy-art .simple .choice-left .shape .lo-Rec {
   height: 32px;
   width: 16px;
 }
@@ -197,7 +211,11 @@
   color: #666;
   display: block;
 }
-.buy-art .simple .choice-right .show_wall {
+.buy-art .simple .choice-right .text ul a.active {
+  color: #000;
+  font-weight: bold;
+}
+.buy-art .simple .choice-right .show-wall {
   background-size: cover;
   height: 310px;
   float: left;
@@ -208,13 +226,13 @@
   position: relative;
   box-sizing: border-box;
 }
-.buy-art .simple .choice-right .show_wall h2 {
+.buy-art .simple .choice-right .show-wall h2 {
   font-size: 24px;
   font-weight: 500;
   position: relative;
   z-index: 2;
 }
-.buy-art .simple .choice-right .show_wall hr {
+.buy-art .simple .choice-right .show-wall hr {
   margin: 20px auto;
   background-color: #fff;
   border: none;
@@ -223,7 +241,7 @@
   position: relative;
   z-index: 2;
 }
-.buy-art .simple .choice-right .show_wall p {
+.buy-art .simple .choice-right .show-wall p {
   line-height: 26px;
   text-align: left;
   margin: 0 auto;
@@ -252,4 +270,86 @@
   width: 100%;
   height: 100%;
   position: absolute;
+}
+.buy-art .buy-search {
+  position: relative;
+  top: 0;
+  width: 100%;
+  text-align: left;
+  line-height: 50px;
+  height: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 7.5%;
+  border-bottom: 1px solid #eee;
+  z-index: 0;
+}
+.buy-art .buy-search .s-reset {
+  display: none;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 20px;
+  position: relative;
+}
+.buy-art .buy-search div {
+  display: inline-block;
+  border-radius: 13px;
+  position: relative;
+  height: 28px;
+  top: 12px;
+}
+.buy-art .buy-search div i {
+  position: relative;
+  top: -8px;
+}
+.buy-art .buy-search div .search {
+  position: relative;
+  top: -12px;
+  font-size: 14px;
+  padding-left: 8px;
+  border: none;
+  line-height: 16px;
+}
+.buy-art .buy-search .sure {
+  border-color: #999;
+  background-color: #999;
+  color: #fff;
+  transition: background-color, 1s;
+}
+.buy-art .buy-search .changeModel {
+  position: absolute;
+  text-align: center;
+  background-color: #fff;
+  top: 50px;
+  left: 50%;
+  margin-left: -70px;
+  display: block;
+  width: 140px;
+  height: 30px;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 30px;
+  border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+  border: 1px solid #eee;
+  border-top: none;
+}
+.buy-art .buy-search .changeModel i {
+  margin-left: 10px;
+}
+.buy-art .buy-search button {
+  margin-top: 6px;
+  float: right;
+  border: none;
+  width: 130px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  display: none;
 }

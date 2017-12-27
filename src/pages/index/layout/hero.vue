@@ -2,7 +2,7 @@
     <div class="hero">
         <swiper :options="swiperOption">
             <swiper-slide v-for="(slide,index) in swiperSlides" :key="index">
-                <div class="item-app" :style="{ backgroundImage:'url('+slide.imgUrl+') '}">
+                <div class="item-app" :style="{ backgroundImage:'url('+ slide.imgUrl +') '}">
                 </div>
             </swiper-slide>
             <div class="swiper-pagination" slot="pagination"></div>
