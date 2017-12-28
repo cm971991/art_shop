@@ -18,6 +18,9 @@
 .buy-art .simple .choice-left .price i {
   margin-left: -30px;
 }
+.buy-art .simple .choice-left .size i {
+  margin-left: -20px;
+}
 .buy-art .simple .choice-left .price,
 .buy-art .simple .choice-left .size,
 .buy-art .simple .choice-left .shape {
@@ -38,6 +41,27 @@
 .buy-art .simple .choice-left .size i:first-of-type,
 .buy-art .simple .choice-left .shape i:first-of-type {
   margin-left: -5px;
+  left: 12% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(2),
+.buy-art .simple .choice-left .size i:nth-of-type(2),
+.buy-art .simple .choice-left .shape i:nth-of-type(2) {
+  left: 25% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(3),
+.buy-art .simple .choice-left .size i:nth-of-type(3),
+.buy-art .simple .choice-left .shape i:nth-of-type(3) {
+  left: 39% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(4),
+.buy-art .simple .choice-left .size i:nth-of-type(4),
+.buy-art .simple .choice-left .shape i:nth-of-type(4) {
+  left: 52% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(5),
+.buy-art .simple .choice-left .size i:nth-of-type(5),
+.buy-art .simple .choice-left .shape i:nth-of-type(5) {
+  left: 65% \9;
 }
 .buy-art .simple .choice-left .price i:last-of-type,
 .buy-art .simple .choice-left .size i:last-of-type,
@@ -250,6 +274,10 @@
   position: relative;
   z-index: 2;
 }
+.buy-art .simple .prize,
+.buy-art .simple .size {
+  position: relative;
+}
 .buy-art .red {
   background-color: #e73233;
 }
@@ -352,4 +380,8 @@
   outline: none;
   font-size: 14px;
   display: none;
+}
+.buy-art .icon_a img {
+  width: 100%;
+  height: 100%;
 }

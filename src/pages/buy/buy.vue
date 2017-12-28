@@ -70,7 +70,7 @@
                 </div>
                 <!-- endregion 摆放空间 -->
                 <!-- region 分类 -->
-                <div class="category">
+                <div>
                     <h3>分类</h3>
                     <ul>
                         <template v-for="(item,index) in categoryList">
@@ -130,12 +130,18 @@
             <a class="changeModel">高级筛选<i class="icon-down-arrow" v-html="downIcon"></i></a>
         </div>
         <!-- endregion 查询框 -->
+
+        <!-- region 列表 -->
+        <content-list></content-list>
+        <!-- endregion 列表 -->
     </div>
 </template>
 
 <script>
+  import contentList from './layout/contentList'
+
   export default {
-    components: {},
+    components: {contentList},
     data () {
       return {
         bwgImg: require('../../assets/images/pages/buy/B_W_G.png'),

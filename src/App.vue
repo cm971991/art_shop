@@ -15,14 +15,11 @@
       iHeader, iFooter
     },
     data () {
-      return {
-      }
+      return {}
     },
     created () {},
     computed: {},
-    mounted () {
-      this.$store.commit('UPDATE_FOOTER', '')
-    },
+    mounted () {},
     methods: {}
   }
 </script>
@@ -46,7 +43,7 @@
         -moz-osx-font-smoothing: grayscale;
         text-align: center;
         color: #2c3e50;
-        margin-top: 60px;
+        margin-top: 68px;
         box-sizing: border-box;
     }
 </style>

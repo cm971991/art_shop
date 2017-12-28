@@ -36,7 +36,7 @@
     components: {},
     data () {
       return {
-        logo: {name: '', link: '/', active: true},
+        logo: {name: 'index', link: '/', active: true},
         menuList: [
           {name: '原创艺术', link: '/buy', active: false},
           {name: '造艺', link: '/makeArt', active: false},
@@ -49,6 +49,13 @@
     created () {
     },
     mounted () {
+      if (this.$route.name !== 'index') {
+        this.menuList.forEach((item) => {
+          item.active = item.link === this.$route.path
+        })
+        this.$store.commit('UPDATE_FOOTER', 'simple')
+        this.logo.active = false
+      }
     },
     computed: {},
     methods: {
