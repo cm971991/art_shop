@@ -128,7 +128,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .category {
         display: block;
         position: relative;

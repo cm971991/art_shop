@@ -18,43 +18,56 @@
             </select>
         </div>
         <div class="container">
-            <div class="grid" style="position: relative; height: 4166.44px;">
-                <template v-for="(item,index) in pdlist">
-                    <div class="grid-item" :key="index">
-                        <div class="thumb" data-id="1lwxy1">
-                            <a href="#">
-                                <img :src="item.imgUrl">
-                            </a>
-                        </div>
-                        <div class="detail">
-                            <p>
-                                <a href="/artist/1w73m8" target="_blank">{{ item.artist }}</a>
-                            </p>
-                            <p>
-                                <a href="/artworks/1lwxy1">人体2</a><span>{{  item.date }}</span>
-                            </p>
-                            <p>
-                                <span>{{ item.type }}</span><span>{{ item.size }}</span>
-                            </p>
-                            <div class="qmBox">
-                                <img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"
-                                     class="qmImg">
-                                <p class="price">¥{{ item.price }}</p>
-                            </div>
+            <!--<div class="grid" style="position: relative; height: 4166.44px;">-->
+            <!--<template v-for="(item,index) in pdlist">-->
+            <!--<div class="grid-item" :key="index">-->
+            <!--<div class="thumb" data-id="1lwxy1">-->
+            <!--<a href="#">-->
+            <!--<img :src="item.imgUrl">-->
+            <!--</a>-->
+            <!--</div>-->
+            <!--<div class="detail">-->
+            <!--<p><a href="/artist/1w73m8" target="_blank">{{ item.artist }}</a></p>-->
+            <!--<p><a href="/artworks/1lwxy1">人体2</a><span>{{  item.date }}</span></p>-->
+            <!--<p><span>{{ item.type }}</span><span>{{ item.size }}</span></p>-->
+            <!--<div class="qmBox">-->
+            <!--<img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"-->
+            <!--class="qmImg">-->
+            <!--<p class="price">¥{{ item.price }}</p>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</template>-->
+            <!--</div>-->
+            <waterfall :list="pdlist">
+                <template slot="item" slot-scope="item">
+                    <div class="detail">
+                        <p><a href="#" target="_blank">{{ item.item.artist }}</a></p>
+                        <p><a href="#">{{ item.item.name }}</a>&nbsp;&nbsp;<span>{{  item.item.date }}</span></p>
+                        <p><span>{{ item.item.type }}</span>&nbsp;&nbsp;&nbsp;<span>{{ item.item.size }}</span>
+                        </p>
+                        <div class="qmBox">
+                            <img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"
+                                 class="qmImg">
+                            <p class="price">¥{{ item.item.price }}</p>
                         </div>
                     </div>
                 </template>
-            </div>
+            </waterfall>
         </div>
     </div>
 </template>
 
 <script>
   import MeScroll from 'mescroll.js'
+  import waterfall from '../../../components/common/waterfall'
   import contentList from '../../../../static/contentList'
 
   export default {
-    components: {MeScroll},
+    components: {
+      MeScroll,
+      waterfall
+    },
     data () {
       return {
         mescroll: null,
@@ -62,34 +75,90 @@
       }
     },
     created () {
+      window.onscroll = () => {
+        if (this.flag) {
+          return
+        }
+        if (document.documentElement.scrollTop + document.body.clientHeight + 150 > document.documentElement.scrollHeight) {
+          this.flag = true
+          if (this.pdlist.length < 30) {
+            this.pdlist = this.pdlist.concat([
+              {
+                'id': '4',
+                'imgUrl': 'https://cdn.ywart.com/yw/2016111117372065643c76a49.jpg@600w_1e_1c_1wh_90Q',
+                'artist': '',
+                'name': '鸟与林二',
+                'date': '2014',
+                'type': '铜版腐蚀',
+                'size': '75x75cm',
+                'price': '6050',
+                'height': '599',
+                'width': '600'
+              },
+              {
+                'id': '5',
+                'imgUrl': 'https://cdn.ywart.com/yw/201606081450399568ad65519.jpg@600w_1e_1c_1wh_90Q',
+                'artist': '姜波',
+                'name': '谈些什么5',
+                'date': '2015',
+                'type': '综合材料',
+                'size': '12x18cm',
+                'price': '1050',
+                'height': '917',
+                'width': '600'
+              },
+              {
+                'id': '6',
+                'imgUrl': 'https://cdn.ywart.com/yw/20160805115126168201c9db4.jpg@600w_1e_1c_1wh_90Q',
+                'artist': '真琦',
+                'name': '盛夏-鸟语林',
+                'date': '2015',
+                'type': '丝网版',
+                'size': '55x75cm',
+                'price': '3050',
+                'height': '895',
+                'width': '600'
+              }
+            ])
+          }
+          setTimeout(() => {
+            if (this.pdlist.length >= 30) {
+              this.flag = true
+            } else {
+              this.flag = false
+            }
+          }, 500)
+        }
+      }
     },
     mounted () {
-      let self = this
-      self.mescroll = new MeScroll('body', {
-        up: {
-          htmlLoading: '',
-          callback: self.upCallback,
-          showNoMore: self.showNoMore,
-          isBounce: false
-        }
-      })
+      this.pdlist = contentList
+      // let self = this
+      // self.mescroll = new MeScroll('body', {
+      //   up: {
+      //     htmlLoading: '',
+      //     callback: self.upCallback,
+      //     showNoMore: self.showNoMore,
+      //     isBounce: false
+      //   }
+      // })
     },
     computed: {},
     methods: {
       upCallback (page) {
         let self = this
-        getListDataFromNet(page.num, page.size, function (curPageData) {
+        getListDataFromNet(page.num, page.size, (curPageData) => {
           if (page.num === 1) {
             self.pdlist = []
           }
           self.pdlist = self.pdlist.concat(curPageData)
           self.mescroll.endSuccess(curPageData.length)
-        }, function () {
+        }, () => {
           self.mescroll.endErr()
         })
 
         function getListDataFromNet (pageNum, pageSize, successCallback, errorCallback) {
-          setTimeout(function () {
+          setTimeout(() => {
             let data = contentList
             let listData = []
             for (let i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
@@ -109,7 +178,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .content {
         width: 100%;
         background-color: #fff;
@@ -138,103 +207,105 @@
             margin: 0 auto;
             max-width: 1200px;
             display: block;
-            .grid {
-                display: block;
-                .grid-item {
-                    width: 300px;
-                    min-height: 100px;
-                    float: left;
-                    background: #FFF;
-                    margin: 80px 46px 0 46px !important;
-                    .thumb {
-                        position: relative;
-                        img {
-                            width: 100%;
-                            background: #ccc;
-                            display: block;
-                            cursor: pointer;
+
+            .column-item {
+                .detail {
+                    position: relative;
+                    padding: 12px 0 0 0;
+                    text-align: left;
+                    .qmBox {
+                        display: flex;
+                        .qmImg {
+                            height: 26px;
+                            top: 85px;
+                            left: 18px;
+                        }
+                        .price {
+                            margin-top: 5px;
+                            padding-left: 10px;
                         }
                     }
-                    .detail {
-                        position: relative;
-                        padding: 12px 0 0 0;
+                    p {
+                        color: #666666;
+                        font-size: 12px;
+                        line-height: 20px;
+                        padding: 0 20px;
+                        height: 20px;
+                        width: 80%;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        font-style: italic;
 
-                        .qmBox {
-                            display: flex;
-                            .qmImg {
-                                height: 26px;
-                                top: 85px;
-                                left: 18px;
-                            }
-                            .price {
-                                margin-top: 5px;
-                                padding-left: 10px;
-                            }
-                        }
-                        /*.image_list_icon {*/
-                        /*position: absolute;*/
-                        /*right: 0;*/
-                        /*bottom: 0;*/
-                        /*display: none;*/
-                        /*a {*/
-                        /*width: 30px;*/
-                        /*height: 30px;*/
-                        /*line-height: 30px;*/
-                        /*text-align: center;*/
-                        /*text-decoration: none;*/
-                        /*display: block;*/
-                        /*img {*/
-                        /*width: 100%;*/
-                        /*height: 100%;*/
-                        /*&.default {*/
-                        /*display: inline-block;*/
-                        /*}*/
-                        /*&.hover {*/
-                        /*display: none;*/
-                        /*}*/
-                        /*}*/
-                        /*}*/
-                        /*}*/
-
-                        p {
-                            color: #666666;
-                            font-size: 12px;
-                            line-height: 20px;
-                            padding: 0 20px;
-                            height: 20px;
-                            width: 80%;
-                            overflow: hidden;
-                            text-overflow: ellipsis;
-                            white-space: nowrap;
-                            font-style: italic;
-
-                            .price {
-                                margin-top: 10px;
-                                color: black;
-                                font-size: 14px;
-                                font-weight: 500;
-                                margin-bottom: 20px;
-                                font-style: normal;
-                            }
-
-                            &:nth-child(1) {
-                                font-style: normal;
-                                margin-bottom: 8px;
-                            }
-                        }
-                        div {
+                        .price {
                             margin-top: 10px;
-                            padding: 0 20px;
+                            color: black;
+                            font-size: 14px;
+                            font-weight: 500;
+                            margin-bottom: 20px;
+                            font-style: normal;
+                        }
+
+                        &:nth-child(1) {
+                            font-style: normal;
+                            margin-bottom: 8px;
+                        }
+                    }
+                    div {
+                        margin-top: 10px;
+                        padding: 0 20px;
+                    }
+                }
+            }
+
+            .detail {
+                position: relative;
+                padding: 12px 0 0 0;
+                .qmBox {
+                    display: flex;
+                    .qmImg {
+                        height: 26px;
+                        top: 85px;
+                        left: 18px;
+                    }
+                    .price {
+                        margin-top: 5px;
+                        padding-left: 10px;
+                    }
+                }
+                p {
+                    color: #666666;
+                    font-size: 12px;
+                    line-height: 20px;
+                    padding: 0 20px;
+                    height: 20px;
+                    width: 80%;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                    font-style: italic;
+
+                    &.price {
+                        margin-top: 10px;
+                        color: black;
+                        font-size: 14px;
+                        font-weight: 500;
+                        margin-bottom: 20px;
+                        font-style: normal;
+                    }
+
+                    &:nth-child(1) {
+                        font-style: normal;
+                        margin-bottom: 8px;
+                        a {
+                            color: #000;
+                            font-weight: 600;
                         }
                     }
                 }
-                &::after {
-                    visibility: hidden;
-                    display: block;
-                    font-size: 0;
-                    content: " ";
-                    clear: both;
-                    height: 0;
+                div {
+                    margin-top: 10px;
+                    padding: 0 20px;
                 }
             }
 

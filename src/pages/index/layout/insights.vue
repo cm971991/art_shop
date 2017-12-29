@@ -60,7 +60,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .insights {
         display: block;
         position: relative;

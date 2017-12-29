@@ -103,7 +103,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .searchBar {
         display: block;
         width: 100%;

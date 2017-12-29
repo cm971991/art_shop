@@ -151,7 +151,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .specials {
         position: relative;
         width: 100%;

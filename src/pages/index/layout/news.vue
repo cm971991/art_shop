@@ -298,7 +298,7 @@
   }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
     .news {
         user-select: none;
         display: block;
