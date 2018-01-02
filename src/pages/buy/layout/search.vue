@@ -156,20 +156,20 @@
         starMiddleImg: require('../../../assets/images/pages/buy/icon_star_middle.svg'),
         starChooseImg: require('../../../assets/images/pages/buy/icon_star_choose.svg'),
         priceList: [
-          {title: '0', value: '0～2000', active: false},
-          {title: '¥2,000', value: '2000～8000', active: false},
-          {title: '¥8,000', value: '8000～15000', active: false},
-          {title: '¥15,000', value: '15000～30000', active: false},
-          {title: '¥30,000', value: '30000～max', active: false},
-          {title: 'max', value: '30000～max', active: false}
+          {title: '0', value: '0-2000', active: false},
+          {title: '¥2,000', value: '2000-8000', active: false},
+          {title: '¥8,000', value: '8000-15000', active: false},
+          {title: '¥15,000', value: '15000-30000', active: false},
+          {title: '¥30,000', value: '30000-max', active: false},
+          {title: 'max', value: '30000-max', active: false}
         ],
         sizeList: [
-          {title: '0', value: '0～50', active: false},
-          {title: '50cm', value: '50～100', active: false},
-          {title: '100cm', value: '100～150', active: false},
-          {title: '150cm', value: '150～200', active: false},
-          {title: '200cm', value: '200～max', active: false},
-          {title: 'max', value: '200～max', active: false}
+          {title: '0', value: '0-50', active: false},
+          {title: '50cm', value: '50-100', active: false},
+          {title: '100cm', value: '100-150', active: false},
+          {title: '150cm', value: '150-200', active: false},
+          {title: '200cm', value: '200-max', active: false},
+          {title: 'max', value: '200-max', active: false}
         ],
         colorList: [
           {title: '红色系', value: 'red', className: 'red', active: false},
@@ -273,8 +273,58 @@
     created () {
     },
     mounted () {
+      let search = this.$store.getters.search
+      if (search.price) {
+        this.priceList.forEach((item, index) => {
+          item.active = search.price === item.value
+        })
+      }
+      if (search.size) {
+        this.sizeList.forEach((item, index) => {
+          item.active = search.size === item.value
+        })
+      }
+      if (search.color) {
+        this.colorList.forEach((item, index) => {
+          item.active = search.color === item.value
+        })
+      }
+      if (search.shape) {
+        this.shapeList.forEach((item, index) => {
+          item.active = search.shape === item.value
+        })
+      }
+      if (search.space) {
+        this.spaceList.forEach((item, index) => {
+          item.active = search.space === item.value
+        })
+      }
+      if (search.category) {
+        this.categoryList.forEach((item, index) => {
+          item.active = search.category === item.value
+        })
+      }
+      if (search.style) {
+        this.styleList.forEach((item, index) => {
+          item.active = search.style === item.value
+        })
+        this.themList.forEach((item, index) => {
+          item.active = search.style === item.value
+        })
+      }
     },
-    computed: {},
+    computed: {
+      // computePriceList () {
+      //   let search = this.$store.getters.search
+      //   this.priceList.forEach((item, index) => {
+      //     if (!search.price) {
+      //       item.active = false
+      //     }
+      //   })
+      //   console.log('this.priceList:', this.priceList)
+      //   return this.priceList
+      // }
+    },
     methods: {
       /**
        * 查询栏右侧 艺术风格 鼠标聚焦事件
@@ -312,112 +362,38 @@
         }
       },
       /**
-       * 查询栏左侧 价格 点击选择事件
-       * @param item
-       */
-      selectPrice (item) {
-        this.priceList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
-       * 查询栏左侧 尺寸 点击选择事件
-       * @param item
-       */
-      selectSize (item) {
-        this.sizeList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
-       * 查询栏左侧 颜色 点击选择事件
-       * @param item
-       */
-      selectColor (item) {
-        this.colorList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
-       * 查询栏左侧 形状 点击选择事件
-       * @param item
-       */
-      selectShape (item) {
-        this.shapeList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
-       * 查询栏中间 摆放空间 点击选择事件
-       * @param item
-       */
-      selectSpace (item) {
-        this.spaceList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
-       * 查询栏中间 分类 点击选择事件
-       * @param item
-       */
-      selectCategory (item) {
-        this.categoryList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
-       * 查询栏右侧 艺术风格 点击选择事件
-       * @param item
-       */
-      selectStyle (item) {
-        this.styleList.forEach((val) => {
-          val.active = false
-        })
-        this.themList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
-        return false
-      },
-      /**
        *
        * @param item
        * @param type
        */
       chooseSearch (item, type) {
-        debugger
         let list = []
         let otherList = []
+        let seerch = this.$store.getters.search
         switch (type) {
           case 'price':
             list = this.priceList
+            seerch.price = item.value
             break
           case 'size':
             list = this.sizeList
+            seerch.size = item.value
             break
           case 'color':
             list = this.colorList
+            seerch.color = item.value
             break
           case 'shape':
             list = this.shapeList
+            seerch.shape = item.value
             break
           case 'space':
             list = this.spaceList
+            seerch.space = item.value
             break
           case 'category':
             list = this.categoryList
+            seerch.category = item.value
             break
           case 'style':
             list = this.styleList
@@ -425,6 +401,7 @@
             otherList.forEach((val) => {
               val.active = false
             })
+            seerch.style = item.value
             break
         }
         if (!item.active) {
@@ -433,6 +410,7 @@
           })
           item.active = true
         }
+        this.$store.commit('UPDATE_SEARCH', seerch)
         return false
       }
     }

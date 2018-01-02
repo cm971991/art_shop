@@ -1,6 +1,27 @@
 <template>
     <div class="buy-search">
-        <input type="reset" class="s-reset" value="重置">
+        <span class="price" :class="{ active : computePriceData.active }">{{ computePriceData.value }}
+            <i class="icon-close-small" v-html="closeIcon"></i>
+        </span>
+        <span class="size" :class="{ active : computeSizeData.active }">{{ computeSizeData.value }}
+            <i class="icon-close" v-html="closeIcon"></i>
+        </span>
+        <span class="color" :class="[{ active : computeColorData.active }, computeColorData.value]">{{ computeColorData.value }}
+            <i class="icon-close" v-html="closeIcon"></i>
+        </span>
+        <span class="shape" :class="{ active : computeShapeData.active }">{{ computeShapeData.value }}
+            <i class="icon-close" v-html="closeIcon"></i>
+        </span>
+        <span class="space" :class="{ active : computeSpaceData.active }">{{ computeSpaceData.value }}
+            <i class="icon-close" v-html="closeIcon"></i>
+        </span>
+        <span class="category" :class="{ active : computeCategoryData.active }">{{ computeCategoryData.value }}
+            <i class="icon-close" v-html="closeIcon"></i>
+        </span>
+        <span class="style" :class="{ active : computeStyleData.active }">{{ computeStyleData.value }}
+            <i class="icon-close" v-html="closeIcon"></i>
+        </span>
+        <input type="reset" class="s-reset" value="重置" @click="resetSearch">
         <div>
             <i class="icon-search" v-html="searchIcon"></i>
             <input type="text" class="search" placeholder="搜索艺术家或艺术品">
@@ -16,15 +37,52 @@
     data () {
       return {
         downIcon: '&#xe64b;',
-        searchIcon: '&#xe603;'
+        searchIcon: '&#xe603;',
+        closeIcon: '&#xe60d;'
       }
     },
     created () {
     },
-    mounted () {
+    mounted () {},
+    computed: {
+      computePriceData () {
+        return {value: this.$store.getters.search.price, active: !!this.$store.getters.search.price}
+      },
+      computeSizeData () {
+        return {value: this.$store.getters.search.size, active: !!this.$store.getters.search.size}
+      },
+      computeColorData () {
+        return {value: this.$store.getters.search.color, active: !!this.$store.getters.search.color}
+      },
+      computeShapeData () {
+        return {value: this.$store.getters.search.shape, active: !!this.$store.getters.search.shape}
+      },
+      computeSpaceData () {
+        return {value: this.$store.getters.search.space, active: !!this.$store.getters.search.space}
+      },
+      computeCategoryData () {
+        return {value: this.$store.getters.search.category, active: !!this.$store.getters.search.category}
+      },
+      computeStyleData () {
+        return {value: this.$store.getters.search.style, active: !!this.$store.getters.search.style}
+      }
     },
-    computed: {},
-    methods: {}
+    methods: {
+      /**
+       * 重置查询条件
+       */
+      resetSearch () {
+        this.$store.commit('INIT_SEARCH')
+      }
+    },
+    watch: {
+      computePriceData: {
+        handler (val, oldVal) {
+          console.log('new: %s, old: %s', val.value, oldVal.value)
+        },
+        deep: true
+      }
+    }
   }
 </script>
 
@@ -41,6 +99,42 @@
         padding: 0 7.5%;
         border-bottom: 1px solid #eee;
         z-index: 0;
+        span {
+            padding: 0 26px 0 12px;
+            font-size: 14px;
+            color: #fff;
+            background-color: #666;
+            border-radius: 14px;
+            position: relative;
+            line-height: 28px;
+            display: none;
+            i {
+                width: 10px;
+                font-size: 10px;
+                position: absolute;
+                right: 6px;
+                top: 2px;
+                cursor: pointer;
+            }
+            &:after {
+                content: " ";
+                width: 1px;
+                height: 28px;
+                position: absolute;
+                top: 0;
+                right: 19px;
+                background-color: rgba(255, 255, 255, 0.2);
+            }
+            & + span {
+                margin-left: 8px;
+            }
+            &.active {
+                display: inline-block;
+            }
+            & + .s-reset {
+                display: inline;
+            }
+        }
         .s-reset {
             display: none;
             background: none;
@@ -51,6 +145,7 @@
             margin: 0 20px;
             position: relative;
         }
+
         div {
             display: inline-block;
             border-radius: 13px;
@@ -70,6 +165,7 @@
                 line-height: 16px;
             }
         }
+
         .sure {
             border-color: #999;
             background-color: #999;

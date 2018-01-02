@@ -5,6 +5,7 @@ import Login from '../pages/login'
 import Buy from '../pages/buy/buy'
 import Artworks from '../pages/artworks'
 import Artist from '../pages/artist'
+import Solicitation from '../pages/solicitation/solicitation'
 
 Vue.use(Router)
 
@@ -44,6 +45,11 @@ export default new Router({
       path: '/artist/:id',
       name: 'artist',
       component: Artist
+    },
+    {
+      path: '/solicitation',
+      name: 'solicitation',
+      component: Solicitation
     }
   ]
 })

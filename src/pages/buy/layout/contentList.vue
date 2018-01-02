@@ -62,7 +62,7 @@
   import MeScroll from 'mescroll.js'
   import waterfall from '../../../components/common/waterfall'
   import contentList from '../../../../static/contentList'
-
+  
   export default {
     components: {
       MeScroll,
@@ -132,7 +132,47 @@
       }
     },
     mounted () {
+      let search = this.$store.getters.search
       this.pdlist = contentList
+      if (search.price) {
+        let min = search.price.split('-')[0] || 0
+        let max = search.price.split('-')[1] || 0
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.price <= min && item.price >= max
+        })
+      }
+      if (search.size) {
+        let min = search.size.split('-')[0] || 0
+        let max = search.size.split('-')[1] || 0
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.size <= min && item.size >= max
+        })
+      }
+      if (search.color) {
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.color === search.color
+        })
+      }
+      if (search.shape) {
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.shape === search.shape
+        })
+      }
+      if (search.space) {
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.space === search.space
+        })
+      }
+      if (search.category) {
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.category === search.category
+        })
+      }
+      if (search.style) {
+        this.pdlist = this.pdlist.filter((item) => {
+          return item.style === search.style
+        })
+      }
       // let self = this
       // self.mescroll = new MeScroll('body', {
       //   up: {

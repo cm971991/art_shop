@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont';
   /* project id 502388 */
-  src: url('//at.alicdn.com/t/font_502388_ykh6yncbvj84zpvi.eot');
-  src: url('//at.alicdn.com/t/font_502388_ykh6yncbvj84zpvi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502388_ykh6yncbvj84zpvi.woff') format('woff'), url('//at.alicdn.com/t/font_502388_ykh6yncbvj84zpvi.ttf') format('truetype'), url('//at.alicdn.com/t/font_502388_ykh6yncbvj84zpvi.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_502388_ivv8dq8f4vwh4cxr.eot');
+  src: url('//at.alicdn.com/t/font_502388_ivv8dq8f4vwh4cxr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502388_ivv8dq8f4vwh4cxr.woff') format('woff'), url('//at.alicdn.com/t/font_502388_ivv8dq8f4vwh4cxr.ttf') format('truetype'), url('//at.alicdn.com/t/font_502388_ivv8dq8f4vwh4cxr.svg#iconfont') format('svg');
 }
 .icon-wechat,
 .icon-facebook,
@@ -17,6 +17,12 @@
   font-family: 'iconfont', serif;
   font-style: normal;
   font-size: 20px;
+  cursor: pointer;
+}
+.icon-close-small {
+  font-family: 'iconfont', serif;
+  font-style: normal;
+  font-size: 10px;
   cursor: pointer;
 }
 .icon-refresh {

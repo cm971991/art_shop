@@ -61,7 +61,7 @@
             type: '布面油画',
             size: '50x40cm',
             price: '10050',
-            img: require('../../../assets/images/pages/index/category/oil_1.jpg')
+            img: 'https://cdn.ywart.com/yw/201707261534468354784fa8d.jpg@560h_560w_1e_1c_1wh_90Q'
           },
           {
             id: '2',
@@ -72,7 +72,7 @@
             type: '布面油画、墨',
             size: '70x50cm',
             price: '6050',
-            img: require('../../../assets/images/pages/index/category/oil_2.jpg')
+            img: 'https://cdn.ywart.com/yw/201701041338407648a9c8ed2.jpg@560h_560w_1e_1c_1wh_90Q'
           },
           {
             id: '3',
@@ -83,7 +83,7 @@
             type: '布面油画',
             size: '40x30cm',
             price: '24050',
-            img: require('../../../assets/images/pages/index/category/oil_3.jpg')
+            img: 'https://cdn.ywart.com/yw/20160908170110899b209c141.jpg@560h_560w_1e_1c_1wh_90Q'
           },
           {
             id: '4',
@@ -94,7 +94,7 @@
             type: '布面丙烯',
             size: '120x100cm',
             price: '28350',
-            img: require('../../../assets/images/pages/index/category/oil_4.jpg')
+            img: 'https://cdn.ywart.com/yw/201609081714181647ce474b4.jpg@560h_560w_1e_1c_1wh_90Q'
           }
         ]
       }

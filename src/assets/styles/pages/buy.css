@@ -2,16 +2,16 @@
   width: 100%;
 }
 .buy-art .red {
-  background-color: #e73233;
+  background-color: #e73233 !important;
 }
 .buy-art .yellow {
-  background-color: #ffea03;
+  background-color: #ffea03 !important;
 }
 .buy-art .green {
-  background-color: #32cc66;
+  background-color: #32cc66 !important;
 }
 .buy-art .blue {
-  background-color: #0099ff;
+  background-color: #0099ff !important;
 }
 .buy-art .bwg {
   box-sizing: border-box;
