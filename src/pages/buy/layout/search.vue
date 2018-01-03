@@ -6,7 +6,7 @@
             <!-- region 价格 -->
             <p class="price">
                 <b>价格</b>
-                <template v-for="(item,index) in priceList">
+                <template v-for="(item,index) in computePriceList">
                     <i>{{ item.title }}</i>
                     <a :class="{ active : item.active }"
                        :data-v="item.value"
@@ -19,7 +19,7 @@
             <!-- region 尺寸 -->
             <p class="size">
                 <b>尺寸</b>
-                <template v-for="(item,index) in sizeList">
+                <template v-for="(item,index) in computeSizeList">
                     <i>{{ item.title }}</i>
                     <a :class="{ active : item.active }"
                        :data-v="item.value"
@@ -32,7 +32,7 @@
             <!-- region 颜色 -->
             <p class="color">
                 <b>颜色</b>
-                <template v-for="(item,index) in colorList">
+                <template v-for="(item,index) in computeColorList">
                     <a :class="[{ active : item.active }, item.className ]"
                        :data-v="item.value"
                        :key="index"
@@ -51,7 +51,7 @@
             <!-- region 形状 -->
             <p class="shape">
                 <b>形状</b>
-                <template v-for="(item,index) in shapeList">
+                <template v-for="(item,index) in computeShapeList">
                     <a :class="[{ active : item.active }, item.className ]"
                        :data-v="item.value"
                        :key="index"
@@ -78,7 +78,7 @@
             <div class="space">
                 <h3>摆放空间</h3>
                 <ul>
-                    <template v-for="(item,index) in spaceList">
+                    <template v-for="(item,index) in computeSpaceList">
                         <a :class="{ active : item.active }"
                            :data-v="item.value"
                            :key="index"
@@ -91,7 +91,7 @@
             <div>
                 <h3>分类</h3>
                 <ul>
-                    <template v-for="(item,index) in categoryList">
+                    <template v-for="(item,index) in computeCategoryList">
                         <a :class="{ active : item.active }"
                            :data-v="item.value"
                            :key="index"
@@ -108,7 +108,7 @@
             <!-- region 文字 -->
             <div class="text">
                 <ul class="style">
-                    <template v-for="(item,index) in styleList">
+                    <template v-for="(item,index) in computeStyleList">
                         <a :class="{ active : item.active }"
                            :data-v="item.value"
                            :key="index"
@@ -119,7 +119,7 @@
                     </template>
                 </ul>
                 <ul class="theme">
-                    <template v-for="(item,index) in themList">
+                    <template v-for="(item,index) in computeThemList">
                         <a :class="{ active : item.active }"
                            :data-v="item.value"
                            :key="index"
@@ -314,16 +314,78 @@
       }
     },
     computed: {
-      // computePriceList () {
-      //   let search = this.$store.getters.search
-      //   this.priceList.forEach((item, index) => {
-      //     if (!search.price) {
-      //       item.active = false
-      //     }
-      //   })
-      //   console.log('this.priceList:', this.priceList)
-      //   return this.priceList
-      // }
+      computePriceList () {
+        let search = this.$store.getters.search
+        if (!search.price) {
+          this.priceList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.priceList
+      },
+      computeSizeList () {
+        let search = this.$store.getters.search
+        if (!search.size) {
+          this.sizeList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.sizeList
+      },
+      computeColorList () {
+        let search = this.$store.getters.search
+        if (!search.color) {
+          this.colorList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.colorList
+      },
+      computeShapeList () {
+        let search = this.$store.getters.search
+        if (!search.shape) {
+          this.shapeList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.shapeList
+      },
+      computeSpaceList () {
+        let search = this.$store.getters.search
+        if (!search.space) {
+          this.spaceList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.spaceList
+      },
+      computeCategoryList () {
+        let search = this.$store.getters.search
+        if (!search.category) {
+          this.categoryList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.categoryList
+      },
+      computeStyleList () {
+        let search = this.$store.getters.search
+        if (!search.style) {
+          this.styleList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.styleList
+      },
+      computeThemList () {
+        let search = this.$store.getters.search
+        if (!search.style) {
+          this.themList.forEach((item, index) => {
+            item.active = false
+          })
+        }
+        return this.themList
+      }
     },
     methods: {
       /**
