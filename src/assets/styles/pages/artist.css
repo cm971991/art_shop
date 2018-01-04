@@ -1,0 +1,225 @@
+body {
+  background-color: #eee;
+  white-space: nowrap;
+  min-height: 640px;
+  overflow: hidden;
+  overflow-y: hidden;
+  min-width: 968px;
+}
+body .artist-contain {
+  position: relative;
+}
+body .artist-contain .artist-first {
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  z-index: 2;
+  display: inline-block;
+  position: fixed;
+  min-height: 640px;
+  top: 0;
+  left: 0;
+  transition: width, 0.5s;
+}
+body .artist-contain .artist-first .left-info {
+  background-color: #b7ab3f;
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  text-align: center;
+  transition: width, 0.5s;
+}
+body .artist-contain .artist-first .left-info .artist-photo {
+  display: block;
+  margin: auto;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  margin-left: -106px;
+  margin-top: -60px;
+  width: 212px;
+  height: 212px;
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.2);
+  border: solid 6px #ffffff;
+  border-radius: 106px 106px;
+  box-sizing: border-box;
+}
+body .artist-contain .artist-first .left-info .likes-num {
+  margin: auto;
+  display: block;
+  width: 100px;
+  height: 24px;
+  border-radius: 12px;
+  background-color: #ffffff;
+  cursor: pointer;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  margin-left: -50px;
+}
+body .artist-contain .artist-first .left-info .likes-num i {
+  display: block;
+  height: 24px;
+  line-height: 24px;
+  float: left;
+  width: 29px;
+  text-align: center;
+  font-size: 14px;
+  padding-left: 2px;
+  box-sizing: border-box;
+  color: #999;
+}
+body .artist-contain .artist-first .left-info .likes-num span {
+  float: left;
+  border-left: 1px solid #eee;
+  width: 70px;
+  height: 24px;
+  line-height: 24px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-size: 12px;
+  color: #666666;
+  text-align: center;
+}
+body .artist-contain .artist-first .left-info .name-level {
+  margin-top: 33px;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 28px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  white-space: normal;
+  padding: 0 5px;
+  box-sizing: border-box;
+  left: 0;
+}
+body .artist-contain .artist-first .left-info .name-level > p {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  position: relative;
+}
+body .artist-contain .artist-first .left-info .name-level > p img {
+  height: 24px;
+  line-height: 28px;
+  vertical-align: top;
+}
+body .artist-contain .artist-first .left-info .name-level > p span {
+  display: none;
+}
+body .artist-contain .artist-first .left-info .name-level > p:hover span {
+  display: block;
+  position: absolute;
+  left: 24px;
+  top: -24px;
+  color: #666;
+  height: 24px;
+  white-space: nowrap;
+  padding: 0 10px;
+  background-color: #fff;
+  border: 1px solid #eee;
+  border-radius: 3px;
+  box-shadow: rgba(0, 0, 0, 0.2) 2px 2px 2px;
+}
+body .artist-contain .artist-first .left-info .resume {
+  margin-top: 30px;
+  width: 100%;
+  text-align: center;
+  font-size: 14px;
+  white-space: normal;
+  position: absolute;
+  top: 58%;
+}
+body .artist-contain .artist-first .right-info {
+  width: 50%;
+  height: 100%;
+  float: left;
+  position: relative;
+  background-size: cover;
+  transition: width, 0.5s;
+  background-position: center center;
+}
+body .artist-contain .artist-first .right-info .linear-gradient {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: url("../../../assets/images/common/top0bottomblack.png");
+  background-size: auto 100%;
+  background-repeat: repeat-x;
+}
+body .artist-contain .artist-first .right-info .go-right {
+  display: block;
+  width: 120px;
+  height: 80px;
+  background-color: #ffffff;
+  border-radius: 40px 0 0 40px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  margin-top: -40px;
+  cursor: pointer;
+}
+body .artist-contain .artist-first .right-info .go-right span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  display: block;
+  width: 20px;
+  height: 20px;
+  border-bottom: 1px solid #000;
+  border-right: 1px solid #000;
+  transform: rotate(-45deg);
+}
+body .artist-contain .artist-first .right-info .artist-name-right {
+  position: absolute;
+  bottom: 110px;
+  right: 20px;
+}
+body .artist-contain .artist-first .right-info .artist-name-right .name {
+  width: 100%;
+  text-align: right;
+  font-size: 48px;
+}
+body .artist-contain .artist-first .right-info .bottom-box {
+  width: 100%;
+  position: absolute;
+  bottom: 40px;
+  left: 0;
+  height: 20px;
+  padding-left: 45px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+body .artist-contain .artist-first .right-info .bottom-box .artist-http {
+  float: right;
+  font-size: 14px;
+}
+body.retract {
+  display: block;
+  width: auto;
+  height: 100%;
+  min-height: 640px;
+}
+body.retract .artist-contain {
+  position: relative;
+}
+body.retract .artist-contain .artist-first {
+  width: 280px;
+}
+body.retract .artist-contain .artist-first .left-info {
+  width: 280px;
+  box-shadow: 2px 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+body.retract .artist-contain .artist-first .right-info {
+  width: 0;
+}
+body.retract .artist-contain .artist-first .right-info > * {
+  display: none !important;
+}

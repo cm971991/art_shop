@@ -11,208 +11,116 @@
                 <option value="1">价格从低到高</option>
                 <option value="2">价格从高到低</option>
             </select>
-            <select class="IsSale">
+            <select>
                 <option value="false">作品状态</option>
                 <option value="false">全部</option>
                 <option value="true">未售作品</option>
             </select>
         </div>
         <div class="container">
-            <!--<div class="grid" style="position: relative; height: 4166.44px;">-->
-            <!--<template v-for="(item,index) in pdlist">-->
-            <!--<div class="grid-item" :key="index">-->
-            <!--<div class="thumb" data-id="1lwxy1">-->
-            <!--<a href="#">-->
-            <!--<img :src="item.imgUrl">-->
-            <!--</a>-->
-            <!--</div>-->
-            <!--<div class="detail">-->
-            <!--<p><a href="/artist/1w73m8" target="_blank">{{ item.artist }}</a></p>-->
-            <!--<p><a href="/artworks/1lwxy1">人体2</a><span>{{  item.date }}</span></p>-->
-            <!--<p><span>{{ item.type }}</span><span>{{ item.size }}</span></p>-->
-            <!--<div class="qmBox">-->
-            <!--<img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"-->
-            <!--class="qmImg">-->
-            <!--<p class="price">¥{{ item.price }}</p>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</template>-->
-            <!--</div>-->
-            <waterfall :list="pdlist">
-                <template slot="item" slot-scope="item">
-                    <div class="detail">
-                        <p><a href="#" target="_blank">{{ item.item.artist }}</a></p>
-                        <p><a href="#">{{ item.item.name }}</a>&nbsp;&nbsp;<span>{{  item.item.date }}</span></p>
-                        <p><span>{{ item.item.type }}</span>&nbsp;&nbsp;&nbsp;<span>{{ item.item.size }}</span>
-                        </p>
-                        <div class="qmBox">
-                            <img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"
-                                 class="qmImg">
-                            <p class="price">¥{{ item.item.price }}</p>
-                        </div>
+            <vue-waterfall-easy :imgsArr="productList" :gap="92" :maxCols="3" :imgWidth="300"
+                                @scrollLoadImg="fetchData">
+                <div class="detail" slot-scope="props">
+                    <p><a href="#" target="_blank">{{ props.item.artist }}</a></p>
+                    <p><a href="#">{{ props.item.name }}</a>&nbsp;&nbsp;<span>{{  props.item.date }}</span></p>
+                    <p><span>{{ props.item.type }}</span>&nbsp;&nbsp;&nbsp;<span>{{ props.item.size }}</span>
+                    </p>
+                    <div class="qmBox">
+                        <img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"
+                             class="qmImg">
+                        <p class="price">¥{{ props.item.price }}</p>
                     </div>
-                </template>
-            </waterfall>
+                </div>
+            </vue-waterfall-easy>
         </div>
     </div>
 </template>
 
 <script>
-  import MeScroll from 'mescroll.js'
-  import waterfall from '../../../components/common/waterfall'
+  import vueWaterfallEasy from '../../../components/common/waterfall-easy'
   import contentList from '../../../../static/contentList'
   
   export default {
     components: {
-      MeScroll,
-      waterfall
+      vueWaterfallEasy
     },
     data () {
       return {
-        mescroll: null,
-        pdlist: []
+        productList: []
       }
     },
     created () {
-      window.onscroll = () => {
-        if (this.flag) {
-          return
-        }
-        if (document.documentElement.scrollTop + document.body.clientHeight + 150 > document.documentElement.scrollHeight) {
-          this.flag = true
-          if (this.pdlist.length < 30) {
-            this.pdlist = this.pdlist.concat([
-              {
-                'id': '4',
-                'imgUrl': 'https://cdn.ywart.com/yw/2016111117372065643c76a49.jpg@600w_1e_1c_1wh_90Q',
-                'artist': '',
-                'name': '鸟与林二',
-                'date': '2014',
-                'type': '铜版腐蚀',
-                'size': '75x75cm',
-                'price': '6050',
-                'height': '599',
-                'width': '600'
-              },
-              {
-                'id': '5',
-                'imgUrl': 'https://cdn.ywart.com/yw/201606081450399568ad65519.jpg@600w_1e_1c_1wh_90Q',
-                'artist': '姜波',
-                'name': '谈些什么5',
-                'date': '2015',
-                'type': '综合材料',
-                'size': '12x18cm',
-                'price': '1050',
-                'height': '917',
-                'width': '600'
-              },
-              {
-                'id': '6',
-                'imgUrl': 'https://cdn.ywart.com/yw/20160805115126168201c9db4.jpg@600w_1e_1c_1wh_90Q',
-                'artist': '真琦',
-                'name': '盛夏-鸟语林',
-                'date': '2015',
-                'type': '丝网版',
-                'size': '55x75cm',
-                'price': '3050',
-                'height': '895',
-                'width': '600'
-              }
-            ])
-          }
-          setTimeout(() => {
-            if (this.pdlist.length >= 30) {
-              this.flag = true
-            } else {
-              this.flag = false
-            }
-          }, 500)
-        }
-      }
+      this.productList = contentList
     },
     mounted () {
-      let search = this.$store.getters.search
-      this.pdlist = contentList
-      if (search.price) {
-        let min = search.price.split('-')[0] || 0
-        let max = search.price.split('-')[1] || 0
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.price <= min && item.price >= max
-        })
-      }
-      if (search.size) {
-        let min = search.size.split('-')[0] || 0
-        let max = search.size.split('-')[1] || 0
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.size <= min && item.size >= max
-        })
-      }
-      if (search.color) {
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.color === search.color
-        })
-      }
-      if (search.shape) {
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.shape === search.shape
-        })
-      }
-      if (search.space) {
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.space === search.space
-        })
-      }
-      if (search.category) {
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.category === search.category
-        })
-      }
-      if (search.style) {
-        this.pdlist = this.pdlist.filter((item) => {
-          return item.style === search.style
-        })
-      }
-      // let self = this
-      // self.mescroll = new MeScroll('body', {
-      //   up: {
-      //     htmlLoading: '',
-      //     callback: self.upCallback,
-      //     showNoMore: self.showNoMore,
-      //     isBounce: false
-      //   }
-      // })
     },
-    computed: {},
-    methods: {
-      upCallback (page) {
-        let self = this
-        getListDataFromNet(page.num, page.size, (curPageData) => {
-          if (page.num === 1) {
-            self.pdlist = []
-          }
-          self.pdlist = self.pdlist.concat(curPageData)
-          self.mescroll.endSuccess(curPageData.length)
-        }, () => {
-          self.mescroll.endErr()
-        })
-
-        function getListDataFromNet (pageNum, pageSize, successCallback, errorCallback) {
-          setTimeout(() => {
-            let data = contentList
-            let listData = []
-            for (let i = (pageNum - 1) * pageSize; i < pageNum * pageSize; i++) {
-              if (i === data.length) {
-                break
-              }
-              listData.push(data[i])
-            }
-            successCallback && successCallback(listData)
-          }, 500)
+    computed: {
+      filterList () {
+        let search = this.$store.getters.search
+        if (search.price) {
+          let pMin = search.price.split('-')[0] || 0
+          let pMax = search.price.split('-')[1] || 0
+          this.productList = this.productList.filter((item) => {
+            return item.price >= pMin && item.price <= pMax
+          })
         }
+        if (search.size) {
+          let sMin = search.size.split('-')[0] || 0
+          let sMax = search.size.split('-')[1] || 0
+          this.productList = this.productList.filter((item) => {
+            let itemWidth = item.size.split('x')[0]
+            let itemHeight = item.size.split('x')[1]
+            return (itemWidth >= sMin && itemHeight >= sMin) && (itemWidth <= sMax && itemHeight <= sMax)
+          })
+        }
+        if (search.color) {
+          this.productList = this.productList.filter((item) => {
+            return item.color === search.color
+          })
+        }
+        if (search.shape) {
+          this.productList = this.productList.filter((item) => {
+            return item.shape === search.shape
+          })
+        }
+        if (search.space) {
+          this.productList = this.productList.filter((item) => {
+            return item.space === search.space
+          })
+        }
+        if (search.category) {
+          this.productList = this.productList.filter((item) => {
+            return item.category === search.category
+          })
+        }
+        if (search.style) {
+          this.productList = this.productList.filter((item) => {
+            return item.style === search.style
+          })
+        }
+        this.productList = this.initList(0, 10)
+        return this.productList
+      }
+    },
+    methods: {
+      initList (n, m) {
+        let arr = []
+        let listLength = this.productList.length
+        if (listLength < m) {
+          m = listLength
+        }
+        for (let i = n; i < m; i++) {
+          arr.push(this.productList[i])
+        }
+        return arr
       },
-      showNoMore (mescroll, upwarp) {
-        mescroll.upwarp = ''
+      fetchData () {
+        if (this.productList.length > 40) {
+          // document.querySelector('.container').style.height = '8900px'
+          // document.querySelector('.footer').style.display = 'block'
+          return
+        }
+        this.productList = this.productList.concat(this.initList(10, 20))
       }
     }
   }
@@ -243,12 +151,13 @@
                 }
             }
         }
+
         .container {
             margin: 0 auto;
             max-width: 1200px;
             display: block;
 
-            .column-item {
+            .img-box {
                 .detail {
                     position: relative;
                     padding: 12px 0 0 0;

@@ -147,14 +147,7 @@
             search.style = ''
             break
         }
-      }
-    },
-    watch: {
-      computePriceData: {
-        handler (val, oldVal) {
-          console.log('new: %s, old: %s', val.value, oldVal.value)
-        },
-        deep: true
+        this.$store.commit('UPDATE_SEARCH', search)
       }
     }
   }

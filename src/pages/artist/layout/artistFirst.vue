@@ -1,12 +1,16 @@
 <template>
-    <div class="MyContain">
-        <h1>artist</h1>
+    <div class="artist-first">
+        <left-info></left-info>
+        <right-info></right-info>
     </div>
 </template>
 
 <script>
+  import leftInfo from './leftInfo'
+  import rightInfo from './rightInfo'
+
   export default {
-    components: {},
+    components: {leftInfo, rightInfo},
     data () {
       return {}
     },
@@ -20,7 +24,5 @@
 </script>
 
 <style lang="less">
-    .MyContain {
-        background-color: #fff;
-    }
+
 </style>

@@ -28,6 +28,8 @@
     },
     mounted () {
       this.$store.commit('UPDATE_FOOTER', 'simple')
+      // TODO 底部footer样式处理 暂时隐藏
+      document.querySelector('.footer').style.display = 'none'
     },
     computed: {},
     methods: {}
