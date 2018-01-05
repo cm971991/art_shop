@@ -2,7 +2,7 @@
     <section class="right-info"
              style="background-image:url(https://cdn.ywart.com/yw/20160826181756311dc61f285.jpg_small04);background-color:#666">
         <div class="linear-gradient"></div>
-        <a class="go-right"><span></span></a>
+        <a class="go-right" @click="goRight"><span></span></a>
         <div class="artist-name-right">
             <p class="name">张家玮</p>
         </div>
@@ -23,7 +23,11 @@
     mounted () {
     },
     computed: {},
-    methods: {}
+    methods: {
+      goRight () {
+        this.$utils.Dom.addClass(document.querySelector('body'), 'retract')
+      }
+    }
   }
 </script>
 

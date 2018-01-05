@@ -10,7 +10,7 @@
     </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   import 'swiper/dist/css/swiper.css'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
 

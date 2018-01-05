@@ -103,7 +103,7 @@
   }
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
     .searchBar {
         display: block;
         width: 100%;
@@ -143,7 +143,7 @@
                         background-color: #f8f8f8;
                         -webkit-appearance: none;
                         overflow: hidden;
-                        background: url(../../../assets/images/common/select_bg.png) no-repeat right #fff;
+                        background: url('../../../assets/images/common/select_bg.png') no-repeat right #fff;
                     }
                 }
             }

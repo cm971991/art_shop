@@ -214,7 +214,110 @@ body {
     }
     // 第二页
     .artist-second {
+      height: 100vh;
+      width: 100%;
+      font-size: 16px;
+      -webkit-overflow-scrolling: touch;
+      overflow-x: auto;
+      overflow-y: hidden;
+      .rightContainer {
+        height: 100%;
+        position: relative;
+        display: inline-block;
+        vertical-align: top;
+        .swiper-container {
+          height: 100%;
+          min-height: 700px;
+          background-color: #fff;
+          width: calc(~"100vw - 280px");
+          .swiper-wrapper {
+            height: 400px;
+            position: relative;
+            top: 45%;
+            margin-top: -200px;
+            .swiper-slide {
+              height: 400px;
+              text-align: center;
+              & > a {
+                display: inline-block;
+                position: relative;
+                width: 400px;
+                height: 400px;
+                overflow: hidden;
+                text-align: left;
+                vertical-align: top;
+                background-size: contain;
+                background-position: center center;
+                background-repeat: no-repeat;
+              }
+              .cover {
+                vertical-align: top;
+                padding: 10vh 52px 0 100px;
+                display: inline-block;
+                font-size: 0.75em;
+                text-align: left;
+                .text-wrapper {
+                  color: #666666;
+                  h3 {
+                    font-size: 18px;
+                    font-weight: 500;
+                    color: #262626;
+                    margin-bottom: 25px;
+                  }
+                  p {
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+          .swiper-pagination {
+            bottom: 40px;
+          }
+        }
+      }
+    }
+  }
 
+  .experience {
+    display: inline-block;
+    position: fixed;
+    top: -200%;
+    left: -200%;
+    width: auto;
+    height: 100%;
+    font-size: 12px;
+    color: #333;
+    white-space: nowrap;
+    padding: 128px 42px 88px;
+    box-sizing: border-box;
+    margin-right: 10px;
+    text-align: left;
+    div {
+      width: 380px;
+      overflow: visible;
+      display: inline-block;
+      vertical-align: top;
+      padding: 0 22px;
+      border-left: solid 1px #dddddd;
+      p {
+        white-space: normal;
+        word-break: break-all;
+        position: relative;
+        line-height: 16px;
+        min-height: 16px;
+        &.year:after {
+          content: '';
+          position: absolute;
+          left: -26px;
+          top: 5px;
+          width: 7px;
+          height: 7px;
+          background-color: #dddddd;
+          border-radius: 50% 50%;
+        }
+      }
     }
   }
 
@@ -238,6 +341,19 @@ body {
           }
         }
       }
+      .artist-second {
+        display: inline-block;
+      }
+    }
+
+    .experience {
+      position: relative;
+      top: 0;
+      left: 0;
+      margin-left: 290px;
+      background-color: #fff;
+      display: inline-block;
+      vertical-align: top;
     }
   }
 }

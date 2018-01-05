@@ -2,7 +2,6 @@ html {
   height: 100%;
   width: 100%;
 }
-
 body {
   height: 100%;
   width: 100%;
@@ -13,7 +12,6 @@ body {
   -moz-font-feature-settings: 'liga', 'kern';
   -webkit-overflow-scrolling: touch;
 }
-
 html,
 body,
 h1,
@@ -45,16 +43,13 @@ option {
   outline: none;
   font-family: 'PingFang SC', 'Microsoft YaHei', 'Helvetica', 'STHeitiSC-Light', 'Arial', 'sans-serif' !important;
 }
-
 a {
   color: inherit;
   text-decoration: none;
 }
-
 img {
   border: 0;
 }
-
 nav,
 header,
 footer,
@@ -62,24 +57,23 @@ section,
 article {
   display: block;
 }
-
 ol,
 ul,
 li {
   list-style-type: none;
 }
-
-input[type="button"], input[type="submit"], input[type="reset"], input[type="text"] {
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="text"] {
   -webkit-appearance: none;
   border-radius: 0;
 }
-
 input:-webkit-autofill,
 textarea:-webkit-autofill,
 select:-webkit-autofill {
   -webkit-box-shadow: 0 0 0 1000px white inset;
 }
-
 select {
   -webkit-appearance: none;
   border-radius: 0;
@@ -87,23 +81,20 @@ select {
   background: url("../../images/common/select_bg.png") no-repeat right #fff;
   padding-right: 15px;
 }
-
 input::-ms-clear {
   display: none;
 }
-
 textarea {
   resize: none;
 }
-
 .clearfix {
   display: block;
-  &:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
-  }
+}
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }

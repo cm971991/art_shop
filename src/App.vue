@@ -24,7 +24,7 @@
   }
 </script>
 
-<style>
+<style lang="less">
     @import "./assets/styles/common/base.less";
     @import "./assets/styles/common/icon.less";
 
@@ -33,17 +33,17 @@
         margin-top: 0;
         position: relative;
         padding-bottom: 445px;
-    }
 
-    #app {
-        height: 100%;
-        width: 100%;
-        font-family: "Avenir", Helvetica, Arial, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        text-align: center;
-        color: #2c3e50;
-        margin-top: 68px;
-        box-sizing: border-box;
+        #app {
+            height: 100%;
+            width: 100%;
+            font-family: "Avenir", Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-align: center;
+            color: #2c3e50;
+            margin-top: 68px;
+            box-sizing: border-box;
+        }
     }
 </style>

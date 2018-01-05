@@ -12,18 +12,31 @@
   export default {
     components: {artistFirst, artistSecond},
     data () {
-      return {}
+      return {
+        scroll: ''
+      }
     },
     created () {
     },
     mounted () {
       this.pageStyleInit()
+      window.addEventListener('mousewheel', this.mousewheel)
     },
     computed: {},
     methods: {
       pageStyleInit () {
         document.querySelector('#app').style.marginTop = '0'
         document.querySelector('.footer').style.display = 'none'
+      },
+      mousewheel (e) {
+        console.log('e:', e)
+        let body = document.querySelector('body')
+        let direction = e.deltaY > 0 ? 'down' : 'up'
+        if (direction === 'down') {
+          this.$utils.Dom.addClass(body, 'retract')
+        } else {
+          this.$utils.Dom.removeClass(body, 'retract')
+        }
       }
     }
   }
