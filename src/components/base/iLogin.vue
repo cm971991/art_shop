@@ -63,10 +63,15 @@
         if (!this.firstLoad && !this.$utils.Validate.chkFormat(this.formData.account, 'email') && !this.$utils.Validate.chkFormat(this.formData.account, 'phone')) {
           this.accountValidate = false
           return '您输入的不是一个手机号或邮箱'
+        } else {
+          this.accountValidate = true
         }
         if (!this.firstLoad && !this.formData.mobile) {
           this.pwdValidate = false
           return '登录密码不能为空'
+        }
+        else {
+          this.pwdValidate = true
         }
         return null
       }
@@ -77,6 +82,9 @@
         if (this.errMsg) {
           return false
         }
+        // 模拟登录成功
+        this.$store.commit('UPDATE_USERINFO', {userId: '1', userName: 'Hale', tooken: 'abcdef'})
+        this.$router.push({path: '/index'})
       }
     }
   }

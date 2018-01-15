@@ -13,6 +13,7 @@
     float: left;
     height: 58px;
     margin: 8px 50px 0 0;
+    cursor: pointer;
     &:hover:after, &.active:after {
       width: 106px;
       height: 5px;
@@ -26,9 +27,6 @@
       img {
         height: 45px;
         width: 106px;
-        &:hover {
-
-        }
       }
     }
   }
@@ -40,13 +38,14 @@
     float: left;
     width: 700px;
     white-space: nowrap;
-    > a {
+    & > a {
       margin-right: 95px;
       display: inline-block;
       color: #fff;
       text-decoration: none;
       letter-spacing: 1px;
       position: relative;
+      cursor: pointer;
       &.active {
         font-weight: bold;
       }

@@ -1,8 +1,8 @@
 <template>
-    <div class="artist-contain">
-        <artist-first></artist-first>
-        <artist-second></artist-second>
-    </div>
+  <div class="artist-contain" @wheel.prevent="mouseWheel">
+    <artist-first></artist-first>
+    <artist-second></artist-second>
+  </div>
 </template>
 
 <script>
@@ -20,7 +20,6 @@
     },
     mounted () {
       this.pageStyleInit()
-      window.addEventListener('mousewheel', this.mousewheel)
     },
     computed: {},
     methods: {
@@ -28,7 +27,7 @@
         document.querySelector('#app').style.marginTop = '0'
         document.querySelector('.footer').style.display = 'none'
       },
-      mousewheel (e) {
+      mouseWheel (e) {
         console.log('e:', e)
         let body = document.querySelector('body')
         let direction = e.deltaY > 0 ? 'down' : 'up'
@@ -43,5 +42,5 @@
 </script>
 
 <style lang="less">
-    @import "../../assets/styles/pages/artist";
+  @import "../../assets/styles/pages/artist";
 </style>

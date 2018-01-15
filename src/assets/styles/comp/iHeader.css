@@ -14,6 +14,7 @@
   float: left;
   height: 58px;
   margin: 8px 50px 0 0;
+  cursor: pointer;
 }
 .header .logo:hover:after,
 .header .logo.active:after {
@@ -44,6 +45,7 @@
   text-decoration: none;
   letter-spacing: 1px;
   position: relative;
+  cursor: pointer;
 }
 .header .nav > a.active {
   font-weight: bold;

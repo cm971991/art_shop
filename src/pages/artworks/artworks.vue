@@ -64,8 +64,8 @@
               <span>¥190</span>
             </p>
             <div>
-              <a href="javascript:void(0);" class="cart">加入购物车</a>
-              <a href="javascript:void(0);" class="buy">立即购买</a>
+              <a href="javascript:void(0);" class="cart" @click="addCart">加入购物车</a>
+              <a href="javascript:void(0);" class="buy" @click="buy">立即购买</a>
             </div>
           </div>
         </div>
@@ -392,8 +392,31 @@
         this.menuShow = false
         this.shoppingCartShow = false
       },
+      /**
+       * 小贴士 切换显示
+       */
       showRemind () {
         this.remindActive = !this.remindActive
+      },
+      /**
+       * 加入购物车
+       */
+      addCart () {
+        let userInfo = this.$store.getters.userInfo
+        if (userInfo) {
+
+        } else {
+        }
+      },
+      /**
+       * 立即购买
+       */
+      buy () {
+        let userInfo = this.$store.getters.userInfo
+        if (userInfo) {
+
+        } else {
+        }
       }
     }
   }
