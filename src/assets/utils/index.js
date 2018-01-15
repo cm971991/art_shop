@@ -5,6 +5,7 @@ import localStorage from './localStorage'
 import Common from './common'
 import Date from './date'
 import PinYin from './pinyin'
+import Validate from './validate'
 import Dom from './dom'
 import xHttp from './xHttp'
 
@@ -15,6 +16,7 @@ export default function (Vue) {
       Common,
       Date,
       PinYin,
+      Validate,
       Dom
     }
   } else {
@@ -23,6 +25,7 @@ export default function (Vue) {
       Common,
       Date,
       PinYin,
+      Validate,
       Dom
     }
   }
@@ -33,11 +36,12 @@ export default function (Vue) {
         Common,
         Date,
         PinYin,
+        Validate,
         Dom
       }
     }
   })
-  
+
   if (!Vue.$api) {
     Vue.prototype.$api = {xHttp}
     Vue.$api = {xHttp}

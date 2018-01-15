@@ -13,7 +13,7 @@
                     <div class="item">
                         <router-link :to="{ path: '/artworks/' + category.id +''}" target="_blank">
                             <div class="img img-hover">
-                                <img :src="category.img">
+                                <img v-lazy="category.img">
                             </div>
                         </router-link>
                         <div class="info_box">

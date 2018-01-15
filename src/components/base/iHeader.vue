@@ -1,34 +1,34 @@
 <template>
-    <div class="header">
-        <div class="logo" :class="{ active:logo.active }">
-            <a @click="menuRedirect(logo)">
-                <img src="https://www.ywart.com/svg_file?path=/Content/image/logo_text.svg&amp;rgb=255,255,255">
-            </a>
-        </div>
-        <div class="nav">
-            <template v-for="(item,index) in menuList">
-                <a :class="{ active : item.active }" @click="menuRedirect(item)" :key="index">{{ item.name }}</a>
-            </template>
-            <div class="search">
-                <a @click="search($event)">
-                    <img src="https://www.ywart.com/svg_file?path=/Content/image/search.svg&amp;rgb=255,255,255"
-                         class="searchIcon" :class="{ active : searchFlag }">
-                    <img src="https://www.ywart.com/svg_file?path=/Content/image/closeInput.svg&amp;rgb=255,255,255"
-                         class="closeIcon" :class="{ active : !searchFlag }">
-                </a>
-            </div>
-        </div>
-        <div class="member">
-            <div class="login_prev">
-                <a>
-                    <b @click="loginRedirect">登录 / 注册</b>
-                </a>
-            </div>
-        </div>
-        <div class="searchBox" :class="{ active : !searchFlag }">
-            <input placeholder="搜索艺术家或艺术品">
-        </div>
+  <div class="header">
+    <div class="logo" :class="{ active:logo.active }">
+      <a @click="menuRedirect(logo)">
+        <img v-lazy="logImg">
+      </a>
     </div>
+    <div class="nav">
+      <template v-for="(item,index) in menuList">
+        <a :class="{ active : item.active }" @click="menuRedirect(item)" :key="index">{{ item.name }}</a>
+      </template>
+      <div class="search">
+        <a @click="search($event)">
+          <img src="https://www.ywart.com/svg_file?path=/Content/image/search.svg&amp;rgb=255,255,255"
+               class="searchIcon" :class="{ active : searchFlag }">
+          <img src="https://www.ywart.com/svg_file?path=/Content/image/closeInput.svg&amp;rgb=255,255,255"
+               class="closeIcon" :class="{ active : !searchFlag }">
+        </a>
+      </div>
+    </div>
+    <div class="member">
+      <div class="login_prev">
+        <a>
+          <b @click="loginRedirect">登录 / 注册</b>
+        </a>
+      </div>
+    </div>
+    <div class="searchBox" :class="{ active : !searchFlag }">
+      <input placeholder="搜索艺术家或艺术品">
+    </div>
+  </div>
 </template>
 
 <script>
@@ -36,6 +36,7 @@
     components: {},
     data () {
       return {
+        logImg: require('../../assets/images/common/logo.png'),
         logo: {name: 'index', link: '/', active: true},
         menuList: [
           {name: '原创艺术', link: '/buy', active: false},
@@ -107,5 +108,5 @@
 </script>
 
 <style lang="less">
-    @import "../../assets/styles/comp/iHeader";
+  @import "../../assets/styles/comp/iHeader";
 </style>

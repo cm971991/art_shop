@@ -78,12 +78,12 @@
     )
         a.img-box(
         v-for="(v,i) in imgsArrC",
-        :href="v.link+'/artworks/'+v.id",
+        :href="v.link+'/artworks/'+v.id" target="_blank",
         :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
         )
             .img-inner-box
                 div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")
-                    img(:src="v.src")
+                    img(v-lazy="v.src")
                 .img-info
                     slot(:item="v")
 

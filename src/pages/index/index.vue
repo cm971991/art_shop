@@ -29,9 +29,9 @@
             <insights></insights>
             <!--endregion 艺视野 -->
 
-            <!--region 选择艺网 -->
+            <!--region 选择爱艺 -->
             <why-us></why-us>
-            <!--endregion 选择艺网 -->
+            <!--endregion 选择爱艺 -->
 
             <!--region 合作伙伴 -->
             <as-featured-in></as-featured-in>

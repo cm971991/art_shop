@@ -114,3 +114,18 @@ textarea {
 .t_c {
   text-align: center;
 }
+.f_l {
+  float: left;
+}
+.f_r {
+  float: right;
+}
+.font_b {
+  font-weight: bold;
+}
+.font_l {
+  font-weight: lighter;
+}
+img[lazy=loading] {
+  background-color: #999;
+}

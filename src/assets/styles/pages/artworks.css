@@ -321,3 +321,389 @@
 .detail-contain .viewer-section .goods-info .detail-info.active {
   opacity: 1;
 }
+.detail-contain .work-info-section {
+  position: relative;
+  width: 100%;
+  padding: 39px 0 60px 0;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+}
+.detail-contain .work-info-section .arter {
+  position: relative;
+  width: 100%;
+  padding-top: 60px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.detail-contain .work-info-section .arter .imgbox {
+  position: relative;
+  width: 100%;
+  height: 140px;
+  text-align: center;
+}
+.detail-contain .work-info-section .arter .imgbox img {
+  width: 140px;
+  height: 100%;
+  border-radius: 50%;
+}
+.detail-contain .work-info-section .arter .name {
+  font-size: 18px;
+  line-height: 25px;
+  margin-top: 14px;
+}
+.detail-contain .work-info-section .arter .name a {
+  color: black;
+  font-size: 16px;
+}
+.detail-contain .work-info-section .arter .another {
+  font-size: 14px;
+  line-height: 20px;
+  width: 100%;
+  margin-top: 10px;
+  text-align: center;
+  color: #666;
+}
+.detail-contain .work-info-section .arter .another .artworkcount {
+  color: #000;
+  font-weight: bold;
+  margin: 0 5px;
+}
+.detail-contain .work-info-section .arter .more {
+  margin-top: 19px;
+  line-height: 20px;
+  font-size: 14px;
+  display: block;
+}
+.detail-contain .work-info-section > ul {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 44px;
+  list-style-type: none;
+  color: #333;
+  border-top: dashed 1px #979797;
+  font-size: 16px;
+}
+.detail-contain .work-info-section > ul li {
+  width: 100%;
+  box-sizing: border-box;
+  border-bottom: dashed 1px #979797;
+}
+.detail-contain .work-info-section > ul li div {
+  width: 28%;
+  margin-right: 2%;
+  text-align: left;
+  float: left;
+  padding: 16px 0;
+}
+.detail-contain .work-info-section > ul li div:first-child {
+  margin-left: 7%;
+}
+.detail-contain .work-info-section > ul li span {
+  display: block;
+  float: left;
+  width: 70px;
+  padding-right: 10px;
+  text-align: justify;
+}
+.detail-contain .work-info-section > ul li h1 {
+  font-size: 16px;
+  font-weight: normal;
+}
+.detail-contain .work-info-section > p {
+  width: 150px;
+  height: 37px;
+  line-height: 37px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  margin: auto;
+}
+.detail-contain .work-desc-section {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 0 0;
+  box-sizing: border-box;
+}
+.detail-contain .work-desc-section .onePingxi {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 300px;
+  padding: 0 96px;
+  box-sizing: border-box;
+  margin-bottom: 70px;
+  line-height: 300px;
+}
+.detail-contain .work-desc-section .onePingxi .textDes {
+  overflow: hidden;
+  width: 100%;
+  max-height: 300px;
+  padding-left: 400px;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  color: #666;
+  font-size: 14px;
+  line-height: 2.14;
+}
+.detail-contain .work-desc-section .onePingxi .textDes p {
+  text-align: justify;
+}
+.detail-contain .work-desc-section .onePingxi img {
+  float: left;
+  width: 300px;
+  height: 300px;
+  margin-right: -300px;
+}
+.detail-contain .work-desc-section > div {
+  padding: 96px 96px 70px;
+  width: 100%;
+  box-sizing: border-box;
+  position: relative;
+}
+.detail-contain .work-desc-section > div .yinhaoleft {
+  top: 30px;
+  left: 10px;
+}
+.detail-contain .work-desc-section > div .yinhaoright {
+  bottom: 0;
+  right: 10px;
+}
+.detail-contain .work-desc-section > div .yinhao {
+  font-family: Arial !important;
+  font-size: 210px;
+  position: absolute;
+  color: #eeeeee;
+}
+.detail-contain .work-desc-section > div i {
+  font-size: 18px;
+  line-height: 36px;
+  display: block;
+  font-family: serif !important;
+}
+.detail-contain .work-desc-section > div i span {
+  display: block;
+  text-align: right;
+  font-family: serif !important;
+}
+.detail-contain .work-desc-section > p {
+  width: 124px;
+  height: 37px;
+  line-height: 37px;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  margin: auto;
+}
+.detail-contain .comment-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 96px 40px;
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+}
+.detail-contain .comment-section .comment-header {
+  padding-bottom: 30px;
+}
+.detail-contain .comment-section .comment-header > p {
+  font-size: 18px;
+  text-align: left;
+}
+.detail-contain .comment-section .comment-header .text-area {
+  width: 100%;
+  height: 70px;
+  margin-top: 20px;
+}
+.detail-contain .comment-section .publish {
+  font-size: 14px;
+  line-height: 27px;
+  display: block;
+  width: 100px;
+  margin-top: 20px;
+  text-align: center;
+  color: #fff;
+  background-color: #CF680A;
+  position: relative;
+  left: 100%;
+  margin-left: -100px;
+}
+.detail-contain .comment-section textarea {
+  font-size: 14px;
+  color: #999;
+  padding: 6px;
+  padding-left: 10px;
+  padding-top: 10px;
+  box-sizing: border-box;
+  line-height: 20px;
+  border: 0;
+  background-color: #f8f8f8;
+}
+.detail-contain .comment-section button {
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  cursor: pointer;
+  color: #aaa;
+}
+.detail-contain .remind-section {
+  font-size: 14px;
+  position: relative;
+  width: 100%;
+  margin: auto;
+  max-width: 1200px;
+  margin-bottom: 80px;
+  background-color: #fff;
+  border-bottom: 1px solid #eee;
+}
+.detail-contain .remind-section .remind-contain {
+  padding: 0 96px;
+  display: none;
+}
+.detail-contain .remind-section .remind-contain .remind {
+  margin-top: 45px;
+  padding: 0 0 20px 30px;
+  color: #666;
+  text-align: left;
+}
+.detail-contain .remind-section .remind-contain .remind h3 {
+  font-size: 14px;
+  font-weight: bold;
+  vertical-align: middle;
+  line-height: 20px;
+  position: relative;
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+.detail-contain .remind-section .remind-contain .remind h4 {
+  font-weight: normal;
+  margin-top: 30px;
+}
+.detail-contain .remind-section .remind-contain .remind ul {
+  font-size: 14px;
+}
+.detail-contain .remind-section .remind-contain .remind ul li {
+  line-height: 30px;
+  list-style-position: inside;
+  padding-left: 18px;
+  height: 30px;
+  position: relative;
+}
+.detail-contain .remind-section .remind-contain .remind ul li:after {
+  content: "";
+  width: 5px;
+  height: 5px;
+  background: #666;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 13px;
+}
+.detail-contain .remind-section .remind-contain .remind > p:first-child {
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+  margin-bottom: 60px;
+}
+.detail-contain .remind-section .remind-contain.active {
+  display: block;
+}
+.detail-contain .remind-section > p {
+  font-size: 16px;
+  text-align: left;
+  color: #000000;
+  line-height: 22px;
+  padding: 23px 96px;
+  cursor: pointer;
+}
+.detail-contain .remind-section > p i {
+  width: 30px;
+  text-align: center;
+}
+.detail-contain .remind-section > p .icon-down-solid-arrow {
+  font-size: 22px;
+  display: none;
+}
+.detail-contain .remind-section > p .icon-down-solid-arrow.active {
+  display: block;
+}
+.detail-contain .remind-section > p .icon-up-solid-arrow {
+  font-size: 22px;
+  display: none;
+}
+.detail-contain .remind-section > p .icon-up-solid-arrow.active {
+  display: block;
+}
+.detail-contain .recommend-section {
+  width: 100%;
+  background-color: #f8f8f8;
+  padding-bottom: 100px;
+}
+.detail-contain .recommend-section .maybe-like {
+  margin: 0 0 10px 0;
+  text-align: center;
+  padding-bottom: 10px;
+  font-size: 26px;
+  font-weight: bold;
+  padding-top: 40px;
+}
+.detail-contain .recommend-section .item-box {
+  width: 1200px;
+  margin: auto;
+  position: relative;
+  padding: 10px 0;
+}
+.detail-contain .recommend-section .item-box .item {
+  border-radius: 3px;
+  float: left;
+  position: relative;
+  word-spacing: normal;
+  margin-right: 20px;
+  width: 280px;
+  height: 400px;
+  overflow: hidden;
+  background-color: #fff;
+  margin-top: 46px;
+}
+.detail-contain .recommend-section .item-box .item img {
+  width: 280px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+.detail-contain .recommend-section .item-box .item img img {
+  width: 100%;
+  height: 100%;
+}
+.detail-contain .recommend-section .item-box .item .info-box {
+  width: 280px;
+  height: 120px;
+  display: table-cell;
+  color: #666;
+  font-size: 12px;
+  text-align: left;
+  padding: 0 20px;
+  vertical-align: middle;
+  line-height: 18px;
+}
+.detail-contain .recommend-section .item-box .item .info-box p {
+  text-align: left;
+  font-weight: 600;
+  color: #000;
+}
+.detail-contain .recommend-section .item-box .item .info-box h4 {
+  display: inline;
+  font-weight: 500;
+  color: #666;
+}
+.detail-contain .recommend-section .item-box .item:last-child {
+  margin-right: 0;
+}

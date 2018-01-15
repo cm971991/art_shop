@@ -1,0 +1,170 @@
+.header {
+  min-width: 1028px;
+  width: 100%;
+  height: 68px;
+  padding: 0 40px;
+  position: fixed;
+  top: 0;
+  text-align: center;
+  background: #000;
+  box-shadow: 0 -1px 8px 1px #333;
+  z-index: 5;
+}
+.header .logo {
+  float: left;
+  height: 58px;
+  margin: 8px 50px 0 0;
+}
+.header .logo:hover:after,
+.header .logo.active:after {
+  width: 106px;
+  height: 5px;
+  background-color: #fff;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 38px;
+}
+.header .logo a img {
+  height: 45px;
+  width: 106px;
+}
+.header .nav {
+  display: inline-block;
+  line-height: 68px;
+  text-align: center;
+  float: left;
+  width: 700px;
+  white-space: nowrap;
+}
+.header .nav > a {
+  margin-right: 95px;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  position: relative;
+}
+.header .nav > a.active {
+  font-weight: bold;
+}
+.header .nav > a:hover:after,
+.header .nav > a.active:after {
+  width: 100px;
+  height: 5px;
+  background-color: #fff;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 33px;
+}
+.header .nav > a:nth-child(1):hover:after,
+.header .nav > a:nth-child(1).active:after {
+  left: -16px;
+}
+.header .nav > a:nth-child(2):hover:after,
+.header .nav > a:nth-child(2).active:after {
+  left: -32px;
+}
+.header .nav > a:nth-child(3):hover:after,
+.header .nav > a:nth-child(3).active:after {
+  left: -24px;
+}
+.header .nav > a:nth-child(4):hover:after,
+.header .nav > a:nth-child(4).active:after {
+  left: -14px;
+}
+.header .nav .search {
+  display: inline-block;
+  width: 20px;
+}
+.header .nav .search a img {
+  position: relative;
+  top: 5px;
+  height: 20px;
+  width: 20px;
+  display: none;
+}
+.header .nav .search a img.active {
+  display: inline-block;
+}
+.header .nav .search a .closeIcon.active {
+  display: inline-block;
+  animation: Search 0.5s;
+}
+.header .nav .search a .closeIcon.back {
+  animation: Back 0.5s;
+}
+@keyframes Search {
+  100% {
+    transform: rotate(90deg);
+  }
+}
+@keyframes Back {
+  100% {
+    transform: rotate(-90deg);
+  }
+}
+.header .member {
+  padding: 0 20px 0 4px;
+  position: absolute;
+  top: 0;
+  right: 100px;
+}
+.header .member .login_prev {
+  position: relative;
+  right: -40px;
+  width: 248px;
+  height: 68px;
+  background-size: contain;
+}
+.header .member .login_prev a {
+  height: 68px;
+  line-height: 68px;
+  color: #fff;
+  font-size: 14px;
+  float: left;
+  display: block;
+  text-decoration: none;
+  margin-left: 10px;
+}
+.header .member .login_prev a b {
+  position: relative;
+  right: -126px;
+  font-weight: normal;
+  display: inline-block;
+  width: 100px;
+  height: 36px;
+  color: #000;
+  text-align: center;
+  line-height: 36px;
+  font-size: 16px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+.header .searchBox {
+  display: none;
+  position: absolute;
+  margin-left: -40px;
+  height: 0px;
+  width: 100%;
+  top: 68px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 1px 1px 1px #eee;
+  overflow: hidden;
+  transition: height 500ms;
+}
+.header .searchBox.active {
+  height: 68px;
+}
+.header .searchBox input {
+  width: 400px;
+  height: 24px;
+  max-width: 80vw;
+  margin: 18px 5px 0;
+  font-size: 18px;
+  background-color: transparent;
+  border: 0;
+  outline: none;
+}

@@ -1,149 +1,149 @@
 <template>
-    <!-- region 默认查询条件 -->
-    <div class="simple">
-        <!-- region 查询条件 左侧 -->
-        <div class="choice-left">
-            <!-- region 价格 -->
-            <p class="price">
-                <b>价格</b>
-                <template v-for="(item,index) in computePriceList">
-                    <i>{{ item.title }}</i>
-                    <a :class="{ active : item.active }"
-                       :data-v="item.value"
-                       :key="index"
-                       @click="chooseSearch(item, 'price')"
-                       v-if="index < priceList.length - 1"></a>
-                </template>
-            </p>
-            <!-- endregion 价格 -->
-            <!-- region 尺寸 -->
-            <p class="size">
-                <b>尺寸</b>
-                <template v-for="(item,index) in computeSizeList">
-                    <i>{{ item.title }}</i>
-                    <a :class="{ active : item.active }"
-                       :data-v="item.value"
-                       :key="index"
-                       @click="chooseSearch(item, 'size')"
-                       v-if="index < sizeList.length - 1"></a>
-                </template>
-            </p>
-            <!-- endregion 尺寸 -->
-            <!-- region 颜色 -->
-            <p class="color">
-                <b>颜色</b>
-                <template v-for="(item,index) in computeColorList">
-                    <a :class="[{ active : item.active }, item.className ]"
-                       :data-v="item.value"
-                       :key="index"
-                       @click="chooseSearch(item, 'color')"
-                       v-if="item.value !== 'bwg'"></a>
-                    <a :class="[{ active : item.active }, item.className ]"
-                       :data-v="item.value"
-                       :key="index"
-                       @click="chooseSearch(item, 'color')"
-                       v-else>
-                        <img :src="bwgImg" alt="黑白灰">
-                    </a>
-                </template>
-            </p>
-            <!-- endregion 颜色 -->
-            <!-- region 形状 -->
-            <p class="shape">
-                <b>形状</b>
-                <template v-for="(item,index) in computeShapeList">
-                    <a :class="[{ active : item.active }, item.className ]"
-                       :data-v="item.value"
-                       :key="index"
-                       @click="chooseSearch(item, 'shape')"
-                       v-if="item.value !== 'irregular'"></a>
-                    <a :class="[{ active : item.active }, item.className ]"
-                       :data-v="item.value"
-                       :key="index"
-                       @click="chooseSearch(item, 'shape')"
-                       v-else>
-                        <img :src="starEmptyImg" alt="default" class="default">
-                        <img :src="starMiddleImg" alt="hover" class="hover">
-                        <img :src="starChooseImg" alt="active" class="show">
-                    </a>
-                </template>
-            </p>
-            <!-- endregion 形状 -->
-        </div>
-        <!-- endregion 查询条件 左侧 -->
-
-        <!-- region 查询条件 中间 -->
-        <div class="choice-middle">
-            <!-- region 摆放空间 -->
-            <div class="space">
-                <h3>摆放空间</h3>
-                <ul>
-                    <template v-for="(item,index) in computeSpaceList">
-                        <a :class="{ active : item.active }"
-                           :data-v="item.value"
-                           :key="index"
-                           @click="chooseSearch(item, 'space')">{{ item.title }}</a>
-                    </template>
-                </ul>
-            </div>
-            <!-- endregion 摆放空间 -->
-            <!-- region 分类 -->
-            <div>
-                <h3>分类</h3>
-                <ul>
-                    <template v-for="(item,index) in computeCategoryList">
-                        <a :class="{ active : item.active }"
-                           :data-v="item.value"
-                           :key="index"
-                           @click="chooseSearch(item, 'category')">{{ item.title }}</a>
-                    </template>
-                </ul>
-            </div>
-            <!-- endregion 分类 -->
-        </div>
-        <!-- endregion 查询条件 中间 -->
-
-        <!-- region 查询条件 右侧 -->
-        <div class="choice-right">
-            <!-- region 文字 -->
-            <div class="text">
-                <ul class="style">
-                    <template v-for="(item,index) in computeStyleList">
-                        <a :class="{ active : item.active }"
-                           :data-v="item.value"
-                           :key="index"
-                           @mouseenter="mouseEnter(item)"
-                           @mouseleave="mouseLeave"
-                           @click="chooseSearch(item, 'style')">{{ item.title
-                                                                }}</a>
-                    </template>
-                </ul>
-                <ul class="theme">
-                    <template v-for="(item,index) in computeThemList">
-                        <a :class="{ active : item.active }"
-                           :data-v="item.value"
-                           :key="index"
-                           @mouseenter="mouseEnter(item)"
-                           @mouseleave="mouseLeave"
-                           @click="chooseSearch(item, 'style')">{{ item.title
-                                                                }}</a>
-                    </template>
-                </ul>
-            </div>
-            <!-- endregion 文字 -->
-            <!-- region 图片墙 -->
-            <div class="show-wall"
-                 :style="{ backgroundImage:'url('+ showWal.imgUrl +') '}">
-                <h2 class="cn-des">{{ showWal.title }}</h2>
-                <h2 class="en-des"> {{ showWal.enTitle }}</h2>
-                <hr>
-                <p class="hover-text">{{ showWal.desc }}</p>
-            </div>
-            <!-- endregion 图片墙 -->
-        </div>
-        <!-- endregion 查询条件 右侧 -->
+  <!-- region 默认查询条件 -->
+  <div class="simple">
+    <!-- region 查询条件 左侧 -->
+    <div class="choice-left">
+      <!-- region 价格 -->
+      <p class="price">
+        <b>价格</b>
+        <template v-for="(item,index) in computePriceList">
+          <i>{{ item.title }}</i>
+          <a :class="{ active : item.active }"
+             :data-v="item.value"
+             :key="index"
+             @click="chooseSearch(item, 'price')"
+             v-if="index < priceList.length - 1"></a>
+        </template>
+      </p>
+      <!-- endregion 价格 -->
+      <!-- region 尺寸 -->
+      <p class="size">
+        <b>尺寸</b>
+        <template v-for="(item,index) in computeSizeList">
+          <i>{{ item.title }}</i>
+          <a :class="{ active : item.active }"
+             :data-v="item.value"
+             :key="index"
+             @click="chooseSearch(item, 'size')"
+             v-if="index < sizeList.length - 1"></a>
+        </template>
+      </p>
+      <!-- endregion 尺寸 -->
+      <!-- region 颜色 -->
+      <p class="color">
+        <b>颜色</b>
+        <template v-for="(item,index) in computeColorList">
+          <a :class="[{ active : item.active }, item.className ]"
+             :data-v="item.value"
+             :key="index"
+             @click="chooseSearch(item, 'color')"
+             v-if="item.value !== 'bwg'"></a>
+          <a :class="[{ active : item.active }, item.className ]"
+             :data-v="item.value"
+             :key="index"
+             @click="chooseSearch(item, 'color')"
+             v-else>
+            <img v-lazy="bwgImg" alt="黑白灰">
+          </a>
+        </template>
+      </p>
+      <!-- endregion 颜色 -->
+      <!-- region 形状 -->
+      <p class="shape">
+        <b>形状</b>
+        <template v-for="(item,index) in computeShapeList">
+          <a :class="[{ active : item.active }, item.className ]"
+             :data-v="item.value"
+             :key="index"
+             @click="chooseSearch(item, 'shape')"
+             v-if="item.value !== 'irregular'"></a>
+          <a :class="[{ active : item.active }, item.className ]"
+             :data-v="item.value"
+             :key="index"
+             @click="chooseSearch(item, 'shape')"
+             v-else>
+            <img v-lazy="starEmptyImg" alt="default" class="default">
+            <img v-lazy="starMiddleImg" alt="hover" class="hover">
+            <img v-lazy="starChooseImg" alt="active" class="show">
+          </a>
+        </template>
+      </p>
+      <!-- endregion 形状 -->
     </div>
-    <!-- endregion 默认查询条件 -->
+    <!-- endregion 查询条件 左侧 -->
+
+    <!-- region 查询条件 中间 -->
+    <div class="choice-middle">
+      <!-- region 摆放空间 -->
+      <div class="space">
+        <h3>摆放空间</h3>
+        <ul>
+          <template v-for="(item,index) in computeSpaceList">
+            <a :class="{ active : item.active }"
+               :data-v="item.value"
+               :key="index"
+               @click="chooseSearch(item, 'space')">{{ item.title }}</a>
+          </template>
+        </ul>
+      </div>
+      <!-- endregion 摆放空间 -->
+      <!-- region 分类 -->
+      <div>
+        <h3>分类</h3>
+        <ul>
+          <template v-for="(item,index) in computeCategoryList">
+            <a :class="{ active : item.active }"
+               :data-v="item.value"
+               :key="index"
+               @click="chooseSearch(item, 'category')">{{ item.title }}</a>
+          </template>
+        </ul>
+      </div>
+      <!-- endregion 分类 -->
+    </div>
+    <!-- endregion 查询条件 中间 -->
+
+    <!-- region 查询条件 右侧 -->
+    <div class="choice-right">
+      <!-- region 文字 -->
+      <div class="text">
+        <ul class="style">
+          <template v-for="(item,index) in computeStyleList">
+            <a :class="{ active : item.active }"
+               :data-v="item.value"
+               :key="index"
+               @mouseenter="mouseEnter(item)"
+               @mouseleave="mouseLeave"
+               @click="chooseSearch(item, 'style')">{{ item.title
+              }}</a>
+          </template>
+        </ul>
+        <ul class="theme">
+          <template v-for="(item,index) in computeThemList">
+            <a :class="{ active : item.active }"
+               :data-v="item.value"
+               :key="index"
+               @mouseenter="mouseEnter(item)"
+               @mouseleave="mouseLeave"
+               @click="chooseSearch(item, 'style')">{{ item.title
+              }}</a>
+          </template>
+        </ul>
+      </div>
+      <!-- endregion 文字 -->
+      <!-- region 图片墙 -->
+      <div class="show-wall"
+           :style="{ backgroundImage:'url('+ showWal.imgUrl +') '}">
+        <h2 class="cn-des">{{ showWal.title }}</h2>
+        <h2 class="en-des"> {{ showWal.enTitle }}</h2>
+        <hr>
+        <p class="hover-text">{{ showWal.desc }}</p>
+      </div>
+      <!-- endregion 图片墙 -->
+    </div>
+    <!-- endregion 查询条件 右侧 -->
+  </div>
+  <!-- endregion 默认查询条件 -->
 </template>
 
 <script>
@@ -402,8 +402,12 @@
        * 查询栏右侧 艺术风格 鼠标离开事件
        */
       mouseLeave () {
-        let styleItem = this.styleList.find((item) => { return item.active === true })
-        let themItem = this.themList.find((item) => { return item.active === true })
+        let styleItem = this.styleList.find((item) => {
+          return item.active === true
+        })
+        let themItem = this.themList.find((item) => {
+          return item.active === true
+        })
         if (!styleItem && !themItem) {
           this.showWal.imgUrl = 'https://cdn.ywart.com/material/goodsbuy/20160727/02.jpg'
           this.showWal.title = '抽象'
@@ -480,273 +484,273 @@
 </script>
 
 <style lang="less" scoped>
-    .simple {
-        width: 100%;
-        height: 310px;
-        border-bottom: 1px solid #eee;
-        .choice-left {
-            box-sizing: border-box;
-            padding-left: 7.5%;
-            float: left;
-            width: 50%;
-            line-height: 80px;
-            font-size: 0;
-            text-align: left;
-            .price {
-                i {
-                    margin-left: -30px;
-                }
-            }
-            .size {
-                i {
-                    margin-left: -20px;
-                }
-            }
-            .price, .size, .shape {
-                position: relative;
-                i {
-                    position: absolute;
-                    font-size: 12px;
-                    color: #666;
-                    top: 15px;
-                    font-style: inherit;
-                    width: 0;
-                    height: 0;
-                }
-                i:first-of-type {
-                    margin-left: -5px;
-                    left: 12% \9;
-                }
-                i:nth-of-type(2) {
-                    left: 25% \9;
-                }
-                i:nth-of-type(3) {
-                    left: 39% \9;
-                }
-                i:nth-of-type(4) {
-                    left: 52% \9;
-                }
-                i:nth-of-type(5) {
-                    left: 65% \9;
-                }
-                i:last-of-type {
-                    margin-left: -15px;
-                }
-                a {
-                    background-color: #ddd;
-                    &.active {
-                        background-color: #000;
-                        border-color: #000;
-                    }
-                    &:hover {
-                        background-color: #b0b0b0;
-                    }
-                }
-            }
-            .size {
-            }
-            .color {
-                b {
-                    position: relative;
-                    top: -4px;
-                }
-                a.active {
-                    border: 2px solid #000;
-                    box-sizing: border-box;
-                }
-                .bwg {
-                    box-sizing: border-box;
-                    position: relative;
-                }
-            }
-            .shape {
-                line-height: 40px;
-                .square {
-                    width: 24px;
-                    height: 24px;
-                }
-                .la-Rec {
-                    height: 16px;
-                    width: 32px;
-                }
-                .lo-Rec {
-                    height: 32px;
-                    width: 16px;
-                }
-                .round {
-                    width: 24px;
-                    height: 24px;
-                    border-radius: 50%;
-                }
-                .irregular {
-                    border: none;
-                    width: 0;
-                    height: 0;
-                    text-decoration: none;
-                    color: #666;
-                    font-size: 36px;
-                    position: relative;
-                    top: 14px;
-                }
-                a {
-                    transform: translate(0, 50%);
-                    background-color: #fff;
-                    border: 1px solid #666;
-                    margin-right: 10%;
-                    margin-top: -10px;
-                    .default {
-                        display: inline-block;
-                        &:hover {
-                            display: none;
-                        }
-                    }
-                    .hover {
-                        display: none;
-                    }
-                    .show {
-                        display: none;
-                    }
-                    img {
-                        width: 30px;
-                    }
-                    &:hover {
-                        .default {
-                            display: none;
-                        }
-                        .hover {
-                            display: inline-block;
-                        }
-                        .show {
-                            display: none;
-                        }
-                    }
-                    &.active {
-                        .default {
-                            display: none;
-                        }
-                        .hover {
-                            display: none;
-                        }
-                        .show {
-                            display: inline-block;
-                        }
-                    }
-                }
-                & > b {
-                    position: relative;
-                    top: 4px;
-                }
-            }
-            a {
-                display: inline-block;
-                width: 13%;
-                box-sizing: border-box;
-                height: 16px;
-                cursor: pointer;
-                margin-right: 2px;
-                &:hover {
-                    filter: opacity(80);
-                    opacity: 0.8;
-                }
-            }
-            & > p > b {
-                font-size: 14px;
-                margin-right: 50px;
-            }
+  .simple {
+    width: 100%;
+    height: 310px;
+    border-bottom: 1px solid #eee;
+    .choice-left {
+      box-sizing: border-box;
+      padding-left: 7.5%;
+      float: left;
+      width: 50%;
+      line-height: 80px;
+      font-size: 0;
+      text-align: left;
+      .price {
+        i {
+          margin-left: -30px;
         }
-
-        .choice-middle {
-            float: left;
-            width: 17.5%;
-            & > .space {
-                width: 62.5%;
-            }
-            & > div {
-                float: left;
-                text-align: left;
-                h3 {
-                    line-height: 80px;
-                    font-size: 14px;
-                }
-                ul > a {
-                    cursor: pointer;
-                    line-height: 36px;
-                    font-size: 14px;
-                    color: #666;
-                    display: block;
-                    &.active {
-                        color: #000;
-                        font-weight: bold;
-                    }
-                }
-            }
+      }
+      .size {
+        i {
+          margin-left: -20px;
         }
-
-        .choice-right {
-            box-sizing: border-box;
-            float: left;
-            width: 32.5%;
-            border-left: 1px solid #eee;
-            .text {
-                cursor: pointer;
-                text-align: center;
-                float: left;
-                width: 30%;
-                margin-top: 35px;
-                ul {
-                    margin-bottom: 30px;
-                    a {
-                        text-align: center;
-                        line-height: 30px;
-                        font-size: 14px;
-                        color: #666;
-                        display: block;
-                        &.active {
-                            color: #000;
-                            font-weight: bold;
-                        }
-                    }
-                }
-            }
-            .show-wall {
-                background-size: cover;
-                height: 310px;
-                float: left;
-                width: 70%;
-                text-align: center;
-                color: #fff;
-                padding-top: 30px;
-                position: relative;
-                box-sizing: border-box;
-                h2 {
-                    font-size: 24px;
-                    font-weight: 500;
-                    position: relative;
-                    z-index: 2;
-                }
-                hr {
-                    margin: 20px auto;
-                    background-color: #fff;
-                    border: none;
-                    height: 1px;
-                    width: 30%;
-                    position: relative;
-                    z-index: 2;
-                }
-                p {
-                    line-height: 26px;
-                    text-align: left;
-                    margin: 0 auto;
-                    width: 90%;
-                    font-size: 14px;
-                    position: relative;
-                    z-index: 2;
-                }
-            }
+      }
+      .price, .size, .shape {
+        position: relative;
+        i {
+          position: absolute;
+          font-size: 12px;
+          color: #666;
+          top: 15px;
+          font-style: inherit;
+          width: 0;
+          height: 0;
         }
-
-        .prize, .size {
-            position: relative;
+        i:first-of-type {
+          margin-left: -5px;
+          left: 12% \9;
         }
+        i:nth-of-type(2) {
+          left: 25% \9;
+        }
+        i:nth-of-type(3) {
+          left: 39% \9;
+        }
+        i:nth-of-type(4) {
+          left: 52% \9;
+        }
+        i:nth-of-type(5) {
+          left: 65% \9;
+        }
+        i:last-of-type {
+          margin-left: -15px;
+        }
+        a {
+          background-color: #ddd;
+          &.active {
+            background-color: #000;
+            border-color: #000;
+          }
+          &:hover {
+            background-color: #b0b0b0;
+          }
+        }
+      }
+      .size {
+      }
+      .color {
+        b {
+          position: relative;
+          top: -4px;
+        }
+        a.active {
+          border: 2px solid #000;
+          box-sizing: border-box;
+        }
+        .bwg {
+          box-sizing: border-box;
+          position: relative;
+        }
+      }
+      .shape {
+        line-height: 40px;
+        .square {
+          width: 24px;
+          height: 24px;
+        }
+        .la-Rec {
+          height: 16px;
+          width: 32px;
+        }
+        .lo-Rec {
+          height: 32px;
+          width: 16px;
+        }
+        .round {
+          width: 24px;
+          height: 24px;
+          border-radius: 50%;
+        }
+        .irregular {
+          border: none;
+          width: 0;
+          height: 0;
+          text-decoration: none;
+          color: #666;
+          font-size: 36px;
+          position: relative;
+          top: 14px;
+        }
+        a {
+          transform: translate(0, 50%);
+          background-color: #fff;
+          border: 1px solid #666;
+          margin-right: 10%;
+          margin-top: -10px;
+          .default {
+            display: inline-block;
+            &:hover {
+              display: none;
+            }
+          }
+          .hover {
+            display: none;
+          }
+          .show {
+            display: none;
+          }
+          img {
+            width: 30px;
+          }
+          &:hover {
+            .default {
+              display: none;
+            }
+            .hover {
+              display: inline-block;
+            }
+            .show {
+              display: none;
+            }
+          }
+          &.active {
+            .default {
+              display: none;
+            }
+            .hover {
+              display: none;
+            }
+            .show {
+              display: inline-block;
+            }
+          }
+        }
+        & > b {
+          position: relative;
+          top: 4px;
+        }
+      }
+      a {
+        display: inline-block;
+        width: 13%;
+        box-sizing: border-box;
+        height: 16px;
+        cursor: pointer;
+        margin-right: 2px;
+        &:hover {
+          filter: opacity(80);
+          opacity: 0.8;
+        }
+      }
+      & > p > b {
+        font-size: 14px;
+        margin-right: 50px;
+      }
     }
+
+    .choice-middle {
+      float: left;
+      width: 17.5%;
+      & > .space {
+        width: 62.5%;
+      }
+      & > div {
+        float: left;
+        text-align: left;
+        h3 {
+          line-height: 80px;
+          font-size: 14px;
+        }
+        ul > a {
+          cursor: pointer;
+          line-height: 36px;
+          font-size: 14px;
+          color: #666;
+          display: block;
+          &.active {
+            color: #000;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+
+    .choice-right {
+      box-sizing: border-box;
+      float: left;
+      width: 32.5%;
+      border-left: 1px solid #eee;
+      .text {
+        cursor: pointer;
+        text-align: center;
+        float: left;
+        width: 30%;
+        margin-top: 35px;
+        ul {
+          margin-bottom: 30px;
+          a {
+            text-align: center;
+            line-height: 30px;
+            font-size: 14px;
+            color: #666;
+            display: block;
+            &.active {
+              color: #000;
+              font-weight: bold;
+            }
+          }
+        }
+      }
+      .show-wall {
+        background-size: cover;
+        height: 310px;
+        float: left;
+        width: 70%;
+        text-align: center;
+        color: #fff;
+        padding-top: 30px;
+        position: relative;
+        box-sizing: border-box;
+        h2 {
+          font-size: 24px;
+          font-weight: 500;
+          position: relative;
+          z-index: 2;
+        }
+        hr {
+          margin: 20px auto;
+          background-color: #fff;
+          border: none;
+          height: 1px;
+          width: 30%;
+          position: relative;
+          z-index: 2;
+        }
+        p {
+          line-height: 26px;
+          text-align: left;
+          margin: 0 auto;
+          width: 90%;
+          font-size: 14px;
+          position: relative;
+          z-index: 2;
+        }
+      }
+    }
+
+    .prize, .size {
+      position: relative;
+    }
+  }
 </style>
