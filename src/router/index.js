@@ -6,6 +6,7 @@ import Buy from '../pages/buy/buy'
 import Artworks from '../pages/artworks/artworks'
 import Artist from '../pages/artist/artist'
 import Solicitation from '../pages/solicitation/solicitation'
+import Cart from '../pages/shopping/cart'
 
 Vue.use(Router)
 
@@ -50,6 +51,11 @@ export default new Router({
       path: '/solicitation',
       name: 'solicitation',
       component: Solicitation
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: Cart
     }
   ]
 })

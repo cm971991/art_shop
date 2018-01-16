@@ -43,6 +43,8 @@
 </template>
 
 <script type="text/ecmascript-6">
+  import artistList from '../../../../static/data/index/artistList'
+
   export default {
     components: {},
     data () {
@@ -51,28 +53,9 @@
           artistId: '1',
           title: '吴霜：做一个艺术的信徒',
           desc: '“艺术是信仰，你不信，它便什么也不是，你信，它就能给你所有。”',
-          imgUrl: 'https://cdn.ywart.com/material/ArtistRecommend/wushuang.jpg@320h_450w_1e_1c_1wh_90Q'
+          imgUrl: require('../../../../static/images/index/artist/artist_1.jpg')
         },
-        artistList: [
-          {
-            artistId: '1',
-            artistName: '孔令楠',
-            imgUrls: ['https://cdn.ywart.com/yw/2017042415554433719683fdf.jpg@260h_260w_1e_1c_1wh_90Q', 'https://cdn.ywart.com/yw/201704241556052438e0694a1.jpg@130h_130w_1e_1c_1wh_90Q', 'https://cdn.ywart.com/yw/20170424155825367261f025b.jpg@86h_86w_1e_1c_1wh_90Q'],
-            artistCount: '3'
-          },
-          {
-            artistId: '2',
-            artistName: '马文婷',
-            imgUrls: ['https://cdn.ywart.com/yw/201704241557024776390f76d.jpg@260h_260w_1e_1c_1wh_90Q', 'https://cdn.ywart.com/yw/20170424155822226d3b128f9.jpg@130h_130w_1e_1c_1wh_90Q', 'https://cdn.ywart.com/yw/20170424155901538c030b1de.jpg@86h_86w_1e_1c_1wh_90Q'],
-            artistCount: '6'
-          },
-          {
-            artistId: '3',
-            artistName: '陈可',
-            imgUrls: ['https://cdn.ywart.com/yw/2017010413331682200253239.jpg@260h_260w_1e_1c_1wh_90Q', 'https://cdn.ywart.com/yw/201704251341057633dd19d60.jpg@130h_130w_1e_1c_1wh_90Q', 'https://cdn.ywart.com/yw/20170425134838479725c153c.jpg@86h_86w_1e_1c_1wh_90Q'],
-            artistCount: '6'
-          }
-        ]
+        artistList: artistList
       }
     },
     created () {

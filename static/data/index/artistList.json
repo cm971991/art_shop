@@ -1,0 +1,32 @@
+[
+  {
+    "artistId": "1",
+    "artistName": "孔令楠",
+    "imgUrls": [
+      "./static/images/index/artist/artist_2_1.jpg",
+      "./static/images/index/artist/artist_2_2.jpg",
+      "./static/images/index/artist/artist_2_3.jpg"
+    ],
+    "artistCount": "3"
+  },
+  {
+    "artistId": "2",
+    "artistName": "马文婷",
+    "imgUrls": [
+      "./static/images/index/artist/artist_3_1.jpg",
+      "./static/images/index/artist/artist_3_2.jpg",
+      "./static/images/index/artist/artist_3_3.jpg"
+    ],
+    "artistCount": "6"
+  },
+  {
+    "artistId": "3",
+    "artistName": "陈可",
+    "imgUrls": [
+      "./static/images/index/artist/artist_4_1.jpg",
+      "./static/images/index/artist/artist_4_2.jpg",
+      "./static/images/index/artist/artist_4_3.jpg"
+    ],
+    "artistCount": "6"
+  }
+]

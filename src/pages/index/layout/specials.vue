@@ -26,6 +26,7 @@
 <script type="text/ecmascript-6">
   import 'swiper/dist/css/swiper.css'
   import {swiper, swiperSlide} from 'vue-awesome-swiper'
+  import specialsList from '../../../../static/data/index/specialsList'
 
   export default {
     components: {
@@ -34,7 +35,6 @@
     data () {
       return {
         swiperOption: {
-
           slidesPerView: 4,
           spaceBetween: 30,
           slidesPerGroup: 4,
@@ -45,80 +45,7 @@
             prevEl: '.prev'
           }
         },
-        swiperSlides: [
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/capricornus.jpg@90q',
-            link: '',
-            name: '周而复始 | 给摩羯的生日礼物',
-            desc: '黑色、墨绿色和咖啡色是摩羯的专属幸运色，这三种颜色大气沉稳，一定会俘获摩羯的心，给摩羯新的一年带来幸运。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/tiaowengezi.jpg@90q',
-            link: '',
-            name: '条纹X格子 | 强迫症的治愈良药',
-            desc: '在众多强迫症中，艺术家是最奇妙的存在，他们将条纹和格子整齐的排列在画布之上，使整个画面都透露着工整严谨，让人看了，只觉舒服无比。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/hunger_and_love.jpg@90q',
-            link: '',
-            name: '饥饿与爱 都是不治之症',
-            desc: '爱情给人的安全感就像吃到好吃的食物一样，可以完全抵消掉焦虑情绪。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/minimalist.jpg@90q',
-            link: '',
-            name: '认识极简主义，享受精致生活',
-            desc: '追求 minimalist life 的过程，就是深刻认识精致之美的过程。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/capricornus.jpg@90q',
-            link: '',
-            name: '周而复始 | 给摩羯的生日礼物',
-            desc: '黑色、墨绿色和咖啡色是摩羯的专属幸运色，这三种颜色大气沉稳，一定会俘获摩羯的心，给摩羯新的一年带来幸运。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/tiaowengezi.jpg@90q',
-            link: '',
-            name: '条纹X格子 | 强迫症的治愈良药',
-            desc: '在众多强迫症中，艺术家是最奇妙的存在，他们将条纹和格子整齐的排列在画布之上，使整个画面都透露着工整严谨，让人看了，只觉舒服无比。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/hunger_and_love.jpg@90q',
-            link: '',
-            name: '饥饿与爱 都是不治之症',
-            desc: '爱情给人的安全感就像吃到好吃的食物一样，可以完全抵消掉焦虑情绪。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/minimalist.jpg@90q',
-            link: '',
-            name: '认识极简主义，享受精致生活',
-            desc: '追求 minimalist life 的过程，就是深刻认识精致之美的过程。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/capricornus.jpg@90q',
-            link: '',
-            name: '周而复始 | 给摩羯的生日礼物',
-            desc: '黑色、墨绿色和咖啡色是摩羯的专属幸运色，这三种颜色大气沉稳，一定会俘获摩羯的心，给摩羯新的一年带来幸运。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/tiaowengezi.jpg@90q',
-            link: '',
-            name: '条纹X格子 | 强迫症的治愈良药',
-            desc: '在众多强迫症中，艺术家是最奇妙的存在，他们将条纹和格子整齐的排列在画布之上，使整个画面都透露着工整严谨，让人看了，只觉舒服无比。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/hunger_and_love.jpg@90q',
-            link: '',
-            name: '饥饿与爱 都是不治之症',
-            desc: '爱情给人的安全感就像吃到好吃的食物一样，可以完全抵消掉焦虑情绪。'
-          },
-          {
-            imgUrl: 'https://cdn.ywart.com/material/topic_cover/minimalist.jpg@90q',
-            link: '',
-            name: '认识极简主义，享受精致生活',
-            desc: '追求 minimalist life 的过程，就是深刻认识精致之美的过程。'
-          }
-        ]
+        swiperSlides: specialsList
       }
     },
     created () {

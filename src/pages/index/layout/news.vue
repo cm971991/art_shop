@@ -12,7 +12,7 @@
       <template v-for="item in newsList">
         <div class="new" :class="{ active: rotateShow, out: roteteHide }">
           <div class="front" @mouseenter="mouseEnter($event)" @mouseleave="mouseLeave($event)">
-            <img v-lazy="item.img">
+            <img v-lazy="item.imgUrl">
             <router-link :to="{ path: '/artworks/' + item.id +''}" target="_blank">
               <div class="info_box" style="display: none">
                 <div>
@@ -32,6 +32,9 @@
 </template>
 
 <script>
+  import newList from '../../../../static/data/index/newsList'
+  import newList2 from '../../../../static/data/index/newsList2'
+
   export default {
     components: {},
     data () {
@@ -40,118 +43,7 @@
         roteteHide: false,
         rotateShow: false,
         refreshIcon: '&#xe600;',
-        newsList: [
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/201706071713304210727f022.jpg@560h_560w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/20170704125446813dd3ea032.jpg@560h_560w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/201707261534468354784fa8d.jpg@560h_560w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/20170621180717098f8d536c6.jpg@260h_260w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/2017080916440502499a91d98.jpg@260h_260w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/2017101313241517132a6ad07.jpg@260h_260w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/20171013155950972f1b66bcc.jpg@260h_260w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/20170714165836467bb13660d.jpg@260h_260w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/201708301756077995a3dff77.jpg@260h_260w_1e_1c_1wh_90Q'
-          },
-          {
-            id: '1',
-            artist: '黄国锋',
-            artistId: 'fxs',
-            name: '巫峡清秋图',
-            date: '2017',
-            type: '宣纸设色',
-            size: '35x105cm',
-            price: '3350',
-            img: 'https://cdn.ywart.com/yw/20170922145542940b4ffdf94.jpg@560h_560w_1e_1c_1wh_90Q'
-          }
-        ]
+        newsList: newList
       }
     },
     created () {
@@ -167,117 +59,7 @@
           this.refreshing = false
           this.roteteHide = false
           this.rotateShow = true
-          this.newsList = [
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20170526141239550a67dbf25.jpg@560h_560w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20170816170500926d132292f.jpg@560h_560w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/201710241601267120c4ada5a.jpg@260h_260w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20170925163340116bb9743e8.jpg@260h_260w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/201711081523348341ed056a7.jpg@260h_260w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20170929175730042c9e1f66a.jpg@260h_260w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/201709301442260453051f338.jpg@260h_260w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20170704142945962f68543e5.jpg@260h_260w_1e_1c_1wh_90Q'
-            }, {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20171220174305806427fbd0a.jpg@560h_560w_1e_1c_1wh_90Q'
-            },
-            {
-              id: '1',
-              artist: '贺泓洋',
-              artistId: 'gbd',
-              name: '花瓶的世界',
-              date: '2017',
-              type: '综合材料',
-              size: '22x30cm',
-              price: '1250',
-              img: 'https://cdn.ywart.com/yw/20171107152905377876cbd29.jpg@260h_260w_1e_1c_1wh_90Q'
-            }
-          ]
+          this.newsList = newList2
         }, 2000)
       },
       mouseEnter (e) {

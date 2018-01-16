@@ -1,5 +1,5 @@
 <template>
-  <div class="detail-contain clearfix" @click="hideGoodsInfo">
+  <div class="detail-contain clearfix">
     <!-- region 工具栏 -->
     <!--<section class="top-btns">-->
     <!--<div class="top-btn t_c active">美术馆</div>-->
@@ -64,8 +64,8 @@
               <span>¥190</span>
             </p>
             <div>
-              <a href="#" class="cart" @click="addCart">加入购物车</a>
-              <a href="#" class="buy" @click="buy">立即购买</a>
+              <a class="cart" @click="addCart">加入购物车</a>
+              <a class="buy" @click="buy">立即购买</a>
             </div>
           </div>
         </div>
@@ -403,10 +403,9 @@
        * 加入购物车
        */
       addCart () {
-        debugger
         let userInfo = this.$store.getters.userInfo
-        if (userInfo) {
-
+        if (userInfo && userInfo.userId && userInfo.tooken) {
+          this.$router.push({path: '/cart'})
         } else {
           this.$store.commit('SHOW_LOGIN', true)
         }

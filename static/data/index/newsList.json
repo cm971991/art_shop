@@ -1,0 +1,112 @@
+[
+  {
+    "id": "1",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_1.jpg"
+  },
+  {
+    "id": "2",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_2.jpg"
+  },
+  {
+    "id": "3",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_3.jpg"
+  },
+  {
+    "id": "4",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_4.jpg"
+  },
+  {
+    "id": "5",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_5.jpg"
+  },
+  {
+    "id": "6",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_6.jpg"
+  },
+  {
+    "id": "7",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_7.jpg"
+  },
+  {
+    "id": "8",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_8.jpg"
+  },
+  {
+    "id": "9",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_9.jpg"
+  },
+  {
+    "id": "10",
+    "artist": "黄国锋",
+    "artistId": "fxs",
+    "name": "巫峡清秋图",
+    "date": "2017",
+    "type": "宣纸设色",
+    "size": "35x105cm",
+    "price": "3350",
+    "imgUrl": "./static/images/index/news/news_10.jpg"
+  }
+]

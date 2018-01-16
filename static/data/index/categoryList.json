@@ -1,0 +1,46 @@
+[
+  {
+    "id": "1",
+    "artist": "王缺土",
+    "artistId": "wqe",
+    "name": "布景",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "50x40cm",
+    "price": "10050",
+    "imgUrl": "./static/images/index/category/category_1.jpg"
+  },
+  {
+    "id": "2",
+    "artist": "Pung刘",
+    "artistId": "ddd",
+    "name": "空",
+    "date": "2013",
+    "type": "布面油画、墨",
+    "size": "70x50cm",
+    "price": "6050",
+    "imgUrl": "./static/images/index/category/category_2.jpg"
+  },
+  {
+    "id": "3",
+    "artist": "李昌龙",
+    "artistId": "sss",
+    "name": "色层与边界系列90号",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "40x30cm",
+    "price": "24050",
+    "imgUrl": "./static/images/index/category/category_3.jpg"
+  },
+  {
+    "id": "4",
+    "artist": "刘川",
+    "artistId": "tew",
+    "name": "角落",
+    "date": "2017",
+    "type": "布面丙烯",
+    "size": "120x100cm",
+    "price": "28350",
+    "imgUrl": "./static/images/index/category/category_4.jpg"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "title": "人物",
+    "enTitle": "Portrait",
+    "value": "人物",
+    "imgUrl": "./static/images/buy/search/them_1.jpg",
+    "desc": "是以人物为形象主体的画。中国画人物力求逼真传神，气韵生动，形神兼备，西方人物画严谨规整，秉承理性思维，以光感，质感体积和空间感来体现人物。近现代绘画运动之后则更加侧重人物精神及心理层面的表达，风格和媒介也更加多样化。",
+    "active": false
+  },
+  {
+    "title": "风景",
+    "enTitle": "Landscape",
+    "value": "风景",
+    "imgUrl": "./static/images/buy/search/them_2.jpg",
+    "desc": "风景的概念起源于绘画，人类绘画早先的主题是动物，然后是人类自己，最早有记载的的单纯风景画是中国晋代展子虔的《游春图》，以后中国画中的风景画被称为山水画。在欧洲，“风景”的概念起源于荷兰，也是从绘画开始，最早的记录是1598年，后来被英语借用。",
+    "active": false
+  },
+  {
+    "title": "静物",
+    "enTitle": "Still-life",
+    "value": "静物",
+    "imgUrl": "./static/images/buy/search/them_3.jpg",
+    "desc": "仅以画家近距离观察的物体（大多数为家居用品——餐具、花卉、书籍，但有时是头盖骨、已死的猎物等）为内容的绘画。静物在早期东方艺术中相当重要，在西方，它直到16世纪才作为独立题材出现。",
+    "active": false
+  }
+]

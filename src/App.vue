@@ -2,8 +2,8 @@
   <div id="app">
     <i-header></i-header>
     <router-view/>
-    <i-footer :type="$store.getters.footerType"></i-footer>
-    <i-login :show-dialog="loginDialogIsShow"></i-login>
+    <i-footer :type="global.footerType"></i-footer>
+    <i-login :show-dialog="login.loginDialogIsShow"></i-login>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
   import iHeader from './components/base/iHeader'
   import iFooter from './components/base/iFooter'
   import iLogin from './components/base/iLogin'
-  import { mapState } from 'vuex'
+  import {mapState} from 'vuex'
 
   export default {
     components: {
@@ -23,9 +23,9 @@
     created () {
     },
     computed: {
-      ...mapState({
-        loginDialogIsShow: ({login}) => login.loginDialogIsShow
-      })
+      ...mapState([
+        'login', 'global'
+      ])
     },
     mounted () {
     },

@@ -62,9 +62,9 @@
              :key="index"
              @click="chooseSearch(item, 'shape')"
              v-else>
-            <img v-lazy="starEmptyImg" alt="default" class="default">
-            <img v-lazy="starMiddleImg" alt="hover" class="hover">
-            <img v-lazy="starChooseImg" alt="active" class="show">
+            <img v-lazy="starEmptyImg" alt="default" class="default"/>
+            <img v-lazy="starMiddleImg" alt="hover" class="hover"/>
+            <img v-lazy="starChooseImg" alt="active" class="show"/>
           </a>
         </template>
       </p>
@@ -147,6 +147,9 @@
 </template>
 
 <script>
+  import styleList from '../../../../static/data/buy/styleList'
+  import themList from '../../../../static/data/buy/themList'
+
   export default {
     components: {},
     data () {
@@ -201,70 +204,12 @@
           {title: '雕塑', value: '雕塑', active: false},
           {title: '摄影', value: '摄影', active: false}
         ],
-        styleList: [
-          {
-            title: '抽象',
-            enTitle: 'Abstract-Expression',
-            value: '抽象',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/02.jpg',
-            desc: '是既不模仿又不直接再现外在现实，以形式和色彩本身来打动观众的艺术风格。通过对现实的扭曲变形来表现艺术家的激情和内心幻象，强调表现的自发性和艺术家的个性。',
-            active: false
-          },
-          {
-            title: '具象',
-            enTitle: 'Realism',
-            value: '具象',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/04.jpg',
-            desc: '起源于十九世纪的法国。写实不是描绘抽象的符号，而是对真实存在的物体或想象出来的对象的描述。',
-            active: false
-          },
-          {
-            title: '观念',
-            enTitle: 'Conceptual Art',
-            value: '观念',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/05.jpg',
-            desc: '观念艺术质疑艺术这一整体观念，例如：艺术是否可以指涉及其自身之外的东西。观念艺术需要通过语言和文字进行表达，它的呈现方式为绘画、方案计划书、照片、影像等。',
-            active: false
-          },
-          {
-            title: '传统国画',
-            enTitle: 'Chinese Painting',
-            value: '传统国画',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/03.jpg',
-            desc: '传统国画：国画一词起源于汉代，汉朝人认为中国是居天地之中者，所以称为中国，将中国的绘画称为“中国画”，简称“国画”。主要指的是画在绢、宣纸、帛上并加以装裱的卷轴画。国画是汉族的传统绘画形式，是用毛笔蘸水、墨、彩作画于绢或纸上。',
-            active: false
-          }
-        ],
-        themList: [
-          {
-            title: '人物',
-            enTitle: 'Portrait',
-            value: '人物',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/06.jpg',
-            desc: '是以人物为形象主体的画。中国画人物力求逼真传神，气韵生动，形神兼备，西方人物画严谨规整，秉承理性思维，以光感，质感体积和空间感来体现人物。近现代绘画运动之后则更加侧重人物精神及心理层面的表达，风格和媒介也更加多样化。',
-            active: false
-          },
-          {
-            title: '风景',
-            enTitle: 'Landscape',
-            value: '风景',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/07.jpg',
-            desc: '风景的概念起源于绘画，人类绘画早先的主题是动物，然后是人类自己，最早有记载的的单纯风景画是中国晋代展子虔的《游春图》，以后中国画中的风景画被称为山水画。在欧洲，“风景”的概念起源于荷兰，也是从绘画开始，最早的记录是1598年，后来被英语借用。',
-            active: false
-          },
-          {
-            title: '静物',
-            enTitle: 'Still-life',
-            value: '静物',
-            imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/08.jpg',
-            desc: '仅以画家近距离观察的物体（大多数为家居用品——餐具、花卉、书籍，但有时是头盖骨、已死的猎物等）为内容的绘画。静物在早期东方艺术中相当重要，在西方，它直到16世纪才作为独立题材出现。',
-            active: false
-          }
-        ],
+        styleList: styleList,
+        themList: themList,
         showWal: {
           title: '抽象',
           enTitle: 'Abstract-Expression',
-          imgUrl: 'https://cdn.ywart.com/material/goodsbuy/20160727/02.jpg',
+          imgUrl: require('../../../../static/images/buy/search/style_1.jpg'),
           desc: '是既不模仿又不直接再现外在现实，以形式和色彩本身来打动观众的艺术风格。通过对现实的扭曲变形来表现艺术家的激情和内心幻象，强调表现的自发性和艺术家的个性。',
           active: true
         }

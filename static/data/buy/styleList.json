@@ -1,0 +1,34 @@
+[
+  {
+    "title": "抽象",
+    "enTitle": "Abstract-Expression",
+    "value": "抽象",
+    "imgUrl": "./static/images/buy/search/style_1.jpg",
+    "desc": "是既不模仿又不直接再现外在现实，以形式和色彩本身来打动观众的艺术风格。通过对现实的扭曲变形来表现艺术家的激情和内心幻象，强调表现的自发性和艺术家的个性。",
+    "active": false
+  },
+  {
+    "title": "具象",
+    "enTitle": "Realism",
+    "value": "具象",
+    "imgUrl": "./static/images/buy/search/style_2.jpg",
+    "desc": "起源于十九世纪的法国。写实不是描绘抽象的符号，而是对真实存在的物体或想象出来的对象的描述。",
+    "active": false
+  },
+  {
+    "title": "观念",
+    "enTitle": "Conceptual Art",
+    "value": "观念",
+    "imgUrl": "./static/images/buy/search/style_3.jpg",
+    "desc": "观念艺术质疑艺术这一整体观念，例如：艺术是否可以指涉及其自身之外的东西。观念艺术需要通过语言和文字进行表达，它的呈现方式为绘画、方案计划书、照片、影像等。",
+    "active": false
+  },
+  {
+    "title": "传统国画",
+    "enTitle": "Chinese Painting",
+    "value": "传统国画",
+    "imgUrl": "./static/images/buy/search/style_4.jpg",
+    "desc": "传统国画：国画一词起源于汉代，汉朝人认为中国是居天地之中者，所以称为中国，将中国的绘画称为“中国画”，简称“国画”。主要指的是画在绢、宣纸、帛上并加以装裱的卷轴画。国画是汉族的传统绘画形式，是用毛笔蘸水、墨、彩作画于绢或纸上。",
+    "active": false
+  }
+]
