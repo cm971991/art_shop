@@ -64,8 +64,8 @@
               <span>¥190</span>
             </p>
             <div>
-              <a href="javascript:void(0);" class="cart" @click="addCart">加入购物车</a>
-              <a href="javascript:void(0);" class="buy" @click="buy">立即购买</a>
+              <a href="#" class="cart" @click="addCart">加入购物车</a>
+              <a href="#" class="buy" @click="buy">立即购买</a>
             </div>
           </div>
         </div>
@@ -389,6 +389,7 @@
        * 点击页面 隐藏作品详情信息
        */
       hideGoodsInfo () {
+        debugger
         this.menuShow = false
         this.shoppingCartShow = false
       },
@@ -402,11 +403,14 @@
        * 加入购物车
        */
       addCart () {
+        debugger
         let userInfo = this.$store.getters.userInfo
         if (userInfo) {
 
         } else {
+          this.$store.commit('SHOW_LOGIN', true)
         }
+        return false
       },
       /**
        * 立即购买

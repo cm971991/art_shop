@@ -1,49 +1,58 @@
 <template>
-    <div id="app">
-        <i-header></i-header>
-        <router-view/>
-        <i-footer :type="$store.getters.footerType"></i-footer>
-    </div>
+  <div id="app">
+    <i-header></i-header>
+    <router-view/>
+    <i-footer :type="$store.getters.footerType"></i-footer>
+    <i-login :show-dialog="loginDialogIsShow"></i-login>
+  </div>
 </template>
 
 <script>
   import iHeader from './components/base/iHeader'
   import iFooter from './components/base/iFooter'
+  import iLogin from './components/base/iLogin'
+  import { mapState } from 'vuex'
 
   export default {
     components: {
-      iHeader, iFooter
+      iHeader, iFooter, iLogin
     },
     data () {
       return {}
     },
-    created () {},
-    computed: {},
-    mounted () {},
+    created () {
+    },
+    computed: {
+      ...mapState({
+        loginDialogIsShow: ({login}) => login.loginDialogIsShow
+      })
+    },
+    mounted () {
+    },
     methods: {}
   }
 </script>
 
 <style lang="less">
-    @import "./assets/styles/common/base.less";
-    @import "./assets/styles/common/icon.less";
+  @import "./assets/styles/common/base.less";
+  @import "./assets/styles/common/icon.less";
 
-    body {
-        min-width: 1200px;
-        margin-top: 0;
-        position: relative;
-        padding-bottom: 445px;
+  body {
+    min-width: 1200px;
+    margin-top: 0;
+    position: relative;
+    padding-bottom: 445px;
 
-        #app {
-            height: 100%;
-            width: 100%;
-            font-family: "Avenir", Helvetica, Arial, sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            text-align: center;
-            color: #2c3e50;
-            margin-top: 68px;
-            box-sizing: border-box;
-        }
+    #app {
+      height: 100%;
+      width: 100%;
+      font-family: "Avenir", Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+      margin-top: 68px;
+      box-sizing: border-box;
     }
+  }
 </style>

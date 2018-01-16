@@ -27,3 +27,9 @@ export const INIT_USERINFO = 'INIT_USERINFO'
  * @type {string}
  */
 export const UPDATE_USERINFO = 'UPDATE_USERINFO'
+
+/**
+ * 显示登陆框
+ * @type {string}
+ */
+export const SHOW_LOGIN = 'SHOW_LOGIN'
