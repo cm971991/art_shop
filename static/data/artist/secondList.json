@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "artistName": "大家好我叫Sansang",
+    "date": "2013",
+    "type": "艺术微喷",
+    "size": "40x30",
+    "imgUrl": "./static/images/artist/second/second_1.jpg"
+  },
+  {
+    "id": "2",
+    "artistName": "玉兰 伍",
+    "date": "2016",
+    "type": "纸本设色",
+    "size": "40x40",
+    "imgUrl": "./static/images/artist/second/second_2.jpg"
+  },
+  {
+    "id": "3",
+    "artistName": "玉兰 肆",
+    "date": "2016",
+    "type": "纸本设色",
+    "size": "34x34",
+    "imgUrl": "./static/images/artist/second/second_3.jpg"
+  },
+  {
+    "id": "4",
+    "artistName": "玉兰 叁",
+    "date": "2016",
+    "type": "纸本设色",
+    "size": "34x34",
+    "imgUrl": "./static/images/artist/second/second_4.jpg"
+  },
+  {
+    "id": "5",
+    "artistName": "孤独园·醉纸兰 柒",
+    "date": "2015",
+    "type": "纸本水彩",
+    "size": "26x38",
+    "imgUrl": "./static/images/artist/second/second_5.jpg"
+  }
+]

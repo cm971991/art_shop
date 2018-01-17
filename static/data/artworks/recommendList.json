@@ -1,0 +1,74 @@
+[
+  {
+    "id": "1",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_1.jpg"
+  },
+  {
+    "id": "2",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_2.jpg"
+  },
+  {
+    "id": "3",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_3.jpg"
+  },
+  {
+    "id": "4",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_4.jpg"
+  },
+  {
+    "id": "5",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_5.jpg"
+  },
+  {
+    "id": "6",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_6.jpg"
+  },
+  {
+    "id": "7",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_7.jpg"
+  },
+  {
+    "id": "8",
+    "name": "草丛里胡猫",
+    "date": "2015",
+    "type": "布面油画",
+    "size": "70.00✕70.00",
+    "price": "12050",
+    "imgUrl": "./static/images/artworks/recommend/recommend_8.jpg"
+  }
+]
