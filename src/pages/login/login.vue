@@ -6,7 +6,7 @@
 </template>
 
 <script>
-  import iLogin from '../components/base/iLogin'
+  import iLogin from '../../components/base/iLogin'
 
   export default {
     components: {iLogin},

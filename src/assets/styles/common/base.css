@@ -120,6 +120,10 @@ textarea {
 .f_r {
   float: right;
 }
+.fix-bottom {
+  position: fixed;
+  bottom: 0;
+}
 .font_b {
   font-weight: bold;
 }

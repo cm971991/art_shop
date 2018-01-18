@@ -29,63 +29,6 @@
 .cart-contain .cart-main {
   padding: 20px 20px 20px 28px;
 }
-.cart-contain .cart-main .cart-choice-all {
-  font-size: 12px;
-  color: #666;
-  margin-bottom: 40px;
-  text-align: left;
-  padding-left: 10px;
-  line-height: 44px;
-}
-.cart-contain .cart-main .cart-choice-all .choice-all input {
-  position: absolute;
-  left: -100px;
-}
-.cart-contain .cart-main .cart-choice-all .choice-all span {
-  width: 16px;
-  height: 14px;
-  display: inline-block;
-  background: url("../../images/pages/shopping/uncheck.svg") left top no-repeat;
-  background-size: auto 100%;
-  margin-bottom: -2px;
-}
-.cart-contain .cart-main .cart-choice-all div .info {
-  vertical-align: middle;
-  float: left;
-  margin-right: 20px;
-}
-.cart-contain .cart-main .cart-choice-all div .info span {
-  color: #000;
-}
-.cart-contain .cart-main .cart-choice-all div .price {
-  text-decoration: none;
-  color: #ee403c;
-  font-weight: bold;
-  font-size: 18px;
-  vertical-align: middle;
-  float: left;
-}
-.cart-contain .cart-main .cart-choice-all div .price span,
-.cart-contain .cart-main .cart-choice-all div .price em {
-  font-style: normal;
-  text-decoration: none;
-}
-.cart-contain .cart-main .cart-choice-all div .ok {
-  background: #000;
-  cursor: pointer;
-}
-.cart-contain .cart-main .cart-choice-all div button {
-  color: #FFF;
-  background: #CCC;
-  width: 140px;
-  line-height: 36px;
-  display: inline-block;
-  border: 0;
-  margin-left: 30px;
-  cursor: not-allowed;
-  font-size: 16px;
-  float: left;
-}
 .cart-contain .cart-main .cart-list ul {
   padding: 0;
 }
@@ -178,6 +121,7 @@
   padding: 0;
   margin: 0;
   font-size: 12px;
+  text-align: left;
 }
 .cart-contain .cart-main .cart-list ul > li .item .info-box .detail p a {
   color: #a8a8a8;
@@ -191,6 +135,7 @@
 .cart-contain .cart-main .cart-list ul > li .item .info-box .price-unit p.now {
   color: #000;
   font-size: 16px;
+  display: inline-block;
 }
 .cart-contain .cart-main .cart-list ul > li .item .info-box .price-unit p.old {
   color: #999;
@@ -209,40 +154,83 @@
   text-decoration: none;
   font-size: 12px;
 }
+.cart-contain .cart-main .cart-list ul > li .item.active {
+  border: 2px solid #000;
+}
+.cart-contain .cart-choice-all {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 40px;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 44px;
+}
+.cart-contain .cart-choice-all .choice-all input {
+  position: absolute;
+  left: -100px;
+}
+.cart-contain .cart-choice-all .choice-all span {
+  width: 16px;
+  height: 14px;
+  display: inline-block;
+  background: url("../../images/pages/shopping/uncheck.svg") left top no-repeat;
+  background-size: auto 100%;
+  margin-bottom: -2px;
+}
+.cart-contain .cart-choice-all div .info {
+  vertical-align: middle;
+  float: left;
+  margin-right: 20px;
+}
+.cart-contain .cart-choice-all div .info span {
+  color: #000;
+}
+.cart-contain .cart-choice-all div .price {
+  text-decoration: none;
+  color: #ee403c;
+  font-weight: bold;
+  font-size: 18px;
+  vertical-align: middle;
+  float: left;
+}
+.cart-contain .cart-choice-all div .price span,
+.cart-contain .cart-choice-all div .price em {
+  font-style: normal;
+  text-decoration: none;
+}
+.cart-contain .cart-choice-all div .ok {
+  background: #000;
+  cursor: pointer;
+}
+.cart-contain .cart-choice-all div button {
+  color: #FFF;
+  background: #CCC;
+  width: 140px;
+  line-height: 36px;
+  display: inline-block;
+  border: 0;
+  margin-left: 30px;
+  cursor: not-allowed;
+  font-size: 16px;
+  float: left;
+}
+.cart-contain .cart-choice-all .dels {
+  margin-left: 40px;
+  color: #666;
+}
+.cart-contain .cart-choice-all.fix-bottom {
+  height: 44px;
+  background-color: #f8f8f8;
+  margin: 0;
+  width: 100%;
+  max-width: 960px;
+}
+.cart-contain .cart-choice-all.fix-bottom button {
+  height: 44px;
+}
 .cart-contain button {
   margin: 0;
   border: 0;
   padding: 0;
   outline: 0;
-}
-.mz {
-  width: 100%;
-  height: 40px;
-  text-align: left;
-  line-height: 40px;
-  color: #ee403c;
-  background: #FFF;
-  font-size: 12px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-  border-top: 1px solid #eeeeee;
-  display: block;
-  padding-left: 45px;
-  box-sizing: border-box;
-}
-.mz div {
-  display: inline-block;
-  width: 26px;
-  height: 16px;
-  border-radius: 1px;
-  position: relative;
-  top: 3px;
-  background-size: 100%;
-}
-.mz div img {
-  display: block;
-  width: 100%;
-}
-.mz span {
-  display: inline-block;
 }

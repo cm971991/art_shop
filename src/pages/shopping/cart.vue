@@ -26,58 +26,44 @@
       <!-- endregion 全选 -->
       <!-- region 商品列表 -->
       <div class="cart-list">
-        <template v-for="i in 3">
+        <template v-for="cart in cartList">
           <ul>
             <li>
               <div class="choice-item">
-                <p class="daytime">2018-01-16</p>
+                <p class="daytime">{{ cart.date }}</p>
               </div>
 
               <div>
-                <template v-for="j in 2">
+                <template v-for="item in cart.list">
                   <div class="item clearfix">
                     <div class="f_l choice">
                       <label></label>
                     </div>
                     <div class="f_l info-box">
                       <div class="f_l thumb">
-                        <a href="/artworks/1k6wwe?agentcode=null">
+                        <router-link :to="{ path: '/artworks/' + item.id +''}" target="_blank">
                           <div class="img"
-                               style="background-image: url(&quot;https://cdn.ywart.com/yw/201607041135276303ff377a9.jpg_small01&quot;);"></div>
-                        </a>
+                               :style="{ backgroundImage:'url('+ item.imgUrl +') '}"></div>
+                        </router-link>
                       </div>
                       <div class="f_l detail">
-                        <div class="title">战俘R</div>
+                        <div class="title">{{ item.name }}</div>
                         <p class="pc-name">
-                          <a href="/artist/1yxjw9">祖萌</a>
+                          <router-link :to="{ path: '/artist/' + item.artistId +''}" target="_blank">{{ item.artist }}
+                          </router-link>
                         </p>
-                        <p>20x30cm</p>
-                        <p class="number _hidden">
-                          <span>1</span>件
-                        </p>
-                        <p style="display: none;">版号:null</p>
-                        <p style="display: none;">画框装裱: null</p>
-                        <p style="display: none;">已售</p>
+                        <p>{{ item.size }}cm</p>
                       </div>
                       <div class="f_l price-unit">
-                        <p class="now price" style="display:inline-block">
-                          ¥ <span>5,050</span>
-                        </p>
-                        <p class="old" style="vertical-align: bottom; display: none;">
-                          <del class="price">¥
-                            <del>5,050</del>
-                          </del>
+                        <p class="now price">
+                          ¥ <span>{{ item.price }}</span>
                         </p>
                       </div>
                       <div class="f_l op">
-                        <a href="javascript:;" class="del">移除</a>
+                        <a class="del">移除</a>
                       </div>
                     </div>
                   </div>
-                  <a class="mz" style="display: none;">
-                    <div><img/></div>
-                    <span></span>
-                  </a>
                 </template>
               </div>
             </li>
@@ -88,15 +74,40 @@
     </section>
     <!-- endregion 购物车列表 -->
 
-
+    <!-- region 底部全选 -->
+    <div class="cart-choice-all fix-bottom clearfix">
+      <label class="f_l choice-all"
+             style="display: inline-block;">
+        <span></span> 全选
+      </label>
+      <a class="dels">移除</a>
+      <div class="f_r">
+        <span class="info">已选商品
+          <span>0</span>件（不含运费、装裱费）
+        </span>
+        <span class="price">¥
+          <em>0</em>
+        </span>
+        <button>结算
+          <span class="_hidden" style="display: none;">
+            (<span>0</span>)
+          </span>
+        </button>
+      </div>
+    </div>
+    <!-- endregion 底部全选 -->
   </section>
 </template>
 
 <script>
+  import cartList from '../../../static/data/shopping/cartList'
+
   export default {
     components: {},
     data () {
-      return {}
+      return {
+        cartList: cartList
+      }
     },
     created () {
     },

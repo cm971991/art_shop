@@ -28,66 +28,6 @@
 
   .cart-main {
     padding: 20px 20px 20px 28px;
-    .cart-choice-all {
-      font-size: 12px;
-      color: #666;
-      margin-bottom: 40px;
-      text-align: left;
-      padding-left: 10px;
-      line-height: 44px;
-      .choice-all {
-        input {
-          position: absolute;
-          left: -100px;
-        }
-        span {
-          width: 16px;
-          height: 14px;
-          display: inline-block;
-          background: url("../../images/pages/shopping/uncheck.svg") left top no-repeat;
-          background-size: auto 100%;
-          margin-bottom: -2px;
-        }
-      }
-      div {
-        .info {
-          vertical-align: middle;
-          float: left;
-          margin-right: 20px;
-          span {
-            color: #000;
-          }
-        }
-        .price {
-          text-decoration: none;
-          color: #ee403c;
-          font-weight: bold;
-          font-size: 18px;
-          vertical-align: middle;
-          float: left;
-          span, em {
-            font-style: normal;
-            text-decoration: none;
-          }
-        }
-        .ok {
-          background: #000;
-          cursor: pointer;
-        }
-        button {
-          color: #FFF;
-          background: #CCC;
-          width: 140px;
-          line-height: 36px;
-          display: inline-block;
-          border: 0;
-          margin-left: 30px;
-          cursor: not-allowed;
-          font-size: 16px;
-          float: left;
-        }
-      }
-    }
     .cart-list {
       ul {
         padding: 0;
@@ -178,6 +118,7 @@
                   padding: 0;
                   margin: 0;
                   font-size: 12px;
+                  text-align: left;
                   a {
                     color: #a8a8a8;
                   }
@@ -190,6 +131,7 @@
                   &.now {
                     color: #000;
                     font-size: 16px;
+                    display: inline-block
                   }
                   &.old {
                     color: #999;
@@ -211,8 +153,86 @@
                 }
               }
             }
+            &.active {
+              border: 2px solid #000;
+            }
           }
         }
+      }
+    }
+  }
+
+  .cart-choice-all {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 40px;
+    text-align: left;
+    padding-left: 10px;
+    line-height: 44px;
+    .choice-all {
+      input {
+        position: absolute;
+        left: -100px;
+      }
+      span {
+        width: 16px;
+        height: 14px;
+        display: inline-block;
+        background: url("../../images/pages/shopping/uncheck.svg") left top no-repeat;
+        background-size: auto 100%;
+        margin-bottom: -2px;
+      }
+    }
+    div {
+      .info {
+        vertical-align: middle;
+        float: left;
+        margin-right: 20px;
+        span {
+          color: #000;
+        }
+      }
+      .price {
+        text-decoration: none;
+        color: #ee403c;
+        font-weight: bold;
+        font-size: 18px;
+        vertical-align: middle;
+        float: left;
+        span, em {
+          font-style: normal;
+          text-decoration: none;
+        }
+      }
+      .ok {
+        background: #000;
+        cursor: pointer;
+      }
+      button {
+        color: #FFF;
+        background: #CCC;
+        width: 140px;
+        line-height: 36px;
+        display: inline-block;
+        border: 0;
+        margin-left: 30px;
+        cursor: not-allowed;
+        font-size: 16px;
+        float: left;
+      }
+    }
+    .dels {
+      margin-left: 40px;
+      color: #666;
+    }
+    &.fix-bottom {
+      height: 44px;
+      background-color: #f8f8f8;
+      margin: 0;
+      width: 100%;
+      max-width: 960px;
+      button {
+        height: 44px;
       }
     }
   }
@@ -222,37 +242,5 @@
     border: 0;
     padding: 0;
     outline: 0;
-  }
-}
-
-.mz {
-  width: 100%;
-  height: 40px;
-  text-align: left;
-  line-height: 40px;
-  color: #ee403c;
-  background: #FFF;
-  font-size: 12px;
-  margin-top: -10px;
-  margin-bottom: 10px;
-  border-top: 1px solid #eeeeee;
-  display: block;
-  padding-left: 45px;
-  box-sizing: border-box;
-  div {
-    display: inline-block;
-    width: 26px;
-    height: 16px;
-    border-radius: 1px;
-    position: relative;
-    top: 3px;
-    background-size: 100%;
-    img {
-      display: block;
-      width: 100%;
-    }
-  }
-  span {
-    display: inline-block;
   }
 }
