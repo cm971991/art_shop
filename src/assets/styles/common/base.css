@@ -130,6 +130,9 @@ textarea {
 .font_l {
   font-weight: lighter;
 }
+_hidden {
+  display: none;
+}
 img[lazy=loading] {
   background-color: #999;
 }

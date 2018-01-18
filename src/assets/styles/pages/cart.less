@@ -155,6 +155,18 @@
             }
             &.active {
               border: 2px solid #000;
+              .choice {
+                label {
+                  background: url("../../images/pages/shopping/checked.svg") left top no-repeat;
+                }
+              }
+            }
+            &:hover {
+              .info-box {
+                .op {
+                  display: block;
+                }
+              }
             }
           }
         }
@@ -182,6 +194,11 @@
         background-size: auto 100%;
         margin-bottom: -2px;
       }
+      &.active {
+        span {
+          background: url("../../images/pages/shopping/checked.svg") left top no-repeat;
+        }
+      }
     }
     div {
       .info {
@@ -204,7 +221,7 @@
           text-decoration: none;
         }
       }
-      .ok {
+      .active {
         background: #000;
         cursor: pointer;
       }
@@ -224,6 +241,9 @@
     .dels {
       margin-left: 40px;
       color: #666;
+      &:hover {
+      }
+      cursor: pointer;
     }
     &.fix-bottom {
       height: 44px;

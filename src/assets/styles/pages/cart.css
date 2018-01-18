@@ -157,6 +157,12 @@
 .cart-contain .cart-main .cart-list ul > li .item.active {
   border: 2px solid #000;
 }
+.cart-contain .cart-main .cart-list ul > li .item.active .choice label {
+  background: url("../../images/pages/shopping/checked.svg") left top no-repeat;
+}
+.cart-contain .cart-main .cart-list ul > li .item:hover .info-box .op {
+  display: block;
+}
 .cart-contain .cart-choice-all {
   font-size: 12px;
   color: #666;
@@ -176,6 +182,9 @@
   background: url("../../images/pages/shopping/uncheck.svg") left top no-repeat;
   background-size: auto 100%;
   margin-bottom: -2px;
+}
+.cart-contain .cart-choice-all .choice-all.active span {
+  background: url("../../images/pages/shopping/checked.svg") left top no-repeat;
 }
 .cart-contain .cart-choice-all div .info {
   vertical-align: middle;
@@ -198,7 +207,7 @@
   font-style: normal;
   text-decoration: none;
 }
-.cart-contain .cart-choice-all div .ok {
+.cart-contain .cart-choice-all div .active {
   background: #000;
   cursor: pointer;
 }
@@ -217,6 +226,7 @@
 .cart-contain .cart-choice-all .dels {
   margin-left: 40px;
   color: #666;
+  cursor: pointer;
 }
 .cart-contain .cart-choice-all.fix-bottom {
   height: 44px;

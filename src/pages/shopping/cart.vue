@@ -10,17 +10,19 @@
     <section class="cart-main">
       <!-- region 全选 -->
       <div class="cart-choice-all clearfix">
-        <label class="f_l choice-all">
+        <label class="f_l choice-all" :class="{ active: checkedProductNum === parseInt(cartListTotal) }"
+               @click="choiceAll">
           <span></span> 全选
         </label>
         <div class="f_r">
           <span class="info">已选商品
-            <span>0</span>件（不含运费、装裱费）
+            <span>{{ checkedProductNum }}</span>件（不含运费、装裱费）
           </span>
           <span class="price">
-            <span>¥</span><em>0</em>
+            <span>¥</span>
+            <em>{{ totalPrice }}</em>
           </span>
-          <button class="ok">结算</button>
+          <button :class="{ active: checkedProductNum > 0 }">结算</button>
         </div>
       </div>
       <!-- endregion 全选 -->
@@ -35,9 +37,9 @@
 
               <div>
                 <template v-for="item in cart.list">
-                  <div class="item clearfix">
+                  <div class="item clearfix" :class="{ active: item.ischecked }">
                     <div class="f_l choice">
-                      <label></label>
+                      <label @click="choiceItem(item)"></label>
                     </div>
                     <div class="f_l info-box">
                       <div class="f_l thumb">
@@ -60,7 +62,7 @@
                         </p>
                       </div>
                       <div class="f_l op">
-                        <a class="del">移除</a>
+                        <a class="del" @click="deleteItem(item)">移除</a>
                       </div>
                     </div>
                   </div>
@@ -77,25 +79,29 @@
     <!-- region 底部全选 -->
     <div class="cart-choice-all fix-bottom clearfix">
       <label class="f_l choice-all"
-             style="display: inline-block;">
+             :class="{ active: checkedProductNum === parseInt(cartListTotal) }"
+             @click="choiceAll()">
         <span></span> 全选
       </label>
-      <a class="dels">移除</a>
+      <a class="dels" @click="deleteAll()">移除</a>
       <div class="f_r">
         <span class="info">已选商品
-          <span>0</span>件（不含运费、装裱费）
+          <span>{{ checkedProductNum }}</span>件（不含运费、装裱费）
         </span>
-        <span class="price">¥
-          <em>0</em>
+        <span class="price">
+          <span>¥</span>
+          <em>{{ totalPrice }}</em>
         </span>
-        <button>结算
-          <span class="_hidden" style="display: none;">
-            (<span>0</span>)
+        <button :class="{ active: checkedProductNum > 0 }">结算
+          <span :style="{ display: checkedProductNum > 0 ? 'inline': 'none' }">
+            (<span>{{ checkedProductNum }}</span>)
           </span>
         </button>
       </div>
     </div>
     <!-- endregion 底部全选 -->
+
+    <v-dialog/>
   </section>
 </template>
 
@@ -106,15 +112,127 @@
     components: {},
     data () {
       return {
-        cartList: cartList
+        cartList: [], // 商品列表
+        cartListTotal: 0, // 商品总数
+        totalPrice: 0, // 总价
+        checkedProductNum: 0, // 已选商品数量
+        checkAll: false, // 是否全选
+        checkAllCounter: 0 // 计算全选点击次数 单数：全选 双数：反选
       }
     },
     created () {
     },
     mounted () {
+      this.$nextTick(() => {
+        document.querySelector('.footer').style.display = 'none'
+        this.cartList = cartList.data.list
+        this.cartListTotal = cartList.data.total
+      })
     },
     computed: {},
-    methods: {}
+    methods: {
+      /**
+       * 单个商品选择
+       * @param item
+       */
+      choiceItem (item) {
+        if (typeof item.ischecked === 'undefined') {
+          this.$set(item, 'ischecked', true)
+        } else {
+          item.ischecked = !item.ischecked
+        }
+        this.calcTotalPrice()
+      },
+      /**
+       * 全选、反选
+       */
+      choiceAll () {
+        this.checkAllCounter++
+        this.cartList.forEach((cart) => {
+          cart.list.forEach((item) => {
+            this.checkAll = !(this.checkAllCounter % 2 === 0)
+            if (typeof item.ischecked === 'undefined') {
+              this.$set(item, 'ischecked', this.checkAll)
+            } else {
+              item.ischecked = this.checkAll
+            }
+          })
+        })
+        this.calcTotalPrice()
+      },
+      /**
+       * 单个商品删除
+       * @param item
+       */
+      deleteItem (item) {
+        this.$modal.show('dialog', {
+          title: '确认',
+          text: '您确定要移除吗?',
+          buttons: [
+            {
+              title: '确定',
+              default: true,
+              handler: () => {
+                this.cartList.forEach((val) => {
+                  let index = val.list.indexOf(item)
+                  if (index !== -1) {
+                    val.list.splice(index, 1)
+                  }
+                })
+                this.calcTotalPrice()
+                this.$modal.hide('dialog')
+              }
+            },
+            {title: '取消'}
+          ]
+        })
+        return false
+      },
+      /**
+       * 全部删除
+       */
+      deleteAll () {
+        if (this.checkedProductNum > 0) {
+          this.$modal.show('dialog', {
+            title: '确认',
+            text: '你确定要移除选中的商品吗?',
+            buttons: [
+              {
+                title: '确定',
+                default: true,
+                handler: () => {
+                  // this.cartList.forEach((val) => {
+                  //   let index = val.list.indexOf(item)
+                  //   if (index !== -1) {
+                  //     val.list.splice(index, 1)
+                  //   }
+                  // })
+                  this.calcTotalPrice()
+                  this.$modal.hide('dialog')
+                }
+              },
+              {title: '取消'}
+            ]
+          })
+        }
+        return false
+      },
+      /**
+       * 计算总价
+       */
+      calcTotalPrice () {
+        this.checkedProductNum = 0
+        this.totalPrice = 0
+        this.cartList.forEach((cart) => {
+          cart.list.forEach((item) => {
+            if (item.ischecked) {
+              this.checkedProductNum++
+              this.totalPrice += parseInt(item.price)
+            }
+          })
+        })
+      }
+    }
   }
 </script>
 

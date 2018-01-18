@@ -19,7 +19,9 @@
     created () {
     },
     mounted () {
-      this.pageStyleInit()
+      this.$nextTick(() => {
+        this.pageStyleInit()
+      })
     },
     computed: {},
     methods: {

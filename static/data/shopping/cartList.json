@@ -1,56 +1,64 @@
-[
-  {
-    "date": "2018-01-16",
+{
+  "code": "0000",
+  "message": "success",
+  "data": {
+    "total": "4",
     "list": [
       {
-        "id": "1",
-        "artist": "李昌龙",
-        "artistId": "sss",
-        "name": "色层与边界系列90号",
-        "date": "2015",
-        "type": "布面油画",
-        "size": "40x30cm",
-        "price": "3410",
-        "imgUrl": "./static/images/buy/content/content_1.jpg"
+        "date": "2018-01-16",
+        "list": [
+          {
+            "id": "1",
+            "artist": "李昌龙1",
+            "artistId": "111",
+            "name": "色层与边界系列90号1",
+            "date": "2011",
+            "type": "布面油画",
+            "size": "10x10cm",
+            "price": "10",
+            "imgUrl": "./static/images/buy/content/content_1.jpg"
+          },
+          {
+            "id": "2",
+            "artist": "李昌龙2",
+            "artistId": "222",
+            "name": "色层与边界系列90号2",
+            "date": "2012",
+            "type": "布面油画",
+            "size": "20x20cm",
+            "price": "20",
+            "imgUrl": "./static/images/buy/content/content_2.jpg"
+          }
+        ]
       },
       {
-        "id": "2",
-        "artist": "李昌龙",
-        "artistId": "sss",
-        "name": "色层与边界系列90号",
-        "date": "2015",
-        "type": "布面油画",
-        "size": "40x30cm",
-        "price": "24050",
-        "imgUrl": "./static/images/buy/content/content_2.jpg"
-      }
-    ]
-  },
-  {
-    "date": "2018-01-17",
-    "list": [
-      {
-        "id": "3",
-        "artist": "李昌龙",
-        "artistId": "sss",
-        "name": "色层与边界系列90号",
-        "date": "2015",
-        "type": "布面油画",
-        "size": "40x30cm",
-        "price": "7650",
-        "imgUrl": "./static/images/buy/content/content_3.jpg"
-      },
-      {
-        "id": "4",
-        "artist": "李昌龙",
-        "artistId": "sss",
-        "name": "色层与边界系列90号",
-        "date": "2015",
-        "type": "布面油画",
-        "size": "40x30cm",
-        "price": "4352",
-        "imgUrl": "./static/images/buy/content/content_4.jpg"
+        "date": "2018-01-17",
+        "list": [
+          {
+            "id": "3",
+            "artist": "李昌龙3",
+            "artistId": "333",
+            "name": "色层与边界系列90号3",
+            "date": "2013",
+            "type": "布面油画",
+            "size": "30x30cm",
+            "price": "30",
+            "imgUrl": "./static/images/buy/content/content_3.jpg"
+          },
+          {
+            "id": "4",
+            "artist": "李昌龙4",
+            "artistId": "444",
+            "name": "色层与边界系列90号4",
+            "date": "2014",
+            "type": "布面油画",
+            "size": "40x40cm",
+            "price": "40",
+            "imgUrl": "./static/images/buy/content/content_4.jpg"
+          }
+        ]
       }
     ]
   }
-]
+}
+
