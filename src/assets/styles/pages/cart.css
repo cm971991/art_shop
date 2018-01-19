@@ -163,6 +163,9 @@
 .cart-contain .cart-main .cart-list ul > li .item:hover .info-box .op {
   display: block;
 }
+.cart-contain .cart-main .cart-list ul > li .item + .item {
+  border-top: none;
+}
 .cart-contain .cart-choice-all {
   font-size: 12px;
   color: #666;

@@ -7,6 +7,7 @@ import Artworks from '../pages/artworks/artworks'
 import Artist from '../pages/artist/artist'
 import Solicitation from '../pages/solicitation/solicitation'
 import Cart from '../pages/shopping/cart'
+import Order from '../pages/order/order'
 
 Vue.use(Router)
 
@@ -56,6 +57,11 @@ export default new Router({
       path: '/cart',
       name: 'cart',
       component: Cart
+    },
+    {
+      path: '/order',
+      name: 'order',
+      component: Order
     }
   ]
 })

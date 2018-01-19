@@ -22,7 +22,7 @@
             <span>¥</span>
             <em>{{ totalPrice }}</em>
           </span>
-          <button :class="{ active: checkedProductNum > 0 }">结算</button>
+          <button :class="{ active: checkedProductNum > 0 }" @click="Settle">结算</button>
         </div>
       </div>
       <!-- endregion 全选 -->
@@ -92,7 +92,7 @@
           <span>¥</span>
           <em>{{ totalPrice }}</em>
         </span>
-        <button :class="{ active: checkedProductNum > 0 }">结算
+        <button :class="{ active: checkedProductNum > 0 }" @click="Settle">结算
           <span :style="{ display: checkedProductNum > 0 ? 'inline': 'none' }">
             (<span>{{ checkedProductNum }}</span>)
           </span>
@@ -201,12 +201,16 @@
                 title: '确定',
                 default: true,
                 handler: () => {
-                  // this.cartList.forEach((val) => {
-                  //   let index = val.list.indexOf(item)
-                  //   if (index !== -1) {
-                  //     val.list.splice(index, 1)
-                  //   }
-                  // })
+                  let ids = []
+                  this.cartList.forEach((val) => {
+                    let list = val.list
+                    list.forEach((item) => {
+                      if (item.ischecked !== 'undefined' && item.ischecked) {
+                        ids.push(item.id)
+                      }
+                    })
+                  })
+                  console.log('deleteAll ids:', ids)
                   this.calcTotalPrice()
                   this.$modal.hide('dialog')
                 }
@@ -216,6 +220,17 @@
           })
         }
         return false
+      },
+      /**
+       * 结算
+       */
+      Settle () {
+        let userInfo = this.$store.getters.userInfo
+        if (userInfo && userInfo.userId && userInfo.tooken) {
+          this.$router.push({path: '/order'})
+        } else {
+          this.$store.commit('SHOW_LOGIN', true)
+        }
       },
       /**
        * 计算总价

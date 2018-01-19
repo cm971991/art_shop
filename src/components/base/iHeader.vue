@@ -40,9 +40,10 @@
         logo: {name: 'index', link: '/', active: true},
         menuList: [
           {name: '原创艺术', link: '/buy', active: false},
-          {name: '造艺', link: '/makeArt', active: false},
-          {name: '藏艺术', link: '/collect/index', active: false},
-          {name: '我的珍藏', link: '/user/userWishList', active: false}
+          {name: '美物', link: '/makeArt', active: false},
+          {name: '发现', link: '/collect/index', active: false},
+          {name: '我的珍藏', link: '/user/userWishList', active: false},
+          {name: '经纪人专享', link: '/user/userWishList', active: false}
         ],
         searchFlag: true
       }
