@@ -23,8 +23,12 @@
     <!-- endregion 备注 -->
 
     <!-- region 使用优惠 -->
-
+    <sale></sale>
     <!-- endregion 使用优惠 -->
+
+    <!-- region 计算价格 -->
+    <result></result>
+    <!-- endregion 计算价格 -->
 
   </section>
 </template>
@@ -32,15 +36,13 @@
 <script>
   import consignee from './layout/consignee'
   import buyProduct from './layout/buyProduct'
+  import sale from './layout/sale'
+  import result from './layout/result'
 
   export default {
-    components: {consignee, buyProduct},
+    components: {consignee, buyProduct, sale, result},
     data () {
-      return {
-        editIcon: '&#xe604;',
-        deleteIcon: '&#xe609;',
-        checkIcon: '&#xe643;'
-      }
+      return {}
     },
     created () {
     },

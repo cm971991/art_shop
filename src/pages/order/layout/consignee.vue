@@ -37,7 +37,11 @@
   export default {
     components: {},
     data () {
-      return {}
+      return {
+        editIcon: '&#xe604;',
+        deleteIcon: '&#xe609;',
+        checkIcon: '&#xe643;'
+      }
     },
     created () {
     },
