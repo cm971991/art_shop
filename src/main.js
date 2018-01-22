@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import store from './vuex/index'
-import router from './router'
+import {router} from './router'
 import VueLazyLoad from 'vue-lazyload' // 图片懒加载
 import VModal from 'vue-js-modal'
 import Util from './assets/utils/index'
@@ -12,7 +12,7 @@ Vue.use(VueLazyLoad, {
   error: require('./assets/images/common/img_error.png')
   // loading: require('./assets/images/common/loading.gif')
 })
-Vue.use(VModal, { dialog: true })
+Vue.use(VModal, {dialog: true})
 Vue.config.productionTip = false
 Vue.use(Util)
 /* eslint-disable no-new */

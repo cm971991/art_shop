@@ -12,13 +12,13 @@
 }
 .header .logo {
   float: left;
-  height: 58px;
-  margin: 8px 50px 0 0;
+  height: 26px;
+  margin: 20px 50px 0 0;
   cursor: pointer;
 }
 .header .logo:hover:after,
 .header .logo.active:after {
-  width: 106px;
+  width: 150px;
   height: 5px;
   background-color: #fff;
   content: '';
@@ -27,8 +27,8 @@
   left: 38px;
 }
 .header .logo a img {
-  height: 45px;
-  width: 106px;
+  height: 26px;
+  width: 150px;
 }
 .header .nav {
   display: inline-block;

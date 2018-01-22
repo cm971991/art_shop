@@ -11,8 +11,8 @@ import OrderPay from '../pages/order/orderPay/orderPay'
 import OrderDetail from '../pages/order/orderDetail/orderDetail'
 
 Vue.use(Router)
-
-export default new Router({
+const defaultTitle = '爱艺'
+export const router = new Router({
   routes: [
     {
       path: '/',
@@ -27,11 +27,13 @@ export default new Router({
     {
       path: '/login',
       name: 'login',
+      meta: {title: '登录注册页-爱艺'},
       component: Login
     },
     {
       path: '/buy',
       name: 'buy',
+      meta: {title: '原创艺术-爱艺'},
       component: Buy
     },
     {
@@ -70,4 +72,10 @@ export default new Router({
       component: OrderDetail
     }
   ]
+})
+router.afterEach((to) => {
+  // 设置标题
+  if (to.meta.title || defaultTitle !== document.title) {
+    Vue.$utils.Common.setTitle(to.meta.title || defaultTitle)
+  }
 })
