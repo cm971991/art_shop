@@ -54,5 +54,5 @@
 </script>
 
 <style lang="less">
-  @import "../../assets/styles/pages/order";
+  @import "../../../assets/styles/pages/orderPay";
 </style>

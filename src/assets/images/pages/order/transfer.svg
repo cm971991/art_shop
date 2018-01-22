@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="29px" height="29px" viewBox="0 0 29 29" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 5</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <rect id="path-1" x="254" y="567" width="140" height="40" rx="4"></rect>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="140" height="40" fill="white">
+            <use xlink:href="#path-1"></use>
+        </mask>
+    </defs>
+    <g id="订单-web" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="支付" transform="translate(-261.000000, -573.000000)">
+            <use id="Rectangle-7-Copy-2" stroke="#C0C0C0" mask="url(#mask-2)" stroke-width="2" xlink:href="#path-1"></use>
+            <rect id="Rectangle-5" fill="#000000" x="261" y="573" width="29" height="29" rx="4"></rect>
+            <polyline id="Path-2" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" points="269 585.133489 282.351103 585.133489 277.217614 580"></polyline>
+            <polyline id="Path-2-Copy" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" transform="translate(276.675551, 592.566744) scale(-1, -1) translate(-276.675551, -592.566744) " points="270 595.133489 283.351103 595.133489 278.217614 590"></polyline>
+        </g>
+    </g>
+</svg>

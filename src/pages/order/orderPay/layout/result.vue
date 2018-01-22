@@ -14,7 +14,7 @@
         <em>¥30,450</em>
       </div>
       <div class="submit">
-        <button type="button">提交订单</button>
+        <button type="button" @click="submitOrder">提交订单</button>
       </div>
     </div>
   </div>
@@ -31,6 +31,10 @@
     mounted () {
     },
     computed: {},
-    methods: {}
+    methods: {
+      submitOrder () {
+        this.$router.push({path: './orderDetail'})
+      }
+    }
   }
 </script>
