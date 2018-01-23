@@ -9,73 +9,77 @@ import Solicitation from '../pages/solicitation/solicitation'
 import Cart from '../pages/shopping/cart'
 import OrderPay from '../pages/order/orderPay/orderPay'
 import OrderDetail from '../pages/order/orderDetail/orderDetail'
+import MakeArt from '../pages/makeArt/MakeArt'
 
 Vue.use(Router)
-const defaultTitle = '爱艺'
+export const defaultTitle = '爱艺'
 export const router = new Router({
   routes: [
     {
       path: '/',
       name: 'index',
+      meta: {title: '爱艺', showNav: true, footer: 'default'},
       component: Index
     },
     {
       path: '/index',
       name: 'index',
+      meta: {title: '爱艺', showNav: true, footer: 'default'},
       component: Index
     },
     {
       path: '/login',
       name: 'login',
-      meta: {title: '登录注册页-爱艺'},
+      meta: {title: '登录注册页-爱艺', showNav: false, footer: 'none'},
       component: Login
     },
     {
       path: '/buy',
       name: 'buy',
-      meta: {title: '原创艺术-爱艺'},
+      meta: {title: '原创艺术-爱艺', showNav: true, footer: 'none'},
       component: Buy
-    },
-    {
-      path: '/artworks',
-      name: 'artworks',
-      component: Artworks
     },
     {
       path: '/artworks/:id',
       name: 'artworks',
+      meta: {title: '原创艺术-爱艺', showNav: true, footer: 'none'},
       component: Artworks
     },
     {
       path: '/artist/:id',
       name: 'artist',
+      meta: {title: '艺术家-爱艺', showNav: false, footer: 'none'},
       component: Artist
     },
     {
       path: '/solicitation',
       name: 'solicitation',
+      meta: {title: '艺术家作品征集-爱艺', showNav: true, footer: 'default'},
       component: Solicitation
     },
     {
       path: '/cart',
       name: 'cart',
+      meta: {title: '购物车-爱艺', showNav: true, footer: 'none'},
       component: Cart
     },
     {
       path: '/order',
       name: 'order',
+      meta: {title: '订单-爱艺', showNav: true, footer: 'default'},
       component: OrderPay
     },
     {
       path: '/orderDetail',
       name: 'orderDetail',
+      meta: {title: '订单-爱艺', showNav: true, footer: 'default'},
       component: OrderDetail
+    },
+    {
+      path: '/makeArt',
+      name: 'makeArt',
+      meta: {title: '美物-爱艺', showNav: true, footer: 'default'},
+      component: MakeArt
     }
   ]
-})
-router.afterEach((to) => {
-  // 设置标题
-  if (to.meta.title || defaultTitle !== document.title) {
-    Vue.$utils.Common.setTitle(to.meta.title || defaultTitle)
-  }
 })

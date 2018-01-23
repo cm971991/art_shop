@@ -100,8 +100,6 @@
       </div>
     </div>
     <!-- endregion 底部全选 -->
-
-    <v-dialog/>
   </section>
 </template>
 
@@ -124,7 +122,6 @@
     },
     mounted () {
       this.$nextTick(() => {
-        document.querySelector('.footer').style.display = 'none'
         this.cartList = cartList.data.list
         this.cartListTotal = cartList.data.total
       })

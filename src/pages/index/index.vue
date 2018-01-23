@@ -64,8 +64,6 @@
     },
     computed: {},
     mounted () {
-      this.$store.commit('SHOW_LOGIN', false)
-      this.$store.commit('UPDATE_FOOTER', '')
     },
     methods: {}
   }

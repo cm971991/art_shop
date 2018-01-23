@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header" v-show="showNav">
     <div class="logo" :class="{ active:logo.active }">
       <a @click="menuRedirect(logo)">
         <img v-lazy="logImg">
@@ -34,6 +34,12 @@
 <script>
   export default {
     components: {},
+    props: {
+      showNav: {
+        type: Boolean,
+        default: true
+      }
+    },
     data () {
       return {
         logImg: require('../../assets/images/common/logo.png'),
@@ -55,7 +61,6 @@
         this.menuList.forEach((item) => {
           item.active = item.link === this.$route.path
         })
-        this.$store.commit('UPDATE_FOOTER', 'simple')
         this.logo.active = false
       }
     },
@@ -71,11 +76,6 @@
           val.active = false
         })
         item.active = true
-        if (item.name === '原创艺术') {
-          this.$store.commit('UPDATE_FOOTER', 'simple')
-        } else {
-          this.$store.commit('UPDATE_FOOTER', '')
-        }
         this.$router.push({path: item.link})
         return false
       },

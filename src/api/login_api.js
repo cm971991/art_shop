@@ -1,14 +1,20 @@
-import Vue from 'vue'
 import url from './api_config'
+import ex from './exception'
 
 export default {
-  loginByAccount (successFunc, errorFunc) {
-    Vue.$api.xHttp.get(url.getUrl('loginByAccount').stringFormat('13776626715', 'java125'))
+  /**
+   * 登录
+   * @param params
+   * @param successFunc
+   */
+  loginByAccount (params, successFunc) {
+    window.$globalHub.$api.xHttp.get(url.getUrl('loginByAccount').stringFormat(params.account, params.password))
       .then(res => {
         successFunc(res)
       })
-      .catch((ex) => {
-        errorFunc(ex)
+      .catch((e) => {
+        console.log('loginByAccount ex:', e)
+        ex.errorMsg(-1, e.msg)
       })
   }
 }

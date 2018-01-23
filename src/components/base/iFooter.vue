@@ -1,5 +1,5 @@
 <template>
-  <div class="footer" :class="{ 'simple' : type === 'simple' }">
+  <div class="footer" :class="[type === 'simple' ? 'simple' : type === 'none' ? 'none' : '']">
     <div class="banner" v-if="type !== 'simple' ">
       <div class="footer_top">
         <div class="top-left">
@@ -360,6 +360,10 @@
       width: 100%;
       padding: 0;
       background: #fff;
+      margin-top: 80px;
+    }
+    &.none {
+      display: none;
     }
   }
 </style>

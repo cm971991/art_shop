@@ -62,7 +62,6 @@
       </template>
     </div>
     <p class="clearfix"><a class="go-pay" @click="goPay">去支付</a></p>
-    <v-dialog/>
   </section>
 </template>
 

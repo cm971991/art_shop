@@ -42,24 +42,39 @@
         </div>
       </vue-waterfall-easy>
     </div>
+    <paginate :class="{ active: paginateShow }"
+              :page-count="5"
+              :page-range="1"
+              :margin-pages="1"
+              :click-handler="clickCallback"
+              :containerClass="'pagination'"
+              :prev-class="'prev'"
+              :next-class="'next'"
+              :prev-text="'上一页'"
+              :next-text="'下一页'">
+    </paginate>
   </div>
 </template>
 
 <script>
   import vueWaterfallEasy from '../../../components/common/waterfall-easy'
+  import paginate from 'vuejs-paginate'
   import contentList from '../../../../static/contentList'
 
   export default {
     components: {
-      vueWaterfallEasy
+      vueWaterfallEasy, paginate
     },
     data () {
       return {
-        productList: []
+        productList: [],
+        paginateShow: false
       }
     },
     created () {
-      this.productList = contentList
+      this.$nextTick(() => {
+        this.productList = contentList
+      })
     },
     mounted () {
     },
@@ -125,156 +140,14 @@
       },
       fetchData () {
         if (this.productList.length > 40) {
-          // document.querySelector('.container').style.height = '8900px'
-          // document.querySelector('.footer').style.display = 'block'
+          this.paginateShow = true
           return
         }
         this.productList = this.productList.concat(this.initList(10, 20))
+      },
+      clickCallback (pageNum) {
+        console.log(pageNum)
       }
     }
   }
 </script>
-
-<style lang="less" scoped>
-  .content {
-    width: 100%;
-    background-color: #fff;
-    padding: 30px 0 50px;
-    .filter {
-      text-align: right;
-      margin: 0 auto 30px;
-      max-width: 1200px;
-      padding-right: 20px;
-      box-sizing: border-box;
-      select {
-        outline: none;
-        width: 100px;
-        height: 30px;
-        font-size: 12px;
-        color: #666;
-        padding-right: 0;
-        border: 1px solid #eee;
-        border-radius: 4px;
-        option {
-          outline: none;
-        }
-      }
-    }
-
-    .container {
-      margin: 0 auto;
-      max-width: 1200px;
-      display: block;
-
-      .img-box {
-        .detail {
-          position: relative;
-          padding: 12px 0 0 0;
-          text-align: left;
-          .qmBox {
-            display: flex;
-            .qmImg {
-              height: 26px;
-              top: 85px;
-              left: 18px;
-            }
-            .price {
-              margin-top: 5px;
-              padding-left: 10px;
-            }
-          }
-          p {
-            color: #666666;
-            font-size: 12px;
-            line-height: 20px;
-            padding: 0 20px;
-            height: 20px;
-            width: 80%;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            font-style: italic;
-
-            .price {
-              margin-top: 10px;
-              color: black;
-              font-size: 14px;
-              font-weight: 500;
-              margin-bottom: 20px;
-              font-style: normal;
-            }
-
-            &:nth-child(1) {
-              font-style: normal;
-              margin-bottom: 8px;
-            }
-          }
-          div {
-            margin-top: 10px;
-            padding: 0 20px;
-          }
-        }
-      }
-
-      .detail {
-        position: relative;
-        padding: 12px 0 0 0;
-        .qmBox {
-          display: flex;
-          .qmImg {
-            height: 26px;
-            top: 85px;
-            left: 18px;
-          }
-          .price {
-            margin-top: 5px;
-            padding-left: 10px;
-          }
-        }
-        p {
-          color: #666666;
-          font-size: 12px;
-          line-height: 20px;
-          padding: 0 20px;
-          height: 20px;
-          width: 80%;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
-          font-style: italic;
-
-          &.price {
-            margin-top: 10px;
-            color: black;
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            font-style: normal;
-          }
-
-          &:nth-child(1) {
-            font-style: normal;
-            margin-bottom: 8px;
-            a {
-              color: #000;
-              font-weight: 600;
-            }
-          }
-        }
-        div {
-          margin-top: 10px;
-          padding: 0 20px;
-        }
-      }
-
-      &::after {
-        visibility: hidden;
-        display: block;
-        font-size: 0;
-        content: " ";
-        clear: both;
-        height: 0;
-      }
-    }
-  }
-</style>

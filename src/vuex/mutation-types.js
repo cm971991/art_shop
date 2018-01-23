@@ -1,4 +1,9 @@
 /**
+ * 是否显示头部导航
+ * @type {string}
+ */
+export const SHOW_NAV = 'SHOW_NAV'
+/**
  * footer类型
  * @type {string}
  */

@@ -1,95 +1,95 @@
 <!-- —————————————↓LESS———————分界线————————————————————————— -->
 <style lang="less">
-    .vue-waterfall-easy {
-        position: relative;
-        width: 100%; // 移动端生效
-        .img-box {
-            display: inline-block;
-            width: 50%; // 移动端生效
-            box-sizing: border-box;
-            float: left; // 首行排版
-            transition: left 1s, top 1s;
+  .vue-waterfall-easy {
+    position: relative;
+    width: 100%; // 移动端生效
+    .img-box {
+      display: inline-block;
+      width: 50%; // 移动端生效
+      box-sizing: border-box;
+      float: left; // 首行排版
+      transition: left 1s, top 1s;
 
-            .img-inner-box {
-                box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
-                .img-wraper {
-                    width: 100%;
-                    background: #999999;
-                    img {
-                        width: 100%;
-                        vertical-align: bottom;
-                    }
-                }
-                .img-info {
-                    background: #fff;
-                    padding: .6em;
-                }
-            }
-        }
-        .loading {
-            text-align: center;
+      .img-inner-box {
+        box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+        .img-wraper {
+          width: 100%;
+          background: #999999;
+          img {
             width: 100%;
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            margin-left: -15px;
-            width: 30px;
-            height: 30px;
+            vertical-align: bottom;
+          }
         }
-        .loading.first-loading {
-            //  首次预加载白屏，让加载动画处于中间
-            top: 50%;
-            margin-top: -15px;
+        .img-info {
+          background: #fff;
+          padding: .6em;
         }
-        .double-bounce1,
-        .double-bounce2 {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            background-color: #67CF22;
-            opacity: 0.6;
-            position: absolute;
-            top: 0;
-            left: 0;
-
-            animation: bounce 2.0s infinite ease-in-out;
-        }
-
-        .double-bounce2 {
-            animation-delay: -1.0s;
-        }
-
-        @keyframes bounce {
-            0%,
-            100% {
-                transform: scale(0.0);
-            }
-            50% {
-                transform: scale(1.0);
-            }
-        }
+      }
     }
+    .loading {
+      text-align: center;
+      width: 100%;
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -15px;
+      width: 30px;
+      height: 30px;
+    }
+    .loading.first-loading {
+      //  首次预加载白屏，让加载动画处于中间
+      top: 50%;
+      margin-top: -15px;
+    }
+    .double-bounce1,
+    .double-bounce2 {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background-color: #67CF22;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      animation: bounce 2.0s infinite ease-in-out;
+    }
+
+    .double-bounce2 {
+      animation-delay: -1.0s;
+    }
+
+    @keyframes bounce {
+      0%,
+      100% {
+        transform: scale(0.0);
+      }
+      50% {
+        transform: scale(1.0);
+      }
+    }
+  }
 </style>
 
 <!-- —————————————↓HTML————————分界线———————————————————————— -->
 <template lang="pug">
-    .vue-waterfall-easy(
-    :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px'}"
+  .vue-waterfall-easy(
+  :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}"
+  )
+    a.img-box(
+    v-for="(v,i) in imgsArrC",
+    :href="v.link+'/artworks/'+v.id" target="_blank",
+    :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
     )
-        a.img-box(
-        v-for="(v,i) in imgsArrC",
-        :href="v.link+'/artworks/'+v.id" target="_blank",
-        :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
-        )
-            .img-inner-box
-                div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")
-                    img(v-lazy="v.src")
-                .img-info
-                    slot(:item="v")
+      .img-inner-box
+        div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")
+          img(v-lazy="v.src")
+        .img-info
+          slot(:item="v")
 
-        .loading(v-if="isPreloadingC",:class="{'first-loading':isFirstTIme}")
-            div.double-bounce1
-            div.double-bounce2
+    .loading(v-if="isPreloadingC",:class="{'first-loading':isFirstTIme}")
+      div.double-bounce1
+      div.double-bounce2
 </template>
 <!-- ——————————————↓JS—————————分界线———————————————————————— -->
 <script>
@@ -120,6 +120,7 @@
     data () {
       return {
         msg: 'this is from vue-waterfall-easy.vue',
+        height: 0,
         columnCount: NaN, // 列数，根据窗口大小初始化
         isMobile: navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i), // 初始化移动端
         beginIndex: NaN, // 第二列首张图片的index，从这一张开始重新计算图片位置
@@ -152,6 +153,9 @@
           this.imgBoxEls[i].style.top = minHeight + 'px'
           // 更新colsHeightArr
           this.$set(this.colsHeightArr, minIndex, minHeight + this.imgBoxEls[i].offsetHeight)
+          if (this.imgsArr.length - 1 === i) {
+            this.height = minHeight + this.imgBoxEls[i].offsetHeight
+          }
         }
         this.beginIndex = this.imgsArr.length
       },
@@ -228,23 +232,10 @@
         var scrollHeight = window.pageYOffset ||
           document.documentElement.scrollTop ||
           document.body.scrollTop || 0
-        console.log('height:', (pageHeight - viewportHeight - scrollHeight))
         if (pageHeight - viewportHeight - scrollHeight < 20) {
-          console.log('scrollLoadImg')
           this.$emit('scrollLoadImg')
         }
       }
-
-      // console.log(this.$el.parentNode)
-      // console.log(this.$el.parentNode, this.$el.parentNode.scrollTop + this.$el.parentNode.offsetHeight, this.$el.parentNode.scrollHeight)
-      // this.$el.parentNode.addEventListener('scroll', () => {
-      //   if (this.isPreloading) return
-      //   const lastImgHeight = this.imgsArr[this.imgsArr.length - 1].height
-      //   console.log(this.$el.parentNode, this.$el.parentNode.scrollTop + this.$el.parentNode.offsetHeight, this.$el.parentNode.scrollHeight)
-      //   if (this.$el.parentNode.scrollTop + this.$el.parentNode.offsetHeight > this.$el.parentNode.scrollHeight - lastImgHeight) {
-      //     this.$emit('scrollLoadImg')
-      //   }
-      // })
     },
     watch: {
       imgsArr (newV, oldV) {

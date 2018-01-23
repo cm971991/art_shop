@@ -1,6 +1,591 @@
 .buy-art {
   width: 100%;
 }
+.buy-art .simple {
+  width: 100%;
+  height: 310px;
+  border-bottom: 1px solid #eee;
+}
+.buy-art .simple .choice-left {
+  box-sizing: border-box;
+  padding-left: 7.5%;
+  float: left;
+  width: 50%;
+  line-height: 80px;
+  font-size: 0;
+  text-align: left;
+}
+.buy-art .simple .choice-left .price i {
+  margin-left: -30px;
+}
+.buy-art .simple .choice-left .size i {
+  margin-left: -20px;
+}
+.buy-art .simple .choice-left .price,
+.buy-art .simple .choice-left .size,
+.buy-art .simple .choice-left .shape {
+  position: relative;
+}
+.buy-art .simple .choice-left .price i,
+.buy-art .simple .choice-left .size i,
+.buy-art .simple .choice-left .shape i {
+  position: absolute;
+  font-size: 12px;
+  color: #666;
+  top: 15px;
+  font-style: inherit;
+  width: 0;
+  height: 0;
+}
+.buy-art .simple .choice-left .price i:first-of-type,
+.buy-art .simple .choice-left .size i:first-of-type,
+.buy-art .simple .choice-left .shape i:first-of-type {
+  margin-left: -5px;
+  left: 12% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(2),
+.buy-art .simple .choice-left .size i:nth-of-type(2),
+.buy-art .simple .choice-left .shape i:nth-of-type(2) {
+  left: 25% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(3),
+.buy-art .simple .choice-left .size i:nth-of-type(3),
+.buy-art .simple .choice-left .shape i:nth-of-type(3) {
+  left: 39% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(4),
+.buy-art .simple .choice-left .size i:nth-of-type(4),
+.buy-art .simple .choice-left .shape i:nth-of-type(4) {
+  left: 52% \9;
+}
+.buy-art .simple .choice-left .price i:nth-of-type(5),
+.buy-art .simple .choice-left .size i:nth-of-type(5),
+.buy-art .simple .choice-left .shape i:nth-of-type(5) {
+  left: 65% \9;
+}
+.buy-art .simple .choice-left .price i:last-of-type,
+.buy-art .simple .choice-left .size i:last-of-type,
+.buy-art .simple .choice-left .shape i:last-of-type {
+  margin-left: -15px;
+}
+.buy-art .simple .choice-left .price a,
+.buy-art .simple .choice-left .size a,
+.buy-art .simple .choice-left .shape a {
+  background-color: #ddd;
+}
+.buy-art .simple .choice-left .price a.active,
+.buy-art .simple .choice-left .size a.active,
+.buy-art .simple .choice-left .shape a.active {
+  background-color: #000;
+  border-color: #000;
+}
+.buy-art .simple .choice-left .price a:hover,
+.buy-art .simple .choice-left .size a:hover,
+.buy-art .simple .choice-left .shape a:hover {
+  background-color: #b0b0b0;
+}
+.buy-art .simple .choice-left .color b {
+  position: relative;
+  top: -4px;
+}
+.buy-art .simple .choice-left .color a.active {
+  border: 2px solid #000;
+  box-sizing: border-box;
+}
+.buy-art .simple .choice-left .color .bwg {
+  box-sizing: border-box;
+  position: relative;
+}
+.buy-art .simple .choice-left .shape {
+  line-height: 40px;
+}
+.buy-art .simple .choice-left .shape .square {
+  width: 24px;
+  height: 24px;
+}
+.buy-art .simple .choice-left .shape .la-Rec {
+  height: 16px;
+  width: 32px;
+}
+.buy-art .simple .choice-left .shape .lo-Rec {
+  height: 32px;
+  width: 16px;
+}
+.buy-art .simple .choice-left .shape .round {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+.buy-art .simple .choice-left .shape .irregular {
+  border: none;
+  width: 0;
+  height: 0;
+  text-decoration: none;
+  color: #666;
+  font-size: 36px;
+  position: relative;
+  top: 14px;
+}
+.buy-art .simple .choice-left .shape a {
+  transform: translate(0, 50%);
+  background-color: #fff;
+  border: 1px solid #666;
+  margin-right: 10%;
+  margin-top: -10px;
+}
+.buy-art .simple .choice-left .shape a .default {
+  display: inline-block;
+}
+.buy-art .simple .choice-left .shape a .default:hover {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a .hover {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a .show {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a img {
+  width: 30px;
+}
+.buy-art .simple .choice-left .shape a:hover .default {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a:hover .hover {
+  display: inline-block;
+}
+.buy-art .simple .choice-left .shape a:hover .show {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a.active .default {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a.active .hover {
+  display: none;
+}
+.buy-art .simple .choice-left .shape a.active .show {
+  display: inline-block;
+}
+.buy-art .simple .choice-left .shape > b {
+  position: relative;
+  top: 4px;
+}
+.buy-art .simple .choice-left a {
+  display: inline-block;
+  width: 13%;
+  box-sizing: border-box;
+  height: 16px;
+  cursor: pointer;
+  margin-right: 2px;
+}
+.buy-art .simple .choice-left a:hover {
+  filter: opacity(80);
+  opacity: 0.8;
+}
+.buy-art .simple .choice-left > p > b {
+  font-size: 14px;
+  margin-right: 50px;
+}
+.buy-art .simple .choice-middle {
+  float: left;
+  width: 17.5%;
+}
+.buy-art .simple .choice-middle > .space {
+  width: 62.5%;
+}
+.buy-art .simple .choice-middle > div {
+  float: left;
+  text-align: left;
+}
+.buy-art .simple .choice-middle > div h3 {
+  line-height: 80px;
+  font-size: 14px;
+}
+.buy-art .simple .choice-middle > div ul > a {
+  cursor: pointer;
+  line-height: 36px;
+  font-size: 14px;
+  color: #666;
+  display: block;
+}
+.buy-art .simple .choice-middle > div ul > a.active {
+  color: #000;
+  font-weight: bold;
+}
+.buy-art .simple .choice-right {
+  box-sizing: border-box;
+  float: left;
+  width: 32.5%;
+  border-left: 1px solid #eee;
+}
+.buy-art .simple .choice-right .text {
+  cursor: pointer;
+  text-align: center;
+  float: left;
+  width: 30%;
+  margin-top: 35px;
+}
+.buy-art .simple .choice-right .text ul {
+  margin-bottom: 30px;
+}
+.buy-art .simple .choice-right .text ul a {
+  text-align: center;
+  line-height: 30px;
+  font-size: 14px;
+  color: #666;
+  display: block;
+}
+.buy-art .simple .choice-right .text ul a.active {
+  color: #000;
+  font-weight: bold;
+}
+.buy-art .simple .choice-right .show-wall {
+  background-size: cover;
+  height: 310px;
+  float: left;
+  width: 70%;
+  text-align: center;
+  color: #fff;
+  padding-top: 30px;
+  position: relative;
+  box-sizing: border-box;
+}
+.buy-art .simple .choice-right .show-wall h2 {
+  font-size: 24px;
+  font-weight: 500;
+  position: relative;
+  z-index: 2;
+}
+.buy-art .simple .choice-right .show-wall hr {
+  margin: 20px auto;
+  background-color: #fff;
+  border: none;
+  height: 1px;
+  width: 30%;
+  position: relative;
+  z-index: 2;
+}
+.buy-art .simple .choice-right .show-wall p {
+  line-height: 26px;
+  text-align: left;
+  margin: 0 auto;
+  width: 90%;
+  font-size: 14px;
+  position: relative;
+  z-index: 2;
+}
+.buy-art .simple .prize,
+.buy-art .simple .size {
+  position: relative;
+}
+.buy-art .buy-search {
+  position: relative;
+  top: 0;
+  width: 100%;
+  text-align: left;
+  line-height: 50px;
+  height: 50px;
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 0 7.5%;
+  border-bottom: 1px solid #eee;
+  z-index: 0;
+}
+.buy-art .buy-search span {
+  padding: 0 26px 0 12px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #666;
+  border-radius: 14px;
+  position: relative;
+  line-height: 28px;
+  display: none;
+}
+.buy-art .buy-search span i {
+  width: 10px;
+  font-size: 10px;
+  position: absolute;
+  right: 6px;
+  top: 2px;
+  cursor: pointer;
+}
+.buy-art .buy-search span:after {
+  content: " ";
+  width: 1px;
+  height: 28px;
+  position: absolute;
+  top: 0;
+  right: 19px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.buy-art .buy-search span + span {
+  margin-left: 8px;
+}
+.buy-art .buy-search span.active {
+  display: inline-block;
+}
+.buy-art .buy-search span + .s-reset {
+  display: inline;
+}
+.buy-art .buy-search .s-reset {
+  display: none;
+  background: none;
+  border: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
+  margin: 0 20px;
+  position: relative;
+}
+.buy-art .buy-search div {
+  display: inline-block;
+  border-radius: 13px;
+  position: relative;
+  height: 28px;
+  top: 12px;
+}
+.buy-art .buy-search div i {
+  position: relative;
+  top: -8px;
+}
+.buy-art .buy-search div .search {
+  position: relative;
+  top: -12px;
+  font-size: 14px;
+  padding-left: 8px;
+  border: none;
+  line-height: 16px;
+}
+.buy-art .buy-search .sure {
+  border-color: #999;
+  background-color: #999;
+  color: #fff;
+  transition: background-color, 1s;
+}
+.buy-art .buy-search .changeModel {
+  position: absolute;
+  text-align: center;
+  background-color: #fff;
+  top: 50px;
+  left: 50%;
+  margin-left: -70px;
+  display: block;
+  width: 140px;
+  height: 30px;
+  color: #333;
+  font-size: 14px;
+  text-decoration: none;
+  line-height: 30px;
+  border-radius: 0 0 4px 4px;
+  -moz-border-radius: 0 0 4px 4px;
+  -webkit-border-radius: 0 0 4px 4px;
+  border: 1px solid #eee;
+  border-top: none;
+}
+.buy-art .buy-search .changeModel i {
+  margin-left: 10px;
+}
+.buy-art .buy-search button {
+  margin-top: 6px;
+  float: right;
+  border: none;
+  width: 130px;
+  height: 36px;
+  cursor: pointer;
+  outline: none;
+  font-size: 14px;
+  display: none;
+}
+.buy-art .content {
+  width: 100%;
+  background-color: #fff;
+  padding: 30px 0 50px;
+}
+.buy-art .content .filter {
+  text-align: right;
+  margin: 0 auto 30px;
+  max-width: 1200px;
+  padding-right: 20px;
+  box-sizing: border-box;
+}
+.buy-art .content .filter select {
+  outline: none;
+  width: 100px;
+  height: 30px;
+  font-size: 12px;
+  color: #666;
+  padding-right: 0;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+.buy-art .content .filter select option {
+  outline: none;
+}
+.buy-art .content .container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: block;
+}
+.buy-art .content .container .img-box .detail {
+  position: relative;
+  padding: 12px 0 0 0;
+  text-align: left;
+}
+.buy-art .content .container .img-box .detail .qmBox {
+  display: flex;
+}
+.buy-art .content .container .img-box .detail .qmBox .qmImg {
+  height: 26px;
+  top: 85px;
+  left: 18px;
+}
+.buy-art .content .container .img-box .detail .qmBox .price {
+  margin-top: 5px;
+  padding-left: 10px;
+}
+.buy-art .content .container .img-box .detail p {
+  color: #666666;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 20px;
+  height: 20px;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
+.buy-art .content .container .img-box .detail p .price {
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+.buy-art .content .container .img-box .detail p:nth-child(1) {
+  font-style: normal;
+  margin-bottom: 8px;
+}
+.buy-art .content .container .img-box .detail div {
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.buy-art .content .container .detail {
+  position: relative;
+  padding: 12px 0 0 0;
+}
+.buy-art .content .container .detail .qmBox {
+  display: flex;
+}
+.buy-art .content .container .detail .qmBox .qmImg {
+  height: 26px;
+  top: 85px;
+  left: 18px;
+}
+.buy-art .content .container .detail .qmBox .price {
+  margin-top: 5px;
+  padding-left: 10px;
+}
+.buy-art .content .container .detail p {
+  color: #666666;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 20px;
+  height: 20px;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
+.buy-art .content .container .detail p.price {
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+.buy-art .content .container .detail p:nth-child(1) {
+  font-style: normal;
+  margin-bottom: 8px;
+}
+.buy-art .content .container .detail p:nth-child(1) a {
+  color: #000;
+  font-weight: 600;
+}
+.buy-art .content .container .detail div {
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.buy-art .content .container::after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.buy-art .content ul {
+  color: #000;
+  width: 100%;
+  max-width: 1200px;
+  margin: 50px auto;
+  font-size: 0;
+  display: none;
+}
+.buy-art .content ul li {
+  display: inline-block;
+  width: 81px;
+  background-color: #fff;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.buy-art .content ul li.prev {
+  display: none;
+}
+.buy-art .content ul li.next {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  line-height: 50px;
+  width: 580px;
+  font-size: 20px;
+  display: inline-block;
+  float: right;
+  margin-right: 20px;
+}
+.buy-art .content ul li.next:hover {
+  background-color: #000;
+}
+.buy-art .content ul li.disabled {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.buy-art .content ul li.disabled:hover {
+  background-color: #fff;
+  border-color: #ddd;
+}
+.buy-art .content ul li.active {
+  background-color: #000;
+  color: #fff;
+}
+.buy-art .content ul li.active:hover {
+  background-color: #000;
+}
+.buy-art .content ul li:hover {
+  background-color: #ccc;
+}
+.buy-art .content ul.active {
+  display: block;
+}
 .buy-art .red {
   background-color: #e73233 !important;
 }

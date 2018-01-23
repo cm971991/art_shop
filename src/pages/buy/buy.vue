@@ -1,17 +1,17 @@
 <template>
-    <div class="buy-art">
-        <!-- region 默认查询条件 -->
-        <search></search>
-        <!-- endregion 默认查询条件 -->
+  <div class="buy-art">
+    <!-- region 默认查询条件 -->
+    <search></search>
+    <!-- endregion 默认查询条件 -->
 
-        <!-- region 查询框 -->
-        <buy-search></buy-search>
-        <!-- endregion 查询框 -->
+    <!-- region 查询框 -->
+    <buy-search></buy-search>
+    <!-- endregion 查询框 -->
 
-        <!-- region 列表 -->
-        <content-list></content-list>
-        <!-- endregion 列表 -->
-    </div>
+    <!-- region 列表 -->
+    <content-list></content-list>
+    <!-- endregion 列表 -->
+  </div>
 </template>
 
 <script>
@@ -27,9 +27,6 @@
     created () {
     },
     mounted () {
-      this.$store.commit('UPDATE_FOOTER', 'simple')
-      // TODO 底部footer样式处理 暂时隐藏
-      document.querySelector('.footer').style.display = 'none'
     },
     computed: {},
     methods: {}
@@ -37,5 +34,5 @@
 </script>
 
 <style lang="less">
-    @import "../../assets/styles/pages/buy.less";
+  @import "../../assets/styles/pages/buy.less";
 </style>

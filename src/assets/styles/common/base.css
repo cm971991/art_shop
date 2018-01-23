@@ -136,6 +136,9 @@ textarea {
 _hidden {
   display: none;
 }
+.v--modal-overlay {
+  z-index: 2000;
+}
 img[lazy=loading] {
   background-color: #999;
 }

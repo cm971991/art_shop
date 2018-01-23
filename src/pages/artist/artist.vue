@@ -27,7 +27,6 @@
     methods: {
       pageStyleInit () {
         document.querySelector('#app').style.marginTop = '0'
-        document.querySelector('.footer').style.display = 'none'
       },
       mouseWheel (e) {
         console.log('e:', e)

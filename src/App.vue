@@ -1,9 +1,10 @@
 <template>
   <div id="app">
-    <i-header></i-header>
+    <i-header :showNav="global.showNav"></i-header>
     <router-view/>
     <i-footer :type="global.footerType"></i-footer>
     <i-login :show-dialog="login.loginDialogIsShow"></i-login>
+    <v-dialog/>
   </div>
 </template>
 

@@ -39,6 +39,8 @@
 </template>
 
 <script>
+  import Service from '../../service/login_service'
+
   export default {
     props: {
       showDialog: {
@@ -59,6 +61,9 @@
       }
     },
     created () {
+      this.$nextTick(() => {
+        this.service = new Service(this)
+      })
     },
     mounted () {
       this.firstLoad = true
@@ -86,15 +91,15 @@
         if (this.errMsg) {
           return false
         }
-
-        this.$store.commit('UPDATE_USERINFO', {userId: '1', userName: 'Hale', tooken: 'abcdef'})
-        let path = this.$route.path
-        if (path === '/login') { // 登陆页调用 提供外部回调函数
-          this.$emit('login-success')
-        } else { // 外部调用 非登陆页调用
-          this.$store.commit('SHOW_LOGIN', false)
-          window.location.reload()
-        }
+        this.service.loginByAccount(this.formData)
+        // this.$store.commit('UPDATE_USERINFO', {userId: '1', userName: 'Hale', tooken: 'abcdef'})
+        // let path = this.$route.path
+        // if (path === '/login') { // 登陆页调用 提供外部回调函数
+        //   this.$emit('login-success')
+        // } else { // 外部调用 非登陆页调用
+        //   this.$store.commit('SHOW_LOGIN', false)
+        //   window.location.reload()
+        // }
       },
       /**
        * 关闭登录框

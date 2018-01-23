@@ -3,7 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import store from './vuex/index'
-import {router} from './router'
+import {router, defaultTitle} from './router'
 import VueLazyLoad from 'vue-lazyload' // 图片懒加载
 import VModal from 'vue-js-modal'
 import Util from './assets/utils/index'
@@ -15,6 +15,19 @@ Vue.use(VueLazyLoad, {
 Vue.use(VModal, {dialog: true})
 Vue.config.productionTip = false
 Vue.use(Util)
+
+const commit = store.commit
+router.afterEach((to) => {
+  // 设置标题
+  if (to.meta.title || defaultTitle !== document.title) {
+    Vue.$utils.Common.setTitle(to.meta.title || defaultTitle)
+  }
+  setTimeout(() => {
+    commit('SHOW_NAV', to.meta.showNav)
+    commit('UPDATE_FOOTER', to.meta.footer)
+  }, 100)
+})
+
 /* eslint-disable no-new */
 window.$globalHub = new Vue({
   el: '#app',

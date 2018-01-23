@@ -1,0 +1,196 @@
+.markArt-contain {
+  position: relative;
+  .nav-select {
+    height: 198px;
+    width: 100%;
+    background-color: #fff;
+    max-width: 1180px;
+    margin: 0 auto;
+    overflow: hidden;
+    & > p {
+      font-size: 16px;
+      font-weight: 500;
+      color: #999;
+      line-height: 40px;
+      margin-top: 15px;
+      border-bottom: 4px solid #d8d8d8;
+      text-align: left;
+      span {
+        position: relative;
+        width: 80px;
+        text-align: center;
+        display: inline-block;
+        cursor: pointer;
+        & + span {
+          margin-left: 50px;
+        }
+        &.active {
+          color: #000;
+          &:after {
+            display: block;
+          }
+        }
+        &:after {
+          content: '';
+          height: 4px;
+          position: absolute;
+          bottom: -4px;
+          background-color: #000;
+          width: 80px;
+          display: none;
+        }
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+    ul {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #666;
+      li {
+        padding-left: 6px;
+        display: none;
+        p {
+          text-align: left;
+        }
+        span, b {
+          margin: 10px 40px 10px 0;
+          cursor: pointer;
+          box-sizing: border-box;
+          padding: 0 10px;
+          display: inline-block;
+          height: 26px;
+          text-align: center;
+          line-height: 26px;
+          border-radius: 13px;
+          &:hover, &.active {
+            color: #000;
+            font-weight: bold;
+          }
+        }
+        &.sel-color {
+          p {
+            overflow: hidden;
+            span {
+              width: 46px;
+              height: 26px;
+              float: left;
+              color: transparent;
+              position: relative;
+              &.active {
+                box-shadow: 6px 3px 11px 0 rgba(0, 0, 0, 0.32), 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
+              }
+              &:last-child {
+                overflow: hidden;
+                padding: 0;
+                a {
+                  position: absolute;
+                  left: 0;
+                  top: 0;
+                  background: #666666;
+                  width: 50%;
+                  height: 100%;
+                }
+                i {
+                  width: 50%;
+                  height: 100%;
+                  position: absolute;
+                  right: 0;
+                  top: 0;
+                  background: #000;
+                }
+              }
+            }
+          }
+          .pink {
+            background-color: #ff8787;
+          }
+          .red {
+            background-color: #e8343d;
+          }
+          .orange {
+            background-color: #ff9706;
+          }
+          .yellow {
+            background-color: #ffde00;
+          }
+          .green {
+            background-color: #1bd168;
+          }
+          .cyan {
+            background-color: #04d2d3;
+          }
+          .blue {
+            background-color: #14a1e4;
+          }
+          .purple {
+            background-color: #673ab7;
+          }
+          .brown {
+            background-color: #804000;
+          }
+          .white {
+            background-color: #ffffff;
+            border: 1px solid #000000;
+          }
+          .bwg {
+          }
+          .bg-color(@color) {
+            background-color: @color;
+          }
+        }
+        &.sel-shape {
+          span {
+            color: transparent;
+            border: 1px solid #666;
+            border-radius: 0%;
+          }
+          .square {
+            width: 24px;
+            height: 24px;
+          }
+          .la-rec {
+            height: 16px;
+            width: 32px;
+            position: relative;
+            top: 4px;
+          }
+          .lo-rec {
+            height: 32px;
+            width: 16px;
+            position: relative;
+            top: -4px;
+          }
+        }
+        &.active {
+          display: block;
+        }
+        &:last-child {
+          font-size: 14px;
+          p {
+            margin-top: 10px;
+          }
+          .artists-box {
+            width: 100%;
+            padding-left: 6px;
+            span {
+              text-align: left;
+              float: left;
+              margin: 10px 30px 10px 0;
+              background-color: #fff;
+              padding: 0;
+              display: inline-block;
+              a {
+                border-radius: 13px;
+                display: inline-block;
+                height: 26px;
+                padding: 0 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
