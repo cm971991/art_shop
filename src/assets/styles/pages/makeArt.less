@@ -1,7 +1,7 @@
 .markArt-contain {
   position: relative;
   .nav-select {
-    height: 198px;
+    height: 248px;
     width: 100%;
     background-color: #fff;
     max-width: 1180px;
@@ -189,6 +189,61 @@
               }
             }
           }
+        }
+      }
+    }
+    .collect-search {
+      border-color: #ddd;
+      border-width: 1px 0;
+      border-style: solid;
+      width: 100%;
+      height: 48px;
+      line-height: 48px;
+      position: absolute;
+      left: 0;
+      background-color: #f4f5f8;
+      p {
+        width: 100%;
+        max-width: 1180px;
+        margin: 0 auto;
+        text-align: left;
+      }
+      span {
+        display: none;
+        padding: 0 26px 0 12px;
+        font-size: 14px;
+        color: #fff;
+        background-color: #000;
+        border-radius: 14px;
+        position: relative;
+        line-height: 28px;
+        i {
+          width: 10px;
+          font-size: 10px;
+          color: #ccc;
+          position: absolute;
+          right: 6px;
+          top: 2px;
+          cursor: pointer;
+        }
+        & + span {
+          display: none;
+          margin-left: 8px;
+          &.active{
+            display: inline-block;
+          }
+        }
+        &.active{
+          display: inline-block;
+        }
+        &:after {
+          content: " ";
+          width: 1px;
+          height: 28px;
+          position: absolute;
+          top: 0;
+          right: 19px;
+          background-color: rgba(255, 255, 255, 0.2);
         }
       }
     }

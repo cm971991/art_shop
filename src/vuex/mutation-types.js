@@ -22,6 +22,18 @@ export const UPDATE_SEARCH = 'UPDATE_SEARCH'
 export const INIT_SEARCH = 'INIT_SEARCH'
 
 /**
+ * 美物查询条件
+ * @type {string}
+ */
+export const UPDATE_BEAUTY_SEARCH = 'UPDATE_BEAUTY_SEARCH'
+
+/**
+ * 重置美物查询条件
+ * @type {string}
+ */
+export const INIT_BEAUTY_SEARCH = 'INIT_BEAUTY_SEARCH'
+
+/**
  * 初始化用户信息
  * @type {string}
  */

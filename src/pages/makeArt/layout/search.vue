@@ -41,6 +41,15 @@
         </li>
       </template>
     </ul>
+    <div class="collect-search">
+      <p>
+        <span :class="{ active: computePriceData.active }">50cm以上<i class="icon-close" v-html="closeIcon"></i></span>
+        <span>¥500-¥1,099<i class="icon-close" v-html="closeIcon"></i></span>
+        <span>动物<i class="icon-close" v-html="closeIcon"></i></span>
+        <span>绿色<i class="icon-close" v-html="closeIcon"></i></span>
+        <span>竖形<i class="icon-close" v-html="closeIcon"></i></span>
+      </p>
+    </div>
   </section>
 </template>
 
@@ -49,6 +58,7 @@
     components: {},
     data () {
       return {
+        closeIcon: '&#xe685;',
         searchList: [
           {
             title: '价格',
@@ -114,6 +124,9 @@
               {title: '竖形', value: 'lo-rec', className: 'lo-rec', active: false}
             ]
           }
+        ],
+        collectSearchList: [
+          {title: '', value: '', type: '', active: false}
         ]
       }
     },
@@ -121,14 +134,18 @@
     },
     mounted () {
     },
-    computed: {},
+    computed: {
+      computePriceData () {
+        return {value: this.$store.getters.beautySearch.price, active: !!this.$store.getters.beautySearch.price}
+      }
+    },
     methods: {
       mouseEnter (item) {
         this.searchList.forEach((item) => {
           item.active = false
-          item.list.forEach((listItem) => {
-            listItem.active = false
-          })
+          // item.list.forEach((listItem) => {
+          //   listItem.active = false
+          // })
         })
         item.active = true
       },
@@ -137,6 +154,13 @@
           item.active = false
         })
         self.active = true
+        this.$store.commit('', self.value)
+
+        switch (self.type) {
+          case 'price':
+
+            break
+        }
       }
     }
   }
