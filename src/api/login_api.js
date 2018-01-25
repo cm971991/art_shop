@@ -8,7 +8,7 @@ export default {
    * @param successFunc
    */
   loginByAccount (params, successFunc) {
-    window.$globalHub.$api.xHttp.get(url.getUrl('loginByAccount').stringFormat(params.account, params.password))
+    window.$globalHub.$api.xHttp.post(url.getUrl('loginByAccount'), params)
       .then(res => {
         successFunc(res)
       })

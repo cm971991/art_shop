@@ -111,6 +111,20 @@
     transform: rotate(-90deg);
   }
 }
+.header .nav .cart {
+  display: none;
+  width: 20px;
+  margin-left: 20px;
+}
+.header .nav .cart i {
+  color: #fff;
+  font-size: 20px;
+  position: relative;
+  top: 2px;
+}
+.header .nav .cart.active {
+  display: inline-block;
+}
 .header .member {
   padding: 0 20px 0 4px;
   position: absolute;
@@ -147,6 +161,41 @@
   font-size: 16px;
   background-color: #fff;
   border-radius: 4px;
+}
+.header .member .login_next {
+  position: relative;
+  float: left;
+  height: 26px;
+  line-height: 26px;
+  margin-top: 24px;
+  cursor: pointer;
+  transition: all, 0.5s;
+}
+.header .member .login_next a {
+  font-size: 14px;
+  color: #333333;
+  float: left;
+}
+.header .member .login_next a i {
+  color: #d1d1d1;
+  font-size: 24px;
+  width: 23px;
+  height: 23px;
+  margin-right: 8px;
+}
+.header .member .login_next a .red-dot {
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 18px;
+  width: 8px;
+  height: 8px;
+  background-color: #e05c46;
+  font-size: 12px;
+  border-radius: 50%;
+}
+.header .member .login_next.active {
+  display: inline;
 }
 .header .searchBox {
   display: none;

@@ -8,10 +8,11 @@ export default class extends Base {
   loginByAccount (params) {
     api.loginByAccount(params,
       (res) => {
-        if (res.code === 200) {
-          this.$store.commit('UPDATE_USERINFO', res.userInfo)
+        if (res.code === '0000') {
+          this.vm.$store.commit('UPDATE_USERINFO', res.data)
+          this.vm.$router.go(-1)
         } else {
-          this.$modal.show('dialog', {title: '提示', text: res.msg})
+          this.vm.$modal.show('dialog', {title: '提示', text: res.msg})
         }
       })
   }

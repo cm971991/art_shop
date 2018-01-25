@@ -110,6 +110,20 @@
         }
       }
     }
+    .cart {
+      display: none;
+      width: 20px;
+      margin-left: 20px;
+      i {
+        color: #fff;
+        font-size: 20px;
+        position: relative;
+        top: 2px;
+      }
+      &.active {
+        display: inline-block;
+      }
+    }
   }
   .member {
     padding: 0 20px 0 4px;
@@ -145,6 +159,41 @@
           background-color: #fff;
           border-radius: 4px;
         }
+      }
+    }
+    .login_next {
+      position: relative;
+      float: left;
+      height: 26px;
+      line-height: 26px;
+      margin-top: 24px;
+      cursor: pointer;
+      transition: all, 0.5s;
+      a {
+        font-size: 14px;
+        color: #333333;
+        float: left;
+        i {
+          color: #d1d1d1;
+          font-size: 24px;
+          width: 23px;
+          height: 23px;
+          margin-right: 8px;
+        }
+        .red-dot {
+          display: block;
+          position: absolute;
+          top: -2px;
+          left: 18px;
+          width: 8px;
+          height: 8px;
+          background-color: #e05c46;
+          font-size: 12px;
+          border-radius: 50%;
+        }
+      }
+      &.active {
+        display: inline;
       }
     }
   }

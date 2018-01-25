@@ -92,7 +92,6 @@
           return false
         }
         this.service.loginByAccount(this.formData)
-        // this.$store.commit('UPDATE_USERINFO', {userId: '1', userName: 'Hale', tooken: 'abcdef'})
         // let path = this.$route.path
         // if (path === '/login') { // 登陆页调用 提供外部回调函数
         //   this.$emit('login-success')

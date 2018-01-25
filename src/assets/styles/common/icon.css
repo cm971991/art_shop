@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont';
   /* project id 502388 */
-  src: url('//at.alicdn.com/t/font_502388_4mp895up1zag7gb9.eot');
-  src: url('//at.alicdn.com/t/font_502388_4mp895up1zag7gb9.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502388_4mp895up1zag7gb9.woff') format('woff'), url('//at.alicdn.com/t/font_502388_4mp895up1zag7gb9.ttf') format('truetype'), url('//at.alicdn.com/t/font_502388_4mp895up1zag7gb9.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_502388_lkyt0mbbpudf5hfr.eot');
+  src: url('//at.alicdn.com/t/font_502388_lkyt0mbbpudf5hfr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502388_lkyt0mbbpudf5hfr.woff') format('woff'), url('//at.alicdn.com/t/font_502388_lkyt0mbbpudf5hfr.ttf') format('truetype'), url('//at.alicdn.com/t/font_502388_lkyt0mbbpudf5hfr.svg#iconfont') format('svg');
 }
 .icon-wechat,
 .icon-facebook,
@@ -68,6 +68,16 @@
 .icon-delete,
 .icon-edit,
 .icon-checked {
+  font-family: 'iconfont', serif;
+  font-style: normal;
+  font-size: 16px;
+}
+.icon-search-cart {
+  font-family: 'iconfont', serif;
+  font-style: normal;
+  font-size: 16px;
+}
+.icon-user {
   font-family: 'iconfont', serif;
   font-style: normal;
   font-size: 16px;

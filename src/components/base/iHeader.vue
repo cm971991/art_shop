@@ -17,12 +17,19 @@
                class="closeIcon" :class="{ active : !searchFlag }">
         </a>
       </div>
+      <div class="cart" :class="{ active: logged }">
+        <i class="icon-search-cart" v-html="cartIcon"></i>
+      </div>
     </div>
     <div class="member">
-      <div class="login_prev">
-        <a>
-          <b @click="loginRedirect">登录 / 注册</b>
-        </a>
+      <div class="login_prev" :class="{ _hidden: logged }">
+        <a><b @click="loginRedirect">登录 / 注册</b></a>
+      </div>
+      <div class="login_next" :class="{ active: logged }">
+        <router-link :to="{path:'/user'}">
+          <i class="icon-user" v-html="userIcon"></i>
+          <i class="red-dot"></i>
+        </router-link>
       </div>
     </div>
     <div class="searchBox" :class="{ active : !searchFlag }">
@@ -42,6 +49,8 @@
     },
     data () {
       return {
+        cartIcon: '&#xe60c;',
+        userIcon: '&#xe606;',
         logImg: require('../../assets/images/common/logo.png'),
         logo: {name: 'index', link: '/', active: true},
         menuList: [
@@ -64,7 +73,11 @@
         this.logo.active = false
       }
     },
-    computed: {},
+    computed: {
+      logged () {
+        return !!this.$store.getters.userInfo
+      }
+    },
     methods: {
       /**
        * 菜单跳转事件

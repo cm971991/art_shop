@@ -133,7 +133,7 @@ textarea {
 .font_l {
   font-weight: lighter;
 }
-_hidden {
+._hidden {
   display: none;
 }
 .v--modal-overlay {

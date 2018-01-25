@@ -33,7 +33,6 @@ const defaultValue = deepCopy(state.search)
 const defaultBeautyValue = deepCopy(state.beautySearch)
 const defaultBrokerValue = deepCopy(state.brokerSearch)
 
-
 // getters
 const getters = {
   search: state => {
