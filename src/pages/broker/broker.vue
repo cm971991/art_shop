@@ -1,5 +1,5 @@
 <template>
-  <div class="markArt-contain">
+  <div class="broker-contain">
     <!-- region 搜索 -->
     <search></search>
     <!-- endregion 搜索 -->
@@ -30,5 +30,5 @@
 </script>
 
 <style lang="less">
-  @import "../../assets/styles/pages/makeArt";
+  @import "../../assets/styles/pages/broker";
 </style>

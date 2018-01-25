@@ -144,32 +144,32 @@
     computed: {
       computePriceData () {
         return {
-          title: this.$store.getters.beautySearch.price.title,
-          active: !!this.$store.getters.beautySearch.price.value
+          title: this.$store.getters.brokerSearch.price.title,
+          active: !!this.$store.getters.brokerSearch.price.value
         }
       },
       computeSizeData () {
         return {
-          title: this.$store.getters.beautySearch.size.title,
-          active: !!this.$store.getters.beautySearch.size.value
+          title: this.$store.getters.brokerSearch.size.title,
+          active: !!this.$store.getters.brokerSearch.size.value
         }
       },
       computeCategoryData () {
         return {
-          title: this.$store.getters.beautySearch.category.title,
-          active: !!this.$store.getters.beautySearch.category.value
+          title: this.$store.getters.brokerSearch.category.title,
+          active: !!this.$store.getters.brokerSearch.category.value
         }
       },
       computeColorData () {
         return {
-          title: this.$store.getters.beautySearch.color.title,
-          active: !!this.$store.getters.beautySearch.color.value
+          title: this.$store.getters.brokerSearch.color.title,
+          active: !!this.$store.getters.brokerSearch.color.value
         }
       },
       computeShapeData () {
         return {
-          title: this.$store.getters.beautySearch.shape.title,
-          active: !!this.$store.getters.beautySearch.shape.value
+          title: this.$store.getters.brokerSearch.shape.title,
+          active: !!this.$store.getters.brokerSearch.shape.value
         }
       }
     },
@@ -194,55 +194,55 @@
           item.active = false
         })
         self.active = true
-        let beautySearch = this.$store.getters.beautySearch
+        let brokerSearch = this.$store.getters.brokerSearch
         switch (parent.type) {
           case 'price':
-            beautySearch.price.title = self.title
-            beautySearch.price.value = self.value
+            brokerSearch.price.title = self.title
+            brokerSearch.price.value = self.value
             break
           case 'size':
-            beautySearch.size.title = self.title
-            beautySearch.size.value = self.value
+            brokerSearch.size.title = self.title
+            brokerSearch.size.value = self.value
             break
           case 'category':
-            beautySearch.category.title = self.title
-            beautySearch.category.value = self.value
+            brokerSearch.category.title = self.title
+            brokerSearch.category.value = self.value
             break
           case 'color':
-            beautySearch.color.title = self.title
-            beautySearch.color.value = self.value
+            brokerSearch.color.title = self.title
+            brokerSearch.color.value = self.value
             break
           case 'shape':
-            beautySearch.shape.title = self.title
-            beautySearch.shape.value = self.value
+            brokerSearch.shape.title = self.title
+            brokerSearch.shape.value = self.value
             break
         }
-        this.$store.commit('UPDATE_BEAUTY_SEARCH', beautySearch)
+        this.$store.commit('UPDATE_BROKER_SEARCH', brokerSearch)
       },
       /**
        * 清除某个查询条件
        * @param type 查询条件类型
        */
       clearSearch (type) {
-        let beautySearch = this.$store.getters.beautySearch
+        let brokerSearch = this.$store.getters.brokerSearch
         switch (type) {
           case 'price':
-            beautySearch.price = {title: '', value: ''}
+            brokerSearch.price = {title: '', value: ''}
             break
           case 'size':
-            beautySearch.size = {title: '', value: ''}
+            brokerSearch.size = {title: '', value: ''}
             break
           case 'color':
-            beautySearch.color = {title: '', value: ''}
+            brokerSearch.color = {title: '', value: ''}
             break
           case 'shape':
-            beautySearch.shape = {title: '', value: ''}
+            brokerSearch.shape = {title: '', value: ''}
             break
           case 'category':
-            beautySearch.category = {title: '', value: ''}
+            brokerSearch.category = {title: '', value: ''}
             break
         }
-        this.$store.commit('UPDATE_BEAUTY_SEARCH', beautySearch)
+        this.$store.commit('UPDATE_BROKER_SEARCH', brokerSearch)
       }
     }
   }

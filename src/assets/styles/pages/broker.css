@@ -1,7 +1,7 @@
-.markArt-contain {
+.broker-contain {
   position: relative;
 }
-.markArt-contain .nav-select {
+.broker-contain .nav-select {
   height: 248px;
   width: 100%;
   background-color: #fff;
@@ -9,7 +9,7 @@
   margin: 0 auto;
   overflow: hidden;
 }
-.markArt-contain .nav-select > p {
+.broker-contain .nav-select > p {
   font-size: 16px;
   font-weight: 500;
   color: #999;
@@ -18,23 +18,23 @@
   border-bottom: 4px solid #d8d8d8;
   text-align: left;
 }
-.markArt-contain .nav-select > p span {
+.broker-contain .nav-select > p span {
   position: relative;
   width: 80px;
   text-align: center;
   display: inline-block;
   cursor: pointer;
 }
-.markArt-contain .nav-select > p span + span {
+.broker-contain .nav-select > p span + span {
   margin-left: 50px;
 }
-.markArt-contain .nav-select > p span.active {
+.broker-contain .nav-select > p span.active {
   color: #000;
 }
-.markArt-contain .nav-select > p span.active:after {
+.broker-contain .nav-select > p span.active:after {
   display: block;
 }
-.markArt-contain .nav-select > p span:after {
+.broker-contain .nav-select > p span:after {
   content: '';
   height: 4px;
   position: absolute;
@@ -43,23 +43,23 @@
   width: 80px;
   display: none;
 }
-.markArt-contain .nav-select > p span:hover {
+.broker-contain .nav-select > p span:hover {
   color: #000;
 }
-.markArt-contain .nav-select ul {
+.broker-contain .nav-select ul {
   margin-top: 20px;
   font-size: 16px;
   color: #666;
 }
-.markArt-contain .nav-select ul li {
+.broker-contain .nav-select ul li {
   padding-left: 6px;
   display: none;
 }
-.markArt-contain .nav-select ul li p {
+.broker-contain .nav-select ul li p {
   text-align: left;
 }
-.markArt-contain .nav-select ul li span,
-.markArt-contain .nav-select ul li b {
+.broker-contain .nav-select ul li span,
+.broker-contain .nav-select ul li b {
   margin: 10px 40px 10px 0;
   cursor: pointer;
   box-sizing: border-box;
@@ -70,31 +70,31 @@
   line-height: 26px;
   border-radius: 13px;
 }
-.markArt-contain .nav-select ul li span:hover,
-.markArt-contain .nav-select ul li b:hover,
-.markArt-contain .nav-select ul li span.active,
-.markArt-contain .nav-select ul li b.active {
+.broker-contain .nav-select ul li span:hover,
+.broker-contain .nav-select ul li b:hover,
+.broker-contain .nav-select ul li span.active,
+.broker-contain .nav-select ul li b.active {
   color: #000;
   font-weight: bold;
 }
-.markArt-contain .nav-select ul li.sel-color p {
+.broker-contain .nav-select ul li.sel-color p {
   overflow: hidden;
 }
-.markArt-contain .nav-select ul li.sel-color p span {
+.broker-contain .nav-select ul li.sel-color p span {
   width: 46px;
   height: 26px;
   float: left;
   color: transparent;
   position: relative;
 }
-.markArt-contain .nav-select ul li.sel-color p span.active {
+.broker-contain .nav-select ul li.sel-color p span.active {
   box-shadow: 6px 3px 11px 0 rgba(0, 0, 0, 0.32), 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
 }
-.markArt-contain .nav-select ul li.sel-color p span:last-child {
+.broker-contain .nav-select ul li.sel-color p span:last-child {
   overflow: hidden;
   padding: 0;
 }
-.markArt-contain .nav-select ul li.sel-color p span:last-child a {
+.broker-contain .nav-select ul li.sel-color p span:last-child a {
   position: absolute;
   left: 0;
   top: 0;
@@ -102,7 +102,7 @@
   width: 50%;
   height: 100%;
 }
-.markArt-contain .nav-select ul li.sel-color p span:last-child i {
+.broker-contain .nav-select ul li.sel-color p span:last-child i {
   width: 50%;
   height: 100%;
   position: absolute;
@@ -110,72 +110,72 @@
   top: 0;
   background: #000;
 }
-.markArt-contain .nav-select ul li.sel-color .pink {
+.broker-contain .nav-select ul li.sel-color .pink {
   background-color: #ff8787;
 }
-.markArt-contain .nav-select ul li.sel-color .red {
+.broker-contain .nav-select ul li.sel-color .red {
   background-color: #e8343d;
 }
-.markArt-contain .nav-select ul li.sel-color .orange {
+.broker-contain .nav-select ul li.sel-color .orange {
   background-color: #ff9706;
 }
-.markArt-contain .nav-select ul li.sel-color .yellow {
+.broker-contain .nav-select ul li.sel-color .yellow {
   background-color: #ffde00;
 }
-.markArt-contain .nav-select ul li.sel-color .green {
+.broker-contain .nav-select ul li.sel-color .green {
   background-color: #1bd168;
 }
-.markArt-contain .nav-select ul li.sel-color .cyan {
+.broker-contain .nav-select ul li.sel-color .cyan {
   background-color: #04d2d3;
 }
-.markArt-contain .nav-select ul li.sel-color .blue {
+.broker-contain .nav-select ul li.sel-color .blue {
   background-color: #14a1e4;
 }
-.markArt-contain .nav-select ul li.sel-color .purple {
+.broker-contain .nav-select ul li.sel-color .purple {
   background-color: #673ab7;
 }
-.markArt-contain .nav-select ul li.sel-color .brown {
+.broker-contain .nav-select ul li.sel-color .brown {
   background-color: #804000;
 }
-.markArt-contain .nav-select ul li.sel-color .white {
+.broker-contain .nav-select ul li.sel-color .white {
   background-color: #ffffff;
   border: 1px solid #000000;
 }
-.markArt-contain .nav-select ul li.sel-shape span {
+.broker-contain .nav-select ul li.sel-shape span {
   color: transparent;
   border: 1px solid #666;
   border-radius: 0%;
 }
-.markArt-contain .nav-select ul li.sel-shape .square {
+.broker-contain .nav-select ul li.sel-shape .square {
   width: 24px;
   height: 24px;
 }
-.markArt-contain .nav-select ul li.sel-shape .la-rec {
+.broker-contain .nav-select ul li.sel-shape .la-rec {
   height: 16px;
   width: 32px;
   position: relative;
   top: 4px;
 }
-.markArt-contain .nav-select ul li.sel-shape .lo-rec {
+.broker-contain .nav-select ul li.sel-shape .lo-rec {
   height: 32px;
   width: 16px;
   position: relative;
   top: -4px;
 }
-.markArt-contain .nav-select ul li.active {
+.broker-contain .nav-select ul li.active {
   display: block;
 }
-.markArt-contain .nav-select ul li:last-child {
+.broker-contain .nav-select ul li:last-child {
   font-size: 14px;
 }
-.markArt-contain .nav-select ul li:last-child p {
+.broker-contain .nav-select ul li:last-child p {
   margin-top: 10px;
 }
-.markArt-contain .nav-select ul li:last-child .artists-box {
+.broker-contain .nav-select ul li:last-child .artists-box {
   width: 100%;
   padding-left: 6px;
 }
-.markArt-contain .nav-select ul li:last-child .artists-box span {
+.broker-contain .nav-select ul li:last-child .artists-box span {
   text-align: left;
   float: left;
   margin: 10px 30px 10px 0;
@@ -183,13 +183,13 @@
   padding: 0;
   display: inline-block;
 }
-.markArt-contain .nav-select ul li:last-child .artists-box span a {
+.broker-contain .nav-select ul li:last-child .artists-box span a {
   border-radius: 13px;
   display: inline-block;
   height: 26px;
   padding: 0 10px;
 }
-.markArt-contain .nav-select .collect-search {
+.broker-contain .nav-select .collect-search {
   border-color: #ddd;
   border-width: 1px 0;
   border-style: solid;
@@ -201,13 +201,13 @@
   left: 0;
   background-color: #f4f5f8;
 }
-.markArt-contain .nav-select .collect-search p {
+.broker-contain .nav-select .collect-search p {
   width: 100%;
   max-width: 1180px;
   margin: 0 auto;
   text-align: left;
 }
-.markArt-contain .nav-select .collect-search span {
+.broker-contain .nav-select .collect-search span {
   display: none;
   padding: 0 26px 0 12px;
   font-size: 14px;
@@ -217,7 +217,7 @@
   position: relative;
   line-height: 28px;
 }
-.markArt-contain .nav-select .collect-search span i {
+.broker-contain .nav-select .collect-search span i {
   width: 10px;
   font-size: 10px;
   color: #ccc;
@@ -226,17 +226,17 @@
   top: 2px;
   cursor: pointer;
 }
-.markArt-contain .nav-select .collect-search span + span {
+.broker-contain .nav-select .collect-search span + span {
   display: none;
   margin-left: 8px;
 }
-.markArt-contain .nav-select .collect-search span + span.active {
+.broker-contain .nav-select .collect-search span + span.active {
   display: inline-block;
 }
-.markArt-contain .nav-select .collect-search span.active {
+.broker-contain .nav-select .collect-search span.active {
   display: inline-block;
 }
-.markArt-contain .nav-select .collect-search span:after {
+.broker-contain .nav-select .collect-search span:after {
   content: " ";
   width: 1px;
   height: 28px;
@@ -245,32 +245,32 @@
   right: 19px;
   background-color: rgba(255, 255, 255, 0.2);
 }
-.markArt-contain .all-works {
+.broker-contain .all-works {
   padding-bottom: 125px;
 }
-.markArt-contain .all-works .container {
+.broker-contain .all-works .container {
   margin: 0 auto;
   max-width: 1200px;
   display: block;
 }
-.markArt-contain .all-works .container .img-box .detail {
+.broker-contain .all-works .container .img-box .detail {
   position: relative;
   padding: 12px 0 0 0;
   text-align: left;
 }
-.markArt-contain .all-works .container .img-box .detail .qmBox {
+.broker-contain .all-works .container .img-box .detail .qmBox {
   display: flex;
 }
-.markArt-contain .all-works .container .img-box .detail .qmBox .qmImg {
+.broker-contain .all-works .container .img-box .detail .qmBox .qmImg {
   height: 26px;
   top: 85px;
   left: 18px;
 }
-.markArt-contain .all-works .container .img-box .detail .qmBox .price {
+.broker-contain .all-works .container .img-box .detail .qmBox .price {
   margin-top: 5px;
   padding-left: 10px;
 }
-.markArt-contain .all-works .container .img-box .detail p {
+.broker-contain .all-works .container .img-box .detail p {
   color: #666666;
   font-size: 12px;
   line-height: 20px;
@@ -282,7 +282,7 @@
   white-space: nowrap;
   font-style: italic;
 }
-.markArt-contain .all-works .container .img-box .detail p .price {
+.broker-contain .all-works .container .img-box .detail p .price {
   margin-top: 10px;
   color: black;
   font-size: 14px;
@@ -290,31 +290,31 @@
   margin-bottom: 20px;
   font-style: normal;
 }
-.markArt-contain .all-works .container .img-box .detail p:nth-child(1) {
+.broker-contain .all-works .container .img-box .detail p:nth-child(1) {
   font-style: normal;
   margin-bottom: 8px;
 }
-.markArt-contain .all-works .container .img-box .detail div {
+.broker-contain .all-works .container .img-box .detail div {
   margin-top: 10px;
   padding: 0 20px;
 }
-.markArt-contain .all-works .container .detail {
+.broker-contain .all-works .container .detail {
   position: relative;
   padding: 12px 0 0 0;
 }
-.markArt-contain .all-works .container .detail .qmBox {
+.broker-contain .all-works .container .detail .qmBox {
   display: flex;
 }
-.markArt-contain .all-works .container .detail .qmBox .qmImg {
+.broker-contain .all-works .container .detail .qmBox .qmImg {
   height: 26px;
   top: 85px;
   left: 18px;
 }
-.markArt-contain .all-works .container .detail .qmBox .price {
+.broker-contain .all-works .container .detail .qmBox .price {
   margin-top: 5px;
   padding-left: 10px;
 }
-.markArt-contain .all-works .container .detail p {
+.broker-contain .all-works .container .detail p {
   color: #666666;
   font-size: 12px;
   line-height: 20px;
@@ -326,7 +326,7 @@
   white-space: nowrap;
   font-style: italic;
 }
-.markArt-contain .all-works .container .detail p.price {
+.broker-contain .all-works .container .detail p.price {
   margin-top: 10px;
   color: black;
   font-size: 14px;
@@ -334,19 +334,19 @@
   margin-bottom: 20px;
   font-style: normal;
 }
-.markArt-contain .all-works .container .detail p:nth-child(1) {
+.broker-contain .all-works .container .detail p:nth-child(1) {
   font-style: normal;
   margin-bottom: 8px;
 }
-.markArt-contain .all-works .container .detail p:nth-child(1) a {
+.broker-contain .all-works .container .detail p:nth-child(1) a {
   color: #000;
   font-weight: 600;
 }
-.markArt-contain .all-works .container .detail div {
+.broker-contain .all-works .container .detail div {
   margin-top: 10px;
   padding: 0 20px;
 }
-.markArt-contain .all-works .container::after {
+.broker-contain .all-works .container::after {
   visibility: hidden;
   display: block;
   font-size: 0;
@@ -354,7 +354,7 @@
   clear: both;
   height: 0;
 }
-.markArt-contain .all-works ul {
+.broker-contain .all-works ul {
   color: #000;
   width: 100%;
   max-width: 1200px;
@@ -362,7 +362,7 @@
   font-size: 0;
   display: none;
 }
-.markArt-contain .all-works ul li {
+.broker-contain .all-works ul li {
   display: inline-block;
   width: 81px;
   background-color: #fff;
@@ -372,10 +372,10 @@
   font-size: 20px;
   cursor: pointer;
 }
-.markArt-contain .all-works ul li.prev {
+.broker-contain .all-works ul li.prev {
   display: none;
 }
-.markArt-contain .all-works ul li.next {
+.broker-contain .all-works ul li.next {
   text-decoration: none;
   color: #fff;
   background-color: #000;
@@ -387,29 +387,29 @@
   float: right;
   margin-right: 20px;
 }
-.markArt-contain .all-works ul li.next:hover {
+.broker-contain .all-works ul li.next:hover {
   background-color: #000;
 }
-.markArt-contain .all-works ul li.disabled {
+.broker-contain .all-works ul li.disabled {
   color: #777;
   cursor: not-allowed;
   background-color: #fff;
   border-color: #ddd;
 }
-.markArt-contain .all-works ul li.disabled:hover {
+.broker-contain .all-works ul li.disabled:hover {
   background-color: #fff;
   border-color: #ddd;
 }
-.markArt-contain .all-works ul li.active {
+.broker-contain .all-works ul li.active {
   background-color: #000;
   color: #fff;
 }
-.markArt-contain .all-works ul li.active:hover {
+.broker-contain .all-works ul li.active:hover {
   background-color: #000;
 }
-.markArt-contain .all-works ul li:hover {
+.broker-contain .all-works ul li:hover {
   background-color: #ccc;
 }
-.markArt-contain .all-works ul.active {
+.broker-contain .all-works ul.active {
   display: block;
 }

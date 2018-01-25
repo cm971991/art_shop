@@ -14,16 +14,25 @@ const state = {
     page: ''
   },
   beautySearch: {
-    price: '',
-    size: '',
-    category: '',
-    color: '',
-    shape: ''
+    price: {title: '', value: ''},
+    size: {title: '', value: ''},
+    category: {title: '', value: ''},
+    color: {title: '', value: ''},
+    shape: {title: '', value: ''}
+  },
+  brokerSearch: {
+    price: {title: '', value: ''},
+    size: {title: '', value: ''},
+    category: {title: '', value: ''},
+    color: {title: '', value: ''},
+    shape: {title: '', value: ''}
   }
 }
 
-const defaultValue = deepCopy(state)
-const defaultBeautyValue = deepCopy(state)
+const defaultValue = deepCopy(state.search)
+const defaultBeautyValue = deepCopy(state.beautySearch)
+const defaultBrokerValue = deepCopy(state.brokerSearch)
+
 
 // getters
 const getters = {
@@ -32,6 +41,9 @@ const getters = {
   },
   beautySearch: state => {
     return state.beautySearch
+  },
+  brokerSearch: state => {
+    return state.brokerSearch
   }
 }
 
@@ -48,6 +60,12 @@ const mutations = {
   },
   [types.UPDATE_BEAUTY_SEARCH] (state, direction) {
     state.beautySearch = direction
+  },
+  [types.INIT_BROKER_SEARCH] () {
+    window.$globalHub.$store.state.brokerSearch = defaultBrokerValue
+  },
+  [types.UPDATE_BROKER_SEARCH] (state, direction) {
+    state.brokerSearch = direction
   }
 }
 

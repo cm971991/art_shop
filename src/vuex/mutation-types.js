@@ -28,6 +28,18 @@ export const INIT_SEARCH = 'INIT_SEARCH'
 export const UPDATE_BEAUTY_SEARCH = 'UPDATE_BEAUTY_SEARCH'
 
 /**
+ * 重置经纪人专享查询条件
+ * @type {string}
+ */
+export const INIT_BROKER_SEARCH = 'INIT_BROKER_SEARCH'
+
+/**
+ * 经纪人专享查询条件
+ * @type {string}
+ */
+export const UPDATE_BROKER_SEARCH = 'UPDATE_BROKER_SEARCH'
+
+/**
  * 重置美物查询条件
  * @type {string}
  */

@@ -10,6 +10,8 @@ import Cart from '../pages/shopping/cart'
 import OrderPay from '../pages/order/orderPay/orderPay'
 import OrderDetail from '../pages/order/orderDetail/orderDetail'
 import MakeArt from '../pages/makeArt/MakeArt'
+import Broker from '../pages/broker/broker'
+import UserWish from '../pages/userWish/userWish'
 
 Vue.use(Router)
 export const defaultTitle = '爱艺'
@@ -80,6 +82,18 @@ export const router = new Router({
       name: 'makeArt',
       meta: {title: '美物-爱艺', showNav: true, footer: 'default'},
       component: MakeArt
+    },
+    {
+      path: '/broker',
+      name: 'broker',
+      meta: {title: '经纪人专享-爱艺', showNav: true, footer: 'default'},
+      component: Broker
+    },
+    {
+      path: '/userWish',
+      name: 'userWish',
+      meta: {title: '我的珍藏-爱艺', showNav: true, footer: 'default'},
+      component: UserWish
     }
   ]
 })
