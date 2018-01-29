@@ -11,7 +11,21 @@
       transition: left 1s, top 1s;
 
       .img-inner-box {
+        position: relative;
         box-shadow: 0 1px 3px rgba(0, 0, 0, .3);
+        .close {
+          box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+          position: absolute;
+          top: -10px;
+          right: -10px;
+          width: 20px;
+          height: 20px;
+          line-height: 18px;
+          border-radius: 20px;
+          color: red;
+          background-color: #fff;
+          z-index: 2;
+        }
         .img-wraper {
           width: 100%;
           background: #999999;
@@ -82,6 +96,8 @@
     :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
     )
       .img-inner-box
+        div.close(click="play()",v-if="closeBtn")
+          span='x'
         div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")
           img(v-lazy="v.src")
         .img-info
@@ -115,6 +131,10 @@
       timeOut: { // 预加载事件小于500毫秒就不显示加载动画，增加用户体验
         type: Number,
         default: 500
+      },
+      closeBtn: {
+        type: Boolean,
+        default: false
       }
     },
     data () {
@@ -203,6 +223,9 @@
         var columnCount = parseInt(winWidth / this.colWidth)
         columnCount = columnCount === 0 ? 1 : columnCount
         this.columnCount = this.isMobile ? 2 : (columnCount > this.maxCols ? this.maxCols : columnCount)
+      },
+      close () {
+        console.log('close:')
       }
     },
     mounted () {

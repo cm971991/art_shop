@@ -1,3 +1,4 @@
+const CryptoJS = require('crypto-js')
 import axios from 'axios'
 
 function successParse (res, load) {
@@ -24,10 +25,15 @@ function errorParse (ex, load) {
 }
 
 function send (url, method, body, options, load, loadMsg) {
+  let time = (new Date()).Format("YYYYMMddHHmm")
   const opts = {...options}
   opts.headers = {
     'Accept': 'application/json',
     'Content-Type': 'application/json',
+    'appId': '',
+    'sign': '',
+    'timestamp': time,
+    'os': 'PC',
     ...opts.headers
   }
   switch (method) {

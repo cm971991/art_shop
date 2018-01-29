@@ -1,0 +1,101 @@
+.discover-detail-contain {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 0 40px;
+  background-color: #f2f2f2;
+}
+.discover-detail-contain .detail-box {
+  width: 100%;
+  max-width: 840px;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 40px 60px;
+  background-color: #fff;
+}
+.discover-detail-contain .detail-box h1 {
+  width: 100%;
+  text-align: left;
+  margin-bottom: 20px;
+}
+.discover-detail-contain .detail-box .other-info {
+  width: 100%;
+  height: 30px;
+  margin-bottom: 40px;
+}
+.discover-detail-contain .detail-box .other-info .left {
+  height: 100%;
+  line-height: 30px;
+  float: left;
+}
+.discover-detail-contain .detail-box .other-info .left img {
+  width: 25px;
+  height: 25px;
+  float: left;
+  border-radius: 30px;
+  margin-right: 10px;
+}
+.discover-detail-contain .detail-box .other-info .left div {
+  margin-right: 10px;
+  float: left;
+  font-size: 16px;
+  color: #808080;
+}
+.discover-detail-contain .detail-box .other-info .right {
+  height: 100%;
+  line-height: 30px;
+  float: right;
+}
+.discover-detail-contain .detail-box .other-info .right span {
+  font-size: 16px;
+  color: #808080;
+}
+.discover-detail-contain .detail-box .begin-row {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  margin-bottom: 40px;
+  padding: 20px 0;
+  background-color: #f2f2f2;
+  color: #808080;
+  font-size: 16px;
+  text-align: left;
+}
+.discover-detail-contain .detail-box .begin-row span {
+  padding: 0 20px;
+}
+.discover-detail-contain .detail-box .main-body {
+  width: 100%;
+  margin-bottom: 40px;
+}
+.discover-detail-contain .detail-box .main-body span {
+  letter-spacing: 2px;
+  line-height: 150%;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.discover-detail-contain .detail-box .main-body img {
+  width: auto;
+  height: auto;
+  margin-bottom: 20px;
+}
+.discover-detail-contain .detail-box .share-row {
+  height: 100px;
+  width: 650px;
+  margin: 0 auto;
+}
+.discover-detail-contain .detail-box .share-row > div {
+  width: 50px;
+  height: 50px;
+  margin-right: 100px;
+  float: left;
+}
+.discover-detail-contain .detail-box .share-row > div img {
+  width: 100%;
+  height: 100%;
+}
+.discover-detail-contain .detail-box .share-row > div img:hover {
+  cursor: pointer;
+}
+.discover-detail-contain .detail-box .share-row > div:last-child {
+  margin-right: 0;
+}

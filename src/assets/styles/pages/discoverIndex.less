@@ -1,0 +1,125 @@
+.discover-index-contain {
+  width: 100%;
+  max-width: 960px ;
+  margin: 0 auto;
+  padding: 40px 0 200px;
+  .list-big-box {
+    height: 280px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #777;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    .photo-row {
+      width: 100%;
+      height: 160px;
+      margin-bottom: 10px;
+      & > div {
+        width: 32%;
+        height: 160px;
+        float: left;
+        margin-right: 2%;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 4px;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      & > div:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  .list-small-box {
+    height: 130px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 0 5px #777;
+    padding: 20px 40px;
+    margin-bottom: 20px;
+    .left-img {
+      float: left;
+      width: 200px;
+      height: 130px;
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 4px;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .right-info {
+      float: right;
+      width: 700px;
+      height: 130px;
+      h4 {
+        margin-bottom: 40px;
+      }
+    }
+  }
+  .other-info {
+    width: 100%;
+    height: 30px;
+    .left {
+      height: 100%;
+      line-height: 30px;
+      float: left;
+      img {
+        width: 25px;
+        height: 25px;
+        float: left;
+        border-radius: 30px;
+        margin-right: 10px;
+      }
+      div {
+        margin-right: 10px;
+        float: left;
+        font-size: 16px;
+        color: #808080;
+      }
+    }
+    .right {
+      height: 100%;
+      line-height: 30px;
+      float: right;
+      i {
+        font-size: 20px;
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      span {
+        font-size: 18px;
+        color: #808080;
+      }
+    }
+  }
+  h2 {
+    margin-bottom: 6px;
+    color: #333;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  h4 {
+    margin-bottom: 16px;
+    font-size: 18px;
+    color: #808080;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

@@ -1,6 +1,6 @@
 <template>
   <div class="MyContain">
-    <h1>我的珍藏</h1>
+
   </div>
 </template>
 
@@ -20,5 +20,7 @@
 </script>
 
 <style lang="less">
-  @import "../../assets/styles/pages/userWish";
+  .MyContain {
+    background-color: #fff;
+  }
 </style>

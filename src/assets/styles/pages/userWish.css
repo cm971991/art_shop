@@ -1,0 +1,117 @@
+.userWish-contain .container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: block;
+}
+.userWish-contain .container .img-box .img-inner-box {
+  transition: background 0.2s;
+}
+.userWish-contain .container .img-box .img-inner-box .detail {
+  position: relative;
+  padding: 12px 0 0 0;
+  text-align: left;
+}
+.userWish-contain .container .img-box .img-inner-box .detail .qmBox {
+  display: flex;
+}
+.userWish-contain .container .img-box .img-inner-box .detail .qmBox .qmImg {
+  height: 26px;
+  top: 85px;
+  left: 18px;
+}
+.userWish-contain .container .img-box .img-inner-box .detail .qmBox .price {
+  margin-top: 5px;
+  padding-left: 0;
+  color: black;
+  font-size: 14px;
+}
+.userWish-contain .container .img-box .img-inner-box .detail p {
+  color: #666666;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 20px;
+  height: 20px;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
+.userWish-contain .container .img-box .img-inner-box .detail p .price {
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+.userWish-contain .container .img-box .img-inner-box .detail p:nth-child(1) {
+  font-style: normal;
+  margin-bottom: 8px;
+}
+.userWish-contain .container .img-box .img-inner-box .detail div {
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.userWish-contain .container .img-box .img-inner-box:hover {
+  box-shadow: rgba(0, 0, 0, 0.5) 0 0 20px;
+  background: #FFF;
+}
+.userWish-contain .container .detail {
+  position: relative;
+  padding: 12px 0 0 0;
+}
+.userWish-contain .container .detail .qmBox {
+  display: flex;
+}
+.userWish-contain .container .detail .qmBox .qmImg {
+  height: 26px;
+  top: 85px;
+  left: 18px;
+}
+.userWish-contain .container .detail .qmBox .price {
+  margin-top: 5px;
+  padding-left: 0;
+  color: black;
+  font-size: 14px;
+}
+.userWish-contain .container .detail p {
+  color: #666666;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 20px;
+  height: 20px;
+  width: 80%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
+.userWish-contain .container .detail p.price {
+  margin-top: 10px;
+  color: black;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-style: normal;
+}
+.userWish-contain .container .detail p:nth-child(1) {
+  font-style: normal;
+  margin-bottom: 8px;
+}
+.userWish-contain .container .detail p:nth-child(1) a {
+  color: #000;
+  font-weight: 600;
+}
+.userWish-contain .container .detail div {
+  margin-top: 10px;
+  padding: 0 20px;
+}
+.userWish-contain .container:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
