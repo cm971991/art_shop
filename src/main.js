@@ -24,6 +24,7 @@ router.afterEach((to) => {
   }
   setTimeout(() => {
     commit('SHOW_NAV', to.meta.showNav)
+    commit('UPDATE_NAVTYPE', to.meta.navType)
     commit('UPDATE_FOOTER', to.meta.footer)
   }, 100)
 })

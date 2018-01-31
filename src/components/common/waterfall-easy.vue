@@ -1,4 +1,3 @@
-<!-- —————————————↓LESS———————分界线————————————————————————— -->
 <style lang="less">
   .vue-waterfall-easy {
     position: relative;
@@ -84,29 +83,6 @@
     }
   }
 </style>
-
-<!-- —————————————↓HTML————————分界线———————————————————————— -->
-<!--<template lang="pug">-->
-<!--.vue-waterfall-easy(-->
-<!--:style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}"-->
-<!--)-->
-<!--a.img-box(-->
-<!--v-for="(v,i) in imgsArrC",-->
-<!--:href="v.link+'/artworks/'+v.id" target="_blank",-->
-<!--:style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"-->
-<!--)-->
-<!--.img-inner-box-->
-<!--div.close(v-if="closeBtn")-->
-<!--span='x'-->
-<!--div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")-->
-<!--img(v-lazy="v.src")-->
-<!--.img-info-->
-<!--slot(:item="v")-->
-
-<!--.loading(v-if="isPreloadingC",:class="{'first-loading':isFirstTIme}")-->
-<!--div.double-bounce1-->
-<!--div.double-bounce2-->
-<!--</template>-->
 <template>
   <div class="vue-waterfall-easy"
        :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}">
@@ -133,7 +109,6 @@
     </div>
   </div>
 </template>
-<!-- ——————————————↓JS—————————分界线———————————————————————— -->
 <script>
   export default {
     name: 'vue-waterfall-easy',

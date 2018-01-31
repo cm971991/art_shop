@@ -1,3 +1,65 @@
 .userCollect-contain {
-
+  .container {
+    margin: 0 auto;
+    max-width: 1200px;
+    margin-top: 20px;
+    display: block;
+    .item-box {
+      width: 430px;
+      height: 230px;
+      margin: 20px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      display: inline-block;
+      .left {
+        width: 180px;
+        height: 100%;
+        img {
+          width: 180px;
+          height: 100%;
+        }
+      }
+      .middle {
+        width: 180px;
+        height: 200px;
+        text-align: left;
+        padding: 15px;
+        h4 {
+          &:nth-child(2) {
+            color: #808080;
+            margin-bottom: 60px;
+          }
+        }
+        h5 {
+          color: #808080;
+        }
+        h4, h5 {
+          margin-bottom: 6px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+      .right {
+        width: 40px;
+        height: 100%;
+        background-color: #916D71;
+        span {
+          width: 20px;
+          display: inline-block;
+          margin: 0 auto;
+          height: 80px;
+          margin-top: 75px;
+          color: #fff;
+          font-weight: 500;
+        }
+        &:hover {
+          cursor: pointer;
+        }
+      }
+      & > div {
+        float: left;
+        display: inline-block;
+      }
+    }
+  }
 }

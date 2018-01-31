@@ -1,6 +1,6 @@
 <template>
   <div class="userWish-contain">
-    <navigation :navType="navType"></navigation>
+    <navigation :userNavType="userNavType"></navigation>
     <div class="container">
       <vue-waterfall-easy :imgsArr="productList"
                           :gap="92" :maxCols="3"
@@ -41,7 +41,7 @@
     components: {navigation, vueWaterfallEasy},
     data () {
       return {
-        navType: 'userWish',
+        userNavType: 'userWish',
         productList: []
       }
     },

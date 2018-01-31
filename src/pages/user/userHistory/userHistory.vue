@@ -1,6 +1,6 @@
 <template>
   <div class="userHistory-contain">
-    <navigation :navType="navType"></navigation>
+    <navigation :userNavType="userNavType"></navigation>
     <section class="clearfix">
       <div class="my-center">
         <div class="my-travel clearfix">
@@ -40,7 +40,7 @@
     data () {
       return {
         downIcon: '&#xe64b;',
-        navType: 'userHistory',
+        userNavType: 'userHistory',
         historyList: []
       }
     },

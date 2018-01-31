@@ -1,13 +1,15 @@
 <template>
   <div class="header" v-show="showNav">
-    <div class="logo" :class="{ active:logo.active }">
+    <div class="logo" :class="{ active:navType === 'logo' }">
       <a @click="menuRedirect(logo)">
         <img v-lazy="logImg">
       </a>
     </div>
+
+    <!-- region 导航栏 -->
     <div class="nav">
       <template v-for="(item,index) in menuList">
-        <a :class="{ active : item.active }" @click="menuRedirect(item)" :key="index">{{ item.name }}</a>
+        <a :class="{ active : item.type === navType }" @click="menuRedirect(item)" :key="index">{{ item.name }}</a>
       </template>
       <div class="search">
         <a @click="search($event)">
@@ -21,6 +23,9 @@
         <i class="icon-search-cart" v-html="cartIcon"></i>
       </div>
     </div>
+    <!-- endregion 导航栏 -->
+
+    <!-- region 登录按钮 -->
     <div class="member">
       <div class="login-prev" :class="{ active: userInfo }">
         <a><b @click="loginRedirect">登录 / 注册</b></a>
@@ -47,9 +52,13 @@
         </div>
       </div>
     </div>
+    <!-- endregion 登录按钮 -->
+
+    <!-- region 搜索框 -->
     <div class="searchBox" :class="{ active : !searchFlag }">
       <input placeholder="搜索艺术家或艺术品">
     </div>
+    <!-- endregion 搜索框 -->
   </div>
 </template>
 
@@ -70,13 +79,13 @@
         cartIcon: '&#xe60c;',
         userIcon: '&#xe606;',
         logImg: require('../../assets/images/common/logo.png'),
-        logo: {name: 'index', link: '/', active: true},
+        logo: {name: 'index', link: '/', type: 'logo'},
         menuList: [
-          {name: '原创艺术', link: '/buy', active: false},
-          {name: '美物', link: '/makeArt', active: false},
-          {name: '发现', link: '/discovery/index', active: false},
-          {name: '我的珍藏', link: '/user/userWish', active: false},
-          {name: '经纪人专享', link: '/broker', active: false}
+          {name: '原创艺术', link: '/buy', type: 'buy'},
+          {name: '美物', link: '/makeArt', type: 'makeArt'},
+          {name: '发现', link: '/discovery/index', type: 'discovery'},
+          {name: '我的珍藏', link: '/user/userWish', type: 'userWish'},
+          {name: '经纪人专享', link: '/broker', type: 'broker'}
         ],
         searchFlag: true
       }
@@ -93,15 +102,13 @@
     },
     computed: {
       ...mapState({
-        userInfo: function (state) {
-          let flag = isEmptyObject(state.userInfo.userInfo)
-          console.log('flag:', flag)
+        userInfo: (state) => {
           return isEmptyObject(state.userInfo.userInfo)
+        },
+        navType: (state) => {
+          return state.global.navType
         }
-      }),
-      logged () {
-        return !!this.$store.state.userInfo
-      }
+      })
     },
     methods: {
       /**
@@ -109,11 +116,7 @@
        * @param item
        */
       menuRedirect (item) {
-        this.logo.active = false
-        this.menuList.forEach((val) => {
-          val.active = false
-        })
-        item.active = true
+        this.$store.commit('UPDATE_NAVTYPE', item.type)
         this.$router.push({path: item.link})
         return false
       },

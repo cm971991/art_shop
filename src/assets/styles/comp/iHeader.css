@@ -259,6 +259,10 @@
   font-weight: normal !important;
   float: left;
 }
+.header .member .login-next .login-hover ul li a:hover {
+  font-weight: bold !important;
+  color: #000;
+}
 .header .member .login-next .login-hover ul li:last-child a {
   border-bottom: 0;
 }

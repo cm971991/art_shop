@@ -6,13 +6,13 @@
           <img :src="collectImg">
         </span>
       </a>
-      <router-link :to="{path:'/user/userCollect'}" :class="{ active: navType === 'userCollect' }">
+      <router-link :to="{path:'/user/userCollect'}" :class="{ active: userNavType === 'userCollect' }">
         <span class="nav-title">藏品</span>
       </router-link>
-      <router-link :to="{path:'/user/userWish'}" :class="{ active: navType === 'userWish' }">
+      <router-link :to="{path:'/user/userWish'}" :class="{ active: userNavType === 'userWish' }">
         <span class="nav-title">心愿单</span>
       </router-link>
-      <router-link :to="{path:'/user/userHistory'}" :class="{ active: navType === 'userHistory' }">
+      <router-link :to="{path:'/user/userHistory'}" :class="{ active: userNavType === 'userHistory' }">
         <span class="nav-title">足迹</span>
       </router-link>
     </div>
@@ -22,7 +22,7 @@
 <script>
   export default {
     props: {
-      navType: {
+      userNavType: {
         type: String,
         default: ''
       }

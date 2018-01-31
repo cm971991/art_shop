@@ -3,6 +3,13 @@
  * @type {string}
  */
 export const SHOW_NAV = 'SHOW_NAV'
+
+/**
+ * 头部导航类型
+ * @type {string}
+ */
+export const UPDATE_NAVTYPE = 'UPDATE_NAVTYPE'
+
 /**
  * footer类型
  * @type {string}

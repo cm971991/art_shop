@@ -1,0 +1,62 @@
+.userCollect-contain .container {
+  margin: 0 auto;
+  max-width: 1200px;
+  margin-top: 20px;
+  display: block;
+}
+.userCollect-contain .container .item-box {
+  width: 430px;
+  height: 230px;
+  margin: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  display: inline-block;
+}
+.userCollect-contain .container .item-box .left {
+  width: 180px;
+  height: 100%;
+}
+.userCollect-contain .container .item-box .left img {
+  width: 180px;
+  height: 100%;
+}
+.userCollect-contain .container .item-box .middle {
+  width: 180px;
+  height: 200px;
+  text-align: left;
+  padding: 15px;
+}
+.userCollect-contain .container .item-box .middle h4:nth-child(2) {
+  color: #808080;
+  margin-bottom: 60px;
+}
+.userCollect-contain .container .item-box .middle h5 {
+  color: #808080;
+}
+.userCollect-contain .container .item-box .middle h4,
+.userCollect-contain .container .item-box .middle h5 {
+  margin-bottom: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.userCollect-contain .container .item-box .right {
+  width: 40px;
+  height: 100%;
+  background-color: #916D71;
+}
+.userCollect-contain .container .item-box .right span {
+  width: 20px;
+  display: inline-block;
+  margin: 0 auto;
+  height: 80px;
+  margin-top: 75px;
+  color: #fff;
+  font-weight: 500;
+}
+.userCollect-contain .container .item-box .right:hover {
+  cursor: pointer;
+}
+.userCollect-contain .container .item-box > div {
+  float: left;
+  display: inline-block;
+}

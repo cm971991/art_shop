@@ -90,15 +90,16 @@
         <a href="http://pages.ywart.com/howtobuy">如何购买</a>
         <a href="/about_us">关于我们</a>
         <a href="/common/webmap">网站地图</a>
-        <span><img
-          src="https://www.ywart.com/svg_file?path=/Content/image/logo_footer.svg&amp;rgb=0,0,0"></span>
+        <span>
+          <img src="https://www.ywart.com/svg_file?path=/Content/image/logo_footer.svg&amp;rgb=0,0,0">
+        </span>
       </p>
       <p>京ICP备16003461号&nbsp;Copyright © 2015-2016 爱艺YWART.COM 版权所有</p>
     </div>
   </div>
 </template>
 
-<script type="text/ecmascript-6">
+<script>
   export default {
     components: {},
     props: {

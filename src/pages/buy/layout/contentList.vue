@@ -18,8 +18,12 @@
       </select>
     </div>
     <div class="container">
-      <vue-waterfall-easy :imgsArr="productList" :gap="92" :maxCols="3" :imgWidth="300"
-                          @scrollLoadImg="fetchData">
+      <vue-waterfall-easy :imgsArr="productList"
+                          :gap="92"
+                          :maxCols="3"
+                          :imgWidth="300"
+                          @scrollLoadImg="fetchData"
+                          @waterfallSkip="waterfallSkip">
         <div class="detail" slot-scope="props">
           <p>
             <router-link :to="{ path: '/artist/' + props.item.id +''}" target="_blank">{{ props.item.artist }}
@@ -144,6 +148,9 @@
           return
         }
         this.productList = this.productList.concat(this.initList(10, 20))
+      },
+      waterfallSkip (item) {
+        window.open('#/artworks/' + item.id)
       },
       clickCallback (pageNum) {
         console.log(pageNum)
