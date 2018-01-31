@@ -83,6 +83,7 @@
 .header .nav .search {
   display: inline-block;
   width: 20px;
+  cursor: pointer;
 }
 .header .nav .search a img {
   position: relative;
@@ -124,6 +125,7 @@
 }
 .header .nav .cart.active {
   display: inline-block;
+  cursor: pointer;
 }
 .header .member {
   padding: 0 20px 0 4px;
@@ -131,14 +133,15 @@
   top: 0;
   right: 100px;
 }
-.header .member .login_prev {
+.header .member .login-prev {
   position: relative;
   right: -40px;
   width: 248px;
   height: 68px;
   background-size: contain;
+  display: none;
 }
-.header .member .login_prev a {
+.header .member .login-prev a {
   height: 68px;
   line-height: 68px;
   color: #fff;
@@ -148,7 +151,7 @@
   text-decoration: none;
   margin-left: 10px;
 }
-.header .member .login_prev a b {
+.header .member .login-prev a b {
   position: relative;
   right: -126px;
   font-weight: normal;
@@ -162,7 +165,14 @@
   background-color: #fff;
   border-radius: 4px;
 }
-.header .member .login_next {
+.header .member .login-prev a b:hover {
+  cursor: pointer;
+}
+.header .member .login-prev.active {
+  display: block;
+}
+.header .member .login-next {
+  display: none;
   position: relative;
   float: left;
   height: 26px;
@@ -171,19 +181,19 @@
   cursor: pointer;
   transition: all, 0.5s;
 }
-.header .member .login_next a {
+.header .member .login-next a {
   font-size: 14px;
   color: #333333;
   float: left;
 }
-.header .member .login_next a i {
+.header .member .login-next a i {
   color: #d1d1d1;
   font-size: 24px;
   width: 23px;
   height: 23px;
   margin-right: 8px;
 }
-.header .member .login_next a .red-dot {
+.header .member .login-next a .red-dot {
   display: block;
   position: absolute;
   top: -2px;
@@ -194,8 +204,81 @@
   font-size: 12px;
   border-radius: 50%;
 }
-.header .member .login_next.active {
+.header .member .login-next .login-hover {
+  float: left;
+  height: 26px;
+  border-right: 2px solid #dddddd;
+  line-height: 26px;
+  margin-top: 27px;
+  cursor: pointer;
+  transition: all, 0.5s;
+  margin-right: 0;
+  padding-right: 0;
+  border-right: 0;
+  position: absolute;
+  top: -7px;
+  left: -80px;
+  width: 100%;
+  z-index: 9999;
+  display: none;
+  min-width: 140px;
+}
+.header .member .login-next .login-hover ul {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  margin: 0;
+  padding: 0;
+  background: #FFF;
+  border-radius: 5px;
+  overflow: hidden;
+  z-index: 999;
+  position: relative;
+}
+.header .member .login-next .login-hover ul li {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+.header .member .login-next .login-hover ul li a {
+  display: block;
+  text-decoration: none;
+  height: 50px;
+  line-height: 50px;
+  width: 100%;
+  background: transparent;
+  padding-left: 16px;
+  margin: 0;
+  text-align: left;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EEE;
+  font-size: 16px;
+  transition: all, 0.2s;
+  color: #666;
+  font-weight: normal !important;
+  float: left;
+}
+.header .member .login-next .login-hover ul li:last-child a {
+  border-bottom: 0;
+}
+.header .member .login-next .login-hover > i {
+  width: 15px;
+  height: 15px;
+  display: block;
+  position: relative;
+  top: 8px;
+  left: 64%;
+  margin-left: -7px;
+  background: #FFF;
+  transform: rotate(45deg);
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+}
+.header .member .login-next.active {
   display: inline;
+}
+.header .member .login-next:hover .login-hover {
+  display: block;
 }
 .header .searchBox {
   display: none;

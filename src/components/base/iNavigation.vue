@@ -53,6 +53,7 @@
       height: 100%;
       max-width: 1366px;
       margin: 0 auto;
+      text-align: left;
       a {
         display: inline-block;
         height: 100%;

@@ -2,8 +2,13 @@
   <div class="userWish-contain">
     <navigation :navType="navType"></navigation>
     <div class="container">
-      <vue-waterfall-easy :imgsArr="productList" :gap="92" :maxCols="3" :imgWidth="300" :close-btn="true"
-                          @scrollLoadImg="fetchData">
+      <vue-waterfall-easy :imgsArr="productList"
+                          :gap="92" :maxCols="3"
+                          :imgWidth="300"
+                          :close-btn="true"
+                          @scrollLoadImg="fetchData"
+                          @waterfallSkip="waterfallSkip"
+                          @waterfallClose="waterfallClose">
         <div class="detail" slot-scope="props">
           <p>
             <router-link :to="{ path: '/artist/' + props.item.id +''}" target="_blank">{{ props.item.artist }}
@@ -49,12 +54,29 @@
     },
     computed: {},
     methods: {
+      initList (n, m) {
+        let arr = []
+        let listLength = this.productList.length
+        if (listLength < m) {
+          m = listLength
+        }
+        for (let i = n; i < m; i++) {
+          arr.push(this.productList[i])
+        }
+        return arr
+      },
       fetchData () {
         if (this.productList.length > 40) {
           this.paginateShow = true
           return
         }
         this.productList = this.productList.concat(this.initList(10, 20))
+      },
+      waterfallSkip (item) {
+        window.open('#/artworks/' + item.id)
+      },
+      waterfallClose () {
+        console.log('waterfallClose1')
       }
     }
   }

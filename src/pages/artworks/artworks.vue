@@ -219,7 +219,7 @@
       addCart () {
         let userInfo = this.$store.getters.userInfo
         if (userInfo && userInfo.userId && userInfo.tooken) {
-          this.$router.push({path: '/cart'})
+          this.$router.push({path: '/shopping/cart'})
         } else {
           this.$store.commit('SHOW_LOGIN', true)
         }

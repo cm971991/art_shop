@@ -1,6 +1,6 @@
 <template>
-  <div class="userCollect-contain">
-
+  <div class="userOrder-contain">
+    <h1>我的订单</h1>
   </div>
 </template>
 
@@ -20,5 +20,5 @@
 </script>
 
 <style lang="less">
-
+  @import "../../../assets/styles/pages/userOrder";
 </style>

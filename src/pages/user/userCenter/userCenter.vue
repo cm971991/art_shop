@@ -1,6 +1,6 @@
 <template>
-  <div class="userCollect-contain">
-
+  <div class="userCenter-contain">
+    <h1>会员中心</h1>
   </div>
 </template>
 
@@ -20,5 +20,5 @@
 </script>
 
 <style lang="less">
-
+  @import "../../../assets/styles/pages/userCenter";
 </style>

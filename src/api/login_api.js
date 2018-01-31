@@ -1,5 +1,6 @@
 import url from './api_config'
 import ex from './exception'
+import {loginData} from '../mock'
 
 export default {
   /**
@@ -10,6 +11,7 @@ export default {
   loginByAccount (params, successFunc) {
     window.$globalHub.$api.xHttp.post(url.getUrl('loginByAccount'), params)
       .then(res => {
+        console.log('loginData:', loginData)
         successFunc(res)
       })
       .catch((e) => {

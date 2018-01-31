@@ -1,0 +1,92 @@
+.userHistory-contain {
+  .my-center {
+    min-height: 600px;
+    .my-travel {
+      margin-top: 20px;
+      .item {
+        margin: 20px 0 50px;
+        .date {
+          margin: 0 15px;
+          border-bottom: 4px solid #000;
+          span {
+            padding: 0;
+            margin: 0;
+            color: #000;
+            font-size: 18px;
+            height: 33px;
+            line-height: 33px;
+            border: 4px solid #000;
+            border-bottom: 0;
+            width: 164px;
+            text-align: center;
+            display: block;
+            letter-spacing: 4px;
+          }
+        }
+        .content {
+          padding: 30px 15px;
+          position: relative;
+          border-bottom: 1px solid #e9e9e9;
+          transition: background 0.5s;
+          .category {
+            width: 137px;
+            display: block;
+            text-align: center;
+            line-height: 140px;
+            color: #000;
+            font-weight: lighter;
+            font-size: 14px;
+            float: left;
+            position: absolute;
+            left: 15px;
+            top: 30px;
+            background: #ededed;
+            transition: background 0.5s;
+          }
+          .list {
+            float: left;
+            margin-left: 137px;
+            height: 142px;
+            overflow: hidden;
+            ul {
+              margin: 0;
+              padding: 0;
+              li {
+                padding-right: 20px;
+                padding-bottom: 25px;
+                height: 140px;
+                float: left;
+                .thumb {
+                  height: 140px;
+                  float: left;
+                  img {
+                    height: 100%;
+                  }
+                }
+              }
+            }
+            .more {
+              width: 83px;
+              height: 140px;
+              line-height: 140px;
+              position: absolute;
+              right: 15px;
+              top: 30px;
+              text-align: center;
+              color: #666;
+              display: block;
+              text-decoration: none;
+              background: #ededed;
+              i {
+                font-size: 30px;
+              }
+            }
+          }
+          &:last-child {
+            border: 0;
+          }
+        }
+      }
+    }
+  }
+}

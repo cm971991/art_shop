@@ -104,7 +104,7 @@
 </template>
 
 <script>
-  import cartList from '../../../static/data/shopping/cartList'
+  import cartList from '../../../../static/data/shopping/cartList'
 
   export default {
     components: {},
@@ -249,5 +249,5 @@
 </script>
 
 <style lang="less">
-  @import "../../assets/styles/pages/cart";
+  @import "../../../assets/styles/pages/cart";
 </style>

@@ -70,3 +70,11 @@ export function groupBy (xs, key) {
     return rv
   }, {})
 }
+
+export function isEmptyObject (e) {
+  let t;
+  for (t in e) {
+    return !1;
+  }
+  return !0
+}

@@ -86,26 +86,52 @@
 </style>
 
 <!-- —————————————↓HTML————————分界线———————————————————————— -->
-<template lang="pug">
-  .vue-waterfall-easy(
-  :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}"
-  )
-    a.img-box(
-    v-for="(v,i) in imgsArrC",
-    :href="v.link+'/artworks/'+v.id" target="_blank",
-    :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
-    )
-      .img-inner-box
-        div.close(click="play()",v-if="closeBtn")
-          span='x'
-        div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")
-          img(v-lazy="v.src")
-        .img-info
-          slot(:item="v")
+<!--<template lang="pug">-->
+<!--.vue-waterfall-easy(-->
+<!--:style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}"-->
+<!--)-->
+<!--a.img-box(-->
+<!--v-for="(v,i) in imgsArrC",-->
+<!--:href="v.link+'/artworks/'+v.id" target="_blank",-->
+<!--:style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"-->
+<!--)-->
+<!--.img-inner-box-->
+<!--div.close(v-if="closeBtn")-->
+<!--span='x'-->
+<!--div.img-wraper(:style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}")-->
+<!--img(v-lazy="v.src")-->
+<!--.img-info-->
+<!--slot(:item="v")-->
 
-    .loading(v-if="isPreloadingC",:class="{'first-loading':isFirstTIme}")
-      div.double-bounce1
-      div.double-bounce2
+<!--.loading(v-if="isPreloadingC",:class="{'first-loading':isFirstTIme}")-->
+<!--div.double-bounce1-->
+<!--div.double-bounce2-->
+<!--</template>-->
+<template>
+  <div class="vue-waterfall-easy"
+       :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}">
+    <template v-for="(v,i) in imgsArrC">
+      <div class="img-box"
+           :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
+           @click="skip(v)">
+        <div class="img-inner-box">
+          <div class="close" v-if="closeBtn" @click="close($event)">
+            <span>x</span>
+          </div>
+          <div class="img-wraper" :style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}">
+            <img v-lazy="v.src">
+          </div>
+          <div class="img-info">
+            <slot :item="v"></slot>
+          </div>
+        </div>
+      </div>
+    </template>
+    <div class="loading" :class="{'first-loading':isFirstTIme}" v-if="isPreloadingC">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
 </template>
 <!-- ——————————————↓JS—————————分界线———————————————————————— -->
 <script>
@@ -224,8 +250,16 @@
         columnCount = columnCount === 0 ? 1 : columnCount
         this.columnCount = this.isMobile ? 2 : (columnCount > this.maxCols ? this.maxCols : columnCount)
       },
-      close () {
-        console.log('close:')
+      skip (item) {
+        this.$emit('waterfallSkip', item)
+      },
+      close (e) {
+        let _child = e.toElement.parentElement.parentElement
+        let _parent = _child.parentElement
+        _parent.removeChild(_child)
+        e.stopPropagation()
+        // this.$router.go(0)
+        this.$emit('waterfallClose')
       }
     },
     mounted () {

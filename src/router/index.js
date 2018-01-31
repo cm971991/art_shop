@@ -6,14 +6,16 @@ import Buy from '../pages/buy/buy'
 import Artworks from '../pages/artworks/artworks'
 import Artist from '../pages/artist/artist'
 import Solicitation from '../pages/solicitation/solicitation'
-import Cart from '../pages/shopping/cart'
-import OrderPay from '../pages/order/orderPay/orderPay'
-import OrderDetail from '../pages/order/orderDetail/orderDetail'
+import Cart from '../pages/shopping/cart/cart'
+import OrderPay from '../pages/shopping/orderPay/orderPay'
+import OrderDetail from '../pages/shopping/orderDetail/orderDetail'
 import MakeArt from '../pages/makeArt/MakeArt'
 import Broker from '../pages/broker/broker'
 import UserWish from '../pages/user/userWish/userWish'
 import UserCollect from '../pages/user/userCollect/userCollect'
 import UserHistory from '../pages/user/userHistory/userHistory'
+import UserCenter from '../pages/user/userCenter/userCenter'
+import UserOrder from '../pages/user/userOrder/userOrder'
 import DiscoveryIndex from '../pages/discovery/index/index'
 import DiscoveryDetail from '../pages/discovery/detail/detail'
 
@@ -64,7 +66,7 @@ export const router = new Router({
       component: Solicitation
     },
     {
-      path: '/cart',
+      path: '/shopping/cart',
       name: 'cart',
       meta: {title: '购物车-爱艺', showNav: true, footer: 'none'},
       component: Cart
@@ -110,6 +112,18 @@ export const router = new Router({
       name: 'userHistory',
       meta: {title: '我的珍藏-爱艺', showNav: true, footer: 'default'},
       component: UserHistory
+    },
+    {
+      path: '/user/userCenter',
+      name: 'userCenter',
+      meta: {title: '会员中心-爱艺', showNav: true, footer: 'default'},
+      component: UserCenter
+    },
+    {
+      path: '/user/userOrder',
+      name: 'userOrder',
+      meta: {title: '我的订单-爱艺', showNav: true, footer: 'default'},
+      component: UserOrder
     },
     {
       path: '/discovery/index',

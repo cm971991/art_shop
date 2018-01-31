@@ -17,19 +17,34 @@
                class="closeIcon" :class="{ active : !searchFlag }">
         </a>
       </div>
-      <div class="cart" :class="{ active: logged }">
+      <div class="cart" :class="{ active: !userInfo }" @click="cartRedirect">
         <i class="icon-search-cart" v-html="cartIcon"></i>
       </div>
     </div>
     <div class="member">
-      <div class="login_prev" :class="{ _hidden: logged }">
+      <div class="login-prev" :class="{ active: userInfo }">
         <a><b @click="loginRedirect">登录 / 注册</b></a>
       </div>
-      <div class="login_next" :class="{ active: logged }">
-        <router-link :to="{path:'/user'}">
+      <div class="login-next" :class="{ active: !userInfo }">
+        <router-link :to="{path:'/user/userCenter'}">
           <i class="icon-user" v-html="userIcon"></i>
           <i class="red-dot"></i>
         </router-link>
+        <div class="login-hover">
+          <i></i>
+          <ul>
+            <li>
+              <router-link :to="{path:'/user/userCenter'}">会员中心</router-link>
+            </li>
+            <li>
+              <router-link :to="{path:'/user/userOrder'}">我的订单</router-link>
+            </li>
+            <li>
+              <router-link :to="{path:'/shopping/cart'}">我的购物车</router-link>
+            </li>
+            <li><a @click="exit">退出</a></li>
+          </ul>
+        </div>
       </div>
     </div>
     <div class="searchBox" :class="{ active : !searchFlag }">
@@ -39,6 +54,9 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex'
+  import {isEmptyObject} from '../../assets/utils/util'
+
   export default {
     components: {},
     props: {
@@ -74,8 +92,15 @@
       }
     },
     computed: {
+      ...mapState({
+        userInfo: function (state) {
+          let flag = isEmptyObject(state.userInfo.userInfo)
+          console.log('flag:', flag)
+          return isEmptyObject(state.userInfo.userInfo)
+        }
+      }),
       logged () {
-        return !!this.$store.getters.userInfo
+        return !!this.$store.state.userInfo
       }
     },
     methods: {
@@ -100,6 +125,13 @@
         return false
       },
       /**
+       * 退出登录
+       */
+      exit () {
+        this.$store.commit('INIT_USERINFO')
+        return false
+      },
+      /**
        * 查询
        */
       search (e) {
@@ -116,6 +148,12 @@
           }, 200)
         }
         return false
+      },
+      /**
+       * 跳转到购物车
+       */
+      cartRedirect () {
+        this.$router.push({path: '/shopping/cart'})
       }
     }
   }

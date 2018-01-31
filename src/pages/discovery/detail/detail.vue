@@ -23,7 +23,7 @@
       </div>
       <div class="share-row">
         <template v-for="(item,index) in shareList">
-          <div><img :src="item.imgUrl" @click="share(item.type)"/></div>
+          <div :key="index"><img :src="item.imgUrl" @click="share(item.type)"/></div>
         </template>
       </div>
     </div>
