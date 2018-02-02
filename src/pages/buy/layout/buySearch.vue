@@ -1,34 +1,34 @@
 <template>
-    <div class="buy-search">
+  <div class="buy-search">
         <span class="price" :class="{ active : computePriceData.active }">{{ computePriceData.value }}
-            <i class="icon-close-small" v-html="closeIcon" @click="clearSearch('price')"></i>
+            <i class="icon-close" v-html="closeIcon" @click="clearSearch('price')"></i>
         </span>
-        <span class="size" :class="{ active : computeSizeData.active }">{{ computeSizeData.value }}
+    <span class="size" :class="{ active : computeSizeData.active }">{{ computeSizeData.value }}
             <i class="icon-close" v-html="closeIcon" @click="clearSearch('size')"></i>
         </span>
-        <span class="color" :class="[{ active : computeColorData.active }, computeColorData.value]">{{ computeColorData.displayName }}
+    <span class="color" :class="[{ active : computeColorData.active }, computeColorData.value]">{{ computeColorData.displayName }}
             <i class="icon-close" v-html="closeIcon" @click="clearSearch('color')"></i>
         </span>
-        <span class="shape" :class="{ active : computeShapeData.active }">{{ computeShapeData.displayName }}
+    <span class="shape" :class="{ active : computeShapeData.active }">{{ computeShapeData.displayName }}
             <i class="icon-close" v-html="closeIcon" @click="clearSearch('shape')"></i>
         </span>
-        <span class="space" :class="{ active : computeSpaceData.active }">{{ computeSpaceData.value }}
+    <span class="space" :class="{ active : computeSpaceData.active }">{{ computeSpaceData.value }}
             <i class="icon-close" v-html="closeIcon" @click="clearSearch('space')"></i>
         </span>
-        <span class="category" :class="{ active : computeCategoryData.active }">{{ computeCategoryData.value }}
+    <span class="category" :class="{ active : computeCategoryData.active }">{{ computeCategoryData.value }}
             <i class="icon-close" v-html="closeIcon" @click="clearSearch('category')"></i>
         </span>
-        <span class="style" :class="{ active : computeStyleData.active }">{{ computeStyleData.value }}
+    <span class="style" :class="{ active : computeStyleData.active }">{{ computeStyleData.value }}
             <i class="icon-close" v-html="closeIcon" @click="clearSearch('style')"></i>
         </span>
-        <input type="reset" class="s-reset" value="重置" @click="resetSearch">
-        <div>
-            <i class="icon-search" v-html="searchIcon"></i>
-            <input type="text" class="search" placeholder="搜索艺术家或艺术品">
-        </div>
-        <button class="sure">开始筛选</button>
-        <a class="changeModel">高级筛选<i class="icon-down-arrow" v-html="downIcon"></i></a>
+    <input type="reset" class="s-reset" value="重置" @click="resetSearch">
+    <div>
+      <i class="icon-search" v-html="searchIcon"></i>
+      <input type="text" class="search" placeholder="搜索艺术家或艺术品">
     </div>
+    <button class="sure">开始筛选</button>
+    <!--<a class="changeModel">高级筛选<i class="icon-down-arrow" v-html="downIcon"></i></a>-->
+  </div>
 </template>
 
 <script>
@@ -43,7 +43,8 @@
     },
     created () {
     },
-    mounted () {},
+    mounted () {
+    },
     computed: {
       computePriceData () {
         return {value: this.$store.getters.search.price, active: !!this.$store.getters.search.price}

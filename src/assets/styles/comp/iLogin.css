@@ -41,6 +41,8 @@
   height: 20px;
   top: 5px;
   right: 5px;
+  font-size: 20px;
+  cursor: pointer;
 }
 .page-login .page-login-box .page-login-dialog .login-dialog {
   display: block;
@@ -150,6 +152,11 @@
   border-radius: 50%;
   font-size: 20px;
   text-decoration: none;
+}
+.page-login .page-login-box .page-login-dialog .login-dialog .login-third a i {
+  color: #3a8373;
+  font-size: 24px;
+  cursor: pointer;
 }
 .page-login .page-login-box .page-login-dialog .login-dialog .tip {
   position: absolute;

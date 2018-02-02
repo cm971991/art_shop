@@ -17,6 +17,8 @@
 }
 .buy-art .simple .choice-left .price i {
   margin-left: -30px;
+  font-size: 10px;
+  cursor: pointer;
 }
 .buy-art .simple .choice-left .size i {
   margin-left: -20px;

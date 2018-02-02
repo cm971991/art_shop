@@ -160,13 +160,13 @@
 
         .top-right {
           float: left;
-          margin-top: 7px;
           p {
             text-align: left;
           }
           i {
             margin-right: 20px;
             color: #fff;
+            font-size: 24px;
             &.icon-wechat:hover + img {
               display: block;
             }
@@ -184,6 +184,7 @@
             margin-top: 20px;
             i {
               margin-right: 15px;
+              font-size: 18px;
             }
           }
         }

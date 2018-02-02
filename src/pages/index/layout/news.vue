@@ -110,6 +110,8 @@
           margin-right: 5px;
           color: #003569;
           vertical-align: middle;
+          font-size: 20px;
+          cursor: pointer;
         }
         span {
           font-size: 16px;

@@ -44,7 +44,7 @@ export const router = new Router({
     {
       path: '/buy',
       name: 'buy',
-      meta: {title: '原创艺术-爱艺', showNav: true, navType: 'buy', footer: 'none'},
+      meta: {title: '原创艺术-爱艺', showNav: true, navType: 'buy', footer: 'simple'},
       component: Buy
     },
     {

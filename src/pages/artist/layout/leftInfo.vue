@@ -39,7 +39,3 @@
     methods: {}
   }
 </script>
-
-<style lang="less">
-
-</style>

@@ -225,9 +225,17 @@
         columnCount = columnCount === 0 ? 1 : columnCount
         this.columnCount = this.isMobile ? 2 : (columnCount > this.maxCols ? this.maxCols : columnCount)
       },
+      /**
+       * 外层div 点击跳转事件
+       * @param item
+       */
       skip (item) {
         this.$emit('waterfallSkip', item)
       },
+      /**
+       * 关闭按钮 点击事件
+       * @param e
+       */
       close (e) {
         let _child = e.toElement.parentElement.parentElement
         let _parent = _child.parentElement
