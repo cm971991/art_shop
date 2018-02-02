@@ -90,8 +90,8 @@
   float: left;
 }
 .discover-detail-contain .detail-box .share-row > div img {
-  width: 100%;
-  height: 100%;
+  width: 30px;
+  height: 30px;
 }
 .discover-detail-contain .detail-box .share-row > div img:hover {
   cursor: pointer;

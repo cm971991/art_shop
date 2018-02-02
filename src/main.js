@@ -17,6 +17,12 @@ Vue.config.productionTip = false
 Vue.use(Util)
 
 const commit = store.commit
+
+router.beforeEach(function (to, from, next) {
+  window.scrollTo(0, 0)
+  next()
+})
+
 router.afterEach((to) => {
   // 设置标题
   if (to.meta.title || defaultTitle !== document.title) {

@@ -1,8 +1,8 @@
 @font-face {
   font-family: 'iconfont';
   /* project id 502388 */
-  src: url('//at.alicdn.com/t/font_502388_60lbi69zh4nm6lxr.eot');
-  src: url('//at.alicdn.com/t/font_502388_60lbi69zh4nm6lxr.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502388_60lbi69zh4nm6lxr.woff') format('woff'), url('//at.alicdn.com/t/font_502388_60lbi69zh4nm6lxr.ttf') format('truetype'), url('//at.alicdn.com/t/font_502388_60lbi69zh4nm6lxr.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_502388_z0qfg4b3gb3ayvi.eot');
+  src: url('//at.alicdn.com/t/font_502388_z0qfg4b3gb3ayvi.eot?#iefix') format('embedded-opentype'), url('//at.alicdn.com/t/font_502388_z0qfg4b3gb3ayvi.woff') format('woff'), url('//at.alicdn.com/t/font_502388_z0qfg4b3gb3ayvi.ttf') format('truetype'), url('//at.alicdn.com/t/font_502388_z0qfg4b3gb3ayvi.svg#iconfont') format('svg');
 }
 .icon-wechat,
 .icon-facebook,
@@ -79,7 +79,9 @@
 }
 .icon-user,
 .icon-collect,
-.icon-collected {
+.icon-collected,
+.icon-qrcode,
+.icon-arrow-top {
   font-family: 'iconfont', serif;
   font-style: normal;
   font-size: 16px;

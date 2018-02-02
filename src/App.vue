@@ -4,6 +4,7 @@
     <router-view/>
     <i-footer :type="global.footerType"></i-footer>
     <i-login :show-dialog="login.loginDialogIsShow"></i-login>
+    <i-services></i-services>
     <v-dialog/>
   </div>
 </template>
@@ -12,11 +13,12 @@
   import iHeader from './components/base/iHeader'
   import iFooter from './components/base/iFooter'
   import iLogin from './components/base/iLogin'
+  import iServices from './components/base/iServices'
   import {mapState} from 'vuex'
 
   export default {
     components: {
-      iHeader, iFooter, iLogin
+      iHeader, iFooter, iLogin, iServices
     },
     data () {
       return {}

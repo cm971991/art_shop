@@ -23,7 +23,7 @@
       </div>
       <div class="share-row">
         <template v-for="(item,index) in shareList">
-          <div :key="index"><img :src="item.imgUrl" @click="share(item.type)"/></div>
+          <div :key="index"><img :src="item.imgUrl" @click="share(item)"/></div>
         </template>
       </div>
     </div>
@@ -37,11 +37,11 @@
       return {
         img: require('../../../../static/images/buy/content/content_9.jpg'),
         shareList: [
-          {imgUrl: require('../../../assets/images/pages/disconver/wechat.png'), type: 'weChat'},
-          {imgUrl: require('../../../assets/images/pages/disconver/qq.png'), type: 'qq'},
-          {imgUrl: require('../../../assets/images/pages/disconver/sina.png'), type: 'sina'},
-          {imgUrl: require('../../../assets/images/pages/disconver/zan.png'), type: 'collect'},
-          {imgUrl: require('../../../assets/images/pages/disconver/collect.png'), type: 'collect'}
+          {imgUrl: require('../../../assets/images/pages/disconver/wechat.png'), active: false, type: 'weChat'},
+          {imgUrl: require('../../../assets/images/pages/disconver/qq.png'), active: false, type: 'qq'},
+          {imgUrl: require('../../../assets/images/pages/disconver/sina.png'), active: false, type: 'sina'},
+          {imgUrl: require('../../../assets/images/pages/disconver/zan.png'), active: false, type: 'zan'},
+          {imgUrl: require('../../../assets/images/pages/disconver/collect.png'), active: false, type: 'collect'}
         ]
       }
     },
@@ -50,7 +50,23 @@
     mounted () {
     },
     computed: {},
-    methods: {}
+    methods: {
+      share (item) {
+        if (item.type === 'collect') {
+          if (!item.active) {
+            item.imgUrl = require('../../../assets/images/pages/disconver/collected.png')
+          } else {
+            item.imgUrl = require('../../../assets/images/pages/disconver/collect.png')
+          }
+        } else if (item.type === 'zan') {
+          if (!item.active) {
+            item.imgUrl = require('../../../assets/images/pages/disconver/zaned.png')
+          } else {
+            item.imgUrl = require('../../../assets/images/pages/disconver/zan.png')
+          }
+        }
+      }
+    }
   }
 </script>
 
