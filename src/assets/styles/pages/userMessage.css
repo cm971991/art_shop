@@ -53,6 +53,9 @@
   height: 66px;
   overflow-y: hidden;
 }
+.userMessage-contain .uc-content .main-block .messages a:hover {
+  cursor: pointer;
+}
 .userMessage-contain .uc-content .more-history-msg {
   box-sizing: border-box;
   padding: 5px 20px;

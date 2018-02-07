@@ -24,12 +24,12 @@
       this.$nextTick(() => {
         this.menuList = [
           {link: '/user/userMessage', title: '消息', imgUrl: require('../../assets/images/pages/user/userMessage.svg')},
-          {link: '/user/information', title: '基本信息', imgUrl: require('../../assets/images/pages/user/information.svg')},
-          {link: '/user/securitySet', title: '安全设置', imgUrl: require('../../assets/images/pages/user/securitySet.svg')},
-          {link: '/user/order', title: '我的订单', imgUrl: require('../../assets/images/pages/user/order.svg')},
-          {link: '/user/address', title: '收货地址', imgUrl: require('../../assets/images/pages/user/address.svg')},
-          {link: '/user/voucher', title: '代金券', imgUrl: require('../../assets/images/pages/user/voucher.svg')},
-          {link: '/user/faq', title: '常见问题', imgUrl: require('../../assets/images/pages/user/faq.svg')},
+          {link: '/user/userInfo', title: '基本信息', imgUrl: require('../../assets/images/pages/user/information.svg')},
+          {link: '/user/userSecurity', title: '安全设置', imgUrl: require('../../assets/images/pages/user/securitySet.svg')},
+          {link: '/user/userOrder', title: '我的订单', imgUrl: require('../../assets/images/pages/user/order.svg')},
+          {link: '/user/userAddress', title: '收货地址', imgUrl: require('../../assets/images/pages/user/address.svg')},
+          {link: '/user/userVoucher', title: '代金券', imgUrl: require('../../assets/images/pages/user/voucher.svg')},
+          {link: '/user/userFQA', title: '常见问题', imgUrl: require('../../assets/images/pages/user/faq.svg')},
           {link: '/user/howToBuy', title: '如何购买', imgUrl: require('../../assets/images/pages/user/howtobuy.svg')},
           {link: '/user/contactUs', title: '联系我们', imgUrl: require('../../assets/images/pages/user/contactUs.svg')}
         ]

@@ -167,8 +167,8 @@ export const router = new Router({
       component: UserAddress
     },
     {
-      path: '/user/UserFQA',
-      name: 'UserFQA',
+      path: '/user/userFQA',
+      name: 'userFQA',
       meta: {title: '常见问题-爱艺', showNav: true, navType: '', footer: 'default'},
       component: UserFQA
     },
