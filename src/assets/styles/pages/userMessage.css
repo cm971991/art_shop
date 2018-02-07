@@ -1,0 +1,122 @@
+.userMessage-contain {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.userMessage-contain .uc-content {
+  border-left: 1px solid #ddd;
+  padding-left: 40px;
+  min-height: 660px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left: 244px;
+  min-width: 956px;
+}
+.userMessage-contain .uc-content h2 {
+  padding-left: 22px;
+  font-size: 24px;
+  font-weight: 500;
+  font-style: normal;
+  color: #333;
+  line-height: 44px;
+  text-align: left;
+}
+.userMessage-contain .uc-content .main-block {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  padding-top: 20px;
+  margin-bottom: 20px;
+}
+.userMessage-contain .uc-content .main-block .messages a {
+  display: block;
+  position: relative;
+  width: 770px;
+  height: 120px;
+  border-radius: 20px;
+  border: solid 1px #ddd;
+  box-sizing: border-box;
+  padding: 10px 20px 15px 40px;
+  font-size: 12px;
+  margin-bottom: 20px;
+  cursor: default;
+}
+.userMessage-contain .uc-content .main-block .messages a div {
+  text-align: left;
+}
+.userMessage-contain .uc-content .main-block .messages a div .msg-time {
+  color: #999;
+}
+.userMessage-contain .uc-content .main-block .messages a div .msg-content {
+  margin-top: 10px;
+  line-height: 1.8;
+  height: 66px;
+  overflow-y: hidden;
+}
+.userMessage-contain .uc-content .more-history-msg {
+  box-sizing: border-box;
+  padding: 5px 20px;
+  border-radius: 15px;
+  border: solid 1px #ddd;
+  text-align: center;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+}
+.userMessage-contain .uc-content ul.pagination {
+  color: #000;
+  max-width: 770px;
+  height: 50px;
+  margin-top: 40px;
+  font-size: 0;
+  display: block;
+}
+.userMessage-contain .uc-content ul.pagination li {
+  display: inline-block;
+  width: 81px;
+  background-color: #fff;
+  height: 50px;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.userMessage-contain .uc-content ul.pagination li.prev {
+  display: none;
+}
+.userMessage-contain .uc-content ul.pagination li.next {
+  text-decoration: none;
+  color: #fff;
+  background-color: #000;
+  text-align: center;
+  line-height: 50px;
+  font-size: 20px;
+  display: inline-block;
+  margin-right: 20px;
+}
+.userMessage-contain .uc-content ul.pagination li.next:hover {
+  background-color: #000;
+}
+.userMessage-contain .uc-content ul.pagination li.disabled {
+  color: #777;
+  cursor: not-allowed;
+  background-color: #fff;
+  border-color: #ddd;
+}
+.userMessage-contain .uc-content ul.pagination li.disabled:hover {
+  background-color: #fff;
+  border-color: #ddd;
+}
+.userMessage-contain .uc-content ul.pagination li.active {
+  background-color: #000;
+  color: #fff;
+}
+.userMessage-contain .uc-content ul.pagination li.active:hover {
+  background-color: #000;
+}
+.userMessage-contain .uc-content ul.pagination li:hover {
+  background-color: #ccc;
+}
+.userMessage-contain .uc-content ul.pagination.active {
+  display: block;
+}

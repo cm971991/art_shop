@@ -1,0 +1,346 @@
+.userCenter-contain {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.userCenter-contain .uc-content {
+  border-left: 1px solid #ddd;
+  padding-left: 40px;
+  min-height: 660px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left: 244px;
+  min-width: 956px;
+}
+.userCenter-contain .uc-content .top-info {
+  padding-top: 18px;
+  padding-left: 20px;
+  text-align: left;
+}
+.userCenter-contain .uc-content .top-info .welcome {
+  font-size: 20px;
+}
+.userCenter-contain .uc-content .top-info .welcome img {
+  width: 40px;
+  vertical-align: middle;
+}
+.userCenter-contain .uc-content .top-info .member-info {
+  padding-top: 40px;
+  font-size: 14px;
+  color: #333333;
+}
+.userCenter-contain .uc-content .top-info .member-info img.thumb_o {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  vertical-align: top;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box {
+  padding-left: 63px;
+  display: inline-block;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level {
+  height: 85px;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level img {
+  margin-right: 5px;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level a {
+  margin-left: 40px;
+  color: #CF680A;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines {
+  display: inline-block;
+  width: 420px;
+  margin-left: 20px;
+  padding-top: 7px;
+  position: relative;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .line-back {
+  width: 100%;
+  height: 4px;
+  background-color: #ddd;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-line {
+  background-color: #000;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 5px;
+  transition: width, 1s;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-line div {
+  position: absolute;
+  right: -20px;
+  top: -56px;
+  width: 40px;
+  height: 40px;
+  box-sizing: border-box;
+  border: solid 2px #CF680A;
+  border-radius: 50%;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-line div img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  border: solid 2px #fff;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-line div:before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border: solid 2px #CF680A;
+  border-left: solid 2px transparent;
+  border-top: solid 2px transparent;
+  background-clip: content-box;
+  background-color: #fff;
+  transform-origin: 0 100%;
+  transform: rotate(45deg);
+  position: absolute;
+  bottom: 0;
+  left: 11px;
+  box-sizing: border-box;
+  z-index: 1;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li {
+  display: inline-block;
+  width: 40px;
+  vertical-align: top;
+  margin-top: -7px;
+  margin-left: -20px;
+  text-align: center;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li div {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  box-sizing: border-box;
+  border: 1px solid transparent;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li div span {
+  margin-top: 2px;
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: #ddd;
+  border-radius: 50%;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li div.active {
+  border: 1px solid #000;
+  background-color: #fff;
+  border-radius: 50%;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li div.active span {
+  background-color: #000;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li img {
+  display: block;
+  width: 100%;
+  margin: auto 0;
+  vertical-align: top;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li span {
+  display: block;
+  width: 100%;
+  font-size: 10px;
+  vertical-align: top;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .member-level .level-lines .level-info li + li {
+  margin-left: 60px;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher {
+  line-height: 20px;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher .bonus {
+  margin-right: 62px;
+  display: inline-block;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher .bonus img {
+  margin-right: 5px;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher .bonus .bonus-num {
+  font-size: 16px;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher .bonus a {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #CF680A;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher .voucher {
+  display: inline-block;
+}
+.userCenter-contain .uc-content .top-info .member-info .right-box .bonus-voucher .voucher .voucher-num {
+  color: #CF680A;
+}
+.userCenter-contain .uc-content .top-info .member-info img,
+.userCenter-contain .uc-content .top-info .member-info span {
+  vertical-align: middle;
+}
+.userCenter-contain .uc-content .order-list {
+  margin-top: 40px;
+  padding-bottom: 0;
+}
+.userCenter-contain .uc-content .order-list .order-item {
+  width: 390px;
+  height: 216px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 1px 14px 0 rgba(0, 0, 0, 0.1);
+  display: block;
+  float: left;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-title {
+  width: 100%;
+  height: 46px;
+  background-color: #000;
+  font-size: 12px;
+  color: #ffffff;
+  line-height: 46px;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-title span {
+  padding: 0 20px;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-content {
+  padding: 25px 20px;
+  height: 170px;
+  box-sizing: border-box;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-content img {
+  float: right;
+  width: 120px;
+  height: 120px;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-content .info {
+  position: relative;
+  height: 100%;
+  box-sizing: border-box;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-content .info .artwork-name {
+  font-size: 16px;
+  text-align: left;
+}
+.userCenter-contain .uc-content .order-list .order-item .order-content .info .price {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item,
+.userCenter-contain .uc-content .travel-list .artwork-item {
+  float: left;
+  position: relative;
+  word-spacing: normal;
+  margin-right: 12px;
+  width: 180px;
+  height: 256px;
+  overflow: hidden;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .img,
+.userCenter-contain .uc-content .travel-list .artwork-item .img {
+  width: 100%;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .img img,
+.userCenter-contain .uc-content .travel-list .artwork-item .img img {
+  width: 100%;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box {
+  width: 100%;
+  height: 76px;
+  display: table-cell;
+  color: #666;
+  font-size: 12px;
+  text-align: left;
+  vertical-align: middle;
+  line-height: 18px;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box a,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box a {
+  color: #666;
+  text-decoration: none;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box h3,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box h3,
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box h4,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box h4 {
+  color: #666;
+  font-size: 12px;
+  font-weight: 500;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box p,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box p {
+  text-align: left;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box h4,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box h4 {
+  display: inline-block;
+  vertical-align: top;
+  max-width: 138px;
+}
+.userCenter-contain .uc-content .wish-list .artwork-item .info-box h4 a,
+.userCenter-contain .uc-content .travel-list .artwork-item .info-box h4 a {
+  display: block;
+  white-space: nowrap;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.userCenter-contain .uc-content .wish-list .go-wish-list,
+.userCenter-contain .uc-content .travel-list .go-wish-list {
+  display: block;
+  width: 72px;
+  float: left;
+  height: 180px;
+  background-color: #eee;
+  position: relative;
+}
+.userCenter-contain .uc-content .wish-list .go-wish-list p,
+.userCenter-contain .uc-content .travel-list .go-wish-list p {
+  position: absolute;
+  margin: auto;
+  width: 18px;
+  line-height: 22px;
+  height: 44px;
+  font-size: 16px;
+  text-align: center;
+  color: #999999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.userCenter-contain .uc-content .section-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  padding: 6px;
+  line-height: 22px;
+  padding-left: 20px;
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  box-sizing: border-box;
+}
+.userCenter-contain .uc-content .section-content {
+  width: 100%;
+  padding: 30px 20px;
+}

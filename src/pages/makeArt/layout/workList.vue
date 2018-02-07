@@ -5,22 +5,22 @@
                           @scrollLoadImg="fetchData">
         <div class="detail" slot-scope="props">
           <p>
-            <router-link :to="{ path: '/artist/' + props.item.id +''}" target="_blank">{{ props.item.artist }}
+            <router-link :to="{ path: '/artist/' + props.item.brandId +''}" target="_blank">{{ props.item.brandName }}
             </router-link>
           </p>
           <p>
-            <router-link :to="{ path: '/artworks/' + props.item.id +''}" target="_blank">{{ props.item.name }}
+            <router-link :to="{ path: '/artworks/' + props.item.goodsId +''}" target="_blank">{{ props.item.goodsName }}
             </router-link>
-            &nbsp;&nbsp;<span>{{  props.item.date }}</span>
+            &nbsp;&nbsp;<span>{{  props.item.createTime }}</span>
           </p>
           <p>
-            <span>{{ props.item.type }}</span>&nbsp;&nbsp;&nbsp;
-            <span>{{ props.item.size }}</span>
+            <span>{{ props.item.cateName }}</span>&nbsp;&nbsp;&nbsp;
+            <!--<span>{{ props.item }}</span>-->
           </p>
           <div class="qmBox">
             <img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"
                  class="qmImg">
-            <p class="price">¥{{ props.item.price }}</p>
+            <p class="price">¥ {{ props.item.price }}</p>
           </div>
         </div>
       </vue-waterfall-easy>
@@ -42,7 +42,6 @@
 <script>
   import vueWaterfallEasy from '../../../components/common/waterfall-easy'
   import paginate from 'vuejs-paginate'
-  import contentList from '../../../../static/contentList'
 
   export default {
     components: {vueWaterfallEasy, paginate},
@@ -53,9 +52,9 @@
       }
     },
     created () {
-      this.$nextTick(() => {
-        this.productList = contentList
-      })
+      // this.$nextTick(() => {
+      //   this.productList = contentList
+      // })
     },
     mounted () {
     },

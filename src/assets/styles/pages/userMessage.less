@@ -1,0 +1,126 @@
+.userMessage-contain {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .uc-content {
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+    min-height: 660px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 244px;
+    min-width: 956px;
+    h2 {
+      padding-left: 22px;
+      font-size: 24px;
+      font-weight: 500;
+      font-style: normal;
+      color: #333;
+      line-height: 44px;
+      text-align: left;
+    }
+    .main-block {
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      padding-top: 20px;
+      margin-bottom: 20px;
+      .messages {
+        a {
+          display: block;
+          position: relative;
+          width: 770px;
+          height: 120px;
+          border-radius: 20px;
+          border: solid 1px #ddd;
+          box-sizing: border-box;
+          padding: 10px 20px 15px 40px;
+          font-size: 12px;
+          margin-bottom: 20px;
+          cursor: default;
+          div {
+            text-align: left;
+            .msg-time {
+              color: #999;
+            }
+            .msg-content {
+              margin-top: 10px;
+              line-height: 1.8;
+              height: 66px;
+              overflow-y: hidden;
+            }
+          }
+        }
+      }
+    }
+    .more-history-msg {
+      box-sizing: border-box;
+      padding: 5px 20px;
+      border-radius: 15px;
+      border: solid 1px #ddd;
+      text-align: center;
+      font-size: 14px;
+      color: #333;
+      cursor: pointer;
+    }
+    ul.pagination {
+      color: #000;
+      max-width: 770px;
+      height: 50px;
+      margin-top: 40px;
+      font-size: 0;
+      display: block;
+      li {
+        display: inline-block;
+        width: 81px;
+        background-color: #fff;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        font-size: 20px;
+        cursor: pointer;
+        &.prev {
+          display: none;
+        }
+        &.next {
+          text-decoration: none;
+          color: #fff;
+          background-color: #000;
+          text-align: center;
+          line-height: 50px;
+          font-size: 20px;
+          display: inline-block;
+          margin-right: 20px;
+          &:hover {
+            background-color: #000;
+          }
+        }
+        &.disabled {
+          color: #777;
+          cursor: not-allowed;
+          background-color: #fff;
+          border-color: #ddd;
+          &:hover {
+            background-color: #fff;
+            border-color: #ddd;
+          }
+        }
+        &.active {
+          background-color: #000;
+          color: #fff;
+          &:hover {
+            background-color: #000;
+          }
+        }
+        &:hover {
+          background-color: #ccc;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
+
+

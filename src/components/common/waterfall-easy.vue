@@ -95,7 +95,7 @@
             <span>x</span>
           </div>
           <div class="img-wraper" :style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}">
-            <img v-lazy="v.src">
+            <img v-lazy="v.ImgUrl">
           </div>
           <div class="img-info">
             <slot :item="v"></slot>
@@ -203,7 +203,7 @@
           oImg.addEventListener('load', (e) => {
             this.loadFn(e, oImg, i)
           })
-          oImg.src = v.src
+          oImg.src = v.ImgUrl
         })
       },
       // -----------------初始化化------------------------

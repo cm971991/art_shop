@@ -6,6 +6,10 @@ export default {
       // 账号登录
       'loginByAccount': () => {
         return url + '/login/cellphone?phone={0}&password={1}'
+      },
+      // 美物
+      'getMakeArtList': () => {
+        return url + '/goods/esList.app'
       }
     }
     return actions[action]()

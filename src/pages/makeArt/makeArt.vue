@@ -14,6 +14,7 @@
 <script>
   import search from './layout/search'
   import workList from './layout/workList'
+  import Service from '../../service/makeArt_service'
 
   export default {
     components: {search, workList},
@@ -21,6 +22,18 @@
       return {}
     },
     created () {
+      console.log('parent:')
+      this.$nextTick(() => {
+        this.service = new Service(this)
+        let params = {
+          'type': '0',
+          'tag': '0',
+          'keywords': '',
+          'pageNo': '1',
+          'pageSize': '10'
+        }
+        this.service.getMakeArtList(params)
+      })
     },
     mounted () {
     },

@@ -11,13 +11,24 @@ import OrderPay from '../pages/shopping/orderPay/orderPay'
 import OrderDetail from '../pages/shopping/orderDetail/orderDetail'
 import MakeArt from '../pages/makeArt/MakeArt'
 import Broker from '../pages/broker/broker'
+import DiscoveryIndex from '../pages/discovery/index/index'
+import DiscoveryDetail from '../pages/discovery/detail/detail'
+/** *************************会员中心**************************************/
 import UserWish from '../pages/user/userWish/userWish'
 import UserCollect from '../pages/user/userCollect/userCollect'
 import UserHistory from '../pages/user/userHistory/userHistory'
 import UserCenter from '../pages/user/userCenter/userCenter'
 import UserOrder from '../pages/user/userOrder/userOrder'
-import DiscoveryIndex from '../pages/discovery/index/index'
-import DiscoveryDetail from '../pages/discovery/detail/detail'
+import ContactUs from '../pages/user/contactUs/contactUs'
+import HowToBuy from '../pages/user/howToBuy/howToBuy'
+import UserAddress from '../pages/user/userAddress/userAddress'
+import UserFQA from '../pages/user/userFQA/userFQA'
+import UserInfo from '../pages/user/userInfo/userInfo'
+import UserMessage from '../pages/user/userMessage/userMessage'
+import UserSecurity from '../pages/user/userSecurity/userSecurity'
+import UserVoucher from '../pages/user/userVoucher/userVoucher'
+
+/** *************************会员中心**************************************/
 
 Vue.use(Router)
 export const defaultTitle = '爱艺'
@@ -96,6 +107,18 @@ export const router = new Router({
       component: Broker
     },
     {
+      path: '/discovery/index',
+      name: 'discovery',
+      meta: {title: '发现-爱艺', showNav: true, navType: 'discovery', footer: 'simple'},
+      component: DiscoveryIndex
+    },
+    {
+      path: '/discovery/detail/:id',
+      name: 'discoveryDetail',
+      meta: {title: '发现-爱艺', showNav: true, navType: 'discovery', footer: 'simple'},
+      component: DiscoveryDetail
+    },
+    {
       path: '/user/userWish',
       name: 'userWish',
       meta: {title: '我的珍藏-爱艺', showNav: true, navType: 'userWish', footer: 'simple'},
@@ -126,16 +149,52 @@ export const router = new Router({
       component: UserOrder
     },
     {
-      path: '/discovery/index',
-      name: 'discovery',
-      meta: {title: '发现-爱艺', showNav: true, navType: 'discovery', footer: 'simple'},
-      component: DiscoveryIndex
+      path: '/user/contactUs',
+      name: 'contactUs',
+      meta: {title: '联系我们-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: ContactUs
     },
     {
-      path: '/discovery/detail/:id',
-      name: 'discoveryDetail',
-      meta: {title: '发现-爱艺', showNav: true, navType: 'discovery', footer: 'simple'},
-      component: DiscoveryDetail
+      path: '/user/howToBuy',
+      name: 'howToBuy',
+      meta: {title: '如何购买-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: HowToBuy
+    },
+    {
+      path: '/user/userAddress',
+      name: 'userAddress',
+      meta: {title: '收货地址-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: UserAddress
+    },
+    {
+      path: '/user/UserFQA',
+      name: 'UserFQA',
+      meta: {title: '常见问题-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: UserFQA
+    },
+    {
+      path: '/user/userInfo',
+      name: 'userInfo',
+      meta: {title: '基本信息-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: UserInfo
+    },
+    {
+      path: '/user/userMessage',
+      name: 'userMessage',
+      meta: {title: '消息-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: UserMessage
+    },
+    {
+      path: '/user/userSecurity',
+      name: 'userSecurity',
+      meta: {title: '安全设置-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: UserSecurity
+    },
+    {
+      path: '/user/userVoucher',
+      name: 'userVoucher',
+      meta: {title: '代金券-爱艺', showNav: true, navType: '', footer: 'default'},
+      component: UserVoucher
     }
   ]
 })
