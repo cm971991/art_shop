@@ -27,7 +27,6 @@ import UserInfo from '../pages/user/userInfo/userInfo'
 import UserMessage from '../pages/user/userMessage/userMessage'
 import UserSecurity from '../pages/user/userSecurity/userSecurity'
 import UserVoucher from '../pages/user/userVoucher/userVoucher'
-
 /** *************************会员中心**************************************/
 
 Vue.use(Router)
