@@ -216,6 +216,7 @@
         }
       },
       onClick () {
+        debugger
         if (!this.imageSelected) {
           this.selectImage()
           return
@@ -248,6 +249,7 @@
         this.onFileChange(e)
       },
       onFileChange (e, prefill) {
+        debugger
         let files = e.target.files || e.dataTransfer.files
         if (!files.length) {
           return

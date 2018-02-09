@@ -1,0 +1,175 @@
+.userSecurity-contain {
+  width: 1200px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.userSecurity-contain .uc_content {
+  border-left: 1px solid #ddd;
+  padding-left: 40px;
+  min-height: 660px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-left: 244px;
+  min-width: 956px;
+  width: 985px;
+  text-align: left;
+}
+.userSecurity-contain .uc_content .manage-info .item {
+  position: relative;
+  margin-bottom: 40px;
+}
+.userSecurity-contain .uc_content .manage-info .item .title {
+  color: #000;
+  font-weight: bold;
+  font-size: 14px;
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 10px;
+}
+.userSecurity-contain .uc_content .manage-info .item .form {
+  display: inline-block;
+  vertical-align: top;
+}
+.userSecurity-contain .uc_content .manage-info .item .table {
+  border: 0;
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+.userSecurity-contain .uc_content .manage-info .item .table .input-div {
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 36px;
+  width: 200px;
+}
+.userSecurity-contain .uc_content .manage-info .item .table img {
+  height: 18px;
+  vertical-align: middle;
+}
+.userSecurity-contain .uc_content .manage-info .item .table li > div:first-child {
+  text-align: right;
+  width: 80px;
+  display: inline-block;
+  vertical-align: top;
+  line-height: 36px;
+  margin-bottom: 30px;
+}
+.userSecurity-contain .uc_content .manage-info .item .table:first-child {
+  text-align: right;
+  vertical-align: top;
+}
+.userSecurity-contain .uc_content .manage-info .item .table input,
+.userSecurity-contain .uc_content .manage-info .item .table select,
+.userSecurity-contain .uc_content .manage-info .item .table textarea {
+  border: 0;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 5px;
+  color: #333;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+.userSecurity-contain .uc_content .manage-info .item .modify {
+  vertical-align: middle;
+  margin: 0 20px;
+  height: 24px;
+}
+.userSecurity-contain .uc_content .manage-info .item ul {
+  width: 500px;
+  margin-top: -7px !important;
+}
+.userSecurity-contain .uc_content .manage-info .item ul li .input-div {
+  border: 1px solid #ddd;
+  margin-left: 10px;
+}
+.userSecurity-contain .uc_content .manage-info .item ul li .buttons {
+  width: 200px !important;
+  margin-left: 103px;
+  text-align: left !important;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div {
+  width: 300px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div .first-div {
+  width: 90px;
+  height: 38px;
+  margin-left: 0;
+  float: left;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div .first-div input {
+  width: 100%;
+  display: inline;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div .tool {
+  width: auto;
+  height: 38px;
+  margin-left: 10px;
+  float: left;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div img {
+  margin: 0;
+  height: 100%;
+  width: auto;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div button {
+  width: 95px;
+  height: 40px;
+  color: #000;
+  border: 1px solid #000;
+  background: #fff;
+  padding: 0;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .input-div {
+  width: 300px;
+  margin-bottom: 10px;
+  background: #FFF;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table .buttons {
+  width: 300px !important;
+  text-align: left !important;
+  margin-left: 10px !important;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table .buttons button {
+  width: 88px;
+  height: 38px;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.email-modify li .input-div {
+  width: 280px !important;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.email-modify li .email-send {
+  width: 110px !important;
+  background-color: #000;
+  color: #fff;
+  height: 38px;
+  margin-right: 10px;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.email-modify li button {
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #000;
+}
+.userSecurity-contain .uc_content .manage-info .item button {
+  width: 60px;
+  height: 38px;
+  text-align: center;
+  border: 0;
+}
+.userSecurity-contain .uc_content .manage-info .item button.save {
+  background: #000;
+  color: #fff;
+  margin-right: 10px;
+}
+.userSecurity-contain .uc_content .manage-info .item button.cancel {
+  background: #fff;
+  border: 1px solid #000;
+  color: #000;
+}
