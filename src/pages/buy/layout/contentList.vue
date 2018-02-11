@@ -23,19 +23,17 @@
                           :maxCols="3"
                           :imgWidth="300"
                           @scrollLoadImg="fetchData"
-                          @waterfallSkip="waterfallSkip">
+                          @waterfallSkip="skipToArtworks">
         <div class="detail" slot-scope="props">
           <p>
-            <router-link :to="{ path: '/artist/' + props.item.id +''}" target="_blank">{{ props.item.artist }}
-            </router-link>
+            <span @click="skipToArtist(props.item, $event)">{{ props.item.brandName }}</span>
           </p>
           <p>
-            <router-link :to="{ path: '/artworks/' + props.item.id +''}" target="_blank">{{ props.item.name }}
-            </router-link>
-            &nbsp;&nbsp;<span>{{  props.item.date }}</span>
+            <span>{{ props.item.goodsName }}</span>
+            <span>{{ props.item.createTime }}</span>
           </p>
           <p>
-            <span>{{ props.item.type }}</span>&nbsp;&nbsp;&nbsp;
+            <span>{{ props.item.cateName }}</span>&nbsp;&nbsp;&nbsp;
             <span>{{ props.item.size }}</span>
           </p>
           <div class="qmBox">
@@ -78,6 +76,7 @@
     created () {
       this.$nextTick(() => {
         this.productList = contentList
+        // this.productList = []
       })
     },
     mounted () {
@@ -149,8 +148,12 @@
         }
         this.productList = this.productList.concat(this.initList(10, 20))
       },
-      waterfallSkip (item) {
-        window.open('#/artworks/' + item.id)
+      skipToArtworks (item) {
+        window.open('#/artworks/' + item.goodsId)
+      },
+      skipToArtist (item, e) {
+        window.open('#/artist/' + item.brandId)
+        e.stopPropagation()
       },
       clickCallback (pageNum) {
         console.log(pageNum)

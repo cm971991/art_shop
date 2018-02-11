@@ -99,9 +99,13 @@
   font-style: normal;
   margin-bottom: 8px;
 }
-.userWish-contain .container .detail p:nth-child(1) a {
+.userWish-contain .container .detail p:nth-child(1) span {
   color: #000;
   font-weight: 600;
+  cursor: pointer;
+}
+.userWish-contain .container .detail p:nth-child(2) span {
+  margin-right: 4px;
 }
 .userWish-contain .container .detail div {
   margin-top: 10px;

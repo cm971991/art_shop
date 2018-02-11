@@ -29,6 +29,12 @@
         .form {
           display: inline-block;
           vertical-align: top;
+          .password-default, .mobile-default, .email-default {
+            display: none;
+            &.active {
+              display: block;
+            }
+          }
         }
         .table {
           border: 0;
@@ -95,7 +101,17 @@
               text-align: left !important;
             }
           }
+          &.password-modify.table {
+            display: none;
+            &.active {
+              display: block;
+            }
+          }
           &.mobile-modify.table {
+            display: none;
+            &.active {
+              display: block;
+            }
             li {
               .verify-div {
                 width: 300px;
@@ -148,6 +164,10 @@
             }
           }
           &.email-modify {
+            display: none;
+            &.active {
+              display: block;
+            }
             li {
               .input-div {
                 width: 280px !important;

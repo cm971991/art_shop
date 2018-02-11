@@ -1,0 +1,99 @@
+.userVoucher-contain {
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+.userVoucher-contain .uc_content {
+  border-left: 1px solid #ddd;
+  min-height: 660px;
+  padding: 40px 76px 40px 40px;
+  margin-left: 244px;
+  min-width: 956px;
+  width: 840px;
+  box-sizing: border-box;
+}
+.userVoucher-contain .uc_content table {
+  margin-top: 40px;
+  text-align: center;
+  width: 840px;
+}
+.userVoucher-contain .uc_content table .title {
+  font-size: 16px;
+  letter-spacing: 1.7px;
+  color: #000;
+  background-color: #f8f8f8;
+}
+.userVoucher-contain .uc_content table .title td:first-child {
+  text-align: center;
+  padding: 0;
+}
+.userVoucher-contain .uc_content table tr {
+  opacity: 0.7;
+}
+.userVoucher-contain .uc_content table td {
+  width: 180px;
+  height: 50px;
+  padding: 0 30px;
+  text-align: left;
+  border-bottom: solid 1px #f8f8f8;
+  font-size: 14px;
+  color: #333333;
+}
+.userVoucher-contain .uc_content table td div {
+  width: 284px;
+  height: 110px;
+  border-radius: 4px;
+  background-color: #ffffff;
+  box-shadow: 0 1px 4px 0 #dddddd;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #000;
+  padding: 14px 20px;
+  box-sizing: border-box;
+  opacity: 0.7;
+  position: relative;
+}
+.userVoucher-contain .uc_content table td div hr {
+  border: 0;
+  border-bottom: 1px dashed #ddd;
+  z-index: 1;
+}
+.userVoucher-contain .uc_content table td div .p1 {
+  height: 30px;
+  line-height: 30px;
+}
+.userVoucher-contain .uc_content table td div .p1 span {
+  display: inline-block;
+}
+.userVoucher-contain .uc_content table td div .p1 span:nth-child(1) {
+  font-size: 20px;
+  font-weight: bold;
+  vertical-align: top;
+  margin-top: -4px;
+}
+.userVoucher-contain .uc_content table td div .p1 span:nth-child(2) {
+  font-weight: bold;
+  font-size: 30px;
+  vertical-align: top;
+}
+.userVoucher-contain .uc_content table td div .p1 span:nth-child(3) {
+  font-size: 14px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+.userVoucher-contain .uc_content table td div .p2 {
+  margin-top: 4px;
+  font-size: 14px;
+}
+.userVoucher-contain .uc_content table td div .p3 {
+  font-size: 12px;
+  color: #333333;
+}
+.userVoucher-contain .uc_content table td div p {
+  z-index: 1;
+}
+.userVoucher-contain .uc_content table td:first-child {
+  width: 300px;
+  padding: 10px 0;
+}

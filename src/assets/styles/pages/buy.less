@@ -338,7 +338,8 @@
       top: 12px;
       i {
         position: relative;
-        top: -8px;
+        top: -10px;
+        font-size: 18px;
       }
       .search {
         position: relative;
@@ -349,14 +350,12 @@
         line-height: 16px;
       }
     }
-
     .sure {
       border-color: #999;
       background-color: #999;
       color: #fff;
       transition: background-color, 1s;
     }
-
     .changeModel {
       position: absolute;
       text-align: center;
@@ -380,7 +379,6 @@
         margin-left: 10px;
       }
     }
-
     button {
       margin-top: 6px;
       float: right;
@@ -417,12 +415,10 @@
         }
       }
     }
-
     .container {
       margin: 0 auto;
       max-width: 1200px;
       display: block;
-
       .img-box {
         .detail {
           position: relative;
@@ -451,7 +447,6 @@
             text-overflow: ellipsis;
             white-space: nowrap;
             font-style: italic;
-
             .price {
               margin-top: 10px;
               color: black;
@@ -460,7 +455,6 @@
               margin-bottom: 20px;
               font-style: normal;
             }
-
             &:nth-child(1) {
               font-style: normal;
               margin-bottom: 8px;
@@ -512,9 +506,15 @@
           &:nth-child(1) {
             font-style: normal;
             margin-bottom: 8px;
-            a {
+            span {
               color: #000;
               font-weight: 600;
+              cursor: pointer;
+            }
+          }
+          &:nth-child(2) {
+            span {
+              margin-right: 4px;
             }
           }
         }

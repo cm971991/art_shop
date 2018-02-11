@@ -32,6 +32,16 @@
   display: inline-block;
   vertical-align: top;
 }
+.userSecurity-contain .uc_content .manage-info .item .form .password-default,
+.userSecurity-contain .uc_content .manage-info .item .form .mobile-default,
+.userSecurity-contain .uc_content .manage-info .item .form .email-default {
+  display: none;
+}
+.userSecurity-contain .uc_content .manage-info .item .form .password-default.active,
+.userSecurity-contain .uc_content .manage-info .item .form .mobile-default.active,
+.userSecurity-contain .uc_content .manage-info .item .form .email-default.active {
+  display: block;
+}
 .userSecurity-contain .uc_content .manage-info .item .table {
   border: 0;
   padding: 0;
@@ -94,6 +104,18 @@
   margin-left: 103px;
   text-align: left !important;
 }
+.userSecurity-contain .uc_content .manage-info .item ul.password-modify.table {
+  display: none;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.password-modify.table.active {
+  display: block;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table {
+  display: none;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table.active {
+  display: block;
+}
 .userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table li .verify-div {
   width: 300px;
   margin-left: 10px;
@@ -141,6 +163,12 @@
 .userSecurity-contain .uc_content .manage-info .item ul.mobile-modify.table .buttons button {
   width: 88px;
   height: 38px;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.email-modify {
+  display: none;
+}
+.userSecurity-contain .uc_content .manage-info .item ul.email-modify.active {
+  display: block;
 }
 .userSecurity-contain .uc_content .manage-info .item ul.email-modify li .input-div {
   width: 280px !important;

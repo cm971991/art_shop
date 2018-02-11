@@ -348,7 +348,8 @@
 }
 .buy-art .buy-search div i {
   position: relative;
-  top: -8px;
+  top: -10px;
+  font-size: 18px;
 }
 .buy-art .buy-search div .search {
   position: relative;
@@ -513,9 +514,13 @@
   font-style: normal;
   margin-bottom: 8px;
 }
-.buy-art .content .container .detail p:nth-child(1) a {
+.buy-art .content .container .detail p:nth-child(1) span {
   color: #000;
   font-weight: 600;
+  cursor: pointer;
+}
+.buy-art .content .container .detail p:nth-child(2) span {
+  margin-right: 4px;
 }
 .buy-art .content .container .detail div {
   margin-top: 10px;

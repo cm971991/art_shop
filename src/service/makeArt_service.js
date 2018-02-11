@@ -28,7 +28,7 @@ export default class extends Base {
               v.goodsInfoImgId,
               v.goodsInfoPreferPrice,
               cateName,
-              this.vm.$utils.Date.timestampToTime(v.goodsInfoCreateTime),
+              this.vm.$utils.Date.timestampToTime(v.goodsInfoCreateTime, 'yyyy'),
               v.brand.brandId,
               v.brand.brandName)
             list.push(model)

@@ -338,9 +338,13 @@
   font-style: normal;
   margin-bottom: 8px;
 }
-.markArt-contain .all-works .container .detail p:nth-child(1) a {
+.markArt-contain .all-works .container .detail p:nth-child(1) span {
   color: #000;
   font-weight: 600;
+  cursor: pointer;
+}
+.markArt-contain .all-works .container .detail p:nth-child(2) span {
+  margin-right: 4px;
 }
 .markArt-contain .all-works .container .detail div {
   margin-top: 10px;

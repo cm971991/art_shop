@@ -1,3 +1,238 @@
+<template>
+  <div class="vue-waterfall-easy"
+       :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}">
+    <template v-if="imgsArrC && imgsArrC.length > 0">
+      <template v-for="(v,i) in imgsArrC">
+        <div class="img-box"
+             :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
+             @click="skip(v)">
+          <div class="img-inner-box">
+            <div class="close" v-if="closeBtn" @click="close($event)">
+              <span>x</span>
+            </div>
+            <div class="img-wraper" :style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}">
+              <img v-lazy="v.imgUrl">
+            </div>
+            <div class="img-info">
+              <slot :item="v"></slot>
+            </div>
+          </div>
+        </div>
+      </template>
+    </template>
+    <template v-else>
+      <p class="noData" :class="{ active: noData}">对不起，没有查询到符合要求的内容，请重新选择</p>
+    </template>
+    <div class="loading" :class="{'first-loading':isFirstTIme}" v-if="isPreloadingC">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+  </div>
+</template>
+<script>
+  export default {
+    name: 'vue-waterfall-easy',
+    props: {
+      gap: {
+        type: Number,
+        default: 20
+      },
+      maxCols: {
+        type: Number,
+        default: 5
+      },
+      imgsArr: {
+        type: Array,
+        required: true
+      },
+      imgWidth: {
+        type: Number,
+        default: 240
+      },
+      timeOut: { // 预加载事件小于500毫秒就不显示加载动画，增加用户体验
+        type: Number,
+        default: 500
+      },
+      closeBtn: {
+        type: Boolean,
+        default: false
+      }
+    },
+    data () {
+      return {
+        msg: 'this is from vue-waterfall-easy.vue',
+        height: 0,
+        columnCount: NaN, // 列数，根据窗口大小初始化
+        isMobile: navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i), // 初始化移动端
+        beginIndex: NaN, // 第二列首张图片的index，从这一张开始重新计算图片位置
+        colsHeightArr: [], // 每一列的图片总和高度为元素组成的数组
+        imgBoxEls: null, // 所有的.img-box元素
+        isPreloading: true, // 预加载状态中（1.以等待图片替换 2.图片全部预加载完显示）
+        isPreloadingC: true,
+        imgsArrC: [], // 预加载完之后再才开始
+        loadedCount: 0, // 已经加载图片数量
+        noData: false, // 无数据
+        isFirstTIme: true // 首次加载
+      }
+    },
+    computed: {
+      colWidth () { // 每一列的宽度
+        return this.imgWidth + this.gap
+      },
+      imgWidthC () { // 对于移动端重新计算图片宽度
+        return this.isMobile ? window.innerWidth / 2 - this.gap : this.imgWidth
+      }
+    },
+    methods: {
+      waterfall () { // 执行瀑布布局
+        for (let i = this.beginIndex; i < this.imgsArr.length; i++) {
+          let minHeight = Math.min.apply(null, this.colsHeightArr) // 最低高低
+          let minIndex = this.colsHeightArr.indexOf(minHeight) // 最低高度的索引
+          let width = this.imgBoxEls[0].offsetWidth // 图片的宽度获取
+          // 设置元素定位的位置
+          this.imgBoxEls[i].style.position = 'absolute'
+          this.imgBoxEls[i].style.left = minIndex * width + 'px'
+          this.imgBoxEls[i].style.top = minHeight + 'px'
+          // 更新colsHeightArr
+          this.$set(this.colsHeightArr, minIndex, minHeight + this.imgBoxEls[i].offsetHeight)
+          if (this.imgsArr.length - 1 === i) {
+            this.height = minHeight + this.imgBoxEls[i].offsetHeight
+          }
+        }
+        this.beginIndex = this.imgsArr.length
+      },
+      loadFn (e, oImg, i) { // 每张图片预加载完成执行函数
+        this.loadedCount++
+        if (e.type === 'load') { // 使用图片原始宽度计算图片的高度
+          this.$set(this.imgsArr[i], 'height', Math.round(this.imgWidthC / (oImg.width / oImg.height)))
+        }
+        if (this.loadedCount === this.imgsArr.length) {
+          this.imgsArrC = this.imgsArr.concat([])
+          this.isPreloading = false
+          this.isFirstTIme = false
+          // 预加载完毕
+          this.$nextTick(() => {
+            this.initImgBoxEls()
+            this.$emit('preloaded')
+          })
+        }
+      },
+      preload () {
+        this.imgsArr.forEach((v, i) => {
+          if (i < this.loadedCount) return
+          let oImg = new Image()
+          oImg.addEventListener('load', (e) => {
+            this.loadFn(e, oImg, i)
+          })
+          oImg.src = v.imgUrl
+        })
+      },
+      // -----------------初始化化------------------------
+      initColsHeightArr () { // 第一行元素的高度组成的数组-初始化
+        this.colsHeightArr = [] // 列数发生变化重新初始化
+        for (let i = 0; i < this.columnCount; i++) {
+          this.imgBoxEls[i].style.position = 'static' // 重置下position
+          let height = this.imgBoxEls[i].offsetHeight
+          this.colsHeightArr.push(height)
+        }
+      },
+      initImgBoxEls () { // 初始化所有装图片的元素集合,注意高度获取需要在图片加载完成之后，所以在window.onload 事件中初始化
+        this.imgBoxEls = document.getElementsByClassName('img-box')
+      },
+      // 列数初始化
+      initColumnCount () {
+        let winWidth = window.innerWidth
+        let columnCount = parseInt(winWidth / this.colWidth)
+        columnCount = columnCount === 0 ? 1 : columnCount
+        this.columnCount = this.isMobile ? 2 : (columnCount > this.maxCols ? this.maxCols : columnCount)
+      },
+      /**
+       * 外层div 点击跳转事件
+       * @param item
+       */
+      skip (item) {
+        this.$emit('waterfallSkip', item)
+      },
+      /**
+       * 关闭按钮 点击事件
+       * @param e
+       */
+      close (e) {
+        let _child = e.toElement.parentElement.parentElement
+        let _parent = _child.parentElement
+        _parent.removeChild(_child)
+        e.stopPropagation()
+        this.$emit('waterfallClose')
+      }
+    },
+    mounted () {
+      // ==1== 根据窗口大小初始化列数
+      this.initColumnCount()
+      this.beginIndex = this.columnCount // 开始排列的元素索引
+      // ==2== 根据预加载完成的图片的长宽比，计算图片的高度
+      this.preload()
+      this.$on('preloaded', () => {
+        console.log('preloaded:')
+        if (this.colsHeightArr.length === 0) this.initColsHeightArr() // 第一次初始化
+        this.waterfall()
+      })
+      window.addEventListener('resize', () => {
+        console.log('resize')
+        let old = this.columnCount
+        this.initColumnCount()
+        if (old === this.columnCount) { // 列数不变直接退出
+          return
+        }
+        this.beginIndex = this.columnCount // 开始排列的元素索引
+        this.initColsHeightArr()
+        this.waterfall()
+      })
+
+      window.onscroll = () => {
+        let pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
+        let viewportHeight = window.innerHeight ||
+          document.documentElement.clientHeight ||
+          document.body.clientHeight || 0
+        let scrollHeight = window.pageYOffset ||
+          document.documentElement.scrollTop ||
+          document.body.scrollTop || 0
+        if (pageHeight - viewportHeight - scrollHeight < 20) {
+          this.$emit('scrollLoadImg')
+        }
+      }
+    },
+    watch: {
+      imgsArr (newV, oldV) {
+        if (newV.length === 0 && oldV.length === 0) {
+          this.isPreloading = false
+          this.isFirstTIme = false
+          this.noData = true
+          return
+        } else if (newV.length === oldV.length) {
+          this.isFirstTIme = true
+          this.noData = false
+          return
+        }
+        this.noData = false
+        this.isPreloading = true // 预加载新的图片资源
+        this.preload()
+        // setTimeout(()=>{ // 模拟图片预加载时间为1s
+        // this.preload()
+        // },1000)
+      },
+      isPreloading (v) {
+        if (v) {
+          setTimeout(() => {
+            if (!this.isPreloading) return // 500毫秒内预加载完图片则不显示加载动画
+            this.isPreloadingC = true
+          }, this.timeOut)
+        } else {
+          this.isPreloadingC = false
+        }
+      }
+    }
+  }
+</script>
 <style lang="less">
   .vue-waterfall-easy {
     position: relative;
@@ -54,6 +289,16 @@
       top: 50%;
       margin-top: -15px;
     }
+    .noData {
+      text-align: center;
+      font-size: 20px;
+      color: #666;
+      margin: 100px 0;
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
     .double-bounce1,
     .double-bounce2 {
       width: 100%;
@@ -64,14 +309,11 @@
       position: absolute;
       top: 0;
       left: 0;
-
       animation: bounce 2.0s infinite ease-in-out;
     }
-
     .double-bounce2 {
       animation-delay: -1.0s;
     }
-
     @keyframes bounce {
       0%,
       100% {
@@ -83,219 +325,3 @@
     }
   }
 </style>
-<template>
-  <div class="vue-waterfall-easy"
-       :style="isMobile? '':{width:colWidth*columnCount+'px',left:'50%',marginLeft: -1*colWidth*columnCount/2 +'px',height: height+'px'}">
-    <template v-for="(v,i) in imgsArrC">
-      <div class="img-box"
-           :style="{padding:gap/2+'px',width: isMobile ? '' : colWidth+'px'}"
-           @click="skip(v)">
-        <div class="img-inner-box">
-          <div class="close" v-if="closeBtn" @click="close($event)">
-            <span>x</span>
-          </div>
-          <div class="img-wraper" :style="{width:imgWidthC+'px',height:v.height?v.height+'px':''}">
-            <img v-lazy="v.ImgUrl">
-          </div>
-          <div class="img-info">
-            <slot :item="v"></slot>
-          </div>
-        </div>
-      </div>
-    </template>
-    <div class="loading" :class="{'first-loading':isFirstTIme}" v-if="isPreloadingC">
-      <div class="double-bounce1"></div>
-      <div class="double-bounce2"></div>
-    </div>
-  </div>
-</template>
-<script>
-  export default {
-    name: 'vue-waterfall-easy',
-    props: {
-      gap: {
-        type: Number,
-        default: 20
-      },
-      maxCols: {
-        type: Number,
-        default: 5
-      },
-      imgsArr: {
-        type: Array,
-        required: true
-      },
-      imgWidth: {
-        type: Number,
-        default: 240
-      },
-      timeOut: { // 预加载事件小于500毫秒就不显示加载动画，增加用户体验
-        type: Number,
-        default: 500
-      },
-      closeBtn: {
-        type: Boolean,
-        default: false
-      }
-    },
-    data () {
-      return {
-        msg: 'this is from vue-waterfall-easy.vue',
-        height: 0,
-        columnCount: NaN, // 列数，根据窗口大小初始化
-        isMobile: navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i), // 初始化移动端
-        beginIndex: NaN, // 第二列首张图片的index，从这一张开始重新计算图片位置
-        colsHeightArr: [], // 每一列的图片总和高度为元素组成的数组
-        imgBoxEls: null, // 所有的.img-box元素
-        isPreloading: true, // 预加载状态中（1.以等待图片替换 2.图片全部预加载完显示）
-        isPreloadingC: true,
-        imgsArrC: [], // 预加载完之后再才开始
-        loadedCount: 0, // 已经加载图片数量
-        isFirstTIme: true // 首次加载
-      }
-    },
-    computed: {
-      colWidth () { // 每一列的宽度
-        return this.imgWidth + this.gap
-      },
-      imgWidthC () { // 对于移动端重新计算图片宽度
-        return this.isMobile ? window.innerWidth / 2 - this.gap : this.imgWidth
-      }
-    },
-    methods: {
-      waterfall () { // 执行瀑布布局
-        for (var i = this.beginIndex; i < this.imgsArr.length; i++) {
-          var minHeight = Math.min.apply(null, this.colsHeightArr) // 最低高低
-          var minIndex = this.colsHeightArr.indexOf(minHeight) // 最低高度的索引
-          var width = this.imgBoxEls[0].offsetWidth // 图片的宽度获取
-          // 设置元素定位的位置
-          this.imgBoxEls[i].style.position = 'absolute'
-          this.imgBoxEls[i].style.left = minIndex * width + 'px'
-          this.imgBoxEls[i].style.top = minHeight + 'px'
-          // 更新colsHeightArr
-          this.$set(this.colsHeightArr, minIndex, minHeight + this.imgBoxEls[i].offsetHeight)
-          if (this.imgsArr.length - 1 === i) {
-            this.height = minHeight + this.imgBoxEls[i].offsetHeight
-          }
-        }
-        this.beginIndex = this.imgsArr.length
-      },
-      loadFn (e, oImg, i) { // 每张图片预加载完成执行函数
-        this.loadedCount++
-        if (e.type === 'load') { // 使用图片原始宽度计算图片的高度
-          this.$set(this.imgsArr[i], 'height', Math.round(this.imgWidthC / (oImg.width / oImg.height)))
-        }
-        if (this.loadedCount === this.imgsArr.length) {
-          this.imgsArrC = this.imgsArr.concat([])
-          this.isPreloading = false
-          this.isFirstTIme = false
-          // 预加载完毕
-          this.$nextTick(() => {
-            this.initImgBoxEls()
-            this.$emit('preloaded')
-          })
-        }
-      },
-      preload () {
-        this.imgsArr.forEach((v, i) => {
-          if (i < this.loadedCount) return
-          var oImg = new Image()
-          oImg.addEventListener('load', (e) => {
-            this.loadFn(e, oImg, i)
-          })
-          oImg.src = v.ImgUrl
-        })
-      },
-      // -----------------初始化化------------------------
-      initColsHeightArr () { // 第一行元素的高度组成的数组-初始化
-        this.colsHeightArr = [] // 列数发生变化重新初始化
-        for (var i = 0; i < this.columnCount; i++) {
-          this.imgBoxEls[i].style.position = 'static' // 重置下position
-          var height = this.imgBoxEls[i].offsetHeight
-          this.colsHeightArr.push(height)
-        }
-      },
-      initImgBoxEls () { // 初始化所有装图片的元素集合,注意高度获取需要在图片加载完成之后，所以在window.onload 事件中初始化
-        this.imgBoxEls = document.getElementsByClassName('img-box')
-      },
-      // 列数初始化
-      initColumnCount () {
-        var winWidth = window.innerWidth
-        var columnCount = parseInt(winWidth / this.colWidth)
-        columnCount = columnCount === 0 ? 1 : columnCount
-        this.columnCount = this.isMobile ? 2 : (columnCount > this.maxCols ? this.maxCols : columnCount)
-      },
-      /**
-       * 外层div 点击跳转事件
-       * @param item
-       */
-      skip (item) {
-        this.$emit('waterfallSkip', item)
-      },
-      /**
-       * 关闭按钮 点击事件
-       * @param e
-       */
-      close (e) {
-        let _child = e.toElement.parentElement.parentElement
-        let _parent = _child.parentElement
-        _parent.removeChild(_child)
-        e.stopPropagation()
-        // this.$router.go(0)
-        this.$emit('waterfallClose')
-      }
-    },
-    mounted () {
-      // ==1== 根据窗口大小初始化列数
-      this.initColumnCount()
-      this.beginIndex = this.columnCount // 开始排列的元素索引
-      // ==2== 根据预加载完成的图片的长宽比，计算图片的高度
-      this.preload()
-      this.$on('preloaded', () => {
-        if (this.colsHeightArr.length === 0) this.initColsHeightArr() // 第一次初始化
-        this.waterfall()
-      })
-      window.addEventListener('resize', () => {
-        var old = this.columnCount
-        this.initColumnCount()
-        if (old === this.columnCount) return // 列数不变直接退出
-        this.beginIndex = this.columnCount // 开始排列的元素索引
-        this.initColsHeightArr()
-        this.waterfall()
-      })
-
-      window.onscroll = () => {
-        var pageHeight = Math.max(document.body.scrollHeight, document.body.offsetHeight)
-        var viewportHeight = window.innerHeight ||
-          document.documentElement.clientHeight ||
-          document.body.clientHeight || 0
-        var scrollHeight = window.pageYOffset ||
-          document.documentElement.scrollTop ||
-          document.body.scrollTop || 0
-        if (pageHeight - viewportHeight - scrollHeight < 20) {
-          this.$emit('scrollLoadImg')
-        }
-      }
-    },
-    watch: {
-      imgsArr (newV, oldV) {
-        if (newV.length === oldV.length) return
-        this.isPreloading = true // 预加载新的图片资源
-        this.preload()
-        // setTimeout(()=>{ // 模拟图片预加载时间为1s
-        // this.preload()
-        // },1000)
-      },
-      isPreloading (v) {
-        if (v) {
-          setTimeout(() => {
-            if (!this.isPreloading) return // 500毫秒内预加载完图片则不显示加载动画
-            this.isPreloadingC = true
-          }, this.timeOut)
-        } else {
-          this.isPreloadingC = false
-        }
-      }
-    }
-  }
-</script>

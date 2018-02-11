@@ -117,9 +117,10 @@ export default {
   /**
    * 时间戳转换成日期格式
    * @param timestamp
+   * @param format
    * @returns {*}
    */
-  timestampToTime (timestamp) {
+  timestampToTime (timestamp, format) {
     //时间戳为10位需*1000，时间戳为13位的话不需乘1000
     let date = 0
     if (timestamp.length === 10) {
@@ -132,7 +133,15 @@ export default {
       D = (date.getDate() + 1 < 10 ? '0' + date.getDate() : date.getDate()) + ' ',
       h = date.getHours() + ':',
       m = date.getMinutes() + ':',
-      s = date.getSeconds();
-    return Y + M + D + h + m + s;
+      s = date.getSeconds()
+    if (format === 'yyyy') {
+      return Y.substring(0, Y.length - 1)
+    } else if (format === 'yyyy-MM') {
+      return Y + M.substring(0, M.length - 1)
+    } else if (format === 'yyyy-MM-dd') {
+      return Y + M + D.substring(0, D.length - 1)
+    } else {
+      return Y + M + D + h + m + s
+    }
   }
 }

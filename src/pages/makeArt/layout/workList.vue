@@ -1,17 +1,19 @@
 <template>
   <section class="all-works">
     <div class="container">
-      <vue-waterfall-easy :imgsArr="productList" :gap="92" :maxCols="3" :imgWidth="300"
-                          @scrollLoadImg="fetchData">
+      <vue-waterfall-easy :imgsArr="productList"
+                          :gap="92"
+                          :maxCols="3"
+                          :imgWidth="300"
+                          @scrollLoadImg="fetchData"
+                          @waterfallSkip="skipToArtworks">
         <div class="detail" slot-scope="props">
           <p>
-            <router-link :to="{ path: '/artist/' + props.item.brandId +''}" target="_blank">{{ props.item.brandName }}
-            </router-link>
+            <span @click="skipToArtist(props.item, $event)">{{ props.item.brandName }}</span>
           </p>
           <p>
-            <router-link :to="{ path: '/artworks/' + props.item.goodsId +''}" target="_blank">{{ props.item.goodsName }}
-            </router-link>
-            &nbsp;&nbsp;<span>{{  props.item.createTime }}</span>
+            <span>{{ props.item.goodsName }}</span>
+            <span>{{ props.item.createTime }}</span>
           </p>
           <p>
             <span>{{ props.item.cateName }}</span>&nbsp;&nbsp;&nbsp;
@@ -77,6 +79,13 @@
           return
         }
         this.productList = this.productList.concat(this.initList(10, 20))
+      },
+      skipToArtworks (item) {
+        window.open('#/artworks/' + item.goodsId)
+      },
+      skipToArtist (item, e) {
+        window.open('#/artist/' + item.brandId)
+        e.stopPropagation()
       },
       clickCallback (pageNum) {
         console.log(pageNum)
