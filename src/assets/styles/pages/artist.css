@@ -1,9 +1,3 @@
-body {
-  background-color: #eee;
-  white-space: nowrap;
-  min-height: 640px;
-  min-width: 968px;
-}
 body .artist-contain {
   position: relative;
 }

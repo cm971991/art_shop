@@ -146,7 +146,6 @@
 
       },
       headChoose (item) {
-        debugger
         this.$refs.pictureInput.$refs.fileInput.click()
         console.log('item:', item)
       }

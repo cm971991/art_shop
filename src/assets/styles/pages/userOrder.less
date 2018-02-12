@@ -1,3 +1,205 @@
 .userOrder-contain {
-
+  width: 1200px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .uc_content {
+    width: 1000px;
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+    min-height: 660px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 244px;
+    min-width: 956px;
+    .order-list {
+      float: right;
+      width: 1000px;
+      .order-nav {
+        ul {
+          padding: 0 40px;
+          margin-bottom: 40px;
+          background-color: #f8f8f8;
+          border: solid 1px #eeeeee;
+          height: 40px;
+          line-height: 40px;
+          li {
+            display: inline-block;
+            margin-right: 100px;
+            box-sizing: border-box;
+            position: relative;
+            text-align: left;
+            span {
+              font-size: 14px;
+              letter-spacing: 1.5px;
+              color: #000;
+              text-decoration: none;
+              cursor: pointer;
+            }
+            &:after {
+              display: none;
+              position: absolute;
+              bottom: 0;
+              left: -26px;
+              content: '';
+              width: 100px;
+              height: 4px;
+              background-color: #000;
+            }
+            &.active {
+              &:after {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+      .order-content {
+        .order-item {
+          margin-bottom: 40px;
+          border: 1px solid #000;
+          ul {
+            & > li {
+              .item-header {
+                height: 40px;
+                background-color: #000000;
+                color: #fff;
+                font-size: 12px;
+                line-height: 40px;
+                padding: 0 10px 0 20px;
+                text-align: left;
+                a {
+                  color: #fff;
+                  text-decoration: underline;
+                }
+                span {
+                  margin-right: 10px;
+                }
+              }
+              .item {
+                width: 630px;
+                padding: 20px;
+                border-bottom: 1px solid #e2e2e2;
+                background-color: #FFF;
+                font-size: 12px;
+                position: relative;
+                .thumb {
+                  width: 175px;
+                  height: 140px;
+                  margin-left: 0;
+                  margin-right: 18px;
+                  text-align: center;
+                  overflow: hidden;
+                  img {
+                    vertical-align: middle;
+                  }
+                }
+                .detail {
+                  color: #333 !important;
+                  width: 170px;
+                  a {
+                    color: #333 !important;
+                    font-size: 12px;
+                  }
+                }
+                .logistics {
+                  text-align: right;
+                  width: 100px;
+                  .bottom-box {
+                    right: 20px;
+                  }
+                  p {
+                    color: #666;
+                    a {
+                      color: #666;
+                    }
+                    &:first-child {
+                      text-align: right;
+                    }
+                  }
+                }
+                &:last-child {
+                  border-bottom: 0;
+                }
+              }
+              .price-sum {
+                position: relative;
+                width: 150px;
+                height: 180px;
+                font-size: 12px;
+                text-align: center;
+                color: #666666;
+                border-left: 1px solid #ddd;
+                border-right: 1px solid #ddd;
+                p {
+                  &:first-child {
+                    margin-bottom: 20px;
+                  }
+                }
+                strong {
+                  color: #000;
+                }
+                em {
+                  display: inline-block;
+                  padding: 0 3px;
+                  font-style: normal;
+                  text-decoration: none;
+                }
+              }
+              .middle-box {
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                .close-time {
+                  color: #333;
+                  font-size: 12px;
+                  width: 176px;
+                  text-align: center;
+                }
+                p {
+                  text-align: center;
+                }
+              }
+              .bottom-box {
+                position: absolute;
+                bottom: 20px;
+              }
+              .operation {
+                position: relative;
+                width: 176px;
+                text-align: center;
+                height: 180px;
+                .btn {
+                  background-color: #000000;
+                  color: #fff;
+                  font-size: 16px;
+                }
+                a {
+                  display: inline-block;
+                  width: 100px;
+                  height: 34px;
+                  font-size: 12px;
+                  color: #666666;
+                  line-height: 34px;
+                }
+              }
+              em {
+                font-style: normal;
+              }
+              p {
+                line-height: 18px;
+                text-align: left;
+              }
+              a {
+                color: #000;
+                text-decoration: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

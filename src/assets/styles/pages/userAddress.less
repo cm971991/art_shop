@@ -1,0 +1,186 @@
+.userAddress-contain {
+  width: 1200px;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  .uc_content {
+    border-left: 1px solid #ddd;
+    padding-left: 40px;
+    min-height: 660px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 244px;
+    min-width: 956px;
+    width: 985px;
+    .manage-address {
+      .insert {
+        background: #FFF;
+        border: 1px solid #dadada;
+        padding: 22px 20px;
+        text-align: left;
+        .title {
+          color: #F33;
+          font-size: 16px;
+          span {
+            cursor: pointer;
+          }
+        }
+        .form {
+          padding: 20px 80px;
+          overflow-y: hidden;
+          transition: all .5s cubic-bezier(0, 1, 0.5, 1);
+          table {
+            border: 0;
+            padding: 0;
+            margin: 0;
+            tr {
+              td {
+                padding: 10px;
+                font-size: 14px;
+                button {
+                  width: 64px;
+                  height: 34px;
+                  text-align: center;
+                  &.save {
+                    background: #F33;
+                    border: 1px solid #F33;
+                    color: #FFF;
+                    margin-right: 10px;
+                  }
+                  &.cancel {
+                    background: #f6f6f6;
+                    border: 1px solid #dcdcdc;
+                    color: #6f757a;
+                  }
+                }
+                input, select, textarea {
+                  border: 0;
+                  height: 38px;
+                  line-height: 38px;
+                  padding: 0 10px;
+                  color: #333;
+                  font-size: 14px;
+                }
+                input[type='checkbox'] {
+                  width: 20px;
+                  height: 20px;
+                  display: inline-block;
+                  position: relative;
+                  top: 5px;
+                }
+                input {
+                  width: 100%;
+                  padding-top: 3px;
+                  height: 33px;
+                  line-height: 33px;
+                }
+                select {
+                  width: 22%;
+                  margin-right: 1%;
+                  float: left;
+                  border: 1px solid #dcdcdc;
+                  background: url("../../images/common/select_bg.png") no-repeat right #fff;
+                }
+                textarea {
+                  height: 80px;
+                  width: 100%;
+                  line-height: 24px;
+                }
+                .border-div {
+                  border: 1px solid #dcdcdc;
+                  overflow: hidden;
+                }
+                .input-div {
+                  width: 600px;
+                  padding: 0;
+                  overflow: hidden;
+                }
+                &:first-child {
+                  text-align: right;
+                  vertical-align: top;
+                  padding-top: 15px;
+                  em {
+                    color: #F33;
+                    padding-right: 5px;
+                    font-style: normal;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+      .address {
+        margin-top: 20px;
+        ul {
+          margin: 0;
+          padding: 0;
+          li {
+            width: 435px;
+            height: 174px;
+            border: 3px solid #e5e5e5;
+            float: left;
+            margin: 0 20px 20px 0;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+            p {
+              padding: 8px 0;
+              margin: 0;
+              color: #333;
+              font-weight: lighter;
+              font-size: 14px;
+              display: block;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+            }
+            .controller {
+              position: absolute;
+              bottom: 13px;
+              right: 13px;
+              a {
+                height: 28px;
+                line-height: 28px;
+                text-align: center;
+                padding: 0 11px;
+                margin-left: 10px;
+                color: #6f757a;
+                border: 1px solid #bcbcbc;
+                display: inline-block;
+                text-decoration: none;
+                font-size: 12px;
+              }
+            }
+            .default-txt {
+              position: absolute;
+              right: 0;
+              top: 0;
+              padding: 0 10px;
+              height: 20px;
+              line-height: 20px;
+              background: #000;
+              color: #FFF;
+              font-size: 12px;
+              display: none;
+            }
+            &.default {
+              border: 3px solid #000;
+              text-align: left;
+              p {
+                font-weight: bold;
+              }
+              .s-default {
+                display: none;
+              }
+              .default-txt {
+                display: block;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
