@@ -10,7 +10,7 @@
         <div class="insert">
           <div class="title" @click="showAddressForm"><span>+ 新增收货地址</span></div>
           <div class="form" :style="formStyle">
-            <address-form></address-form>
+            <address-form @saveForm="saveForm"></address-form>
           </div>
         </div>
         <div class="address">
@@ -22,9 +22,9 @@
               <p>江苏 南京市 玄武区其额我去诶我去而起我</p>
               <p></p>
               <div class="controller _hidden">
-                <a href="javascript:void(0);" class="s-default" name="4148">设为默认</a>
-                <a href="javascript:void(0);" class="s-edit" name="4148">修改</a>
-                <a href="javascript:void(0);" class="s-del" name="4148">删除</a>
+                <a href="javascript:void(0);" class="s-default">设为默认</a>
+                <a href="javascript:void(0);" class="s-edit" @click="showAddressForm">修改</a>
+                <a href="javascript:void(0);" class="s-del" @click="deleteFormData">删除</a>
               </div>
             </li>
           </ul>
@@ -63,6 +63,19 @@
        */
       showAddressForm () {
         this.showFormFlag = !this.showFormFlag
+      },
+      /**
+       * 删除
+       */
+      deleteFormData () {
+
+      },
+      /**
+       *
+       * @param form
+       */
+      saveForm (form) {
+        console.log('form:', form)
       }
     }
   }
