@@ -3,10 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 import store from './vuex/index'
-import {router, defaultTitle} from './router'
+import { router, defaultTitle } from './router'
 import VueLazyLoad from 'vue-lazyload' // 图片懒加载
 import VModal from 'vue-js-modal'
 import Util from './assets/utils/index'
+import { isEmptyObject } from './assets/utils/util'
 
 Vue.use(VueLazyLoad, {
   error: require('./assets/images/common/img_error.png')
@@ -19,6 +20,13 @@ Vue.use(Util)
 const commit = store.commit
 
 router.beforeEach(function (to, from, next) {
+  if (to.name === 'userWish') {
+    let userInfo = store.getters.userInfo
+    if (isEmptyObject(userInfo)) {
+      router.push({path: '/login'})
+      next(false)
+    }
+  }
   window.scrollTo(0, 0)
   next()
 })
