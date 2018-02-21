@@ -56,15 +56,15 @@
 
     <!-- region 搜索框 -->
     <div class="searchBox" :class="{ active : !searchFlag }">
-      <input placeholder="搜索艺术家或艺术品">
+      <input placeholder="搜索艺术家或艺术品" @keyup.enter="searchResult">
     </div>
     <!-- endregion 搜索框 -->
   </div>
 </template>
 
 <script>
-  import {mapState} from 'vuex'
-  import {isEmptyObject} from '../../assets/utils/util'
+  import { mapState } from 'vuex'
+  import { isEmptyObject } from '../../assets/utils/util'
 
   export default {
     components: {},
@@ -151,6 +151,13 @@
           }, 200)
         }
         return false
+      },
+      /**
+       * 回车键 搜索事件
+       */
+      searchResult () {
+        console.log('searchResult')
+        this.$router.push({path: '/searchResult'})
       },
       /**
        * 跳转到购物车

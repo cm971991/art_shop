@@ -13,7 +13,9 @@ import MakeArt from '../pages/makeArt/MakeArt'
 import Broker from '../pages/broker/broker'
 import DiscoveryIndex from '../pages/discovery/index/index'
 import DiscoveryDetail from '../pages/discovery/detail/detail'
-/** *************************会员中心**************************************/
+import searchResult from '../pages/search/searchResult'
+
+/** *************************会员中心 START**************************************/
 import UserWish from '../pages/user/userWish/userWish'
 import UserCollect from '../pages/user/userCollect/userCollect'
 import UserHistory from '../pages/user/userHistory/userHistory'
@@ -27,7 +29,8 @@ import UserInfo from '../pages/user/userInfo/userInfo'
 import UserMessage from '../pages/user/userMessage/userMessage'
 import UserSecurity from '../pages/user/userSecurity/userSecurity'
 import UserVoucher from '../pages/user/userVoucher/userVoucher'
-/** *************************会员中心**************************************/
+
+/** *************************会员中心 END**************************************/
 
 Vue.use(Router)
 export const defaultTitle = '爱艺'
@@ -50,6 +53,12 @@ export const router = new Router({
       name: 'login',
       meta: {title: '登录注册页-爱艺', showNav: false, navType: '', footer: 'none'},
       component: Login
+    },
+    {
+      path: '/searchResult',
+      name: 'searchResult',
+      meta: {title: '搜索结果-爱艺', showNav: true, navType: '', footer: 'none'},
+      component: searchResult
     },
     {
       path: '/buy',

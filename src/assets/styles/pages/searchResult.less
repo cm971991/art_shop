@@ -1,0 +1,271 @@
+.searchResult-contain {
+  position: relative;
+  .search-center {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 22px 120px 22px;
+    box-sizing: border-box;
+    overflow: hidden;
+    max-width: 1080px;
+    .search-input {
+      margin-bottom: 3px;
+      .input-div {
+        height: 44px;
+        width: 100%;
+        padding-left: 10px;
+        padding-right: 60px;
+        float: left;
+        box-sizing: border-box;
+        border: 1px solid #c4c4c4;
+        line-height: 42px;
+        display: block;
+        color: #333;
+        background: #FFF;
+        i {
+          width: 40px;
+          text-align: center;
+          float: left;
+          height: 42px;
+          line-height: 42px;
+          font-size: 18px;
+        }
+        input {
+          width: 90%;
+          font-size: 14px;
+          border: 0;
+          float: left;
+          height: 40px;
+          line-height: 40px;
+        }
+        a {
+          text-decoration: none;
+          width: 40px;
+          height: 42px;
+          line-height: 42px;
+          text-align: center;
+          display: block;
+          float: right;
+          color: #333;
+          font-size: 24px;
+          &:hover {
+            cursor: pointer;
+          }
+        }
+      }
+      .input-button {
+        float: right;
+        margin-left: -60px;
+        border: 1px solid #c4c4c4;
+        border-left: 1px solid #ccc;
+        height: 44px;
+        line-height: 44px;
+        width: 60px;
+        display: block;
+        color: #333;
+        background: #FFF;
+        cursor: pointer;
+      }
+    }
+    .search-nav {
+      padding: 30px 0;
+      a {
+        margin-right: 48px;
+        font-size: 18px;
+        color: #000;
+        text-decoration: none;
+        display: block;
+        float: left;
+        font-weight: normal;
+        padding: 10px 0;
+        &.active, &:hover {
+          font-weight: bold;
+          border-bottom: 3px solid #1f1f1f;
+          cursor: pointer;
+        }
+      }
+    }
+    .search-line {
+      width: 100%;
+      border-bottom: 1px solid #e2e2e2;
+      padding: 10px 0;
+      color: #333;
+      font-size: 12px;
+      text-align: left;
+      .result-num {
+        em {
+          font-style: normal;
+        }
+      }
+      em {
+        margin: 0 4px;
+      }
+    }
+    .search-content {
+      padding: 0;
+      margin: 0;
+      .search-list {
+        ul {
+          padding: 0;
+          margin: 0 0 40px 0;
+          li {
+            padding: 40px 0;
+            border-bottom: 1px solid #e2e2e2;
+            a {
+              color: #0086ce;
+              font-size: 12px;
+              text-decoration: none;
+            }
+            .img {
+              background-size: contain;
+              background-position: center center;
+              background-repeat: no-repeat;
+            }
+            .project {
+              .thumb {
+                width: 175px;
+                height: 140px;
+                margin-left: 30px;
+                margin-right: 18px;
+                text-align: center;
+                overflow: hidden;
+                background: #FFF;
+                position: relative;
+              }
+              .detail {
+                width: 280px;
+                text-align: left;
+                .title {
+                  color: #333;
+                  padding: 20px 0;
+                  font-size: 14px;
+                }
+                .content-jies {
+                  width: 204px;
+                  overflow: hidden;
+                  text-overflow: ellipsis;
+                  white-space: nowrap;
+                }
+                p {
+                  color: #a8a8a8;
+                  line-height: 24px;
+                  padding: 0;
+                  margin: 0;
+                  font-size: 12px;
+                }
+              }
+              .info {
+                padding-top: 20px;
+                width: 420px;
+                text-align: left;
+                .title {
+                  color: #333;
+                  font-size: 14px;
+                  font-weight: normal;
+                }
+                .summarize {
+                  color: #6f757a;
+                  font-size: 12px;
+                  line-height: 24px;
+                  padding: 18px 0;
+                }
+                .more {
+                  a {
+                    margin-right: 29px;
+                  }
+                }
+              }
+            }
+            .artist {
+              .introduces {
+                width: 176px;
+                float: left;
+                text-align: center;
+                .avatar {
+                  width: 176px;
+                  height: 176px;
+                  margin-bottom: 20px;
+                  display: block;
+                  img {
+                    width: 100%;
+                    height: 100%;
+                    border-radius: 50%;
+                  }
+                }
+                p {
+                  line-height: 18px;
+                  padding: 0;
+                  margin: 0;
+                  color: #6f757a;
+                  font-size: 12px;
+                }
+                .name {
+                  color: #333;
+                  font-size: 14px;
+                }
+              }
+              .artist-project {
+                width: 710px;
+                float: right;
+                text-align: right;
+                overflow: hidden;
+                ul {
+                  padding: 0;
+                  margin: 0;
+                  width: 710px;
+                  height: 140px;
+                  overflow: hidden;
+                  margin-bottom: 20px;
+                  float: right;
+                  li {
+                    padding: 0 0 0 2px;
+                    margin: 0;
+                    height: 140px;
+                    float: right;
+                    a {
+                      height: 100%;
+                      img {
+                        width: 200px;
+                        height: 140px;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+            & > div > div {
+              float: left;
+            }
+          }
+        }
+      }
+      .no-data {
+        margin: 40px 0 100px;
+        color: #333;
+        font-size: 12px;
+        font-weight: normal;
+        text-align: left;
+        strong {
+          font-weight: bold;
+          font-size: 16px;
+          margin-bottom: 20px;
+          display: block;
+        }
+        p {
+          font-size: 14px;
+        }
+        & > div {
+          display: inline-block;
+          text-align: center;
+        }
+      }
+    }
+    .search-data {
+      .project-data, .artist-data {
+        display: none;
+        &.active {
+          display: block;
+        }
+      }
+    }
+  }
+}
