@@ -25,7 +25,7 @@
         <!-- region 艺术品 -->
         <div class="project-data" :class="{ active : resultType === 'artwork' }">
           <search-list :type="resultType"
-                       :artworkList="artworkList"
+                       :list="artworkList"
                        :keyWord="keyWord"></search-list>
         </div>
         <!-- endregion 艺术品 -->
@@ -33,7 +33,7 @@
         <!-- region 艺术家 -->
         <div class="artist-data" :class="{ active : resultType === 'artist' }">
           <search-list :type="resultType"
-                       :artistList="artistList"
+                       :list="artistList"
                        :keyWord="keyWord"></search-list>
         </div>
         <!-- endregion 艺术家 -->

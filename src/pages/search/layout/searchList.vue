@@ -1,25 +1,17 @@
 <template>
   <div class="search-content">
     <!-- region 总数 -->
-    <template v-if="type === 'artwork'">
-      <div class="search-line"
-           v-if="!artworkList || artworkList.length <= 0">
-        <span class="result-num">共<em>{{ artworkList ? artworkList.length : 0 }}</em>条结果</span>
-      </div>
-    </template>
-    <template v-else>
-      <div class="search-line"
-           v-if="!artistList || artistList.length <= 0">
-        <span class="result-num">共<em>{{ artistList ? artistList.length : 0 }}</em>条结果</span>
-      </div>
-    </template>
+    <div class="search-line"
+         v-if="list && list.length > 0">
+      <span class="result-num">共<em>{{ list ? list.length : 0 }}</em>条结果</span>
+    </div>
     <!-- endregion 总数 -->
 
     <!-- region 列表 -->
     <div class="search-list">
       <template v-if="type === 'artwork'">
         <ul class="works-list">
-          <template v-for="(item,index) in artworkList">
+          <template v-for="(item,index) in list">
             <li :key="index">
               <div class="project clearfix">
                 <div class="thumb">
@@ -52,7 +44,7 @@
       </template>
       <template v-else>
         <ul class="writer-list">
-          <template v-for="(item,index) in artistList">
+          <template v-for="(item,index) in list">
             <li :key="index">
               <div class="artist clearfix">
                 <div class="introduces">
@@ -86,25 +78,28 @@
     <!-- endregion 列表 -->
 
     <!-- region 无数据时展示 -->
-    <template v-if="type === 'artwork'">
-      <div class="no-data"
-           v-if="!artworkList || artworkList.length <= 0">
-        <div class="no-data">
-          <strong>抱歉，没有找到“{{keyWord}}”的相关结果</strong>
-          <p>请尝试修改搜索关键字</p>
-        </div>
+    <div class="no-data"
+         v-if="!list || list.length <= 0">
+      <div class="no-data">
+        <strong>抱歉，没有找到“{{keyWord}}”的相关结果</strong>
+        <p>请尝试修改搜索关键字</p>
       </div>
-    </template>
-    <template v-else>
-      <div class="no-data"
-           v-if="!artistList || artistList.length <= 0">
-        <div class="no-data">
-          <strong>抱歉，没有找到“{{keyWord}}”的相关结果</strong>
-          <p>请尝试修改搜索关键字</p>
-        </div>
-      </div>
-    </template>
+    </div>
     <!-- endregion 无数据时展示 -->
+
+    <!-- region 分页 -->
+    <paginate :class="{ active: list && list.length > 0 }"
+              :page-count="5"
+              :page-range="1"
+              :margin-pages="1"
+              :click-handler="clickCallback"
+              :containerClass="'pagination'"
+              :prev-class="'prev'"
+              :next-class="'next'"
+              :prev-text="'上一页'"
+              :next-text="'下一页'">
+    </paginate>
+    <!-- endregion 分页 -->
   </div>
 </template>
 
@@ -122,10 +117,7 @@
         type: String,
         default: ''
       },
-      artworkList: {
-        type: Array
-      },
-      artistList: {
+      list: {
         type: Array
       }
     },
@@ -133,16 +125,15 @@
       return {}
     },
     created () {
+      console.log('!list || list.length <= 0:', (!this.list || this.list.length <= 0))
     },
     mounted () {
     },
     computed: {},
-    methods: {}
+    methods: {
+      clickCallback (pageNum) {
+        this.$emit('paginateClick', pageNum)
+      }
+    }
   }
 </script>
-
-<style lang="less">
-  .MyContain {
-    background-color: #fff;
-  }
-</style>

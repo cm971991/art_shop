@@ -12,15 +12,12 @@
         <a :class="{ active : item.type === navType }" @click="menuRedirect(item)" :key="index">{{ item.name }}</a>
       </template>
       <div class="search">
-        <a @click="search($event)">
-          <img src="https://www.ywart.com/svg_file?path=/Content/image/search.svg&amp;rgb=255,255,255"
-               class="searchIcon" :class="{ active : searchFlag }">
-          <img src="https://www.ywart.com/svg_file?path=/Content/image/closeInput.svg&amp;rgb=255,255,255"
-               class="closeIcon" :class="{ active : !searchFlag }">
+        <a @click="search()">
+          <i class="icon-search" title="搜索" v-html="searchIcon"></i>
         </a>
       </div>
       <div class="cart" :class="{ active: !userInfo }" @click="cartRedirect">
-        <i class="icon-search-cart" v-html="cartIcon"></i>
+        <i class="icon-search-cart" title="购物车" v-html="cartIcon"></i>
       </div>
     </div>
     <!-- endregion 导航栏 -->
@@ -53,12 +50,6 @@
       </div>
     </div>
     <!-- endregion 登录按钮 -->
-
-    <!-- region 搜索框 -->
-    <div class="searchBox" :class="{ active : !searchFlag }">
-      <input placeholder="搜索艺术家或艺术品" @keyup.enter="searchResult">
-    </div>
-    <!-- endregion 搜索框 -->
   </div>
 </template>
 
@@ -78,6 +69,7 @@
       return {
         cartIcon: '&#xe60c;',
         userIcon: '&#xe606;',
+        searchIcon: '&#xe603;',
         logImg: require('../../assets/images/common/logo.png'),
         logo: {name: 'index', link: '/', type: 'logo'},
         menuList: [
@@ -86,8 +78,7 @@
           {name: '发现', link: '/discovery/index', type: 'discovery'},
           {name: '我的珍藏', link: '/user/userWish', type: 'userWish'},
           {name: '经纪人专享', link: '/broker', type: 'broker'}
-        ],
-        searchFlag: true
+        ]
       }
     },
     created () {
@@ -137,27 +128,9 @@
       /**
        * 查询
        */
-      search (e) {
-        let target = e.target
-        let flag = this.$utils.Dom.hasClass(target, 'searchIcon')
-        if (flag) {
-          this.searchFlag = false
-          this.$utils.Dom.getElement('.searchBox').style.display = 'block'
-          this.$utils.Dom.getElement('.searchBox input').focus()
-        } else {
-          this.$utils.Dom.addClass(this.$utils.Dom.getElement('.closeIcon'), 'back')
-          setTimeout(() => {
-            this.searchFlag = true
-          }, 200)
-        }
-        return false
-      },
-      /**
-       * 回车键 搜索事件
-       */
-      searchResult () {
-        console.log('searchResult')
+      search () {
         this.$router.push({path: '/searchResult'})
+        return false
       },
       /**
        * 跳转到购物车
