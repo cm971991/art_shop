@@ -105,6 +105,7 @@
 
 <script>
   import cartList from '../../../../static/data/shopping/cartList'
+  import { isEmptyObject } from '../../../assets/utils/util'
 
   export default {
     components: {},
@@ -223,8 +224,8 @@
        */
       Settle () {
         let userInfo = this.$store.getters.userInfo
-        if (userInfo && userInfo.userId && userInfo.tooken) {
-          this.$router.push({path: '/order'})
+        if (!isEmptyObject(userInfo)) {
+          this.$router.push({path: '/orderPay'})
         } else {
           this.$store.commit('SHOW_LOGIN', true)
         }

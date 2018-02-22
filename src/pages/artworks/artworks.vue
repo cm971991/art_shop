@@ -209,7 +209,6 @@
        * 点击页面 隐藏作品详情信息
        */
       hideGoodsInfo () {
-        debugger
         this.menuShow = false
         this.shoppingCartShow = false
       },

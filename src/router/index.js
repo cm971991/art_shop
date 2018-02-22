@@ -91,8 +91,8 @@ export const router = new Router({
       component: Cart
     },
     {
-      path: '/order',
-      name: 'order',
+      path: '/orderPay',
+      name: 'orderPay',
       meta: {title: '订单-爱艺', showNav: true, navType: '', footer: 'default'},
       component: OrderPay
     },

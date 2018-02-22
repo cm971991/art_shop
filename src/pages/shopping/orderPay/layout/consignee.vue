@@ -4,7 +4,7 @@
       <div class="title-header">收货人信息</div>
       <div class="f_l panel-container panel-address">
         <ul class="clearfix">
-          <li class="_dizhi defualt active">
+          <li class="active">
             <p class="consignee">(陈明 收）</p>
             <a href="javascript:void(0);" class="s_edit">
               <i class="icon-edit" v-html="editIcon"></i>
@@ -22,7 +22,7 @@
               <span><i class="icon-check" v-html="checkIcon"></i></span>
             </div>
           </li>
-          <li class="address-new">
+          <li class="address-new" @click="addAddress">
             <a href="javascript:void(0);" class="insert _add_addrs">
               <b>+</b>新增收货地址
             </a>
@@ -30,12 +30,16 @@
         </ul>
       </div>
     </div>
+    <modal name="demo-login" transition="pop-out" :width="750" :height="650">
+      <address-form></address-form>
+    </modal>
   </div>
 </template>
 
 <script>
+  const addressForm = () => import('../../../user/userAddress/layout/addressForm')
   export default {
-    components: {},
+    components: {addressForm},
     data () {
       return {
         editIcon: '&#xe604;',
@@ -48,12 +52,11 @@
     mounted () {
     },
     computed: {},
-    methods: {}
+    methods: {
+      addAddress () {
+        console.log('addAddress')
+        this.$modal.show('demo-login')
+      }
+    }
   }
 </script>
-
-<style lang="less">
-  .MyContain {
-    background-color: #fff;
-  }
-</style>
