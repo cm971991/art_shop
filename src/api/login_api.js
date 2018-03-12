@@ -1,6 +1,6 @@
 import url from './api_config'
 import ex from './exception'
-import {loginData} from '../mock'
+import {loginData} from '../mock/mock'
 
 export default {
   /**

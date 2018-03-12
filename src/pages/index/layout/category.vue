@@ -11,24 +11,24 @@
       <div class="item-box" :class="{ active : item.active }">
         <template v-for="category in categoryList">
           <div class="item">
-            <router-link :to="{ path: '/artworks/' + category.id +''}" target="_blank">
+            <router-link :to="{ path: '/artworks/' + category.goodsId +''}" target="_blank">
               <div class="img img-hover">
                 <img v-lazy="category.imgUrl">
               </div>
             </router-link>
             <div class="info_box">
               <div>
-                <router-link :to="{ path: '/artist/' + category.artistId +''}" target="_blank">
-                  <h3>{{ category.artist }}</h3>
+                <router-link :to="{ path: '/artist/' + category.brandId +''}" target="_blank">
+                  <h3>{{ category.brandName }}</h3>
                 </router-link>
-                <router-link :to="{ path: '/artworks/' + category.id +''}" target="_blank">
-                  <h4>{{ category.name }}</h4>
+                <router-link :to="{ path: '/artworks/' + category.goodsId +''}" target="_blank">
+                  <h4>{{ category.goodsName }}</h4>
                   <h4>，</h4>
-                  <h4>{{ category.date }}</h4>
+                  <h4>{{ category.createTime }}</h4>
                 </router-link>
                 <div>
                   <h4>{{ category.type }}</h4>
-                  <h4>{{ category.size }}</h4>
+                  <h4>{{ category.size }}cm</h4>
                 </div>
                 <p class="ysp_price">¥{{ category.price }}</p>
               </div>
@@ -41,8 +41,6 @@
 </template>
 
 <script>
-  import categoryList from '../../../../static/data/index/categoryList'
-
   export default {
     components: {},
     data () {
@@ -53,7 +51,7 @@
           {name: '版画', param: 'print', active: false},
           {name: '油画', param: 'oil', active: true}
         ],
-        categoryList: categoryList
+        categoryList: []
       }
     },
     created () {
