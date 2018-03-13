@@ -26,7 +26,6 @@
 <script>
   import 'swiper/dist/css/swiper.css'
   import { swiper, swiperSlide } from 'vue-awesome-swiper'
-  // import Service from '../../../service/index_service'
 
   export default {
     components: {
@@ -49,10 +48,6 @@
       }
     },
     created () {
-      // this.$nextTick(() => {
-      //   this.service = new Service(this)
-      //   this.service.getSpecials()
-      // })
     },
     mounted () {
 

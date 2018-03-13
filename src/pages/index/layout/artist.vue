@@ -43,8 +43,6 @@
 </template>
 
 <script>
-  import Service from '../../../service/index_service'
-
   export default {
     components: {},
     data () {
@@ -59,10 +57,6 @@
       }
     },
     created () {
-      this.$nextTick(() => {
-        this.service = new Service(this)
-        this.service.getArtist()
-      })
     },
     mounted () {},
     computed: {},

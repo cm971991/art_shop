@@ -1,7 +1,8 @@
 import Mock from 'mockjs'
 import url from '../api/api_config'
 
-const Random = Mock.Random
+const dir = process.env.NODE_ENV === 'production' ? 'iart/' : ''
+const random = Mock.Random
 /**
  * 手机号登录
  */
@@ -9,9 +10,9 @@ export const loginData = Mock.mock(url.getUrl('loginByAccount'), {
   'code': '0000',
   'msg': 'success',
   'data': {
-    'userId': Random.natural(1, 1000),
-    'userName': Random.cname(),
-    'token': Random.guid()
+    'userId': random.natural(1, 1000),
+    'userName': random.cname(),
+    'token': random.guid()
   }
 })
 
@@ -24,7 +25,7 @@ export const bannerData = Mock.mock(url.getUrl('getBanner'), {
   'data': function () {
     let array = []
     for (let i = 1; i <= 6; i++) {
-      array.push({'imgUrl': '../../static/images/index/swiper/swiper_' + i + '.jpg'})
+      array.push({'imgUrl': '../../' + dir + 'static/images/index/swiper/swiper_' + i + '.jpg'})
     }
     return array
   }
@@ -41,15 +42,15 @@ export const categoryData = Mock.mock(url.getUrl('getCategoryList'), {
     for (let i = 1; i <= 4; i++) {
       array.push(
         {
-          'goodsId': Random.id(),
-          'goodsName': Random.ctitle(1, 10),
-          'imgUrl': '../../static/images/index/category/category_' + i + '.jpg',
-          'createTime': Random.datetime('yyyy'),
+          'goodsId': random.id(),
+          'goodsName': random.ctitle(1, 10),
+          'imgUrl': '../../' + dir + 'static/images/index/category/category_' + i + '.jpg',
+          'createTime': random.datetime('yyyy'),
           'type': '布面油画',
-          'size': Random.string('number', 2, 3) + 'x' + Random.string('number', 2, 3),
-          'price': Random.integer(0, 100000),
-          'brandId': Random.id(),
-          'brandName': Random.cname()
+          'size': random.string('number', 2, 3) + 'x' + random.string('number', 2, 3),
+          'price': random.integer(0, 100000),
+          'brandId': random.id(),
+          'brandName': random.cname()
         }
       )
     }
@@ -68,15 +69,15 @@ export const newsData = Mock.mock(url.getUrl('getNews'), {
     for (let i = 1; i <= 20; i++) {
       array.push(
         {
-          'goodsId': Random.id(),
-          'goodsName': Random.ctitle(1, 10),
-          'imgUrl': '../../static/images/index/news/news_' + i + '.jpg',
-          'createTime': Random.datetime('yyyy'),
+          'goodsId': random.id(),
+          'goodsName': random.ctitle(1, 10),
+          'imgUrl': '../../' + dir + 'static/images/index/news/news_' + i + '.jpg',
+          'createTime': random.datetime('yyyy'),
           'type': '宣纸设色',
-          'size': Random.string('number', 2, 3) + 'x' + Random.string('number', 2, 3),
-          'price': Random.integer(0, 100000),
-          'brandId': Random.id(),
-          'brandName': Random.cname()
+          'size': random.string('number', 2, 3) + 'x' + random.string('number', 2, 3),
+          'price': random.integer(0, 100000),
+          'brandId': random.id(),
+          'brandName': random.cname()
         }
       )
     }
@@ -95,10 +96,10 @@ export const specialsData = Mock.mock(url.getUrl('getSpecials'), {
     for (let i = 1; i <= 8; i++) {
       array.push(
         {
-          'topicId': Random.id(),
-          'topicName': Random.ctitle(5, 10),
-          'imgUrl': '../../static/images/index/specials/specials_' + i + '.jpg',
-          'desc': Random.ctitle(10, 50)
+          'topicId': random.id(),
+          'topicName': random.ctitle(5, 10),
+          'imgUrl': '../../' + dir + 'static/images/index/specials/specials_' + i + '.jpg',
+          'desc': random.ctitle(10, 50)
         }
       )
     }
@@ -117,12 +118,12 @@ export const artistData = Mock.mock(url.getUrl('getArtist'), {
     for (let i = 1; i <= 3; i++) {
       array.push(
         {
-          'brandId': Random.id(),
-          'brandName': Random.cname(),
-          'brandCount': Random.integer(0, 50),
-          'imgUrls': ['../../static/images/index/artist/artist_' + (i + 1) + '_1.jpg',
-            '../../static/images/index/artist/artist_' + (i + 1) + '_2.jpg',
-            '../../static/images/index/artist/artist_' + (i + 1) + '_3.jpg']
+          'brandId': random.id(),
+          'brandName': random.cname(),
+          'brandCount': random.integer(0, 50),
+          'imgUrls': ['../../' + dir + 'static/images/index/artist/artist_' + (i + 1) + '_1.jpg',
+            '../../' + dir + 'static/images/index/artist/artist_' + (i + 1) + '_2.jpg',
+            '../../' + dir + 'static/images/index/artist/artist_' + (i + 1) + '_3.jpg']
         }
       )
     }
@@ -145,10 +146,10 @@ export const insightData = Mock.mock(url.getUrl('getInsight'), {
       }
       array.push(
         {
-          'topicId': Random.id(),
-          'topicName': Random.ctitle(10, 20),
-          'imgUrl': '../../static/images/index/insight/' + imgName + '.jpg',
-          'desc': Random.ctitle(50, 70)
+          'topicId': random.id(),
+          'topicName': random.ctitle(10, 20),
+          'imgUrl': '../../' + dir + 'static/images/index/insight/' + imgName + '.jpg',
+          'desc': random.ctitle(50, 70)
         }
       )
     }

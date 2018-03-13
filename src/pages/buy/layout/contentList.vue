@@ -37,8 +37,7 @@
             <span>{{ props.item.size }}</span>
           </p>
           <div class="qmBox">
-            <img src="https://cdn.ywart.com/material/DiscountAction/201712221339391693a0c4534.png"
-                 class="qmImg">
+            <img :src="giftImg" class="qmImg">
             <p class="price">¥{{ props.item.price }}</p>
           </div>
         </div>
@@ -69,6 +68,7 @@
     },
     data () {
       return {
+        giftImg: require('../../../assets/images/pages/buy/gift.png'),
         productList: [],
         paginateShow: false
       }
